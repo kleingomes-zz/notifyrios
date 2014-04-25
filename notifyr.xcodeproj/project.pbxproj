@@ -15,7 +15,6 @@
 		E01A591A1902F05600EB0BE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E01A59191902F05600EB0BE4 /* AppDelegate.m */; };
 		E01A591D1902F05600EB0BE4 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01A591B1902F05600EB0BE4 /* Main_iPhone.storyboard */; };
 		E01A59201902F05600EB0BE4 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E01A591E1902F05600EB0BE4 /* Main_iPad.storyboard */; };
-		E01A59231902F05600EB0BE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01A59221902F05600EB0BE4 /* ViewController.m */; };
 		E01A59251902F05600EB0BE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E01A59241902F05600EB0BE4 /* Images.xcassets */; };
 		E01A592C1902F05600EB0BE4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A592B1902F05600EB0BE4 /* XCTest.framework */; };
 		E01A592D1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
@@ -23,6 +22,11 @@
 		E01A59361902F05600EB0BE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E01A59341902F05600EB0BE4 /* InfoPlist.strings */; };
 		E01A59381902F05600EB0BE4 /* notifyrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E01A59371902F05600EB0BE4 /* notifyrTests.m */; };
 		E01A59421902F07800EB0BE4 /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59411902F07800EB0BE4 /* WindowsAzureMessaging.framework */; };
+		E0931D73190ADBF5001A991F /* ReceivedNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D6E190ADBF5001A991F /* ReceivedNotification.m */; };
+		E0931D74190ADBF5001A991F /* ReceivedNotificationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D70190ADBF5001A991F /* ReceivedNotificationCell.m */; };
+		E0931D75190ADBF5001A991F /* ReceivedNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D72190ADBF5001A991F /* ReceivedNotificationViewController.m */; };
+		E0931D7A190ADF16001A991F /* Biz.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D79190ADF16001A991F /* Biz.m */; };
+		E0931D7D190AE084001A991F /* ReceivedNotificationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D7C190AE084001A991F /* ReceivedNotificationDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +52,6 @@
 		E01A59191902F05600EB0BE4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E01A591C1902F05600EB0BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		E01A591F1902F05600EB0BE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		E01A59211902F05600EB0BE4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E01A59221902F05600EB0BE4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E01A59241902F05600EB0BE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E01A592A1902F05600EB0BE4 /* notifyrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = notifyrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01A592B1902F05600EB0BE4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -57,6 +59,16 @@
 		E01A59351902F05600EB0BE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E01A59371902F05600EB0BE4 /* notifyrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = notifyrTests.m; sourceTree = "<group>"; };
 		E01A59411902F07800EB0BE4 /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMessaging.framework; sourceTree = "<group>"; };
+		E0931D6D190ADBF5001A991F /* ReceivedNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedNotification.h; sourceTree = "<group>"; };
+		E0931D6E190ADBF5001A991F /* ReceivedNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedNotification.m; sourceTree = "<group>"; };
+		E0931D6F190ADBF5001A991F /* ReceivedNotificationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedNotificationCell.h; sourceTree = "<group>"; };
+		E0931D70190ADBF5001A991F /* ReceivedNotificationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedNotificationCell.m; sourceTree = "<group>"; };
+		E0931D71190ADBF5001A991F /* ReceivedNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedNotificationViewController.h; sourceTree = "<group>"; };
+		E0931D72190ADBF5001A991F /* ReceivedNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedNotificationViewController.m; sourceTree = "<group>"; };
+		E0931D78190ADF16001A991F /* Biz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Biz.h; sourceTree = "<group>"; };
+		E0931D79190ADF16001A991F /* Biz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Biz.m; sourceTree = "<group>"; };
+		E0931D7B190AE084001A991F /* ReceivedNotificationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedNotificationDetailViewController.h; sourceTree = "<group>"; };
+		E0931D7C190AE084001A991F /* ReceivedNotificationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedNotificationDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +134,12 @@
 				E01A59191902F05600EB0BE4 /* AppDelegate.m */,
 				E01A591B1902F05600EB0BE4 /* Main_iPhone.storyboard */,
 				E01A591E1902F05600EB0BE4 /* Main_iPad.storyboard */,
-				E01A59211902F05600EB0BE4 /* ViewController.h */,
-				E01A59221902F05600EB0BE4 /* ViewController.m */,
+				E0931D71190ADBF5001A991F /* ReceivedNotificationViewController.h */,
+				E0931D72190ADBF5001A991F /* ReceivedNotificationViewController.m */,
+				E0931D7B190AE084001A991F /* ReceivedNotificationDetailViewController.h */,
+				E0931D7C190AE084001A991F /* ReceivedNotificationDetailViewController.m */,
+				E0931D76190ADED4001A991F /* Model */,
+				E0931D77190ADEDE001A991F /* UI */,
 				E01A59241902F05600EB0BE4 /* Images.xcassets */,
 				E01A59101902F05600EB0BE4 /* Supporting Files */,
 			);
@@ -157,6 +173,26 @@
 				E01A59341902F05600EB0BE4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E0931D76190ADED4001A991F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0931D78190ADF16001A991F /* Biz.h */,
+				E0931D79190ADF16001A991F /* Biz.m */,
+				E0931D6D190ADBF5001A991F /* ReceivedNotification.h */,
+				E0931D6E190ADBF5001A991F /* ReceivedNotification.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E0931D77190ADEDE001A991F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E0931D6F190ADBF5001A991F /* ReceivedNotificationCell.h */,
+				E0931D70190ADBF5001A991F /* ReceivedNotificationCell.m */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,9 +293,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E01A59231902F05600EB0BE4 /* ViewController.m in Sources */,
+				E0931D7D190AE084001A991F /* ReceivedNotificationDetailViewController.m in Sources */,
+				E0931D74190ADBF5001A991F /* ReceivedNotificationCell.m in Sources */,
+				E0931D75190ADBF5001A991F /* ReceivedNotificationViewController.m in Sources */,
 				E01A591A1902F05600EB0BE4 /* AppDelegate.m in Sources */,
+				E0931D7A190ADF16001A991F /* Biz.m in Sources */,
 				E01A59161902F05600EB0BE4 /* main.m in Sources */,
+				E0931D73190ADBF5001A991F /* ReceivedNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +524,7 @@
 				E01A593D1902F05600EB0BE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E01A593E1902F05600EB0BE4 /* Build configuration list for PBXNativeTarget "notifyrTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +533,7 @@
 				E01A59401902F05600EB0BE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
