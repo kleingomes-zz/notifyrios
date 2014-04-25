@@ -7,14 +7,58 @@
 //
 
 #import "AppDelegate.h"
+#import <WindowsAzureMessaging/WindowsAzureMessaging.h>
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    
+     [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+    
+    
     return YES;
 }
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken
+{
+    SBNotificationHub* hub = [[SBNotificationHub alloc] initWithConnectionString:
+                              @"Endpoint=sb://notifyr.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=kMppdojWLSpTzw02vGwHA65Yqw0Ci7J0LGVOFW8HUK4=" notificationHubPath:@"notifyr"];
+    
+    [hub registerNativeWithDeviceToken:deviceToken tags:nil completion:^(NSError* error) {
+        if (error != nil) {
+            NSLog(@"Error registering for notifications: %@", error);
+        }
+    }];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification: (NSDictionary *)userInfo {
+    NSLog(@"%@", userInfo);
+    
+    NSDictionary *aps1 = userInfo[@"aps"];
+    
+    NSDictionary *aps2 = aps1[@"aps"];
+    NSString *msg = aps2[@"alert"];
+    
+    NSLog(@"msg: %@", msg);
+
+
+    
+    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:
+    //                      [[userInfo objectForKey:@"aps"] valueForKey:@"alert"] delegate:nil cancelButtonTitle:
+    //                      @"OK" otherButtonTitles:nil, nil];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:msg delegate:nil cancelButtonTitle:
+                          @"OK" otherButtonTitles:nil, nil];
+
+    
+    [alert show];
+}
+
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
