@@ -20,4 +20,12 @@
     return self;}
 
 
++ (ReceivedNotification *)makeReceivedNotificationFromDictionary:(NSDictionary *)dictionary
+{
+    ReceivedNotification *receivedNotification = [[ReceivedNotification alloc] init];
+    receivedNotification.title = dictionary[@"DeviceId"];
+    return receivedNotification;
+}
+
+
 @end

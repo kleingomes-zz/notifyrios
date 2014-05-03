@@ -15,4 +15,6 @@
 
 - (id)initWithTitle:(NSString *)title;
 
++ (ReceivedNotification *)makeReceivedNotificationFromDictionary:(NSDictionary *)dictionary;
+
 @end

@@ -15,6 +15,7 @@
 @interface ReceivedNotificationViewController ()
 
 @property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) id receivedNotificationObserver;
 
 @end
 
@@ -48,6 +49,22 @@
 }
 
 
+- (void)initObserver
+{
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+    
+    self.receivedNotificationObserver = [center addObserverForName:@"ntest1" object:nil
+                                                     queue:mainQueue usingBlock:^(NSNotification *notification) {
+                                                         NSArray *receivedNotifications = notification.userInfo[@"receivedNotifications"];
+                                                         
+                                                         NSLog(@"Got %lu notifications", (unsigned long)[receivedNotifications count]);
+                                                         
+                                                         self.items = receivedNotifications;
+                                                         [self.tableView reloadData];
+                                                     }];
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -67,6 +84,18 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self initObserver];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center removeObserver:self.receivedNotificationObserver];
+
 }
 
 - (void)didReceiveMemoryWarning
