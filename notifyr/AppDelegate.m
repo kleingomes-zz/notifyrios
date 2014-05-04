@@ -27,7 +27,7 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken
 {
     SBNotificationHub* hub = [[SBNotificationHub alloc] initWithConnectionString:
-                              @"Endpoint=sb://notifyr.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=kMppdojWLSpTzw02vGwHA65Yqw0Ci7J0LGVOFW8HUK4=" notificationHubPath:@"notifyr"];
+                              @"Endpoint=sb://notifyreastus.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=bP3no8T6l5+OR3Q5fRlSgjILWFDKi2xePkYNMl4zLCQ=" notificationHubPath:@"notifyrhub"];
     
     [hub registerNativeWithDeviceToken:deviceToken tags:nil completion:^(NSError* error) {
         if (error != nil) {
@@ -41,8 +41,10 @@
     
     NSDictionary *aps1 = userInfo[@"aps"];
     
-    NSDictionary *aps2 = aps1[@"aps"];
-    NSString *msg = aps2[@"alert"];
+    //NSDictionary *aps2 = aps1[@"aps"];
+    //NSString *msg = aps2[@"alert"];
+    
+    NSString *msg = aps1[@"alert"];
     
     NSLog(@"msg: %@", msg);
 
