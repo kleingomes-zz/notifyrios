@@ -61,10 +61,16 @@
                                                          NSLog(@"Got %lu notifications", (unsigned long)[receivedNotifications count]);
                                                          
                                                          self.items = receivedNotifications;
+                                                         [self.refreshControl endRefreshing];
                                                          [self.tableView reloadData];
                                                      }];
 }
 
+
+- (void)refreshAction
+{
+    [[Biz sharedBiz] getReceivedNotifications];
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -78,6 +84,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshAction) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -95,7 +106,6 @@
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center removeObserver:self.receivedNotificationObserver];
-
 }
 
 - (void)didReceiveMemoryWarning
@@ -123,7 +133,7 @@
     
     // Configure the cell...
     ReceivedNotification *notification = self.items[indexPath.row];
-    cell.titleLabel.text = notification.title;
+    cell.titleLabel.text = notification.title ? notification.title : @"[No company]";
     
     return cell;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "ReceivedNotification.h"
+#import "Utils.h"
 
 @implementation ReceivedNotification
 
@@ -17,13 +18,29 @@
     if (self) {
         self.title = title;
     }
-    return self;}
+    return self;
+}
 
++ (NSInteger)getIntegerFromDictionary:(NSDictionary *)dictionary name:(NSString *)name
+{
+    if (dictionary[name] == [NSNull null])
+    {
+        return -1;
+    }
+    else
+    {
+        return [dictionary[name] integerValue];
+    }
+}
 
 + (ReceivedNotification *)makeReceivedNotificationFromDictionary:(NSDictionary *)dictionary
 {
     ReceivedNotification *receivedNotification = [[ReceivedNotification alloc] init];
-    receivedNotification.title = dictionary[@"DeviceId"];
+    //receivedNotification.title = dictionary[@"DeviceId"];
+    receivedNotification.notificationId = [Utils getNumberFromDictionary:dictionary name:@"Id"];
+    receivedNotification.companyId = [Utils getNumberFromDictionary:dictionary name:@"CompanyId"];
+    receivedNotification.productId = [Utils getNumberFromDictionary:dictionary name:@"ProductId"];
+
     return receivedNotification;
 }
 

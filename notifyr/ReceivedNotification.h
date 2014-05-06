@@ -11,6 +11,9 @@
 @interface ReceivedNotification : NSObject
 
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic) NSNumber *notificationId;
+@property (nonatomic) NSNumber *companyId;
+@property (nonatomic) NSNumber *productId;
 
 
 - (id)initWithTitle:(NSString *)title;

@@ -8,12 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "ReceivedNotification.h"
+#import "Company.h"
 
 @interface Biz : NSObject
+
+@property (nonatomic, strong) NSMutableArray *companies;
 
 + (Biz *)sharedBiz;
 
 - (NSArray *)getReceivedNotifications;
 
+- (Company *)getCompanyById:(NSNumber *)companyId;
 
 @end
