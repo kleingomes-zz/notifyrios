@@ -11,6 +11,7 @@
 #import "ReceivedNotificationCell.h"
 #import "Biz.h"
 #import "ReceivedNotificationDetailViewController.h"
+#import "Constants.h"
 
 @interface ReceivedNotificationViewController ()
 
@@ -34,7 +35,7 @@
 
 - (void)initItems
 {
-    self.items = [[Biz sharedBiz] getReceivedNotifications];
+    [[Biz sharedBiz] getReceivedNotifications];
 }
 
 
@@ -54,7 +55,7 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     
-    self.receivedNotificationObserver = [center addObserverForName:@"ntest1" object:nil
+    self.receivedNotificationObserver = [center addObserverForName:ReceivedNotificationsNotification object:nil
                                                      queue:mainQueue usingBlock:^(NSNotification *notification) {
                                                          NSArray *receivedNotifications = notification.userInfo[@"receivedNotifications"];
                                                          

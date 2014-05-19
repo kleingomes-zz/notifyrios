@@ -22,6 +22,7 @@
 		E01A59361902F05600EB0BE4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E01A59341902F05600EB0BE4 /* InfoPlist.strings */; };
 		E01A59381902F05600EB0BE4 /* notifyrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E01A59371902F05600EB0BE4 /* notifyrTests.m */; };
 		E01A59421902F07800EB0BE4 /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59411902F07800EB0BE4 /* WindowsAzureMessaging.framework */; };
+		E01ED8DE1929815700798C31 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E01ED8DD1929815700798C31 /* Constants.m */; };
 		E0498E531916F1DD004B4CF3 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E521916F1DD004B4CF3 /* Company.m */; };
 		E0498E5619170D5B004B4CF3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E5519170D5B004B4CF3 /* Utils.m */; };
 		E0931D73190ADBF5001A991F /* ReceivedNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D6E190ADBF5001A991F /* ReceivedNotification.m */; };
@@ -29,6 +30,8 @@
 		E0931D75190ADBF5001A991F /* ReceivedNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D72190ADBF5001A991F /* ReceivedNotificationViewController.m */; };
 		E0931D7A190ADF16001A991F /* Biz.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D79190ADF16001A991F /* Biz.m */; };
 		E0931D7D190AE084001A991F /* ReceivedNotificationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D7C190AE084001A991F /* ReceivedNotificationDetailViewController.m */; };
+		E0AF885B19211BC700E27C69 /* NotifyrApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF885A19211BC700E27C69 /* NotifyrApiClient.m */; };
+		E0AF886119211E2F00E27C69 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF886019211E2F00E27C69 /* Repository.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,8 @@
 		E01A59351902F05600EB0BE4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E01A59371902F05600EB0BE4 /* notifyrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = notifyrTests.m; sourceTree = "<group>"; };
 		E01A59411902F07800EB0BE4 /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMessaging.framework; sourceTree = "<group>"; };
+		E01ED8DC1929815700798C31 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		E01ED8DD1929815700798C31 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		E0498E511916F1DD004B4CF3 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		E0498E521916F1DD004B4CF3 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		E0498E5419170D5B004B4CF3 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -75,6 +80,10 @@
 		E0931D79190ADF16001A991F /* Biz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Biz.m; sourceTree = "<group>"; };
 		E0931D7B190AE084001A991F /* ReceivedNotificationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedNotificationDetailViewController.h; sourceTree = "<group>"; };
 		E0931D7C190AE084001A991F /* ReceivedNotificationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedNotificationDetailViewController.m; sourceTree = "<group>"; };
+		E0AF885919211BC700E27C69 /* NotifyrApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifyrApiClient.h; sourceTree = "<group>"; };
+		E0AF885A19211BC700E27C69 /* NotifyrApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifyrApiClient.m; sourceTree = "<group>"; };
+		E0AF885F19211E2F00E27C69 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
+		E0AF886019211E2F00E27C69 /* Repository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repository.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +154,7 @@
 				E0931D7B190AE084001A991F /* ReceivedNotificationDetailViewController.h */,
 				E0931D7C190AE084001A991F /* ReceivedNotificationDetailViewController.m */,
 				E0931D76190ADED4001A991F /* Model */,
+				E0AF886219211E3300E27C69 /* Data */,
 				E0931D77190ADEDE001A991F /* UI */,
 				E01A59241902F05600EB0BE4 /* Images.xcassets */,
 				E01A59101902F05600EB0BE4 /* Supporting Files */,
@@ -186,12 +196,16 @@
 			children = (
 				E0931D78190ADF16001A991F /* Biz.h */,
 				E0931D79190ADF16001A991F /* Biz.m */,
+				E0AF885919211BC700E27C69 /* NotifyrApiClient.h */,
+				E0AF885A19211BC700E27C69 /* NotifyrApiClient.m */,
 				E0498E511916F1DD004B4CF3 /* Company.h */,
 				E0498E521916F1DD004B4CF3 /* Company.m */,
 				E0931D6D190ADBF5001A991F /* ReceivedNotification.h */,
 				E0931D6E190ADBF5001A991F /* ReceivedNotification.m */,
 				E0498E5419170D5B004B4CF3 /* Utils.h */,
 				E0498E5519170D5B004B4CF3 /* Utils.m */,
+				E01ED8DC1929815700798C31 /* Constants.h */,
+				E01ED8DD1929815700798C31 /* Constants.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -203,6 +217,15 @@
 				E0931D70190ADBF5001A991F /* ReceivedNotificationCell.m */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		E0AF886219211E3300E27C69 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E0AF885F19211E2F00E27C69 /* Repository.h */,
+				E0AF886019211E2F00E27C69 /* Repository.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,14 +327,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0498E5619170D5B004B4CF3 /* Utils.m in Sources */,
+				E0AF885B19211BC700E27C69 /* NotifyrApiClient.m in Sources */,
 				E0931D7D190AE084001A991F /* ReceivedNotificationDetailViewController.m in Sources */,
 				E0931D74190ADBF5001A991F /* ReceivedNotificationCell.m in Sources */,
+				E0AF886119211E2F00E27C69 /* Repository.m in Sources */,
 				E0931D75190ADBF5001A991F /* ReceivedNotificationViewController.m in Sources */,
 				E0498E531916F1DD004B4CF3 /* Company.m in Sources */,
 				E01A591A1902F05600EB0BE4 /* AppDelegate.m in Sources */,
 				E0931D7A190ADF16001A991F /* Biz.m in Sources */,
 				E01A59161902F05600EB0BE4 /* main.m in Sources */,
 				E0931D73190ADBF5001A991F /* ReceivedNotification.m in Sources */,
+				E01ED8DE1929815700798C31 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

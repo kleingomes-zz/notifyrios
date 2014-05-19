@@ -12,11 +12,11 @@
 
 @interface Biz : NSObject
 
-@property (nonatomic, strong) NSMutableArray *companies;
+@property (nonatomic, strong) NSArray *companies;
 
 + (Biz *)sharedBiz;
 
-- (NSArray *)getReceivedNotifications;
+- (void)getReceivedNotifications;
 
 - (Company *)getCompanyById:(NSNumber *)companyId;
 
