@@ -18,4 +18,7 @@
 
 - (void)getCompanies;
 
+- (void)getNewAccessToken;
+
+
 @end

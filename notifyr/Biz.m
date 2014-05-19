@@ -27,7 +27,8 @@
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
     //[apiClient getReceivedNotifications];
-    [apiClient getCompanies];
+    //[apiClient getCompanies];
+    [apiClient getNewAccessToken];
 }
 
 - (Company *)getCompanyById:(NSNumber *)companyId

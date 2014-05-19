@@ -15,6 +15,8 @@
 
 @implementation NotifyrApiClient
 
+#pragma mark - Properties
+
 - (NSString *)accessToken
 {
     if (!_accessToken)
@@ -24,9 +26,21 @@
     return  _accessToken;
 }
 
+- (NSString *)userName
+{
+    return @"1470ce68-be22-485d-9ae6-453544326331@notifyr.ca";
+}
+
+- (NSString *)password
+{
+    return @"2014$NotifyrPassword$2014";
+}
+
+
 - (NSString *)getUrl:(NSString *)urlString
 {
-    return [NSString stringWithFormat:@"%@%@", @"http://192.168.1.103/Notifyr.WebAPI/api/", urlString];
+    //return [NSString stringWithFormat:@"%@%@", @"http://192.168.1.180/Notifyr.WebAPI/api/", urlString];
+    return [NSString stringWithFormat:@"%@%@", @"http://www.notifyr.ca/service/api/", urlString];
 }
 
 
@@ -83,22 +97,32 @@
 
 - (void)getNewAccessToken
 {
-    NSString *urlString = @"http://www.notifyr.ca/service/token";
+    //NSString *urlString = @"http://www.notifyr.ca/service/token";
+    NSString *baseUrl = [self getUrl:@""];
+    baseUrl = [baseUrl stringByReplacingOccurrencesOfString:@"/api/" withString:@"/"];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@", baseUrl, @"token"];
     
-    NSMutableURLRequest *request = [self getRequestWithUrlString:urlString method:@"GET"];
+    NSMutableURLRequest *request = [self getRequestWithUrlString:urlString method:@"POST"];
     [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     
-    NSString *userName = @"1470ce68-be22-485d-9ae6-453544326331@notifyr.ca";
-    NSString *password = @"2014$NotifyrPassword$2014";
-    NSString *bodyString = [NSString stringWithFormat:@"grant_type=password&username=%@&password=%@", userName, password];
-    [request setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
+    //NSString *userName = @"1470ce68-be22-485d-9ae6-453544326331@notifyr.ca";
+    //NSString *password = @"2014$NotifyrPassword$2014";
+    
+    NSString *userName = self.userName;
+    NSString *password = self.password;
+    
+    //NSString *bodyString = [NSString stringWithFormat:@"grant_type=password&username=%@&password=%@", userName, password];
+    NSString *bodyString = @"grant_type=password&username=1470ce68-be22-485d-9ae6-453544326331@notifyr.ca&password=2014$NotifyrPassword$2014";
+    
+    //[request setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:[bodyString dataUsingEncoding:NSASCIIStringEncoding]];
+    
     
     [self makeAPICallWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
-        if (!error && jsonObject)
-        {
-            [self notifyNewCompaniesWithDictionary:(NSArray *) jsonObject];
-            [self getReceivedNotifications];
-        }
+
+        NSLog(@"%@", jsonObject[@"access_token"]);
+        self.accessToken = jsonObject[@"access_token"];
+        [self getCompanies];
     }];
 }
 
