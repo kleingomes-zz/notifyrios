@@ -52,13 +52,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Yn3-en-pS9">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="exD-wA-24i"/>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="exD-wA-24i">
+                            <connections>
+                                <segue destination="ARS-tp-Gos" kind="push" id="Bjg-Gn-0q0"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Js7-Jj-T7p"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tko-Cy-IoS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1281" y="36"/>
+            <point key="canvasLocation" x="1305" y="36"/>
         </scene>
         <!--Received Notification Detail View Controller-->
         <scene sceneID="DGp-go-gim">
@@ -88,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaJ-B7-r2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693" y="36"/>
+            <point key="canvasLocation" x="1811" y="36"/>
         </scene>
         <!--Navigation Controller - Notifications-->
         <scene sceneID="ieG-qs-IaG">
@@ -126,7 +130,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9I-FP-kCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="870" y="698"/>
+            <point key="canvasLocation" x="870" y="716"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ujp-9Q-W66">
+            <objects>
+                <viewController id="ARS-tp-Gos" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zsP-la-EIF"/>
+                        <viewControllerLayoutGuide type="bottom" id="fQk-b3-Bgi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5aa-uM-2p4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkO-y6-nLV">
+                                <rect key="frame" x="20" y="87" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zCX-77-k8j"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bL0-d4-1vF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1811" y="726"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Kkx-Yy-Ipa">
@@ -145,7 +177,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7KY-pS-LEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="445" y="36"/>
+            <point key="canvasLocation" x="407" y="36"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

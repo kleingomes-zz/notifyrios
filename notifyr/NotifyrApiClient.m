@@ -97,6 +97,20 @@
 
 - (void)getNewAccessToken
 {
+    [self loadUserData];
+    
+    if (!self.userName)
+    {
+        [self registerGuestAccount];
+    }
+    else
+    {
+        [self getNewAccessTokenMain];
+    }
+}
+
+- (void)getNewAccessTokenMain
+{
     //NSString *urlString = @"http://www.notifyr.ca/service/token";
     NSString *baseUrl = [self getUrl:@""];
     baseUrl = [baseUrl stringByReplacingOccurrencesOfString:@"/api/" withString:@"/"];
@@ -111,21 +125,53 @@
     NSString *userName = self.userName;
     NSString *password = self.password;
     
-    //NSString *bodyString = [NSString stringWithFormat:@"grant_type=password&username=%@&password=%@", userName, password];
-    NSString *bodyString = @"grant_type=password&username=1470ce68-be22-485d-9ae6-453544326331@notifyr.ca&password=2014$NotifyrPassword$2014";
+    NSString *bodyString = [NSString stringWithFormat:@"grant_type=password&username=%@&password=%@", userName, password];
+    //NSString *bodyString = @"grant_type=password&username=1470ce68-be22-485d-9ae6-453544326331@notifyr.ca&password=2014$NotifyrPassword$2014";
     
     //[request setHTTPBody:[bodyString dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPBody:[bodyString dataUsingEncoding:NSASCIIStringEncoding]];
     
     
     [self makeAPICallWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
-
+        
         NSLog(@"%@", jsonObject[@"access_token"]);
         self.accessToken = jsonObject[@"access_token"];
         [self getCompanies];
     }];
 }
 
+- (void)registerGuestAccount
+{
+    NSString *urlString = [self getUrl:@"Account/RegisterGuest"];
+    
+    [self makeAPICallWithUrlString:urlString method:@"POST" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (!error && jsonObject)
+        {
+            self.userId = jsonObject[@"userId"];
+            self.userName = jsonObject[@"userId"];
+            self.password = @"2014$NotifyrPassword$2014";
+            [self saveUserData];
+            [self getNewAccessTokenMain];
+        }
+    }];
+}
+
+- (void)saveUserData
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.userId forKey:@"userId"];
+    [defaults setObject:self.userName forKey:@"userName"];
+    [defaults setObject:self.password forKey:@"password"];
+    [defaults synchronize];
+}
+
+- (void)loadUserData
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    self.userId = [defaults stringForKey:@"userId"];
+    self.userName = [defaults stringForKey:@"userName"];
+    self.password = [defaults stringForKey:@"password"];
+}
 
 
 - (void)makeAPICallWithUrlString:(NSString *)urlString
