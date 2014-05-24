@@ -17,6 +17,9 @@
 		AF75F64F19310EFC005F5F6C /* appbar.people.arrow.right.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F64E19310EFC005F5F6C /* appbar.people.arrow.right.png */; };
 		AF75F65119310FF1005F5F6C /* appbar.newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F65019310FF1005F5F6C /* appbar.newspaper.png */; };
 		AF75F653193111B9005F5F6C /* appbar.email.hardedge.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F652193111B9005F5F6C /* appbar.email.hardedge.png */; };
+		AF75F65519313FCE005F5F6C /* Blur-600.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF75F65419313FCE005F5F6C /* Blur-600.jpg */; };
+		AF75F65719314197005F5F6C /* appbar.connection.wifi.variant.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F65619314197005F5F6C /* appbar.connection.wifi.variant.png */; };
+		AF75F65919314288005F5F6C /* appbar.align.justify.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F65819314288005F5F6C /* appbar.align.justify.png */; };
 		AF7C0FE9192BEC19003FEF2E /* notfyrlogo3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7C0FE8192BEC19003FEF2E /* notfyrlogo3.png */; };
 		E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
 		E01A590C1902F05600EB0BE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */; };
@@ -66,6 +69,9 @@
 		AF75F64E19310EFC005F5F6C /* appbar.people.arrow.right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.people.arrow.right.png; sourceTree = "<group>"; };
 		AF75F65019310FF1005F5F6C /* appbar.newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.newspaper.png; sourceTree = "<group>"; };
 		AF75F652193111B9005F5F6C /* appbar.email.hardedge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.email.hardedge.png; sourceTree = "<group>"; };
+		AF75F65419313FCE005F5F6C /* Blur-600.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Blur-600.jpg"; sourceTree = "<group>"; };
+		AF75F65619314197005F5F6C /* appbar.connection.wifi.variant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.connection.wifi.variant.png; sourceTree = "<group>"; };
+		AF75F65819314288005F5F6C /* appbar.align.justify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.align.justify.png; sourceTree = "<group>"; };
 		AF7C0FE8192BEC19003FEF2E /* notfyrlogo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notfyrlogo3.png; sourceTree = "<group>"; };
 		E01A59061902F05600EB0BE4 /* notifyr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notifyr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01A59091902F05600EB0BE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -136,6 +142,8 @@
 		AF75F63B1930FE47005F5F6C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				AF75F65819314288005F5F6C /* appbar.align.justify.png */,
+				AF75F65619314197005F5F6C /* appbar.connection.wifi.variant.png */,
 				AF75F652193111B9005F5F6C /* appbar.email.hardedge.png */,
 				AF75F64E19310EFC005F5F6C /* appbar.people.arrow.right.png */,
 				AF75F65019310FF1005F5F6C /* appbar.newspaper.png */,
@@ -153,6 +161,7 @@
 		AF7C0FE7192BEBE3003FEF2E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF75F65419313FCE005F5F6C /* Blur-600.jpg */,
 				AF7C0FE8192BEC19003FEF2E /* notfyrlogo3.png */,
 			);
 			name = Images;
@@ -324,6 +333,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Nelson Narciso";
 				TargetAttributes = {
+					E01A59051902F05600EB0BE4 = {
+						DevelopmentTeam = X4QH59WD29;
+					};
 					E01A59291902F05600EB0BE4 = {
 						TestTargetID = E01A59051902F05600EB0BE4;
 					};
@@ -355,9 +367,12 @@
 			files = (
 				AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */,
 				AF75F649193105E2005F5F6C /* appbar.sign.parking.png in Resources */,
+				AF75F65919314288005F5F6C /* appbar.align.justify.png in Resources */,
 				E01A59201902F05600EB0BE4 /* Main_iPad.storyboard in Resources */,
+				AF75F65519313FCE005F5F6C /* Blur-600.jpg in Resources */,
 				AF7C0FE9192BEC19003FEF2E /* notfyrlogo3.png in Resources */,
 				AF75F64719310408005F5F6C /* appbar.chevron.left.png in Resources */,
+				AF75F65719314197005F5F6C /* appbar.connection.wifi.variant.png in Resources */,
 				E01A59251902F05600EB0BE4 /* Images.xcassets in Resources */,
 				AF75F65119310FF1005F5F6C /* appbar.newspaper.png in Resources */,
 				E01A591D1902F05600EB0BE4 /* Main_iPhone.storyboard in Resources */,
@@ -532,6 +547,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -540,7 +557,7 @@
 				GCC_PREFIX_HEADER = "notifyr/notifyr-Prefix.pch";
 				INFOPLIST_FILE = "notifyr/notifyr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "40A4A22C-4D61-491C-9438-297EE359B0C8";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -550,6 +567,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -558,7 +577,7 @@
 				GCC_PREFIX_HEADER = "notifyr/notifyr-Prefix.pch";
 				INFOPLIST_FILE = "notifyr/notifyr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "40A4A22C-4D61-491C-9438-297EE359B0C8";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
