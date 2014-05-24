@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F63D1930FE66005F5F6C /* appbar.cogs.png */; };
+		AF75F6431930FFED005F5F6C /* appbar.people.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F6421930FFED005F5F6C /* appbar.people.png */; };
+		AF75F645193100E7005F5F6C /* appbar.cog.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F644193100E7005F5F6C /* appbar.cog.png */; };
+		AF75F64719310408005F5F6C /* appbar.chevron.left.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F64619310408005F5F6C /* appbar.chevron.left.png */; };
+		AF75F649193105E2005F5F6C /* appbar.sign.parking.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F648193105E2005F5F6C /* appbar.sign.parking.png */; };
+		AF75F64B193106FF005F5F6C /* appbar.list.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F64A193106FF005F5F6C /* appbar.list.png */; };
 		AF7C0FE9192BEC19003FEF2E /* notfyrlogo3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7C0FE8192BEC19003FEF2E /* notfyrlogo3.png */; };
 		E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
 		E01A590C1902F05600EB0BE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */; };
@@ -46,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF75F63D1930FE66005F5F6C /* appbar.cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cogs.png; sourceTree = "<group>"; };
+		AF75F6421930FFED005F5F6C /* appbar.people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.people.png; sourceTree = "<group>"; };
+		AF75F644193100E7005F5F6C /* appbar.cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cog.png; sourceTree = "<group>"; };
+		AF75F64619310408005F5F6C /* appbar.chevron.left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.chevron.left.png; sourceTree = "<group>"; };
+		AF75F648193105E2005F5F6C /* appbar.sign.parking.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.sign.parking.png; sourceTree = "<group>"; };
+		AF75F64A193106FF005F5F6C /* appbar.list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.list.png; sourceTree = "<group>"; };
 		AF7C0FE8192BEC19003FEF2E /* notfyrlogo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notfyrlogo3.png; sourceTree = "<group>"; };
 		E01A59061902F05600EB0BE4 /* notifyr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notifyr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01A59091902F05600EB0BE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -113,6 +125,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF75F63B1930FE47005F5F6C /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				AF75F64A193106FF005F5F6C /* appbar.list.png */,
+				AF75F648193105E2005F5F6C /* appbar.sign.parking.png */,
+				AF75F64619310408005F5F6C /* appbar.chevron.left.png */,
+				AF75F644193100E7005F5F6C /* appbar.cog.png */,
+				AF75F6421930FFED005F5F6C /* appbar.people.png */,
+				AF75F63D1930FE66005F5F6C /* appbar.cogs.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		AF7C0FE7192BEBE3003FEF2E /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +180,7 @@
 		E01A590F1902F05600EB0BE4 /* notifyr */ = {
 			isa = PBXGroup;
 			children = (
+				AF75F63B1930FE47005F5F6C /* Icons */,
 				AF7C0FE7192BEBE3003FEF2E /* Images */,
 				E01A59181902F05600EB0BE4 /* AppDelegate.h */,
 				E01A59191902F05600EB0BE4 /* AppDelegate.m */,
@@ -315,10 +341,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */,
+				AF75F649193105E2005F5F6C /* appbar.sign.parking.png in Resources */,
 				E01A59201902F05600EB0BE4 /* Main_iPad.storyboard in Resources */,
 				AF7C0FE9192BEC19003FEF2E /* notfyrlogo3.png in Resources */,
+				AF75F64719310408005F5F6C /* appbar.chevron.left.png in Resources */,
 				E01A59251902F05600EB0BE4 /* Images.xcassets in Resources */,
 				E01A591D1902F05600EB0BE4 /* Main_iPhone.storyboard in Resources */,
+				AF75F64B193106FF005F5F6C /* appbar.list.png in Resources */,
+				AF75F6431930FFED005F5F6C /* appbar.people.png in Resources */,
+				AF75F645193100E7005F5F6C /* appbar.cog.png in Resources */,
 				E01A59141902F05600EB0BE4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
