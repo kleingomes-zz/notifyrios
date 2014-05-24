@@ -20,6 +20,14 @@
 		AF75F65519313FCE005F5F6C /* Blur-600.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF75F65419313FCE005F5F6C /* Blur-600.jpg */; };
 		AF75F65719314197005F5F6C /* appbar.connection.wifi.variant.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F65619314197005F5F6C /* appbar.connection.wifi.variant.png */; };
 		AF75F65919314288005F5F6C /* appbar.align.justify.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F65819314288005F5F6C /* appbar.align.justify.png */; };
+		AF75F65C19314E0D005F5F6C /* appbar.connection.quality.extremelylow.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F65A19314E0D005F5F6C /* appbar.connection.quality.extremelylow.png */; };
+		AF75F65D19314E0D005F5F6C /* appbar.connection.quality.veryhigh.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F65B19314E0D005F5F6C /* appbar.connection.quality.veryhigh.png */; };
+		AF75F65F19314FA2005F5F6C /* appbar.smiley.frown.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F65E19314FA2005F5F6C /* appbar.smiley.frown.png */; };
+		AF75F66119314FD9005F5F6C /* appbar.smiley.grumpy.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F66019314FD9005F5F6C /* appbar.smiley.grumpy.png */; };
+		AF75F6631931513D005F5F6C /* appbar.elevator.down.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F6621931513D005F5F6C /* appbar.elevator.down.png */; };
+		AF75F66519315273005F5F6C /* appbar.people.sensor.variant.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F66419315273005F5F6C /* appbar.people.sensor.variant.png */; };
+		AF75F667193154EB005F5F6C /* appbar.windowsphone.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F666193154EB005F5F6C /* appbar.windowsphone.png */; };
+		AF75F669193156E1005F5F6C /* appbar.people 2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F668193156E1005F5F6C /* appbar.people 2.png */; };
 		AF7C0FE9192BEC19003FEF2E /* notfyrlogo3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7C0FE8192BEC19003FEF2E /* notfyrlogo3.png */; };
 		E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
 		E01A590C1902F05600EB0BE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */; };
@@ -72,6 +80,14 @@
 		AF75F65419313FCE005F5F6C /* Blur-600.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Blur-600.jpg"; sourceTree = "<group>"; };
 		AF75F65619314197005F5F6C /* appbar.connection.wifi.variant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.connection.wifi.variant.png; sourceTree = "<group>"; };
 		AF75F65819314288005F5F6C /* appbar.align.justify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.align.justify.png; sourceTree = "<group>"; };
+		AF75F65A19314E0D005F5F6C /* appbar.connection.quality.extremelylow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.connection.quality.extremelylow.png; sourceTree = "<group>"; };
+		AF75F65B19314E0D005F5F6C /* appbar.connection.quality.veryhigh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.connection.quality.veryhigh.png; sourceTree = "<group>"; };
+		AF75F65E19314FA2005F5F6C /* appbar.smiley.frown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.smiley.frown.png; sourceTree = "<group>"; };
+		AF75F66019314FD9005F5F6C /* appbar.smiley.grumpy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.smiley.grumpy.png; sourceTree = "<group>"; };
+		AF75F6621931513D005F5F6C /* appbar.elevator.down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.elevator.down.png; sourceTree = "<group>"; };
+		AF75F66419315273005F5F6C /* appbar.people.sensor.variant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.people.sensor.variant.png; sourceTree = "<group>"; };
+		AF75F666193154EB005F5F6C /* appbar.windowsphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.windowsphone.png; sourceTree = "<group>"; };
+		AF75F668193156E1005F5F6C /* appbar.people 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appbar.people 2.png"; sourceTree = "<group>"; };
 		AF7C0FE8192BEC19003FEF2E /* notfyrlogo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notfyrlogo3.png; sourceTree = "<group>"; };
 		E01A59061902F05600EB0BE4 /* notifyr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notifyr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01A59091902F05600EB0BE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -142,6 +158,14 @@
 		AF75F63B1930FE47005F5F6C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				AF75F668193156E1005F5F6C /* appbar.people 2.png */,
+				AF75F666193154EB005F5F6C /* appbar.windowsphone.png */,
+				AF75F66419315273005F5F6C /* appbar.people.sensor.variant.png */,
+				AF75F6621931513D005F5F6C /* appbar.elevator.down.png */,
+				AF75F66019314FD9005F5F6C /* appbar.smiley.grumpy.png */,
+				AF75F65E19314FA2005F5F6C /* appbar.smiley.frown.png */,
+				AF75F65A19314E0D005F5F6C /* appbar.connection.quality.extremelylow.png */,
+				AF75F65B19314E0D005F5F6C /* appbar.connection.quality.veryhigh.png */,
 				AF75F65819314288005F5F6C /* appbar.align.justify.png */,
 				AF75F65619314197005F5F6C /* appbar.connection.wifi.variant.png */,
 				AF75F652193111B9005F5F6C /* appbar.email.hardedge.png */,
@@ -369,19 +393,27 @@
 				AF75F649193105E2005F5F6C /* appbar.sign.parking.png in Resources */,
 				AF75F65919314288005F5F6C /* appbar.align.justify.png in Resources */,
 				E01A59201902F05600EB0BE4 /* Main_iPad.storyboard in Resources */,
+				AF75F65D19314E0D005F5F6C /* appbar.connection.quality.veryhigh.png in Resources */,
 				AF75F65519313FCE005F5F6C /* Blur-600.jpg in Resources */,
 				AF7C0FE9192BEC19003FEF2E /* notfyrlogo3.png in Resources */,
+				AF75F669193156E1005F5F6C /* appbar.people 2.png in Resources */,
 				AF75F64719310408005F5F6C /* appbar.chevron.left.png in Resources */,
 				AF75F65719314197005F5F6C /* appbar.connection.wifi.variant.png in Resources */,
 				E01A59251902F05600EB0BE4 /* Images.xcassets in Resources */,
+				AF75F667193154EB005F5F6C /* appbar.windowsphone.png in Resources */,
 				AF75F65119310FF1005F5F6C /* appbar.newspaper.png in Resources */,
+				AF75F65F19314FA2005F5F6C /* appbar.smiley.frown.png in Resources */,
 				E01A591D1902F05600EB0BE4 /* Main_iPhone.storyboard in Resources */,
 				AF75F64B193106FF005F5F6C /* appbar.list.png in Resources */,
+				AF75F66119314FD9005F5F6C /* appbar.smiley.grumpy.png in Resources */,
 				AF75F64F19310EFC005F5F6C /* appbar.people.arrow.right.png in Resources */,
 				AF75F6431930FFED005F5F6C /* appbar.people.png in Resources */,
+				AF75F65C19314E0D005F5F6C /* appbar.connection.quality.extremelylow.png in Resources */,
 				AF75F645193100E7005F5F6C /* appbar.cog.png in Resources */,
 				AF75F653193111B9005F5F6C /* appbar.email.hardedge.png in Resources */,
 				AF75F64D19310E1B005F5F6C /* appbar.cloud.png in Resources */,
+				AF75F6631931513D005F5F6C /* appbar.elevator.down.png in Resources */,
+				AF75F66519315273005F5F6C /* appbar.people.sensor.variant.png in Resources */,
 				E01A59141902F05600EB0BE4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
