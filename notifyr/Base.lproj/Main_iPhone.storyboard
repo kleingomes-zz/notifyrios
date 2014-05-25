@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JsY-iS-qrA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="9Wd-Mn-9SE">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -180,6 +180,39 @@
             <point key="canvasLocation" x="407" y="36"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Apple-Logo.jpeg" width="225" height="225"/>
+        <image name="appbar.chevron.left.png" width="76" height="76"/>
+        <image name="appbar.chevron.right.png" width="76" height="76"/>
+        <image name="appbar.cloud.png" width="76" height="76"/>
+        <image name="appbar.cog.png" width="76" height="76"/>
+        <image name="appbar.connection.quality.veryhigh.png" width="76" height="76"/>
+        <image name="appbar.elevator.down.png" width="76" height="76"/>
+        <image name="appbar.email.hardedge.png" width="76" height="76"/>
+        <image name="appbar.list 2.png" width="76" height="76"/>
+        <image name="appbar.list.png" width="76" height="76"/>
+        <image name="appbar.newspaper.png" width="76" height="76"/>
+        <image name="appbar.people 2.png" width="76" height="76"/>
+        <image name="appbar.people.arrow.right.png" width="76" height="76"/>
+        <image name="appbar.people.multiple.png" width="76" height="76"/>
+        <image name="appbar.people.png" width="76" height="76"/>
+        <image name="appbar.people.sensor.variant.png" width="76" height="76"/>
+        <image name="appbar.question.png" width="76" height="76"/>
+        <image name="appbar.radar.png" width="76" height="76"/>
+        <image name="appbar.sign.parking.png" width="76" height="76"/>
+        <image name="appbar.social.twitter.png" width="76" height="76"/>
+        <image name="appbar.windowsphone.png" width="76" height="76"/>
+        <image name="btnAddNotification.png" width="202" height="40"/>
+        <image name="btnCreate.png" width="104" height="39"/>
+        <image name="button.png" width="118" height="39"/>
+        <image name="indicatorDisabled.png" width="40" height="22"/>
+        <image name="indicatorGreen.png" width="40" height="22"/>
+        <image name="indicatorRed.png" width="40" height="22"/>
+        <image name="iphone_6_fake_line_up_hero.jpg" width="800" height="600"/>
+        <image name="macvsmac" width="624" height="351"/>
+        <image name="notfyrlogo3.png" width="3320" height="850"/>
+        <image name="sammy.jpeg" width="225" height="225"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
