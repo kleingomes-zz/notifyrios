@@ -38,6 +38,10 @@
 		AF75F67A19324CEA005F5F6C /* appbar.people.multiple.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F67919324CEA005F5F6C /* appbar.people.multiple.png */; };
 		AF75F67C19324F43005F5F6C /* sammy.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AF75F67B19324F43005F5F6C /* sammy.jpeg */; };
 		AF75F67E19325015005F5F6C /* indicatorDisabled.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F67D19325015005F5F6C /* indicatorDisabled.png */; };
+		AF75F68019326F48005F5F6C /* iphones-on-display.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF75F67F19326F48005F5F6C /* iphones-on-display.jpg */; };
+		AF75F68219326FB5005F5F6C /* macvsmac in Resources */ = {isa = PBXBuildFile; fileRef = AF75F68119326FB5005F5F6C /* macvsmac */; };
+		AF75F684193272AC005F5F6C /* appbar.radar.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F683193272AC005F5F6C /* appbar.radar.png */; };
+		AF75F686193273B9005F5F6C /* iphone_6_fake_line_up_hero.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF75F685193273B9005F5F6C /* iphone_6_fake_line_up_hero.jpg */; };
 		AF7C0FE9192BEC19003FEF2E /* notfyrlogo3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF7C0FE8192BEC19003FEF2E /* notfyrlogo3.png */; };
 		E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
 		E01A590C1902F05600EB0BE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */; };
@@ -108,6 +112,10 @@
 		AF75F67919324CEA005F5F6C /* appbar.people.multiple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.people.multiple.png; sourceTree = "<group>"; };
 		AF75F67B19324F43005F5F6C /* sammy.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sammy.jpeg; sourceTree = "<group>"; };
 		AF75F67D19325015005F5F6C /* indicatorDisabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indicatorDisabled.png; sourceTree = "<group>"; };
+		AF75F67F19326F48005F5F6C /* iphones-on-display.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iphones-on-display.jpg"; sourceTree = "<group>"; };
+		AF75F68119326FB5005F5F6C /* macvsmac */ = {isa = PBXFileReference; explicitFileType = image.jpeg; path = macvsmac; sourceTree = "<group>"; };
+		AF75F683193272AC005F5F6C /* appbar.radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.radar.png; sourceTree = "<group>"; };
+		AF75F685193273B9005F5F6C /* iphone_6_fake_line_up_hero.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = iphone_6_fake_line_up_hero.jpg; sourceTree = "<group>"; };
 		AF7C0FE8192BEC19003FEF2E /* notfyrlogo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notfyrlogo3.png; sourceTree = "<group>"; };
 		E01A59061902F05600EB0BE4 /* notifyr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notifyr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01A59091902F05600EB0BE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -178,6 +186,7 @@
 		AF75F63B1930FE47005F5F6C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				AF75F683193272AC005F5F6C /* appbar.radar.png */,
 				AF75F67D19325015005F5F6C /* indicatorDisabled.png */,
 				AF75F67919324CEA005F5F6C /* appbar.people.multiple.png */,
 				AF75F67719324B9A005F5F6C /* appbar.social.twitter.png */,
@@ -211,6 +220,9 @@
 		AF75F670193246AC005F5F6C /* temp images */ = {
 			isa = PBXGroup;
 			children = (
+				AF75F685193273B9005F5F6C /* iphone_6_fake_line_up_hero.jpg */,
+				AF75F68119326FB5005F5F6C /* macvsmac */,
+				AF75F67F19326F48005F5F6C /* iphones-on-display.jpg */,
 				AF75F67B19324F43005F5F6C /* sammy.jpeg */,
 				AF75F671193246BC005F5F6C /* Apple-Logo.jpeg */,
 			);
@@ -446,6 +458,8 @@
 				AF75F65119310FF1005F5F6C /* appbar.newspaper.png in Resources */,
 				AF75F67519324955005F5F6C /* indicatorGreen.png in Resources */,
 				AF75F65F19314FA2005F5F6C /* appbar.smiley.frown.png in Resources */,
+				AF75F68219326FB5005F5F6C /* macvsmac in Resources */,
+				AF75F684193272AC005F5F6C /* appbar.radar.png in Resources */,
 				E01A591D1902F05600EB0BE4 /* Main_iPhone.storyboard in Resources */,
 				AF75F64B193106FF005F5F6C /* appbar.list.png in Resources */,
 				AF75F66119314FD9005F5F6C /* appbar.smiley.grumpy.png in Resources */,
@@ -460,8 +474,10 @@
 				AF75F67619324955005F5F6C /* indicatorRed.png in Resources */,
 				AF75F64D19310E1B005F5F6C /* appbar.cloud.png in Resources */,
 				AF75F67A19324CEA005F5F6C /* appbar.people.multiple.png in Resources */,
+				AF75F686193273B9005F5F6C /* iphone_6_fake_line_up_hero.jpg in Resources */,
 				AF75F6631931513D005F5F6C /* appbar.elevator.down.png in Resources */,
 				AF75F66519315273005F5F6C /* appbar.people.sensor.variant.png in Resources */,
+				AF75F68019326F48005F5F6C /* iphones-on-display.jpg in Resources */,
 				E01A59141902F05600EB0BE4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
