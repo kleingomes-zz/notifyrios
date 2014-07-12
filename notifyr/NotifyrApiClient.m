@@ -39,8 +39,8 @@
 
 - (NSString *)getUrl:(NSString *)urlString
 {
-    return [NSString stringWithFormat:@"%@%@", @"http://192.168.1.180/Notifyr.WebAPI/api/", urlString];
-    //return [NSString stringWithFormat:@"%@%@", @"http://www.notifyr.ca/service/api/", urlString];
+    //return [NSString stringWithFormat:@"%@%@", @"http://192.168.1.180/Notifyr.WebAPI/api/", urlString];
+    return [NSString stringWithFormat:@"%@%@", @"http://www.notifyr.ca/service/api/", urlString];
 }
 
 
@@ -99,7 +99,7 @@
 {
     [self loadUserData];
     
-    if (!self.userName)
+    if (!self.userId)
     {
         [self registerGuestAccount];
     }

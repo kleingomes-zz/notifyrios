@@ -16,12 +16,41 @@
 {
     // Override point for customization after application launch.
     
+    [self checkNotificationTypes:application];
     
      [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
     
     
     return YES;
 }
+
+- (void)checkNotificationTypes:(UIApplication *)application
+{
+    UIRemoteNotificationType remoteNotifcationTypes = [application enabledRemoteNotificationTypes];
+
+    NSLog(@"Remote Notification Types:%u", remoteNotifcationTypes);
+    if (remoteNotifcationTypes == UIRemoteNotificationTypeNone)
+    {
+        NSLog(@"UIRemoteNotificationTypeNone");
+    }
+    if (remoteNotifcationTypes & UIRemoteNotificationTypeAlert)
+    {
+        NSLog(@"UIRemoteNotificationTypeAlert");
+    }
+    if (remoteNotifcationTypes & UIRemoteNotificationTypeBadge)
+    {
+        NSLog(@"UIRemoteNotificationTypeBadge");
+    }
+    if (remoteNotifcationTypes & UIRemoteNotificationTypeSound)
+    {
+        NSLog(@"UIRemoteNotificationTypeSound");
+    }
+    if (remoteNotifcationTypes & UIRemoteNotificationTypeNewsstandContentAvailability)
+    {
+        NSLog(@"UIRemoteNotificationTypeNewsstandContentAvailability");
+    }
+}
+
 
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken
@@ -36,13 +65,18 @@
     
     
     SBNotificationHub* hub = [[SBNotificationHub alloc] initWithConnectionString:
-                              @"Endpoint=sb://notifyreastus.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=bP3no8T6l5+OR3Q5fRlSgjILWFDKi2xePkYNMl4zLCQ=" notificationHubPath:@"notifyrhub"];
+                              @"Endpoint=sb://notifyrtoronto.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=YbApWjxkhzS9/ppSUOEqisY28oUH2cge+hXAIV3HRDU=" notificationHubPath:@"notifyrhub"];
     
     [hub registerNativeWithDeviceToken:deviceToken tags:nil completion:^(NSError* error) {
         if (error != nil) {
             NSLog(@"Error registering for notifications: %@", error);
         }
     }];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"Failed to register for remote notifications: %@", [error description]);
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification: (NSDictionary *)userInfo {
