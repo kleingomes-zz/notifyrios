@@ -1077,58 +1077,8 @@ This document was last updated on May 24, 2014</string>
                             </tableViewSection>
                             <tableViewSection headerTitle="My Settings" id="C97-kF-h4k">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="48" id="6yh-4D-IdC">
-                                        <rect key="frame" x="0.0" y="52" width="320" height="48"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6yh-4D-IdC" id="Ucw-Ne-6iy">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DUK-16-kva">
-                                                    <rect key="frame" x="256" y="11" width="51" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </switch>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use NotifyR Cloud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ly-ux-xo8">
-                                                    <rect key="frame" x="61" y="16" width="162" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="wXx-PA-oYB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="53" height="53"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2rn-5e-Y8p">
-                                        <rect key="frame" x="0.0" y="100" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2rn-5e-Y8p" id="Jy7-r8-kIh">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ezv-V7-PBJ">
-                                                    <rect key="frame" x="256" y="6" width="51" height="31"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </switch>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stay Signed In" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciP-WV-Gwa">
-                                                    <rect key="frame" x="61" y="11" width="162" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.people.arrow.right.png" translatesAutoresizingMaskIntoConstraints="NO" id="MFe-6n-bAs">
-                                                    <rect key="frame" x="0.0" y="-5" width="53" height="53"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3qk-sw-UKE">
-                                        <rect key="frame" x="0.0" y="144" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="52" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3qk-sw-UKE" id="Yeh-cb-rfi">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1152,7 +1102,7 @@ This document was last updated on May 24, 2014</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ilI-Cf-Ylz">
-                                        <rect key="frame" x="0.0" y="188" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="96" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ilI-Cf-Ylz" id="bgT-3z-YvH">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1177,7 +1127,7 @@ This document was last updated on May 24, 2014</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Qs7-J1-aFQ">
-                                        <rect key="frame" x="0.0" y="232" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="140" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Qs7-J1-aFQ" id="RfZ-TW-yg7">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1198,7 +1148,7 @@ This document was last updated on May 24, 2014</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="38" id="1rX-pO-eRs">
-                                        <rect key="frame" x="0.0" y="276" width="320" height="38"/>
+                                        <rect key="frame" x="0.0" y="184" width="320" height="38"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1rX-pO-eRs" id="m41-XZ-TJY">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="38"/>
@@ -1212,7 +1162,7 @@ This document was last updated on May 24, 2014</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="22K-ey-4B4">
-                                        <rect key="frame" x="0.0" y="314" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="222" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="22K-ey-4B4" id="OAH-fu-LvB">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1244,7 +1194,7 @@ This document was last updated on May 24, 2014</string>
                             <tableViewSection headerTitle="Network and Account" id="EN9-gs-AZj">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="49" id="qIz-9V-ZrE">
-                                        <rect key="frame" x="0.0" y="380" width="320" height="49"/>
+                                        <rect key="frame" x="0.0" y="288" width="320" height="49"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qIz-9V-ZrE" id="Ua2-yV-cgu">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -1271,7 +1221,7 @@ This document was last updated on May 24, 2014</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="E94-pP-6Ts">
-                                        <rect key="frame" x="0.0" y="429" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="337" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E94-pP-6Ts" id="0IQ-lr-d1y">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1298,7 +1248,7 @@ This document was last updated on May 24, 2014</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="FHf-5a-gd7">
-                                        <rect key="frame" x="0.0" y="473" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="381" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FHf-5a-gd7" id="Czb-7O-20o">
                                             <rect key="frame" x="0.0" y="0.0" width="253" height="44"/>
@@ -1314,7 +1264,7 @@ This document was last updated on May 24, 2014</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="BBV-FY-Weu">
-                                        <rect key="frame" x="0.0" y="517" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="425" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BBV-FY-Weu" id="5dq-hs-ZoY">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
@@ -1330,11 +1280,11 @@ This document was last updated on May 24, 2014</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="qBE-cv-V3k">
-                                        <rect key="frame" x="0.0" y="561" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="99" id="qBE-cv-V3k">
+                                        <rect key="frame" x="0.0" y="469" width="320" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qBE-cv-V3k" id="0Xe-LZ-sL9">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1789,7 +1739,6 @@ This document was last updated on May 24, 2014</string>
     <resources>
         <image name="Apple-Logo.jpeg" width="225" height="225"/>
         <image name="appbar.chevron.left.png" width="76" height="76"/>
-        <image name="appbar.cloud.png" width="76" height="76"/>
         <image name="appbar.cog.png" width="76" height="76"/>
         <image name="appbar.connection.quality.veryhigh.png" width="76" height="76"/>
         <image name="appbar.elevator.down.png" width="76" height="76"/>
@@ -1798,7 +1747,6 @@ This document was last updated on May 24, 2014</string>
         <image name="appbar.list.png" width="76" height="76"/>
         <image name="appbar.newspaper.png" width="76" height="76"/>
         <image name="appbar.people 2.png" width="76" height="76"/>
-        <image name="appbar.people.arrow.right.png" width="76" height="76"/>
         <image name="appbar.people.png" width="76" height="76"/>
         <image name="appbar.people.sensor.variant.png" width="76" height="76"/>
         <image name="appbar.radar.png" width="76" height="76"/>
