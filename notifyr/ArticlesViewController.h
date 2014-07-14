@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Interest.h"
 
-@interface InterestArticlesViewController : UITableViewController
+@interface ArticlesViewController : UITableViewController
 
 @property (nonatomic, strong)Interest *interest;
 

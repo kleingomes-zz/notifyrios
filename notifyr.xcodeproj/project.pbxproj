@@ -72,7 +72,7 @@
 		E0AF886119211E2F00E27C69 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF886019211E2F00E27C69 /* Repository.m */; };
 		E0D3A5A519735F8A008C445D /* EventType.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5A419735F8A008C445D /* EventType.m */; };
 		E0D3A5A81973904F008C445D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5A71973904F008C445D /* Product.m */; };
-		E0D3A5AB19741CB9008C445D /* InterestArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5AA19741CB9008C445D /* InterestArticlesViewController.m */; };
+		E0D3A5AB19741CB9008C445D /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5AA19741CB9008C445D /* ArticlesViewController.m */; };
 		E0D3A5AE197420B7008C445D /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5AD197420B7008C445D /* Article.m */; };
 		E0D3A5B119742725008C445D /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5B019742725008C445D /* ArticleCell.m */; };
 		E0D3A5B41974511A008C445D /* ArticleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */; };
@@ -169,8 +169,8 @@
 		E0D3A5A419735F8A008C445D /* EventType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventType.m; sourceTree = "<group>"; };
 		E0D3A5A61973904F008C445D /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		E0D3A5A71973904F008C445D /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
-		E0D3A5A919741CB9008C445D /* InterestArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestArticlesViewController.h; sourceTree = "<group>"; };
-		E0D3A5AA19741CB9008C445D /* InterestArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestArticlesViewController.m; sourceTree = "<group>"; };
+		E0D3A5A919741CB9008C445D /* ArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticlesViewController.h; sourceTree = "<group>"; };
+		E0D3A5AA19741CB9008C445D /* ArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticlesViewController.m; sourceTree = "<group>"; };
 		E0D3A5AC197420B7008C445D /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
 		E0D3A5AD197420B7008C445D /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		E0D3A5AF19742725008C445D /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
@@ -304,8 +304,8 @@
 				E01A591E1902F05600EB0BE4 /* Main_iPad.storyboard */,
 				E0931D71190ADBF5001A991F /* InterestsViewController.h */,
 				E0931D72190ADBF5001A991F /* InterestsViewController.m */,
-				E0D3A5A919741CB9008C445D /* InterestArticlesViewController.h */,
-				E0D3A5AA19741CB9008C445D /* InterestArticlesViewController.m */,
+				E0D3A5A919741CB9008C445D /* ArticlesViewController.h */,
+				E0D3A5AA19741CB9008C445D /* ArticlesViewController.m */,
 				E0D3A5B21974511A008C445D /* ArticleDetailsViewController.h */,
 				E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */,
 				E0931D76190ADED4001A991F /* Model */,
@@ -546,7 +546,7 @@
 				E0D3A5AE197420B7008C445D /* Article.m in Sources */,
 				E01A591A1902F05600EB0BE4 /* AppDelegate.m in Sources */,
 				E0931D7A190ADF16001A991F /* Biz.m in Sources */,
-				E0D3A5AB19741CB9008C445D /* InterestArticlesViewController.m in Sources */,
+				E0D3A5AB19741CB9008C445D /* ArticlesViewController.m in Sources */,
 				E01A59161902F05600EB0BE4 /* main.m in Sources */,
 				E0D3A5A519735F8A008C445D /* EventType.m in Sources */,
 				E0931D73190ADBF5001A991F /* Interest.m in Sources */,

@@ -10,7 +10,7 @@
 #import "Interest.h"
 #import "InterestCell.h"
 #import "Biz.h"
-#import "InterestArticlesViewController.h"
+#import "ArticlesViewController.h"
 #import "Constants.h"
 
 @interface InterestsViewController ()
@@ -43,7 +43,7 @@
 {
     if ([segue.identifier isEqualToString:@"ShowInterestArticles"])
     {
-        InterestArticlesViewController *vc = (InterestArticlesViewController *)segue.destinationViewController;
+        ArticlesViewController *vc = (ArticlesViewController *)segue.destinationViewController;
         Interest *interest = self.items[[self.tableView indexPathForSelectedRow].row];
         vc.interest = interest;
     }

@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Nelson Narciso. All rights reserved.
 //
 
-#import "InterestArticlesViewController.h"
+#import "ArticlesViewController.h"
 #import "Biz.h"
 #import "Constants.h"
 #import "ArticleCell.h"
 #import "Article.h"
 #import "ArticleDetailsViewController.h"
 
-@interface InterestArticlesViewController ()
+@interface ArticlesViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *interestNameLabel;
 
@@ -23,7 +23,7 @@
 @end
 
 
-@implementation InterestArticlesViewController
+@implementation ArticlesViewController
 
 - (NSArray *)items
 {
