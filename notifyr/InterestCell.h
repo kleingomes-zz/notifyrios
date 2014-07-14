@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReceivedNotificationCell : UITableViewCell
+@interface InterestCell : UITableViewCell
 
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *companyNameLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *eventTypeLabel;
 
 
 @end

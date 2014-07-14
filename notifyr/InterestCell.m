@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Nelson Narciso. All rights reserved.
 //
 
-#import "ReceivedNotificationCell.h"
+#import "InterestCell.h"
 
 
-@implementation ReceivedNotificationCell
+@implementation InterestCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

@@ -7,17 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ReceivedNotification.h"
+#import "Interest.h"
 #import "Company.h"
+#import "EventType.h"
 
 @interface Biz : NSObject
 
 @property (nonatomic, strong) NSArray *companies;
 
+@property (nonatomic, strong) NSArray *eventTypes;
+
 + (Biz *)sharedBiz;
 
-- (void)getReceivedNotifications;
+- (void)getInterests;
 
 - (Company *)getCompanyById:(NSNumber *)companyId;
+
+- (EventType *)getEventTypeById:(NSNumber *)eventTypeId;
+
 
 @end

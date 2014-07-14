@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.titleLabel.text = self.receivedNotification.title;
+    self.titleLabel.text = self.interest.title;
 }
 
 - (void)didReceiveMemoryWarning

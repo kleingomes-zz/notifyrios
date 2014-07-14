@@ -13,6 +13,7 @@
 
 @implementation Biz
 
+#pragma mark - Properties
 
 - (NSArray *)companies
 {
@@ -23,13 +24,22 @@
     return _companies;
 }
 
-- (void)getReceivedNotifications
+- (NSArray *)eventTypes
 {
-    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
-    //[apiClient getReceivedNotifications];
-    //[apiClient getCompanies];
-    [apiClient getNewAccessToken];
+    if (!_eventTypes)
+    {
+        NSMutableArray *eventTypesArray = [[NSMutableArray alloc] init];
+        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@1 name:@"Release Date"]];
+        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@2 name:@"Quarterly Results"]];
+        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@3 name:@"Conference"]];
+        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@4 name:@"News"]];
+        _eventTypes = [NSArray arrayWithArray:eventTypesArray];
+    }
+    return _eventTypes;
 }
+
+
+#pragma mark - Get Object Methods
 
 - (Company *)getCompanyById:(NSNumber *)companyId
 {
@@ -46,6 +56,35 @@
     }
     return nil;
 }
+
+- (EventType *)getEventTypeById:(NSNumber *)eventTypeId
+{
+    if (eventTypeId == nil)
+    {
+        return nil;
+    }
+    for (EventType *eventType in self.eventTypes)
+    {
+        if ([eventType.eventTypeId isEqualToValue:eventTypeId])
+        {
+            return eventType;
+        }
+    }
+    return nil;
+}
+
+
+#pragma mark - Main Methods
+
+- (void)getInterests
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getCompaniesWithCompletionHandler:^(NSError *error) {
+        [apiClient getInterests];
+    }];
+}
+
+
 
 - (void)initObserver
 {

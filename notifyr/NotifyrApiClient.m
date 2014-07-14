@@ -7,7 +7,7 @@
 //
 
 #import "NotifyrApiClient.h"
-#import "ReceivedNotification.h"
+#import "Interest.h"
 #import "Company.h"
 #import "Biz.h"
 #import "Constants.h"
@@ -62,54 +62,83 @@
     return request;
 }
 
-- (void)getReceivedNotifications
+- (void)getInterests
+{
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getInterestsMain];
+        }];
+    }
+    else
+    {
+        [self getInterestsMain];
+    }
+}
+
+-(void)getInterestsMain
 {
     //NSString *urlString = @"http://www.notifyr.ca/service/api/Notification/GetNotifications?userId=19a65135-4dff-4ac1-b7c0-877c640581ac";
     //NSString *urlString = @"http://frogs.primeprojection.com/api/playsessionapi";
     //NSString *urlString = @"http://192.168.1.103/Notifyr.WebAPI/api/Notification/GetNotifications?userId=19a65135-4dff-4ac1-b7c0-877c640581ac";
-    
-    NSString *urlString = [self getUrl:@"Notification/GetNotifications?userId=19a65135-4dff-4ac1-b7c0-877c640581ac"];
+
+    NSString *urlString = [self getUrl:@"Interest/GetInterests?userId=19a65135-4dff-4ac1-b7c0-877c640581ac"];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
         {
-            //[self notifyNewCompaniesWithDictionary:(NSArray *) jsonObject];
-            [self notifyNewReceivedNotificationsWithDictionary:jsonObject];
+            [self notifyInterestsUpdatedWithDictionary:jsonObject];
         }
     }];
 }
 
-- (void)getCompanies
+- (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getCompaniesMainWithCompletionHandler:completionHandler];
+        }];
+    }
+    else
+    {
+        [self getCompaniesMainWithCompletionHandler:completionHandler];
+    }
+}
+
+- (void)getCompaniesMainWithCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     //NSString *urlString = @"http://www.notifyr.ca/service/api/Company/GetAllCompanies";
     //NSString *urlString = @"http://frogs.primeprojection.com//api/playsessionapi";
     
     NSString *urlString = [self getUrl:@"Company/GetAllCompanies"];
-
+    
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
         {
             [self notifyNewCompaniesWithDictionary:(NSArray *) jsonObject];
-            [self getReceivedNotifications];
+            completionHandler(error);
         }
     }];
 }
 
-- (void)getNewAccessToken
+- (void)getNewAccessTokenWithCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     [self loadUserData];
     
     if (!self.userId)
     {
-        [self registerGuestAccount];
+        [self registerGuestAccountWithCompletionHandler:^(NSError *error) {
+            [self getNewAccessTokenMainWithCompletionHandler:completionHandler];
+        }];
     }
     else
     {
-        [self getNewAccessTokenMain];
+        [self getNewAccessTokenMainWithCompletionHandler:completionHandler];
     }
 }
 
-- (void)getNewAccessTokenMain
+- (void)getNewAccessTokenMainWithCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     //NSString *urlString = @"http://www.notifyr.ca/service/token";
     NSString *baseUrl = [self getUrl:@""];
@@ -136,23 +165,24 @@
         
         NSLog(@"%@", jsonObject[@"access_token"]);
         self.accessToken = jsonObject[@"access_token"];
-        [self getCompanies];
+        //[self getCompanies];
+        completionHandler(error);
     }];
 }
 
-- (void)registerGuestAccount
+- (void)registerGuestAccountWithCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     NSString *urlString = [self getUrl:@"Account/RegisterGuest"];
     
     [self makeAPICallWithUrlString:urlString method:@"POST" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
         {
-            self.userId = jsonObject[@"userId"];
-            self.userName = jsonObject[@"userId"];
+            self.userId = jsonObject[@"UserId"];
+            self.userName = jsonObject[@"UserId"];
             self.password = @"2014$NotifyrPassword$2014";
             [self saveUserData];
-            [self getNewAccessTokenMain];
         }
+        completionHandler(error);
     }];
 }
 
@@ -364,26 +394,31 @@
 
 #pragma mark - Create objects and notify observers
 
-- (void)notifyNewReceivedNotificationsWithDictionary:(NSArray *)jsonItems
+
+- (void)notifyInterestsUpdatedWithDictionary:(NSArray *)jsonItems
 {
     Biz *biz = [Biz sharedBiz];
 
     NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
     for (NSDictionary *dict in jsonItems)
     {
-        [items addObject:[ReceivedNotification makeReceivedNotificationFromDictionary:dict]];
+        Interest *interest = [Interest makeInterestFromDictionary:dict];
+        [items addObject:interest];
     }
     
-    for (ReceivedNotification *notification in items)
+    //set objects
+    for (Interest *interest in items)
     {
-        notification.title = [biz getCompanyById:notification.companyId].name;
+        interest.title = [biz getCompanyById:interest.companyId].name;
+        interest.company = [biz getCompanyById:interest.companyId];
+        interest.eventType = [biz getEventTypeById:interest.eventTypeId];
     }
     
     NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
-    userInfo[@"receivedNotifications"] = items;
+    userInfo[@"interests"] = items;
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:ReceivedNotificationsNotification object:nil userInfo:userInfo];
+    [center postNotificationName:InterestsUpdateNotification object:nil userInfo:userInfo];
 }
 
 - (void)notifyNewCompaniesWithDictionary:(NSArray *)jsonItems

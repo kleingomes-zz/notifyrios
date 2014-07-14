@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ReceivedNotification.h"
+#import "Interest.h"
 
 @interface ReceivedNotificationDetailViewController : UIViewController
 
-@property (nonatomic, strong)ReceivedNotification *receivedNotification;
+@property (nonatomic, strong)Interest *interest;
 
 @end

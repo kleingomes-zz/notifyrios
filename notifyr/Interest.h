@@ -7,17 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Company.h"
+#import "EventType.h"
 
-@interface ReceivedNotification : NSObject
+@interface Interest : NSObject
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic) NSNumber *notificationId;
+@property (nonatomic) NSNumber *interestId;
 @property (nonatomic) NSNumber *companyId;
 @property (nonatomic) NSNumber *productId;
+@property (nonatomic) NSNumber *eventTypeId;
+
+@property (nonatomic, weak) Company *company;
+@property (nonatomic, weak) EventType *eventType;
 
 
 - (id)initWithTitle:(NSString *)title;
 
-+ (ReceivedNotification *)makeReceivedNotificationFromDictionary:(NSDictionary *)dictionary;
++ (Interest *)makeInterestFromDictionary:(NSDictionary *)dictionary;
 
 @end

@@ -11,7 +11,7 @@
 @implementation Constants
 
 
-NSString *const ReceivedNotificationsNotification = @"ReceivedNotificationsNotification";
+NSString *const InterestsUpdateNotification = @"InterestsUpdateNotification";
 NSString *const ReceivedCompaniesNotification = @"ReceivedCompaniesNotification";
 
 

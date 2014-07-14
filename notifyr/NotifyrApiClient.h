@@ -15,11 +15,9 @@
 @property (nonatomic, strong) NSString *userId;
 @property (nonatomic, strong) NSString *accessToken;
 
-- (void)getReceivedNotifications;
+- (void)getInterests;
 
-- (void)getCompanies;
-
-- (void)getNewAccessToken;
+- (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 
 @end

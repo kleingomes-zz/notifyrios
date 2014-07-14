@@ -7,8 +7,8 @@
 //
 
 #import "ReceivedNotificationViewController.h"
-#import "ReceivedNotification.h"
-#import "ReceivedNotificationCell.h"
+#import "Interest.h"
+#import "InterestCell.h"
 #import "Biz.h"
 #import "ReceivedNotificationDetailViewController.h"
 #import "Constants.h"
@@ -16,7 +16,7 @@
 @interface ReceivedNotificationViewController ()
 
 @property (nonatomic, strong) NSArray *items;
-@property (nonatomic, strong) id receivedNotificationObserver;
+@property (nonatomic, strong) id interestObserver;
 
 @end
 
@@ -35,7 +35,7 @@
 
 - (void)initItems
 {
-    [[Biz sharedBiz] getReceivedNotifications];
+    [[Biz sharedBiz] getInterests];
 }
 
 
@@ -44,8 +44,8 @@
     if ([segue.identifier isEqualToString:@"ShowDetail"])
     {
         ReceivedNotificationDetailViewController *vc = (ReceivedNotificationDetailViewController *)segue.destinationViewController;
-        ReceivedNotification *receivedNotification = self.items[[self.tableView indexPathForSelectedRow].row];
-        vc.receivedNotification = receivedNotification;
+        Interest *interest = self.items[[self.tableView indexPathForSelectedRow].row];
+        vc.interest = interest;
     }
 }
 
@@ -55,13 +55,13 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     
-    self.receivedNotificationObserver = [center addObserverForName:ReceivedNotificationsNotification object:nil
+    self.interestObserver = [center addObserverForName:InterestsUpdateNotification object:nil
                                                      queue:mainQueue usingBlock:^(NSNotification *notification) {
-                                                         NSArray *receivedNotifications = notification.userInfo[@"receivedNotifications"];
+                                                         NSArray *interests = notification.userInfo[@"interests"];
                                                          
-                                                         NSLog(@"Got %lu notifications", (unsigned long)[receivedNotifications count]);
+                                                         NSLog(@"Got %lu interests", (unsigned long)[interests count]);
                                                          
-                                                         self.items = receivedNotifications;
+                                                         self.items = interests;
                                                          [self.refreshControl endRefreshing];
                                                          [self.tableView reloadData];
                                                      }];
@@ -70,7 +70,7 @@
 
 - (void)refreshAction
 {
-    [[Biz sharedBiz] getReceivedNotifications];
+    [[Biz sharedBiz] getInterests];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -106,7 +106,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center removeObserver:self.receivedNotificationObserver];
+    [center removeObserver:self.interestObserver];
 }
 
 - (void)didReceiveMemoryWarning
@@ -130,11 +130,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ReceivedNotificationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReceivedNotificationCell" forIndexPath:indexPath];
+    InterestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InterestCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    ReceivedNotification *notification = self.items[indexPath.row];
-    cell.titleLabel.text = notification.title ? notification.title : @"[No company]";
+    Interest *interest = self.items[indexPath.row];
+    //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
+    cell.companyNameLabel.text = interest.company ? interest.company.name : @"[No company]";
+    cell.eventTypeLabel.text = [NSString stringWithFormat:@"Type: %@", interest.eventType ? interest.eventType.name : @"[No Event Type]"];
     
     return cell;
 }
