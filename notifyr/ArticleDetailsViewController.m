@@ -10,6 +10,11 @@
 
 @interface ArticleDetailsViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UIButton *sourceButton;
+
 @end
 
 @implementation ArticleDetailsViewController
@@ -27,6 +32,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    Article *article = self.article;
+    self.titleLabel.text = article.title ? article.title : @"[No Title]";
+    self.descriptionTextView.text = article.description;
+    self.authorLabel.text = article.arthor ? article.arthor : @"[No Author]";
+    [self.sourceButton setTitle:article.source ? article.source : @"[No Source]" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning

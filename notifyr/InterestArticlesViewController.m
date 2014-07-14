@@ -11,6 +11,7 @@
 #import "Constants.h"
 #import "ArticleCell.h"
 #import "Article.h"
+#import "ArticleDetailsViewController.h"
 
 @interface InterestArticlesViewController ()
 
@@ -62,6 +63,16 @@
     [[Biz sharedBiz] getInterests];
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowArticle"])
+    {
+        ArticleDetailsViewController *vc = (ArticleDetailsViewController *)segue.destinationViewController;
+        Article *article = self.items[[self.tableView indexPathForSelectedRow].row];
+        vc.article = article;
+    }
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -166,15 +177,6 @@
 }
 */
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

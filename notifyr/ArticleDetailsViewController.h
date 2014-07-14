@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Article.h"
 
 @interface ArticleDetailsViewController : UIViewController
+
+@property (nonatomic, weak) Article *article;
 
 @end

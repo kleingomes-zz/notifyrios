@@ -206,7 +206,7 @@
                                     <outlet property="descriptionTextView" destination="3SV-g4-Saf" id="bcZ-sH-uqR"/>
                                     <outlet property="sourceButton" destination="dnr-Sd-LSL" id="ruL-eX-zxP"/>
                                     <outlet property="titleLabel" destination="hEk-2p-nCz" id="B6H-mR-Log"/>
-                                    <segue destination="Ns0-sh-3Tf" kind="push" id="P1f-xf-kAb"/>
+                                    <segue destination="Ns0-sh-3Tf" kind="push" identifier="ShowArticle" id="T1m-U7-DcJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -276,6 +276,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="uih-OS-aKA"/>
+                    <connections>
+                        <outlet property="authorLabel" destination="a2J-nm-GCH" id="ZmW-3a-xBV"/>
+                        <outlet property="descriptionTextView" destination="WYC-K9-Gmr" id="JP9-Ee-RNq"/>
+                        <outlet property="sourceButton" destination="dhW-PN-9Rr" id="T9U-qx-BOm"/>
+                        <outlet property="titleLabel" destination="Z1S-mx-55a" id="i18-uo-hDN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kaJ-B7-r2s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
