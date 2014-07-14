@@ -12,7 +12,7 @@
 
 
 NSString *const InterestsUpdateNotification = @"InterestsUpdateNotification";
-NSString *const ReceivedCompaniesNotification = @"ReceivedCompaniesNotification";
-
+NSString *const CompaniesUpdateNotification = @"CompaniesUpdateNotification";
+NSString *const ProductsUpdateNotification = @"ProductsUpdateNotification";
 
 @end

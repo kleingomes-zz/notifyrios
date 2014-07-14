@@ -11,7 +11,9 @@
 @interface Constants : NSObject
 
 FOUNDATION_EXPORT NSString *const InterestsUpdateNotification;
-FOUNDATION_EXPORT NSString *const ReceivedCompaniesNotification;
+FOUNDATION_EXPORT NSString *const CompaniesUpdateNotification;
+FOUNDATION_EXPORT NSString *const ProductsUpdateNotification;
+
 
 
 @end

@@ -12,7 +12,7 @@
 
 
 @property (weak, nonatomic) IBOutlet UILabel *companyNameLabel;
-
+@property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventTypeLabel;
 
 

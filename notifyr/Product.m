@@ -7,7 +7,16 @@
 //
 
 #import "Product.h"
+#import "Utils.h"
 
 @implementation Product
+
++ (Product *)makeProductFromDictionary:(NSDictionary *)dictionary
+{
+    Product *product = [[Product alloc] init];
+    product.productId = [Utils getNumberFromDictionary:dictionary name:@"Id"];
+    product.name = dictionary[@"Name"];
+    return product;
+}
 
 @end

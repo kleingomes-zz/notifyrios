@@ -9,11 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "Interest.h"
 #import "Company.h"
+#import "Product.h"
 #import "EventType.h"
 
 @interface Biz : NSObject
 
 @property (nonatomic, strong) NSArray *companies;
+
+@property (nonatomic, strong) NSArray *products;
 
 @property (nonatomic, strong) NSArray *eventTypes;
 
@@ -22,6 +25,8 @@
 - (void)getInterests;
 
 - (Company *)getCompanyById:(NSNumber *)companyId;
+
+- (Product *)getProductById:(NSNumber *)productId;
 
 - (EventType *)getEventTypeById:(NSNumber *)eventTypeId;
 

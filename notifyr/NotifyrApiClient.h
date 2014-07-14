@@ -19,5 +19,6 @@
 
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 
+- (void)getProductsWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 @end

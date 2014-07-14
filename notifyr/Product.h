@@ -13,5 +13,6 @@
 @property (nonatomic) NSNumber *productId;
 @property (nonatomic) NSString *name;
 
++ (Product *)makeProductFromDictionary:(NSDictionary *)dictionary;
 
 @end

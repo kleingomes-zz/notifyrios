@@ -136,6 +136,7 @@
     Interest *interest = self.items[indexPath.row];
     //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
     cell.companyNameLabel.text = interest.company ? interest.company.name : @"[No company]";
+    cell.productNameLabel.text = interest.product ? interest.product.name : @"[No product]";
     cell.eventTypeLabel.text = [NSString stringWithFormat:@"Type: %@", interest.eventType ? interest.eventType.name : @"[No Event Type]"];
     
     return cell;

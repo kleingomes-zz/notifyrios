@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Company.h"
+#import "Product.h"
 #import "EventType.h"
 
 @interface Interest : NSObject
@@ -19,6 +20,7 @@
 @property (nonatomic) NSNumber *eventTypeId;
 
 @property (nonatomic, weak) Company *company;
+@property (nonatomic, weak) Product *product;
 @property (nonatomic, weak) EventType *eventType;
 
 

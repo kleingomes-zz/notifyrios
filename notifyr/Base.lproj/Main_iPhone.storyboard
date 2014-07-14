@@ -98,6 +98,7 @@
                                 <connections>
                                     <outlet property="companyNameLabel" destination="7b2-mY-SnO" id="NLl-y3-cCh"/>
                                     <outlet property="eventTypeLabel" destination="Zj6-SQ-C96" id="vr0-AV-LO5"/>
+                                    <outlet property="productNameLabel" destination="WHW-H9-4bA" id="vZe-L8-Sml"/>
                                     <segue destination="Ns0-sh-3Tf" kind="push" identifier="ShowDetail" id="pnv-Qs-agN"/>
                                 </connections>
                             </tableViewCell>

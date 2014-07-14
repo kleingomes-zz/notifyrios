@@ -9,6 +9,7 @@
 #import "NotifyrApiClient.h"
 #import "Interest.h"
 #import "Company.h"
+#import "Product.h"
 #import "Biz.h"
 #import "Constants.h"
 
@@ -108,15 +109,39 @@
 
 - (void)getCompaniesMainWithCompletionHandler:(void (^)(NSError *error))completionHandler
 {
-    //NSString *urlString = @"http://www.notifyr.ca/service/api/Company/GetAllCompanies";
-    //NSString *urlString = @"http://frogs.primeprojection.com//api/playsessionapi";
-    
     NSString *urlString = [self getUrl:@"Company/GetAllCompanies"];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
         {
             [self notifyNewCompaniesWithDictionary:(NSArray *) jsonObject];
+            completionHandler(error);
+        }
+    }];
+}
+
+- (void)getProductsWithCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getProductsMainWithCompletionHandler:completionHandler];
+        }];
+    }
+    else
+    {
+        [self getProductsMainWithCompletionHandler:completionHandler];
+    }
+}
+
+- (void)getProductsMainWithCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    NSString *urlString = [self getUrl:@"Product/GetAllProducts"];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (!error && jsonObject)
+        {
+            [self notifyNewProductsWithDictionary:(NSArray *) jsonObject];
             completionHandler(error);
         }
     }];
@@ -412,6 +437,7 @@
         interest.title = [biz getCompanyById:interest.companyId].name;
         interest.company = [biz getCompanyById:interest.companyId];
         interest.eventType = [biz getEventTypeById:interest.eventTypeId];
+        interest.product = [biz getProductById:interest.productId];
     }
     
     NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
@@ -433,9 +459,22 @@
     userInfo[@"companies"] = items;
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:ReceivedCompaniesNotification object:nil userInfo:userInfo];
-
+    [center postNotificationName:CompaniesUpdateNotification object:nil userInfo:userInfo];
 }
 
+- (void)notifyNewProductsWithDictionary:(NSArray *)jsonItems
+{
+    NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
+    for (NSDictionary *dict in jsonItems)
+    {
+        [items addObject:[Product makeProductFromDictionary:dict]];
+    }
+    
+    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+    userInfo[@"products"] = items;
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:ProductsUpdateNotification object:nil userInfo:userInfo];
+}
 
 @end

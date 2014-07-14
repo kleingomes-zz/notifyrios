@@ -57,6 +57,22 @@
     return nil;
 }
 
+- (Product *)getProductById:(NSNumber *)productId
+{
+    if (productId == nil)
+    {
+        return nil;
+    }
+    for (Product *product in self.products)
+    {
+        if ([product.productId isEqualToValue:productId])
+        {
+            return product;
+        }
+    }
+    return nil;
+}
+
 - (EventType *)getEventTypeById:(NSNumber *)eventTypeId
 {
     if (eventTypeId == nil)
@@ -80,7 +96,9 @@
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
     [apiClient getCompaniesWithCompletionHandler:^(NSError *error) {
-        [apiClient getInterests];
+        [apiClient getProductsWithCompletionHandler:^(NSError *error) {
+            [apiClient getInterests];
+        }];
     }];
 }
 
@@ -91,7 +109,7 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     
-    [center addObserverForName:ReceivedCompaniesNotification
+    [center addObserverForName:CompaniesUpdateNotification
                         object:nil
                          queue:mainQueue
                     usingBlock:^(NSNotification *notification) {
@@ -101,6 +119,17 @@
                                                              
                          self.companies = companies;
                      }];
+    
+    [center addObserverForName:ProductsUpdateNotification
+                        object:nil
+                         queue:mainQueue
+                    usingBlock:^(NSNotification *notification) {
+                        NSArray *products = notification.userInfo[@"products"];
+                        
+                        NSLog(@"Got %lu products", (unsigned long)[products count]);
+                        
+                        self.products = products;
+                    }];
 }
 
 + (Biz *)sharedBiz
