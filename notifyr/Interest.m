@@ -21,18 +21,6 @@
     return self;
 }
 
-+ (NSInteger)getIntegerFromDictionary:(NSDictionary *)dictionary name:(NSString *)name
-{
-    if (dictionary[name] == [NSNull null])
-    {
-        return -1;
-    }
-    else
-    {
-        return [dictionary[name] integerValue];
-    }
-}
-
 + (Interest *)makeInterestFromDictionary:(NSDictionary *)dictionary
 {
     Interest *interest = [[Interest alloc] init];

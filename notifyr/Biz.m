@@ -102,6 +102,12 @@
     }];
 }
 
+- (void)getArticlesForInterest:(Interest *)interest
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getArticlesForInterest:interest];
+}
+
 
 
 - (void)initObserver

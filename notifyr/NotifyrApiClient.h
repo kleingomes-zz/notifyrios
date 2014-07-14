@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Interest.h"
 
 @interface NotifyrApiClient : NSObject
 
@@ -16,6 +17,8 @@
 @property (nonatomic, strong) NSString *accessToken;
 
 - (void)getInterests;
+
+- (void)getArticlesForInterest:(Interest *)interest;
 
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 

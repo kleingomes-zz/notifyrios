@@ -24,6 +24,8 @@
 
 - (void)getInterests;
 
+- (void)getArticlesForInterest:(Interest *)interest;
+
 - (Company *)getCompanyById:(NSNumber *)companyId;
 
 - (Product *)getProductById:(NSNumber *)productId;

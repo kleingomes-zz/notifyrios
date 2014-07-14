@@ -66,13 +66,16 @@
 		E0498E5619170D5B004B4CF3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E5519170D5B004B4CF3 /* Utils.m */; };
 		E0931D73190ADBF5001A991F /* Interest.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D6E190ADBF5001A991F /* Interest.m */; };
 		E0931D74190ADBF5001A991F /* InterestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D70190ADBF5001A991F /* InterestCell.m */; };
-		E0931D75190ADBF5001A991F /* ReceivedNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D72190ADBF5001A991F /* ReceivedNotificationViewController.m */; };
+		E0931D75190ADBF5001A991F /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D72190ADBF5001A991F /* InterestsViewController.m */; };
 		E0931D7A190ADF16001A991F /* Biz.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D79190ADF16001A991F /* Biz.m */; };
-		E0931D7D190AE084001A991F /* ReceivedNotificationDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D7C190AE084001A991F /* ReceivedNotificationDetailViewController.m */; };
 		E0AF885B19211BC700E27C69 /* NotifyrApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF885A19211BC700E27C69 /* NotifyrApiClient.m */; };
 		E0AF886119211E2F00E27C69 /* Repository.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF886019211E2F00E27C69 /* Repository.m */; };
 		E0D3A5A519735F8A008C445D /* EventType.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5A419735F8A008C445D /* EventType.m */; };
 		E0D3A5A81973904F008C445D /* Product.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5A71973904F008C445D /* Product.m */; };
+		E0D3A5AB19741CB9008C445D /* InterestArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5AA19741CB9008C445D /* InterestArticlesViewController.m */; };
+		E0D3A5AE197420B7008C445D /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5AD197420B7008C445D /* Article.m */; };
+		E0D3A5B119742725008C445D /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5B019742725008C445D /* ArticleCell.m */; };
+		E0D3A5B41974511A008C445D /* ArticleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,12 +157,10 @@
 		E0931D6E190ADBF5001A991F /* Interest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interest.m; sourceTree = "<group>"; };
 		E0931D6F190ADBF5001A991F /* InterestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestCell.h; sourceTree = "<group>"; };
 		E0931D70190ADBF5001A991F /* InterestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestCell.m; sourceTree = "<group>"; };
-		E0931D71190ADBF5001A991F /* ReceivedNotificationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedNotificationViewController.h; sourceTree = "<group>"; };
-		E0931D72190ADBF5001A991F /* ReceivedNotificationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedNotificationViewController.m; sourceTree = "<group>"; };
+		E0931D71190ADBF5001A991F /* InterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsViewController.h; sourceTree = "<group>"; };
+		E0931D72190ADBF5001A991F /* InterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsViewController.m; sourceTree = "<group>"; };
 		E0931D78190ADF16001A991F /* Biz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Biz.h; sourceTree = "<group>"; };
 		E0931D79190ADF16001A991F /* Biz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Biz.m; sourceTree = "<group>"; };
-		E0931D7B190AE084001A991F /* ReceivedNotificationDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReceivedNotificationDetailViewController.h; sourceTree = "<group>"; };
-		E0931D7C190AE084001A991F /* ReceivedNotificationDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReceivedNotificationDetailViewController.m; sourceTree = "<group>"; };
 		E0AF885919211BC700E27C69 /* NotifyrApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifyrApiClient.h; sourceTree = "<group>"; };
 		E0AF885A19211BC700E27C69 /* NotifyrApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifyrApiClient.m; sourceTree = "<group>"; };
 		E0AF885F19211E2F00E27C69 /* Repository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repository.h; sourceTree = "<group>"; };
@@ -168,6 +169,14 @@
 		E0D3A5A419735F8A008C445D /* EventType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventType.m; sourceTree = "<group>"; };
 		E0D3A5A61973904F008C445D /* Product.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product.h; sourceTree = "<group>"; };
 		E0D3A5A71973904F008C445D /* Product.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product.m; sourceTree = "<group>"; };
+		E0D3A5A919741CB9008C445D /* InterestArticlesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestArticlesViewController.h; sourceTree = "<group>"; };
+		E0D3A5AA19741CB9008C445D /* InterestArticlesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestArticlesViewController.m; sourceTree = "<group>"; };
+		E0D3A5AC197420B7008C445D /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		E0D3A5AD197420B7008C445D /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		E0D3A5AF19742725008C445D /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
+		E0D3A5B019742725008C445D /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
+		E0D3A5B21974511A008C445D /* ArticleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailsViewController.h; sourceTree = "<group>"; };
+		E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,21 +298,23 @@
 		E01A590F1902F05600EB0BE4 /* notifyr */ = {
 			isa = PBXGroup;
 			children = (
-				AF75F670193246AC005F5F6C /* temp images */,
-				AF75F63B1930FE47005F5F6C /* Icons */,
-				AF7C0FE7192BEBE3003FEF2E /* Images */,
 				E01A59181902F05600EB0BE4 /* AppDelegate.h */,
 				E01A59191902F05600EB0BE4 /* AppDelegate.m */,
 				E01A591B1902F05600EB0BE4 /* Main_iPhone.storyboard */,
 				E01A591E1902F05600EB0BE4 /* Main_iPad.storyboard */,
-				E0931D71190ADBF5001A991F /* ReceivedNotificationViewController.h */,
-				E0931D72190ADBF5001A991F /* ReceivedNotificationViewController.m */,
-				E0931D7B190AE084001A991F /* ReceivedNotificationDetailViewController.h */,
-				E0931D7C190AE084001A991F /* ReceivedNotificationDetailViewController.m */,
+				E0931D71190ADBF5001A991F /* InterestsViewController.h */,
+				E0931D72190ADBF5001A991F /* InterestsViewController.m */,
+				E0D3A5A919741CB9008C445D /* InterestArticlesViewController.h */,
+				E0D3A5AA19741CB9008C445D /* InterestArticlesViewController.m */,
+				E0D3A5B21974511A008C445D /* ArticleDetailsViewController.h */,
+				E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */,
 				E0931D76190ADED4001A991F /* Model */,
 				E0AF886219211E3300E27C69 /* Data */,
 				E0931D77190ADEDE001A991F /* UI */,
 				E01A59241902F05600EB0BE4 /* Images.xcassets */,
+				AF75F670193246AC005F5F6C /* temp images */,
+				AF75F63B1930FE47005F5F6C /* Icons */,
+				AF7C0FE7192BEBE3003FEF2E /* Images */,
 				E01A59101902F05600EB0BE4 /* Supporting Files */,
 			);
 			path = notifyr;
@@ -349,10 +360,12 @@
 				E0498E521916F1DD004B4CF3 /* Company.m */,
 				E0D3A5A61973904F008C445D /* Product.h */,
 				E0D3A5A71973904F008C445D /* Product.m */,
-				E0931D6D190ADBF5001A991F /* Interest.h */,
-				E0931D6E190ADBF5001A991F /* Interest.m */,
 				E0D3A5A319735F8A008C445D /* EventType.h */,
 				E0D3A5A419735F8A008C445D /* EventType.m */,
+				E0931D6D190ADBF5001A991F /* Interest.h */,
+				E0931D6E190ADBF5001A991F /* Interest.m */,
+				E0D3A5AC197420B7008C445D /* Article.h */,
+				E0D3A5AD197420B7008C445D /* Article.m */,
 				E0498E5419170D5B004B4CF3 /* Utils.h */,
 				E0498E5519170D5B004B4CF3 /* Utils.m */,
 				E01ED8DC1929815700798C31 /* Constants.h */,
@@ -366,6 +379,8 @@
 			children = (
 				E0931D6F190ADBF5001A991F /* InterestCell.h */,
 				E0931D70190ADBF5001A991F /* InterestCell.m */,
+				E0D3A5AF19742725008C445D /* ArticleCell.h */,
+				E0D3A5B019742725008C445D /* ArticleCell.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -427,7 +442,7 @@
 				ORGANIZATIONNAME = "Nelson Narciso";
 				TargetAttributes = {
 					E01A59051902F05600EB0BE4 = {
-						DevelopmentTeam = X4QH59WD29;
+						DevelopmentTeam = MQK7DD6JPG;
 					};
 					E01A59291902F05600EB0BE4 = {
 						TestTargetID = E01A59051902F05600EB0BE4;
@@ -519,16 +534,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D3A5B41974511A008C445D /* ArticleDetailsViewController.m in Sources */,
 				E0498E5619170D5B004B4CF3 /* Utils.m in Sources */,
 				E0AF885B19211BC700E27C69 /* NotifyrApiClient.m in Sources */,
-				E0931D7D190AE084001A991F /* ReceivedNotificationDetailViewController.m in Sources */,
 				E0931D74190ADBF5001A991F /* InterestCell.m in Sources */,
 				E0AF886119211E2F00E27C69 /* Repository.m in Sources */,
-				E0931D75190ADBF5001A991F /* ReceivedNotificationViewController.m in Sources */,
+				E0931D75190ADBF5001A991F /* InterestsViewController.m in Sources */,
 				E0498E531916F1DD004B4CF3 /* Company.m in Sources */,
+				E0D3A5B119742725008C445D /* ArticleCell.m in Sources */,
 				E0D3A5A81973904F008C445D /* Product.m in Sources */,
+				E0D3A5AE197420B7008C445D /* Article.m in Sources */,
 				E01A591A1902F05600EB0BE4 /* AppDelegate.m in Sources */,
 				E0931D7A190ADF16001A991F /* Biz.m in Sources */,
+				E0D3A5AB19741CB9008C445D /* InterestArticlesViewController.m in Sources */,
 				E01A59161902F05600EB0BE4 /* main.m in Sources */,
 				E0D3A5A519735F8A008C445D /* EventType.m in Sources */,
 				E0931D73190ADBF5001A991F /* Interest.m in Sources */,

@@ -10,6 +10,7 @@
 #import "Interest.h"
 #import "Company.h"
 #import "Product.h"
+#import "Article.h"
 #import "Biz.h"
 #import "Constants.h"
 
@@ -92,6 +93,34 @@
         }
     }];
 }
+
+- (void)getArticlesForInterest:(Interest *)interest
+{
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getArticlesMainForInterest:interest];
+        }];
+    }
+    else
+    {
+        [self getArticlesMainForInterest:interest];
+    }
+}
+
+- (void)getArticlesMainForInterest:(Interest *)interest
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetInterestArticles?interestId=%@", interest.interestId]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (!error && jsonObject)
+        {
+            [self notifyArticlesUpdatedForInterest:interest jsonItems:jsonObject];
+        }
+    }];
+}
+
+
 
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler
 {
@@ -476,5 +505,23 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center postNotificationName:ProductsUpdateNotification object:nil userInfo:userInfo];
 }
+
+- (void)notifyArticlesUpdatedForInterest:(Interest *)interest jsonItems:(NSArray *)jsonItems
+{
+    NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
+    for (NSDictionary *dict in jsonItems)
+    {
+        Article *article = [Article makeArticleFromDictionary:dict];
+        article.interest = interest;
+        [items addObject:article];
+    }
+    
+    NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+    userInfo[@"articles"] = items;
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:ArticlesUpdateNotification object:nil userInfo:userInfo];
+}
+
 
 @end

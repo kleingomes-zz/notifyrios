@@ -14,5 +14,7 @@
 NSString *const InterestsUpdateNotification = @"InterestsUpdateNotification";
 NSString *const CompaniesUpdateNotification = @"CompaniesUpdateNotification";
 NSString *const ProductsUpdateNotification = @"ProductsUpdateNotification";
+NSString *const ArticlesUpdateNotification = @"ArticlesUpdateNotification";
+
 
 @end
