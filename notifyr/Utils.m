@@ -19,4 +19,13 @@
     return dictionary[name];
 }
 
++ (NSString *)getStringFromDictionary:(NSDictionary *)dictionary name:(NSString *)name
+{
+    if (dictionary[name] == [NSNull null])
+    {
+        return nil;
+    }
+    return dictionary[name];
+}
+
 @end

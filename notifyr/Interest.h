@@ -23,6 +23,14 @@
 @property (nonatomic, weak) Product *product;
 @property (nonatomic, weak) EventType *eventType;
 
+@property (nonatomic, strong) NSString *companyName;
+@property (nonatomic, strong) NSString *productName;
+@property (nonatomic) NSNumber *isProduct;
+@property (nonatomic) NSString *eventTypeName;
+@property (nonatomic) NSNumber *stockQuote;
+@property (nonatomic) NSString *logoUrl;
+@property (nonatomic) NSNumber *hasBeenViewed;
+
 
 - (id)initWithTitle:(NSString *)title;
 

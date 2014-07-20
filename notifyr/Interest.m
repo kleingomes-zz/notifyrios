@@ -29,6 +29,14 @@
     interest.productId = [Utils getNumberFromDictionary:dictionary name:@"ProductId"];
     interest.eventTypeId = [Utils getNumberFromDictionary:dictionary name:@"EventTypeId"];
 
+    interest.companyName = [Utils getStringFromDictionary:dictionary name:@"CompanyName"];
+    interest.productName = [Utils getStringFromDictionary:dictionary name:@"ProductName"];
+    interest.isProduct = [Utils getNumberFromDictionary:dictionary name:@"IsProduct"];
+    interest.eventTypeName = [Utils getStringFromDictionary:dictionary name:@"EventTypeName"];
+    interest.stockQuote = [Utils getNumberFromDictionary:dictionary name:@"StockQuote"];
+    interest.logoUrl = [Utils getStringFromDictionary:dictionary name:@"LogoUrl"];
+    interest.hasBeenViewed = [Utils getNumberFromDictionary:dictionary name:@"HasBeenViewed"];
+        
     return interest;
 }
 

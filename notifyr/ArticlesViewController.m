@@ -92,8 +92,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.interestNameLabel.text = self.interest.company.name;
+
+    self.navigationItem.title = self.interest.productName ? self.interest.productName : self.interest.companyName;
 }
 
 - (void)viewWillAppear:(BOOL)animated

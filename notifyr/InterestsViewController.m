@@ -135,9 +135,20 @@
     // Configure the cell...
     Interest *interest = self.items[indexPath.row];
     //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
-    cell.companyNameLabel.text = interest.company ? interest.company.name : @"[No company]";
-    cell.productNameLabel.text = interest.product ? interest.product.name : @"[No product]";
-    cell.eventTypeLabel.text = [NSString stringWithFormat:@"Type: %@", interest.eventType ? interest.eventType.name : @"[No Event Type]"];
+    cell.companyNameLabel.text = interest.companyName ? interest.companyName : @"[No company]";
+    cell.productNameLabel.text = interest.productName ? interest.productName : @"[No product]";
+    cell.eventTypeLabel.text = [NSString stringWithFormat:@"Type: %@", interest.eventTypeName ? interest.eventTypeName : @"[No Event Type]"];
+    
+    
+    static NSNumberFormatter *numberFormatter = nil;
+    if (!numberFormatter)
+    {
+        numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [numberFormatter setGroupingSeparator:@","];
+    }
+    
+    cell.stockQuote.text = [numberFormatter stringFromNumber:interest.stockQuote];
     
     return cell;
 }

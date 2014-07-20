@@ -99,6 +99,7 @@
                                     <outlet property="companyNameLabel" destination="7b2-mY-SnO" id="NLl-y3-cCh"/>
                                     <outlet property="eventTypeLabel" destination="Zj6-SQ-C96" id="vr0-AV-LO5"/>
                                     <outlet property="productNameLabel" destination="WHW-H9-4bA" id="vZe-L8-Sml"/>
+                                    <outlet property="stockQuote" destination="sTj-c7-Jb6" id="LNZ-pH-3dP"/>
                                     <segue destination="VLr-JZ-fXu" kind="push" identifier="ShowInterestArticles" id="3NJ-xn-Hkv"/>
                                 </connections>
                             </tableViewCell>
@@ -125,41 +126,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="5hV-qE-ygs">
-                            <rect key="frame" x="0.0" y="64" width="320" height="88"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="37s-6p-tY0">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="42"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iPhone 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AGx-l5-d7m">
-                                            <rect key="frame" x="124" y="11" width="73" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.14509195920000001" green="0.40299110760000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.radar.png" translatesAutoresizingMaskIntoConstraints="NO" id="izx-hq-mtu">
-                                            <rect key="frame" x="20" y="2" width="40" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
-                                </view>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NXC-bL-GA8">
-                                    <rect key="frame" x="20" y="50" width="280" height="29"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <segments>
-                                        <segment title="News"/>
-                                        <segment title="Images"/>
-                                    </segments>
-                                </segmentedControl>
-                            </subviews>
-                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InterestCell" rowHeight="328" id="Xv2-AE-IhB" customClass="ArticleCell">
-                                <rect key="frame" x="0.0" y="174" width="320" height="328"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="328"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xv2-AE-IhB" id="QyT-fq-WXD">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
@@ -218,9 +187,6 @@
                     <navigationItem key="navigationItem" id="a3r-Yi-2lS">
                         <nil key="title"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="interestNameLabel" destination="AGx-l5-d7m" id="5he-5M-ZCq"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJ5-tf-fbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

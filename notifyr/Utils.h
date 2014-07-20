@@ -12,4 +12,6 @@
 
 + (NSNumber *)getNumberFromDictionary:(NSDictionary *)dictionary name:(NSString *)name;
 
++ (NSString *)getStringFromDictionary:(NSDictionary *)dictionary name:(NSString *)name;
+
 @end
