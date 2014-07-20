@@ -64,6 +64,7 @@
 		E01ED8DE1929815700798C31 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E01ED8DD1929815700798C31 /* Constants.m */; };
 		E0498E531916F1DD004B4CF3 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E521916F1DD004B4CF3 /* Company.m */; };
 		E0498E5619170D5B004B4CF3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E5519170D5B004B4CF3 /* Utils.m */; };
+		E055249E197B61EF007322AE /* NewInterestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E055249D197B61EF007322AE /* NewInterestViewController.m */; };
 		E0931D73190ADBF5001A991F /* Interest.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D6E190ADBF5001A991F /* Interest.m */; };
 		E0931D74190ADBF5001A991F /* InterestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D70190ADBF5001A991F /* InterestCell.m */; };
 		E0931D75190ADBF5001A991F /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D72190ADBF5001A991F /* InterestsViewController.m */; };
@@ -153,6 +154,8 @@
 		E0498E521916F1DD004B4CF3 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		E0498E5419170D5B004B4CF3 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		E0498E5519170D5B004B4CF3 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		E055249C197B61EF007322AE /* NewInterestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewInterestViewController.h; sourceTree = "<group>"; };
+		E055249D197B61EF007322AE /* NewInterestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewInterestViewController.m; sourceTree = "<group>"; };
 		E0931D6D190ADBF5001A991F /* Interest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interest.h; sourceTree = "<group>"; };
 		E0931D6E190ADBF5001A991F /* Interest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interest.m; sourceTree = "<group>"; };
 		E0931D6F190ADBF5001A991F /* InterestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestCell.h; sourceTree = "<group>"; };
@@ -308,6 +311,8 @@
 				E0D3A5AA19741CB9008C445D /* ArticlesViewController.m */,
 				E0D3A5B21974511A008C445D /* ArticleDetailsViewController.h */,
 				E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */,
+				E055249C197B61EF007322AE /* NewInterestViewController.h */,
+				E055249D197B61EF007322AE /* NewInterestViewController.m */,
 				E0931D76190ADED4001A991F /* Model */,
 				E0AF886219211E3300E27C69 /* Data */,
 				E0931D77190ADEDE001A991F /* UI */,
@@ -549,6 +554,7 @@
 				E0D3A5AB19741CB9008C445D /* ArticlesViewController.m in Sources */,
 				E01A59161902F05600EB0BE4 /* main.m in Sources */,
 				E0D3A5A519735F8A008C445D /* EventType.m in Sources */,
+				E055249E197B61EF007322AE /* NewInterestViewController.m in Sources */,
 				E0931D73190ADBF5001A991F /* Interest.m in Sources */,
 				E01ED8DE1929815700798C31 /* Constants.m in Sources */,
 			);
