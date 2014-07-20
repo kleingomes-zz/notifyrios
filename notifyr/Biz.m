@@ -29,10 +29,10 @@
     if (!_eventTypes)
     {
         NSMutableArray *eventTypesArray = [[NSMutableArray alloc] init];
-        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@1 name:@"Release Date"]];
-        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@2 name:@"Quarterly Results"]];
-        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@3 name:@"Conference"]];
         [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@4 name:@"News"]];
+        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@1 name:@"Release Date"]];
+        //[eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@2 name:@"Quarterly Results"]];
+        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@3 name:@"Conference"]];
         _eventTypes = [NSArray arrayWithArray:eventTypesArray];
     }
     return _eventTypes;
