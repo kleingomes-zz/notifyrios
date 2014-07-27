@@ -90,6 +90,8 @@
 }
 
 
+
+
 #pragma mark - Main Methods
 
 - (void)getInterests
@@ -106,6 +108,14 @@
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
     [apiClient getArticlesForInterest:interest];
+}
+
+
+- (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
+{
+    
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient saveInterest:interest withCompletionHandler:completionHandler];
 }
 
 

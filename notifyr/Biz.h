@@ -32,5 +32,7 @@
 
 - (EventType *)getEventTypeById:(NSNumber *)eventTypeId;
 
+- (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
+
 
 @end

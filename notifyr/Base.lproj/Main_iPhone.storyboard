@@ -221,7 +221,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="btnCreate.png" translatesAutoresizingMaskIntoConstraints="NO" id="PkF-WZ-nwg">
-                                <rect key="frame" x="101" y="463" width="118" height="39"/>
+                                <rect key="frame" x="15" y="463" width="118" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.radar.png" translatesAutoresizingMaskIntoConstraints="NO" id="dwq-TK-azM">
@@ -288,10 +288,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peq-Py-FDg">
+                                <rect key="frame" x="208" y="468" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAction:" destination="1i3-3R-ttB" eventType="touchUpInside" id="xVx-z9-rwa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="hsz-bB-sMM"/>
+                    <connections>
+                        <outlet property="conferenceSwitch" destination="SM2-oi-0sc" id="YvH-Qf-NLA"/>
+                        <outlet property="inputField" destination="Msh-J6-hl5" id="msT-C2-fpf"/>
+                        <outlet property="newsPrioritySlider" destination="9GS-L3-t5e" id="ZMk-V7-rlq"/>
+                        <outlet property="newsSwitch" destination="2dG-mF-3RN" id="VrD-9h-prm"/>
+                        <outlet property="releaseDateSwitch" destination="4IM-oq-JmG" id="9rw-OM-6a6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mRp-Xu-BDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

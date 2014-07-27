@@ -10,9 +10,22 @@
 
 @interface NewInterestViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *inputField;
+@property (weak, nonatomic) IBOutlet UISwitch *newsSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *releaseDateSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *conferenceSwitch;
+@property (weak, nonatomic) IBOutlet UISlider *newsPrioritySlider;
+
 @end
 
 @implementation NewInterestViewController
+
+
+- (IBAction)createAction:(id)sender {
+    
+}
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

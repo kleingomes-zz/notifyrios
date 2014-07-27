@@ -132,6 +132,47 @@
     }];
 }
 
+- (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    //todo: replace this access token pattern/main method in these methods
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self saveInterestMain:interest withCompletionHandler:completionHandler];
+        }];
+    }
+    else
+    {
+        [self saveInterestMain:interest withCompletionHandler:completionHandler];
+    }
+}
+
+- (void)saveInterestMain:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    NSString *urlString = [self getUrl:@"Interest/SaveInterests"];
+    
+    NSMutableURLRequest *request = [self getRequestWithUrlString:urlString method:@"POST"];
+    [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    dict[@"UserId"] = self.userId;
+    dict[@"EventTypeId"] = interest.eventTypeId;
+    dict[@"ProductId"] = interest.productId;
+    dict[@"CompanyId"] = interest.companyId;
+    dict[@"NotificationFrequencyHours"] = @0; //todo: eventually get it from the user
+    dict[@"IsActive"] = [NSNumber numberWithBool:YES];
+    
+    NSError *error;
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&error];
+    [request setHTTPBody:postData];
+    
+    [self makeAPICallWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        
+        //NSLog(@"%@", jsonObject[@"access_token"]);
+        completionHandler(error);
+    }];
+}
+
 
 
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler

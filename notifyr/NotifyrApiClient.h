@@ -24,4 +24,7 @@
 
 - (void)getProductsWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 
+- (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
+
+
 @end
