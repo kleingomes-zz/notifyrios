@@ -14,6 +14,7 @@
 
 - (id)initWithTitle:(NSString *)title
 {
+    //todo: remove this
     self = [super init];
     if (self) {
         self.title = title;

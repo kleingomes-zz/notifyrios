@@ -196,10 +196,10 @@
             </objects>
             <point key="canvasLocation" x="1615" y="36"/>
         </scene>
-        <!--View Controller-->
+        <!--New Interest View Controller-->
         <scene sceneID="8Ks-jB-zij">
             <objects>
-                <viewController id="1i3-3R-ttB" sceneMemberID="viewController">
+                <viewController id="1i3-3R-ttB" customClass="NewInterestViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dBd-hD-JNj"/>
                         <viewControllerLayoutGuide type="bottom" id="7Zv-T2-YJl"/>

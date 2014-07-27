@@ -89,7 +89,19 @@
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
         {
+            
             [self notifyInterestsUpdatedWithDictionary:jsonObject];
+            return;
+
+            
+            NSInteger statusCode = ((NSHTTPURLResponse *) response).statusCode;
+            if (statusCode != 200)
+            {
+                NSLog(@"Got bad response code trying to get Interests: %ld", (long)statusCode);
+                return;
+            }
+            [self notifyInterestsUpdatedWithDictionary:jsonObject];
+
         }
     }];
 }
@@ -258,6 +270,8 @@
 }
 
 
+#pragma mark - API Helper Methods
+
 - (void)makeAPICallWithUrlString:(NSString *)urlString
                           method:(NSString *)method
                completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error, id jsonObject))completionHandler
@@ -299,6 +313,9 @@
                                                     }
                                                     completionHandler(data, response, error, jsonObject);
                                                 }
+                                                
+                                                
+                                                
                                             }];
     [task resume];
 }
@@ -469,12 +486,43 @@
         interest.product = [biz getProductById:interest.productId];
     }
     
+    
+    //NSArray *items = [self getFakeInterests];
+
     NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
     userInfo[@"interests"] = items;
     
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center postNotificationName:InterestsUpdateNotification object:nil userInfo:userInfo];
 }
+
+- (NSArray *)getFakeInterests
+{
+    NSMutableArray *dictionaries = [[NSMutableArray alloc] init];
+    
+    [dictionaries addObject: @{
+                           @"CompanyName": @"Apple",
+                           @"ProductName": @"iPhone 6",
+                           @"EventTypeName": @"Release Date"
+                        }];
+    
+    [dictionaries addObject: @{
+                        @"CompanyName": @"Samsung",
+                        @"ProductName": @"G Watch",
+                        @"EventTypeName": @"Conference"
+                        }];
+    
+    NSMutableArray *items = [[NSMutableArray alloc] init];
+    for (NSDictionary *dict in dictionaries)
+    {
+        [items addObject:[Interest makeInterestFromDictionary:dict]];
+    }
+    
+    return items;
+}
+
+
+#pragma mark - Notification Methods
 
 - (void)notifyNewCompaniesWithDictionary:(NSArray *)jsonItems
 {

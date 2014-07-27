@@ -32,8 +32,6 @@
 @property (nonatomic) NSNumber *hasBeenViewed;
 
 
-- (id)initWithTitle:(NSString *)title;
-
 + (Interest *)makeInterestFromDictionary:(NSDictionary *)dictionary;
 
 @end
