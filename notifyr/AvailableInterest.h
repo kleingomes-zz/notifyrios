@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *type;
 
++ (AvailableInterest *)makeAvailableInterestFromDictionary:(NSDictionary *)dictionary;
+
 @end

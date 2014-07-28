@@ -8,15 +8,30 @@
 
 #import "NewInterestViewController.h"
 #import "Biz.h"
+#import "AvailableInterest.h"
 
-@interface NewInterestViewController () <UITextFieldDelegate>
+@interface NewInterestViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *inputField;
 @property (weak, nonatomic) IBOutlet UISlider *notificationPrioritySlider;
 
+@property (strong, nonatomic) UITableView *suggestionsTableView;
+@property (strong, nonatomic) NSArray *allSuggestedInterests;
+@property (strong, nonatomic) NSMutableArray *suggestedInterests;
+
+
 @end
 
 @implementation NewInterestViewController
+
+- (NSMutableArray *)suggestedInterests
+{
+    if (!_suggestedInterests)
+    {
+        _suggestedInterests = [[NSMutableArray alloc] init];
+    }
+    return _suggestedInterests;
+}
 
 
 - (IBAction)createAction:(id)sender {
@@ -28,11 +43,6 @@
 {
     //NSLog(@"You entered %@",self.inputField.text);
     
-    [[Biz sharedBiz] getAvailableInterests:textField.text withCompletionHandler:^(NSArray *availableInterests, NSError *error) {
-        
-    }];
-
-    
     [textField resignFirstResponder];
     return YES;
 }
@@ -40,16 +50,88 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    //NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
     //NSLog(@"%@", newString);
     
-    //if ([newString length] > 1)
-    //{
-        
-    //}
+    if ([newString length] == 2)
+    {
+        [[Biz sharedBiz] getAvailableInterests:newString withCompletionHandler:^(NSArray *availableInterests, NSError *error) {
+            self.allSuggestedInterests = availableInterests;
+            //for (AvailableInterest *availableInterest in availableInterests)
+            //{
+            //    NSLog(@"%@", availableInterest.name);
+            //}
+            [self showSuggestionsForText:newString];
+        }];
+    }
+    else if ([newString length] < 2)
+    {
+        self.allSuggestedInterests = nil;
+        self.suggestionsTableView.hidden = YES;
+    }
+    else
+    {
+        [self showSuggestionsForText:newString];
+    }
+    
     
     return YES;
 }
+
+- (void)showSuggestionsForText:(NSString *)text
+{
+    if (self.allSuggestedInterests == nil || [self.allSuggestedInterests count] < 1)
+    {
+        return;
+    }
+    
+    self.suggestionsTableView.hidden = NO;
+    [self.suggestedInterests removeAllObjects];
+    
+    for(AvailableInterest *availableInterest in self.allSuggestedInterests)
+    {
+        NSRange substringRange = [availableInterest.name rangeOfString:text options:NSCaseInsensitiveSearch];
+        if (substringRange.location != NSNotFound)
+        {
+            [self.suggestedInterests addObject:availableInterest];
+        }
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suggestionsTableView reloadData];
+    });    
+}
+
+#pragma mark - TableView Delegate Methods
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = nil;
+    static NSString *AutoCompleteRowIdentifier = @"AutoCompleteRowIdentifier";
+    cell = [tableView dequeueReusableCellWithIdentifier:AutoCompleteRowIdentifier];
+    if (cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
+    }
+    
+    AvailableInterest *availableInterest = self.suggestedInterests[indexPath.row];
+    cell.textLabel.text = availableInterest.name;
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return (self.suggestedInterests) ? [self.suggestedInterests count] : 0;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AvailableInterest *availableInterest = self.suggestedInterests[indexPath.row];
+    self.inputField.text = availableInterest.name;
+    self.suggestionsTableView.hidden = YES;
+    [self.inputField resignFirstResponder];
+}
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -65,6 +147,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.inputField.delegate = self;
+    
+    //self.suggestionsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 80, 320, 120) style:UITableViewStylePlain];
+    self.suggestionsTableView = [[UITableView alloc] initWithFrame:
+                                 CGRectMake(0, self.inputField.frame.origin.y + self.inputField.frame.size.height, self.view.frame.size.width, 200)
+                                                             style: UITableViewStylePlain];
+    
+    self.suggestionsTableView.delegate = self;
+    self.suggestionsTableView.dataSource = self;
+    self.suggestionsTableView.scrollEnabled = YES;
+    self.suggestionsTableView.hidden = YES;
+    [self.view addSubview:self.suggestionsTableView];
 }
 
 - (void)didReceiveMemoryWarning

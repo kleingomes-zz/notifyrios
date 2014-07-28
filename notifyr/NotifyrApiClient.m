@@ -11,6 +11,7 @@
 #import "Company.h"
 #import "Product.h"
 #import "Article.h"
+#import "AvailableInterest.h"
 #import "Biz.h"
 #import "Constants.h"
 
@@ -178,12 +179,12 @@
     if (!self.accessToken)
     {
         [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
-            [self getAvailableInterests:query withCompletionHandler:completionHandler];
+            [self getAvailableInterestsMain:query withCompletionHandler:completionHandler];
         }];
     }
     else
     {
-        [self getAvailableInterests:query withCompletionHandler:completionHandler];
+        [self getAvailableInterestsMain:query withCompletionHandler:completionHandler];
     }
 }
 
@@ -194,8 +195,14 @@
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
         {
-            NSMutableArray *availableInterests = [[NSMutableArray alloc] init];
-            completionHandler(availableInterests, error);
+            NSArray *jsonItems = (NSArray *)jsonObject;
+            NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
+            for (NSDictionary *dict in jsonItems)
+            {
+                AvailableInterest *availableInterest = [AvailableInterest makeAvailableInterestFromDictionary:dict];
+                [items addObject:availableInterest];
+            }
+            completionHandler(items, error);
         }
     }];
 }
