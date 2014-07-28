@@ -7,14 +7,12 @@
 //
 
 #import "NewInterestViewController.h"
+#import "Biz.h"
 
-@interface NewInterestViewController ()
+@interface NewInterestViewController () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *inputField;
-@property (weak, nonatomic) IBOutlet UISwitch *newsSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *releaseDateSwitch;
-@property (weak, nonatomic) IBOutlet UISwitch *conferenceSwitch;
-@property (weak, nonatomic) IBOutlet UISlider *newsPrioritySlider;
+@property (weak, nonatomic) IBOutlet UISlider *notificationPrioritySlider;
 
 @end
 
@@ -22,10 +20,36 @@
 
 
 - (IBAction)createAction:(id)sender {
-    
+    //[self saveInterestWithName:self.inputField.text priority:50];
 }
 
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    //NSLog(@"You entered %@",self.inputField.text);
+    
+    [[Biz sharedBiz] getAvailableInterests:textField.text withCompletionHandler:^(NSArray *availableInterests, NSError *error) {
+        
+    }];
+
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    //NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    //NSLog(@"%@", newString);
+    
+    //if ([newString length] > 1)
+    //{
+        
+    //}
+    
+    return YES;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,6 +64,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.inputField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning

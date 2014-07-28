@@ -37,7 +37,9 @@
     interest.stockQuote = [Utils getNumberFromDictionary:dictionary name:@"StockQuote"];
     interest.logoUrl = [Utils getStringFromDictionary:dictionary name:@"LogoUrl"];
     interest.hasBeenViewed = [Utils getNumberFromDictionary:dictionary name:@"HasBeenViewed"];
-        
+    interest.notificationPriority = [Utils getNumberFromDictionary:dictionary name:@"notificationPriority"];
+
+    
     return interest;
 }
 

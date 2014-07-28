@@ -118,7 +118,11 @@
     [apiClient saveInterest:interest withCompletionHandler:completionHandler];
 }
 
-
+- (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getAvailableInterests:query withCompletionHandler:completionHandler];
+}
 
 - (void)initObserver
 {

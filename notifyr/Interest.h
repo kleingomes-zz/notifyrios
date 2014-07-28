@@ -30,6 +30,7 @@
 @property (nonatomic) NSNumber *stockQuote;
 @property (nonatomic) NSString *logoUrl;
 @property (nonatomic) NSNumber *hasBeenViewed;
+@property (nonatomic) NSNumber *notificationPriority;
 
 
 + (Interest *)makeInterestFromDictionary:(NSDictionary *)dictionary;

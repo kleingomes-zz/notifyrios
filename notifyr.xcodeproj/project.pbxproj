@@ -62,6 +62,7 @@
 		E01A59381902F05600EB0BE4 /* notifyrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E01A59371902F05600EB0BE4 /* notifyrTests.m */; };
 		E01A59421902F07800EB0BE4 /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59411902F07800EB0BE4 /* WindowsAzureMessaging.framework */; };
 		E01ED8DE1929815700798C31 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E01ED8DD1929815700798C31 /* Constants.m */; };
+		E0414DDB1985C912005B5BB9 /* AvailableInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = E0414DDA1985C912005B5BB9 /* AvailableInterest.m */; };
 		E0498E531916F1DD004B4CF3 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E521916F1DD004B4CF3 /* Company.m */; };
 		E0498E5619170D5B004B4CF3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E5519170D5B004B4CF3 /* Utils.m */; };
 		E055249E197B61EF007322AE /* NewInterestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E055249D197B61EF007322AE /* NewInterestViewController.m */; };
@@ -150,6 +151,8 @@
 		E01A59411902F07800EB0BE4 /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMessaging.framework; sourceTree = "<group>"; };
 		E01ED8DC1929815700798C31 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E01ED8DD1929815700798C31 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		E0414DD91985C912005B5BB9 /* AvailableInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableInterest.h; sourceTree = "<group>"; };
+		E0414DDA1985C912005B5BB9 /* AvailableInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableInterest.m; sourceTree = "<group>"; };
 		E0498E511916F1DD004B4CF3 /* Company.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Company.h; sourceTree = "<group>"; };
 		E0498E521916F1DD004B4CF3 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		E0498E5419170D5B004B4CF3 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -369,6 +372,8 @@
 				E0D3A5A419735F8A008C445D /* EventType.m */,
 				E0931D6D190ADBF5001A991F /* Interest.h */,
 				E0931D6E190ADBF5001A991F /* Interest.m */,
+				E0414DD91985C912005B5BB9 /* AvailableInterest.h */,
+				E0414DDA1985C912005B5BB9 /* AvailableInterest.m */,
 				E0D3A5AC197420B7008C445D /* Article.h */,
 				E0D3A5AD197420B7008C445D /* Article.m */,
 				E0498E5419170D5B004B4CF3 /* Utils.h */,
@@ -555,6 +560,7 @@
 				E01A59161902F05600EB0BE4 /* main.m in Sources */,
 				E0D3A5A519735F8A008C445D /* EventType.m in Sources */,
 				E055249E197B61EF007322AE /* NewInterestViewController.m in Sources */,
+				E0414DDB1985C912005B5BB9 /* AvailableInterest.m in Sources */,
 				E0931D73190ADBF5001A991F /* Interest.m in Sources */,
 				E01ED8DE1929815700798C31 /* Constants.m in Sources */,
 			);

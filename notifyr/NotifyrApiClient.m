@@ -156,7 +156,6 @@
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     dict[@"UserId"] = self.userId;
-    dict[@"EventTypeId"] = interest.eventTypeId;
     dict[@"ProductId"] = interest.productId;
     dict[@"CompanyId"] = interest.companyId;
     dict[@"NotificationFrequencyHours"] = @0; //todo: eventually get it from the user
@@ -173,6 +172,33 @@
     }];
 }
 
+- (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
+{
+    //todo: replace this access token pattern/main method in these methods
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getAvailableInterests:query withCompletionHandler:completionHandler];
+        }];
+    }
+    else
+    {
+        [self getAvailableInterests:query withCompletionHandler:completionHandler];
+    }
+}
+
+- (void)getAvailableInterestsMain:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetAvailableInterests?query=%@", query]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (!error && jsonObject)
+        {
+            NSMutableArray *availableInterests = [[NSMutableArray alloc] init];
+            completionHandler(availableInterests, error);
+        }
+    }];
+}
 
 
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler
