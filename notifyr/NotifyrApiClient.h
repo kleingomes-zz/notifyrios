@@ -26,6 +26,8 @@
 
 - (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
 
+- (void)deleteInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
+
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 
 

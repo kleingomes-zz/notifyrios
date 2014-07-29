@@ -9,11 +9,15 @@
 #import "NewInterestViewController.h"
 #import "Biz.h"
 #import "AvailableInterest.h"
+#import "Interest.h"
 
 @interface NewInterestViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *inputField;
 @property (weak, nonatomic) IBOutlet UISlider *notificationPrioritySlider;
+@property (weak, nonatomic) IBOutlet UILabel *notFoundLabel;
+@property (weak, nonatomic) IBOutlet UIView *saveIndicatorView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 
 @property (strong, nonatomic) UITableView *suggestionsTableView;
 @property (strong, nonatomic) NSArray *allSuggestedInterests;
@@ -34,19 +38,113 @@
 }
 
 
-- (IBAction)createAction:(id)sender {
-    //[self saveInterestWithName:self.inputField.text priority:50];
+- (IBAction)createAction:(id)sender
+{
+    Interest *interest = [self getInterestFromUI];
+    if (interest)
+    {
+        [self saveInterest:[self getInterestFromUI]];
+    }
+    else
+    {
+        NSLog(@"Interest not found");
+    }
 }
 
+- (Interest *)getInterestFromUI
+{
+    NSString *text = [self.inputField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    AvailableInterest *foundAvailableInterest = nil;
+    for (AvailableInterest *availableInterest in self.allSuggestedInterests)
+    {
+        if ([availableInterest.name caseInsensitiveCompare:text] == NSOrderedSame)
+        {
+            foundAvailableInterest = availableInterest;
+            break;
+        }
+    }
+ 
+    if (foundAvailableInterest)
+    {
+        Interest *interest = [[Interest alloc] init];
+        interest.notificationPriority = [NSNumber numberWithFloat: self.notificationPrioritySlider.value];
+        interest.notificationFrequencyHours = @0; //todo: don't hard code this
+        interest.isActive = [NSNumber numberWithBool:YES];
+        
+        if ([foundAvailableInterest.type isEqualToString:@"Company"])
+        {
+            interest.companyId = foundAvailableInterest.availableInterestId;
+        }
+        else
+        {
+            interest.productId = foundAvailableInterest.availableInterestId;
+        }
+        return interest;
+    }
+    
+    return nil;
+}
+
+- (void)saveInterest:(Interest *)interest
+{
+    self.saveIndicatorView.hidden = NO;
+    [self.activityIndicatorView startAnimating];
+    [[Biz sharedBiz] saveInterest:interest withCompletionHandler:^(NSError *error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.saveIndicatorView.hidden = YES;
+            [self.activityIndicatorView stopAnimating];
+
+        });
+        if (!error)
+        {
+            NSLog(@"Save worked");
+        }
+        else
+        {
+            NSLog(@"Save failed");
+        }
+    }];
+}
+
+- (void)showSuggestionsForText:(NSString *)text
+{
+    if (self.allSuggestedInterests == nil || [self.allSuggestedInterests count] < 1)
+    {
+        return;
+    }
+    
+    self.suggestionsTableView.hidden = NO;
+    [self.suggestedInterests removeAllObjects];
+    
+    for(AvailableInterest *availableInterest in self.allSuggestedInterests)
+    {
+        NSRange substringRange = [availableInterest.name rangeOfString:text options:NSCaseInsensitiveSearch];
+        if (substringRange.location != NSNotFound)
+        {
+            [self.suggestedInterests addObject:availableInterest];
+        }
+    }
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.suggestionsTableView reloadData];
+    });    
+}
+
+- (void)hideKeyboard
+{
+    [self.inputField resignFirstResponder];
+}
+
+#pragma mark - TextField Methods
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     //NSLog(@"You entered %@",self.inputField.text);
     
-    [textField resignFirstResponder];
+    [self hideKeyboard];
+    self.suggestionsTableView.hidden = YES;
     return YES;
 }
-
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
@@ -74,33 +172,9 @@
         [self showSuggestionsForText:newString];
     }
     
-    
     return YES;
 }
 
-- (void)showSuggestionsForText:(NSString *)text
-{
-    if (self.allSuggestedInterests == nil || [self.allSuggestedInterests count] < 1)
-    {
-        return;
-    }
-    
-    self.suggestionsTableView.hidden = NO;
-    [self.suggestedInterests removeAllObjects];
-    
-    for(AvailableInterest *availableInterest in self.allSuggestedInterests)
-    {
-        NSRange substringRange = [availableInterest.name rangeOfString:text options:NSCaseInsensitiveSearch];
-        if (substringRange.location != NSNotFound)
-        {
-            [self.suggestedInterests addObject:availableInterest];
-        }
-    }
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.suggestionsTableView reloadData];
-    });    
-}
 
 #pragma mark - TableView Delegate Methods
 
@@ -129,7 +203,7 @@
     AvailableInterest *availableInterest = self.suggestedInterests[indexPath.row];
     self.inputField.text = availableInterest.name;
     self.suggestionsTableView.hidden = YES;
-    [self.inputField resignFirstResponder];
+    [self hideKeyboard];
 }
 
 

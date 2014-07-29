@@ -15,7 +15,7 @@
 
 @interface InterestsViewController ()
 
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) id interestObserver;
 
 @end
@@ -23,7 +23,7 @@
 
 @implementation InterestsViewController
 
-- (NSArray *)items
+- (NSMutableArray *)items
 {
     if (!_items)
     {
@@ -61,12 +61,35 @@
                                                          
                                                          NSLog(@"Got %lu interests", (unsigned long)[interests count]);
                                                          
-                                                         self.items = interests;
+                                                         [self updateInterests:interests];
                                                          [self.refreshControl endRefreshing];
                                                          [self.tableView reloadData];
                                                      }];
 }
 
+- (void)updateInterests:(NSArray *)updatedInterests
+{
+    for (Interest *updatedInterest in updatedInterests)
+    {
+        Interest *foundInterest = nil;
+        for (Interest *interest in self.items)
+        {
+            if ([updatedInterest.interestId isEqualToNumber:interest.interestId])
+            {
+                foundInterest = interest;
+                break;
+            }
+        }
+        if (foundInterest)
+        {
+            //todo: update interest
+        }
+        else
+        {
+            [self.items addObject:updatedInterest];
+        }
+    }
+}
 
 - (void)refreshAction
 {
@@ -101,6 +124,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self initObserver];
+    [self refreshAction];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -153,27 +177,35 @@
     return cell;
 }
 
-/*
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
         // Delete the row from the data source
+        Interest *interest = self.items[indexPath.row];
+        [[Biz sharedBiz] deleteInterest:interest withCompletionHandler:^(NSError *error) {
+            NSLog(@"deleted");
+        }];
+        
+        [self.items removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert)
+    {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
+
 
 /*
 // Override to support rearranging the table view.

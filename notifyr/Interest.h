@@ -31,6 +31,9 @@
 @property (nonatomic) NSString *logoUrl;
 @property (nonatomic) NSNumber *hasBeenViewed;
 @property (nonatomic) NSNumber *notificationPriority;
+@property (nonatomic) NSNumber *notificationFrequencyHours;
+@property (nonatomic) NSNumber *isActive;
+
 
 
 + (Interest *)makeInterestFromDictionary:(NSDictionary *)dictionary;

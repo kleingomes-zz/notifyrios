@@ -85,14 +85,15 @@
     //NSString *urlString = @"http://frogs.primeprojection.com/api/playsessionapi";
     //NSString *urlString = @"http://192.168.1.103/Notifyr.WebAPI/api/Notification/GetNotifications?userId=19a65135-4dff-4ac1-b7c0-877c640581ac";
 
-    NSString *urlString = [self getUrl:@"Interest/GetInterests?userId=19a65135-4dff-4ac1-b7c0-877c640581ac"];
+    //NSString *urlString = [self getUrl:@"Interest/GetInterests?userId=19a65135-4dff-4ac1-b7c0-877c640581ac"];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetInterests?userId=%@", self.userId]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
         {
             
-            [self notifyInterestsUpdatedWithDictionary:jsonObject];
-            return;
+            //[self notifyInterestsUpdatedWithDictionary:jsonObject];
+            //return;
 
             
             NSInteger statusCode = ((NSHTTPURLResponse *) response).statusCode;
@@ -153,25 +154,54 @@
     NSString *urlString = [self getUrl:@"Interest/SaveInterests"];
     
     NSMutableURLRequest *request = [self getRequestWithUrlString:urlString method:@"POST"];
-    [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    //[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     dict[@"UserId"] = self.userId;
-    dict[@"ProductId"] = interest.productId;
-    dict[@"CompanyId"] = interest.companyId;
-    dict[@"NotificationFrequencyHours"] = @0; //todo: eventually get it from the user
-    dict[@"IsActive"] = [NSNumber numberWithBool:YES];
+    dict[@"ProductId"] = interest.productId ? interest.productId : [NSNull null];
+    dict[@"CompanyId"] = interest.companyId ? interest.companyId : [NSNull null];
+    dict[@"NotificationFrequencyHours"] = interest.notificationFrequencyHours;
+    dict[@"NotificationPriority"] = interest.notificationPriority;
+    dict[@"IsActive"] = interest.isActive;
+    
+    NSArray *interestsArray = @[dict];
     
     NSError *error;
-    NSData *postData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&error];
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:interestsArray options:0 error:&error];
     [request setHTTPBody:postData];
     
     [self makeAPICallWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
-        
-        //NSLog(@"%@", jsonObject[@"access_token"]);
+        //NSDictionary *interestDict = jsonObject[0][@"Object"];
+        //[self notifyInterestsUpdatedWithDictionary:@[interestDict]];
         completionHandler(error);
     }];
 }
+
+- (void)deleteInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    //todo: replace this access token pattern/main method in these methods
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self deleteInterestMain:interest withCompletionHandler:completionHandler];
+        }];
+    }
+    else
+    {
+        [self deleteInterestMain:interest withCompletionHandler:completionHandler];
+    }
+}
+
+- (void)deleteInterestMain:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/DeleteInterest?interestId=%@", interest.interestId]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"POST" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        completionHandler(error);
+    }];
+}
+
+
 
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 {

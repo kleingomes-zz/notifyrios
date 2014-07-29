@@ -110,13 +110,18 @@
     [apiClient getArticlesForInterest:interest];
 }
 
-
 - (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
 {
-    
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
     [apiClient saveInterest:interest withCompletionHandler:completionHandler];
 }
+
+- (void)deleteInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient deleteInterest:interest withCompletionHandler:completionHandler];
+}
+
 
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 {
