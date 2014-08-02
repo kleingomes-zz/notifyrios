@@ -19,6 +19,7 @@
 @property (nonatomic) NSString *source;
 @property (nonatomic) NSNumber *score;
 @property (nonatomic) NSString *iUrl;
+@property (nonatomic, strong) UIImage *image;
 
 
 + (Article *)makeArticleFromDictionary:(NSDictionary *)dictionary;

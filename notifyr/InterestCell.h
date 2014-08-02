@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventTypeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *stockQuote;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
 
 @end

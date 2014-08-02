@@ -20,6 +20,8 @@
 
 @property (nonatomic, strong) NSArray *eventTypes;
 
+@property (atomic, strong) NSMutableDictionary *imageCache;
+
 + (Biz *)sharedBiz;
 
 - (void)getInterests;

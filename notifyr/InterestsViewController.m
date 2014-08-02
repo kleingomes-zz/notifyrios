@@ -153,7 +153,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    //NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     //[center removeObserver:self.interestObserver];
 }
 
@@ -187,7 +187,6 @@
     cell.productNameLabel.text = interest.productName ? interest.productName : @"";
     cell.eventTypeLabel.text = [NSString stringWithFormat:@"Type: %@", interest.eventTypeName ? interest.eventTypeName : @"[No Event Type]"];
     
-    
     static NSNumberFormatter *numberFormatter = nil;
     if (!numberFormatter)
     {
@@ -197,6 +196,33 @@
     }
     
     cell.stockQuote.text = [numberFormatter stringFromNumber:interest.stockQuote];
+    
+    //Set image. Check image cache first
+    Biz *biz = [Biz sharedBiz];
+    if (biz.imageCache[interest.logoUrl])
+    {
+        cell.logoImageView.image = biz.imageCache[interest.logoUrl];
+    }
+    else
+    {
+        //cell.logoImageView = nil; //todo: replace with default image
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:interest.logoUrl]];
+            if (imgData) {
+                UIImage *image = [UIImage imageWithData:imgData];
+                if (image) {
+                    //biz.imageCache[interest.logoUrl] = image;
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        InterestCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                        if (updateCell)
+                        {
+                            updateCell.logoImageView.image = image;
+                        }
+                    });
+                }
+            }
+        });
+    }
     
     return cell;
 }

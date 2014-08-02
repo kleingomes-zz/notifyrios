@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JsY-iS-qrA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="JsY-iS-qrA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -31,7 +31,7 @@
                                                     <color key="textColor" red="0.14509195920000001" green="0.40299110760000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Apple-Logo.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-sw-STt">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-sw-STt">
                                                     <rect key="frame" x="6" y="8" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <constraints>
@@ -84,6 +84,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="companyNameLabel" destination="7b2-mY-SnO" id="NLl-y3-cCh"/>
+                                    <outlet property="logoImageView" destination="rgS-sw-STt" id="RdT-Te-CN5"/>
                                     <outlet property="productNameLabel" destination="WHW-H9-4bA" id="vZe-L8-Sml"/>
                                     <outlet property="stockQuote" destination="sTj-c7-Jb6" id="LNZ-pH-3dP"/>
                                     <segue destination="VLr-JZ-fXu" kind="push" identifier="ShowInterestArticles" id="3NJ-xn-Hkv"/>
@@ -128,7 +129,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="macvsmac" translatesAutoresizingMaskIntoConstraints="NO" id="Ngo-Cz-zpM">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ngo-Cz-zpM">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="167"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
@@ -302,7 +303,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="macvsmac" translatesAutoresizingMaskIntoConstraints="NO" id="rCP-Ie-Jgl">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rCP-Ie-Jgl">
                                 <rect key="frame" x="0.0" y="64" width="320" height="167"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -343,6 +344,7 @@
                     <connections>
                         <outlet property="authorLabel" destination="a2J-nm-GCH" id="ZmW-3a-xBV"/>
                         <outlet property="descriptionTextView" destination="WYC-K9-Gmr" id="JP9-Ee-RNq"/>
+                        <outlet property="mainImageView" destination="rCP-Ie-Jgl" id="mP4-Ja-jAb"/>
                         <outlet property="sourceButton" destination="dhW-PN-9Rr" id="T9U-qx-BOm"/>
                         <outlet property="titleLabel" destination="Z1S-mx-55a" id="i18-uo-hDN"/>
                     </connections>

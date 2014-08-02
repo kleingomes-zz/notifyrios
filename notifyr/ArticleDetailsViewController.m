@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UIButton *sourceButton;
+@property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 
 @end
 
@@ -38,6 +39,7 @@
     self.descriptionTextView.text = article.description;
     self.authorLabel.text = article.author ? article.author : @"[No Author]";
     [self.sourceButton setTitle:article.source ? article.source : @"[No Source]" forState:UIControlStateNormal];
+    self.mainImageView.image = article.image;
 }
 
 - (void)didReceiveMemoryWarning

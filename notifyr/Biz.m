@@ -38,6 +38,14 @@
     return _eventTypes;
 }
 
+- (NSMutableDictionary *)imageCache
+{
+    if (!_imageCache)
+    {
+        _imageCache = [[NSMutableDictionary alloc] init];
+    }
+    return _imageCache;
+}
 
 #pragma mark - Get Object Methods
 
