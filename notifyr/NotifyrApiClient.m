@@ -171,8 +171,7 @@
     [request setHTTPBody:postData];
     
     [self makeAPICallWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
-        NSDictionary *interestDict = jsonObject[0][@"Object"];
-        [self notifyInterestsUpdatedWithDictionary:@[interestDict]];
+        [self notifyInterestsUpdatedWithDictionary:jsonObject];
         completionHandler(error);
     }];
 }

@@ -144,14 +144,17 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [self initObserver];
+    if (!_interestObserver)
+    {
+        [self initObserver];
+    }
     //[self refreshAction];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center removeObserver:self.interestObserver];
+    //[center removeObserver:self.interestObserver];
 }
 
 - (void)didReceiveMemoryWarning
