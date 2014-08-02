@@ -96,7 +96,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Yn3-en-pS9">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="exD-wA-24i"/>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="exD-wA-24i">
+                            <connections>
+                                <action selector="blurTest:" destination="jQE-ZB-ylz" id="sfe-et-Q0S"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Js7-Jj-T7p">
                             <connections>
                                 <segue destination="1i3-3R-ttB" kind="push" id="zzG-KP-CWS"/>

@@ -12,6 +12,7 @@
 #import "Biz.h"
 #import "ArticlesViewController.h"
 #import "Constants.h"
+#import "UIImage+ImageEffects.h"
 
 @interface InterestsViewController ()
 
@@ -38,9 +39,29 @@
     [[Biz sharedBiz] getInterests];
 }
 
+- (IBAction)blurTest:(id)sender {
+    [self makeBlurredScreenshot];
+}
+
+- (void)makeBlurredScreenshot
+{
+    //UIGraphicsBeginImageContext(self.view.window.bounds.size);
+    //[self.view.window.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:YES];
+    
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    UIImage *lightImage = [newImage applyLightEffect];
+
+    [self.view addSubview:[[UIImageView alloc] initWithImage:lightImage]];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
     if ([segue.identifier isEqualToString:@"ShowInterestArticles"])
     {
         ArticlesViewController *vc = (ArticlesViewController *)segue.destinationViewController;
@@ -124,7 +145,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [self initObserver];
-    [self refreshAction];
+    //[self refreshAction];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
