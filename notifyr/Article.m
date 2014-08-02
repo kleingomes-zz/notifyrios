@@ -22,7 +22,7 @@
     article.source = dictionary[@"Source"] != [NSNull null] ? dictionary[@"Source"] : nil;
     article.author = dictionary[@"Author"] != [NSNull null] ? dictionary[@"Author"] : nil;
     article.score = [Utils getNumberFromDictionary:dictionary name:@"Score"];
-
+    article.iUrl = [Utils getStringFromDictionary:dictionary name:@"IURL"];
     
     return article;
 }

@@ -174,6 +174,7 @@
                                 <connections>
                                     <outlet property="authorLabel" destination="hf5-1I-S5s" id="Ngm-0R-KfO"/>
                                     <outlet property="descriptionTextView" destination="3SV-g4-Saf" id="bcZ-sH-uqR"/>
+                                    <outlet property="mainImageView" destination="Ngo-Cz-zpM" id="FFR-ft-vAv"/>
                                     <outlet property="score" destination="qgd-vC-ay2" id="x64-B5-tUl"/>
                                     <outlet property="sourceButton" destination="dnr-Sd-LSL" id="ruL-eX-zxP"/>
                                     <outlet property="titleLabel" destination="hEk-2p-nCz" id="B6H-mR-Log"/>

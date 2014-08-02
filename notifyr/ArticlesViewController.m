@@ -136,6 +136,23 @@
     [cell.sourceButton setTitle:article.source ? article.source : @"[No Source]" forState:UIControlStateNormal];
     cell.score.text = [NSString stringWithFormat:@"%.1f", [article.score floatValue]];
     
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:article.iUrl]];
+        if (imgData) {
+            UIImage *image = [UIImage imageWithData:imgData];
+            if (image) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [cell.mainImageView setImage:image];
+                    //ArticleCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                    //if (updateCell)
+                        //updateCell.poster.image = image;
+                });
+            }
+        }
+    });
+    
+    
     return cell;
 }
 

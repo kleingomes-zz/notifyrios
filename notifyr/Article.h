@@ -18,6 +18,7 @@
 @property (nonatomic) NSString *author;
 @property (nonatomic) NSString *source;
 @property (nonatomic) NSNumber *score;
+@property (nonatomic) NSString *iUrl;
 
 
 + (Article *)makeArticleFromDictionary:(NSDictionary *)dictionary;
