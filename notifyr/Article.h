@@ -15,8 +15,9 @@
 @property (nonatomic) Interest *interest;
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *description;
-@property (nonatomic) NSString *arthor;
+@property (nonatomic) NSString *author;
 @property (nonatomic) NSString *source;
+@property (nonatomic) NSNumber *score;
 
 
 + (Article *)makeArticleFromDictionary:(NSDictionary *)dictionary;

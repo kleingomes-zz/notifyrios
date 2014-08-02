@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UIButton *sourceButton;
+@property (weak, nonatomic) IBOutlet UILabel *score;
+
 
 @end

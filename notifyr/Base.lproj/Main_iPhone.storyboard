@@ -133,7 +133,7 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-2p-nCz">
-                                            <rect key="frame" x="20" y="172" width="280" height="21"/>
+                                            <rect key="frame" x="20" y="172" width="200" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -162,11 +162,19 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgd-vC-ay2">
+                                            <rect key="frame" x="239" y="172" width="61" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="authorLabel" destination="hf5-1I-S5s" id="Ngm-0R-KfO"/>
                                     <outlet property="descriptionTextView" destination="3SV-g4-Saf" id="bcZ-sH-uqR"/>
+                                    <outlet property="score" destination="qgd-vC-ay2" id="x64-B5-tUl"/>
                                     <outlet property="sourceButton" destination="dnr-Sd-LSL" id="ruL-eX-zxP"/>
                                     <outlet property="titleLabel" destination="hEk-2p-nCz" id="B6H-mR-Log"/>
                                     <segue destination="Ns0-sh-3Tf" kind="push" identifier="ShowArticle" id="T1m-U7-DcJ"/>

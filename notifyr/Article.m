@@ -20,7 +20,9 @@
     article.title = dictionary[@"Title"] != [NSNull null] ? dictionary[@"Title"] : nil;
     article.description = dictionary[@"Description"];
     article.source = dictionary[@"Source"] != [NSNull null] ? dictionary[@"Source"] : nil;
-    article.arthor = dictionary[@"Author"] != [NSNull null] ? dictionary[@"Author"] : nil;
+    article.author = dictionary[@"Author"] != [NSNull null] ? dictionary[@"Author"] : nil;
+    article.score = [Utils getNumberFromDictionary:dictionary name:@"Score"];
+
     
     return article;
 }
