@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "+[Interest makeInterestFromDictionary:]:Interest.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "interest.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[ArticlesViewController viewDidLoad]:ArticlesViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.interest.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[AppDelegate checkNotificationTypes:]:AppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "UIRemoteNotificationTypeAlert">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__59-[InterestsViewController tableView:cellForRowAtIndexPath:]_block_invoke_2:InterestsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "indexPath.row">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__59-[NotifyrApiClient saveInterestMain:withCompletionHandler:]_block_invoke:NotifyrApiClient.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "jsonObject[@&quot;Object&quot;]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[InterestsViewController tableView:cellForRowAtIndexPath:]:InterestsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "interest.logoUrl">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[Company makeCompanyFromDictionary:]:Company.m">
+      </ContextState>
+      <ContextState
+         contextName = "__59-[InterestsViewController tableView:cellForRowAtIndexPath:]_block_invoke:InterestsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "interest.logoUrl">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

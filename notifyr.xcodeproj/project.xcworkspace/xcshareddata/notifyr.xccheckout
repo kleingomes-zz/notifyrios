@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>06A86269-6968-4A60-A6FB-103DCCD632C5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>notifyr</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>42E23B5A-ED1D-4A6F-9D69-D17ABCF3A25F</key>
+		<string>ssh://bitbucket.org/nnarciso/notifyr.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>notifyr.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>42E23B5A-ED1D-4A6F-9D69-D17ABCF3A25F</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://bitbucket.org/nnarciso/notifyr.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>42E23B5A-ED1D-4A6F-9D69-D17ABCF3A25F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>42E23B5A-ED1D-4A6F-9D69-D17ABCF3A25F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>notifyr</string>
+		</dict>
+	</array>
+</dict>
+</plist>
