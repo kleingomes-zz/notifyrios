@@ -503,7 +503,7 @@
         <scene sceneID="VeD-HC-JZY">
             <objects>
                 <tableViewController storyboardIdentifier="MenuViewController" id="01X-Ik-k1m" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Xfb-rW-q7K">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Xfb-rW-q7K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -718,15 +718,6 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.46670162710000002" green="0.66222535859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.46670162710000002" green="0.66222535859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="EUy-2H-yXS">
-                                        <rect key="frame" x="0.0" y="568" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EUy-2H-yXS" id="RfK-ny-QF5">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.31764706970000001" green="0.59215688710000003" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>

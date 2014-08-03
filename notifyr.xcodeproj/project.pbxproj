@@ -486,7 +486,7 @@
 				ORGANIZATIONNAME = "Nelson Narciso";
 				TargetAttributes = {
 					E01A59051902F05600EB0BE4 = {
-						DevelopmentTeam = MQK7DD6JPG;
+						DevelopmentTeam = X4QH59WD29;
 					};
 					E01A59291902F05600EB0BE4 = {
 						TestTargetID = E01A59051902F05600EB0BE4;
