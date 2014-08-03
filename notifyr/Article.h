@@ -17,6 +17,7 @@
 @property (nonatomic) NSString *description;
 @property (nonatomic) NSString *author;
 @property (nonatomic) NSString *source;
+@property (nonatomic) NSString *url;
 @property (nonatomic) NSNumber *score;
 @property (nonatomic) NSString *iUrl;
 @property (nonatomic, strong) UIImage *image;

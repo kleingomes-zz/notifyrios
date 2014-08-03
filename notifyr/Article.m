@@ -17,10 +17,11 @@
     Article *article = [[Article alloc] init];
     article.articleId = [Utils getNumberFromDictionary:dictionary name:@"Id"];
     
-    article.title = dictionary[@"Title"] != [NSNull null] ? dictionary[@"Title"] : nil;
-    article.description = dictionary[@"Description"];
-    article.source = dictionary[@"Source"] != [NSNull null] ? dictionary[@"Source"] : nil;
-    article.author = dictionary[@"Author"] != [NSNull null] ? dictionary[@"Author"] : nil;
+    article.title = [Utils getStringFromDictionary:dictionary name:@"Title"];
+    article.description = [Utils getStringFromDictionary:dictionary name:@"Description"];
+    article.source = [Utils getStringFromDictionary:dictionary name:@"Source"];
+    article.author = [Utils getStringFromDictionary:dictionary name:@"Author"];
+    article.url = [Utils getStringFromDictionary:dictionary name:@"URL"];
     article.score = [Utils getNumberFromDictionary:dictionary name:@"Score"];
     article.iUrl = [Utils getStringFromDictionary:dictionary name:@"IURL"];
     

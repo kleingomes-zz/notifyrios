@@ -680,11 +680,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "notifyr/Article.m"
-            timestampString = "428702220.482533"
+            timestampString = "428729742.12442"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "+makeArticleFromDictionary:"
             landmarkType = "5">
          </BreakpointContent>
