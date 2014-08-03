@@ -13,6 +13,8 @@
 #import "ArticlesViewController.h"
 #import "Constants.h"
 #import "UIImage+ImageEffects.h"
+#import "UIViewController+ECSlidingViewController.h"
+
 
 @interface InterestsViewController ()
 
@@ -35,12 +37,17 @@
 }
 
 - (void)initItems
-{
+{                
     [[Biz sharedBiz] getInterests];
 }
 
-- (IBAction)blurTest:(id)sender {
-    [self makeBlurredScreenshot];
+- (IBAction)menuAction:(id)sender {
+    //[self makeBlurredScreenshot];
+    
+    [self.slidingViewController anchorTopViewToRightAnimated:YES];
+    if ([self.slidingViewController currentTopViewPosition] == ECSlidingViewControllerTopViewPositionAnchoredRight) {
+        [self.slidingViewController resetTopViewAnimated:YES];
+    }
 }
 
 - (void)makeBlurredScreenshot

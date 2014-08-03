@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90E01EDFC4744AF48F221DD9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3006AF9FF84ABD8AE12F3E /* libPods.a */; };
 		AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F63D1930FE66005F5F6C /* appbar.cogs.png */; };
 		AF75F6431930FFED005F5F6C /* appbar.people.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F6421930FFED005F5F6C /* appbar.people.png */; };
 		AF75F645193100E7005F5F6C /* appbar.cog.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F644193100E7005F5F6C /* appbar.cog.png */; };
@@ -67,6 +68,10 @@
 		E0498E531916F1DD004B4CF3 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E521916F1DD004B4CF3 /* Company.m */; };
 		E0498E5619170D5B004B4CF3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E5519170D5B004B4CF3 /* Utils.m */; };
 		E055249E197B61EF007322AE /* NewInterestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E055249D197B61EF007322AE /* NewInterestViewController.m */; };
+		E07747CC198DC05800D970F7 /* appbar.hamburger.png in Resources */ = {isa = PBXBuildFile; fileRef = E07747CA198DC05800D970F7 /* appbar.hamburger.png */; };
+		E07747CD198DC05800D970F7 /* appbar.hamburger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E07747CB198DC05800D970F7 /* appbar.hamburger@2x.png */; };
+		E07747D3198DC1C900D970F7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07747D2198DC1C900D970F7 /* SettingsViewController.m */; };
+		E07747D6198DC58D00D970F7 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */; };
 		E0931D73190ADBF5001A991F /* Interest.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D6E190ADBF5001A991F /* Interest.m */; };
 		E0931D74190ADBF5001A991F /* InterestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D70190ADBF5001A991F /* InterestCell.m */; };
 		E0931D75190ADBF5001A991F /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D72190ADBF5001A991F /* InterestsViewController.m */; };
@@ -92,6 +97,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8C3006AF9FF84ABD8AE12F3E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF75F63D1930FE66005F5F6C /* appbar.cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cogs.png; sourceTree = "<group>"; };
 		AF75F6421930FFED005F5F6C /* appbar.people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.people.png; sourceTree = "<group>"; };
 		AF75F644193100E7005F5F6C /* appbar.cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cog.png; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 		AF75F68919327C6A005F5F6C /* appbar.question.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.question.png; sourceTree = "<group>"; };
 		AF75F68B19327CAB005F5F6C /* appbar.chevron.right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.chevron.right.png; sourceTree = "<group>"; };
 		AF7C0FE8192BEC19003FEF2E /* notfyrlogo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = notfyrlogo3.png; sourceTree = "<group>"; };
+		DF6DB70069F546298F2ED858 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E01A59061902F05600EB0BE4 /* notifyr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notifyr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01A59091902F05600EB0BE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -162,6 +169,12 @@
 		E0498E5519170D5B004B4CF3 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		E055249C197B61EF007322AE /* NewInterestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewInterestViewController.h; sourceTree = "<group>"; };
 		E055249D197B61EF007322AE /* NewInterestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewInterestViewController.m; sourceTree = "<group>"; };
+		E07747CA198DC05800D970F7 /* appbar.hamburger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.hamburger.png; sourceTree = "<group>"; };
+		E07747CB198DC05800D970F7 /* appbar.hamburger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appbar.hamburger@2x.png"; sourceTree = "<group>"; };
+		E07747D1198DC1C900D970F7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E07747D2198DC1C900D970F7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		E07747D4198DC58D00D970F7 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
+		E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		E0931D6D190ADBF5001A991F /* Interest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interest.h; sourceTree = "<group>"; };
 		E0931D6E190ADBF5001A991F /* Interest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interest.m; sourceTree = "<group>"; };
 		E0931D6F190ADBF5001A991F /* InterestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestCell.h; sourceTree = "<group>"; };
@@ -197,6 +210,7 @@
 				E01A590E1902F05600EB0BE4 /* UIKit.framework in Frameworks */,
 				E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */,
 				E01A59421902F07800EB0BE4 /* WindowsAzureMessaging.framework in Frameworks */,
+				90E01EDFC4744AF48F221DD9 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +230,8 @@
 		AF75F63B1930FE47005F5F6C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				E07747CA198DC05800D970F7 /* appbar.hamburger.png */,
+				E07747CB198DC05800D970F7 /* appbar.hamburger@2x.png */,
 				AF75F68B19327CAB005F5F6C /* appbar.chevron.right.png */,
 				AF75F68919327C6A005F5F6C /* appbar.question.png */,
 				AF75F68719327848005F5F6C /* btnCreate.png */,
@@ -280,6 +296,7 @@
 				E01A59311902F05600EB0BE4 /* notifyrTests */,
 				E01A59081902F05600EB0BE4 /* Frameworks */,
 				E01A59071902F05600EB0BE4 /* Products */,
+				DF6DB70069F546298F2ED858 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -300,6 +317,7 @@
 				E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */,
 				E01A590D1902F05600EB0BE4 /* UIKit.framework */,
 				E01A592B1902F05600EB0BE4 /* XCTest.framework */,
+				8C3006AF9FF84ABD8AE12F3E /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -319,6 +337,10 @@
 				E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */,
 				E055249C197B61EF007322AE /* NewInterestViewController.h */,
 				E055249D197B61EF007322AE /* NewInterestViewController.m */,
+				E07747D1198DC1C900D970F7 /* SettingsViewController.h */,
+				E07747D2198DC1C900D970F7 /* SettingsViewController.m */,
+				E07747D4198DC58D00D970F7 /* PrivacyPolicyViewController.h */,
+				E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */,
 				E0414E6A198D6F64005B5BB9 /* UIImage+ImageEffects.h */,
 				E0414E6B198D6F64005B5BB9 /* UIImage+ImageEffects.m */,
 				E0931D76190ADED4001A991F /* Model */,
@@ -416,9 +438,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E01A593B1902F05600EB0BE4 /* Build configuration list for PBXNativeTarget "notifyr" */;
 			buildPhases = (
+				68942110C3684E53A8559561 /* Check Pods Manifest.lock */,
 				E01A59021902F05600EB0BE4 /* Sources */,
 				E01A59031902F05600EB0BE4 /* Frameworks */,
 				E01A59041902F05600EB0BE4 /* Resources */,
+				165215D736CB4396A1338937 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -504,6 +528,8 @@
 				AF75F67E19325015005F5F6C /* indicatorDisabled.png in Resources */,
 				AF75F66B19323802005F5F6C /* appbar.list 2.png in Resources */,
 				AF75F667193154EB005F5F6C /* appbar.windowsphone.png in Resources */,
+				E07747CD198DC05800D970F7 /* appbar.hamburger@2x.png in Resources */,
+				E07747CC198DC05800D970F7 /* appbar.hamburger.png in Resources */,
 				AF75F68A19327C6A005F5F6C /* appbar.question.png in Resources */,
 				AF75F65119310FF1005F5F6C /* appbar.newspaper.png in Resources */,
 				AF75F67519324955005F5F6C /* indicatorGreen.png in Resources */,
@@ -544,6 +570,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		165215D736CB4396A1338937 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68942110C3684E53A8559561 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E01A59021902F05600EB0BE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -555,6 +614,7 @@
 				E0931D74190ADBF5001A991F /* InterestCell.m in Sources */,
 				E0AF886119211E2F00E27C69 /* Repository.m in Sources */,
 				E0931D75190ADBF5001A991F /* InterestsViewController.m in Sources */,
+				E07747D3198DC1C900D970F7 /* SettingsViewController.m in Sources */,
 				E0498E531916F1DD004B4CF3 /* Company.m in Sources */,
 				E0D3A5B119742725008C445D /* ArticleCell.m in Sources */,
 				E0D3A5A81973904F008C445D /* Product.m in Sources */,
@@ -567,6 +627,7 @@
 				E055249E197B61EF007322AE /* NewInterestViewController.m in Sources */,
 				E0414E6C198D6F64005B5BB9 /* UIImage+ImageEffects.m in Sources */,
 				E0414DDB1985C912005B5BB9 /* AvailableInterest.m in Sources */,
+				E07747D6198DC58D00D970F7 /* PrivacyPolicyViewController.m in Sources */,
 				E0931D73190ADBF5001A991F /* Interest.m in Sources */,
 				E01ED8DE1929815700798C31 /* Constants.m in Sources */,
 			);
@@ -700,6 +761,7 @@
 		};
 		E01A593C1902F05600EB0BE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF6DB70069F546298F2ED858 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -720,6 +782,7 @@
 		};
 		E01A593D1902F05600EB0BE4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF6DB70069F546298F2ED858 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
