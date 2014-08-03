@@ -44,9 +44,13 @@
 - (IBAction)menuAction:(id)sender {
     //[self makeBlurredScreenshot];
     
-    [self.slidingViewController anchorTopViewToRightAnimated:YES];
     if ([self.slidingViewController currentTopViewPosition] == ECSlidingViewControllerTopViewPositionAnchoredRight) {
         [self.slidingViewController resetTopViewAnimated:YES];
+    }
+    else
+    {
+        [self.slidingViewController anchorTopViewToRightAnimated:YES];
+        self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGesturePanning | ECSlidingViewControllerAnchoredGestureTapping;
     }
 }
 
