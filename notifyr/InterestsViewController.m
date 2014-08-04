@@ -179,6 +179,8 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles4.png"]];
     imageView.frame = self.tableView.frame;
     self.tableView.backgroundView = imageView;
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 
