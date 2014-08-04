@@ -243,12 +243,14 @@
     
     
     cell.contentView.backgroundColor = [UIColor clearColor];
-    UIView *whiteRoundedCornerView = [[UIView alloc] initWithFrame:CGRectMake(10,10,300,70)];
+    //UIView *whiteRoundedCornerView = [[UIView alloc] initWithFrame:CGRectMake(10,10,300,70)];
+    UIView *whiteRoundedCornerView = [[UIView alloc] initWithFrame:CGRectMake(10,5,300,70)];
     whiteRoundedCornerView.backgroundColor = [UIColor whiteColor];
     whiteRoundedCornerView.layer.masksToBounds = NO;
     whiteRoundedCornerView.layer.cornerRadius = 3.0;
     whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(-1, 1);
     whiteRoundedCornerView.layer.shadowOpacity = 0.5;
+    whiteRoundedCornerView.alpha = 0.7;
     [cell.contentView addSubview:whiteRoundedCornerView];
     [cell.contentView sendSubviewToBack:whiteRoundedCornerView];
     

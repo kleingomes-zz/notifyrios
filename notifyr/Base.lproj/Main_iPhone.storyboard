@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -8,35 +8,32 @@
         <scene sceneID="jDf-ci-rUT">
             <objects>
                 <tableViewController id="jQE-ZB-ylz" customClass="InterestsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="91" sectionHeaderHeight="22" sectionFooterHeight="22" id="tbu-dE-U2V">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" id="tbu-dE-U2V">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InterestCell" rowHeight="91" id="dlI-7g-PKG" customClass="InterestCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="91"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InterestCell" rowHeight="82" id="dlI-7g-PKG" customClass="InterestCell">
+                                <rect key="frame" x="0.0" y="86" width="320" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dlI-7g-PKG" id="yaz-VH-AL5">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEC-gK-olU">
+                                        <view alpha="0.80000000000000004" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEC-gK-olU">
                                             <rect key="frame" x="5" y="0.0" width="310" height="82"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="iPhone 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHW-H9-4bA">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="iPhone 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHW-H9-4bA">
                                                     <rect key="frame" x="79" y="13" width="231" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.14509195920000001" green="0.40299110760000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-sw-STt">
-                                                    <rect key="frame" x="6" y="13" width="60" height="60"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-sw-STt">
+                                                    <rect key="frame" x="10" y="9" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="rRC-nz-ouu"/>
-                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Apple" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7b2-mY-SnO">
                                                     <rect key="frame" x="79" y="32" width="42" height="21"/>
@@ -62,16 +59,11 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="WHW-H9-4bA" secondAttribute="trailing" id="0c3-Z4-qHa"/>
-                                                <constraint firstAttribute="bottom" secondItem="rgS-sw-STt" secondAttribute="bottom" constant="14" id="Cgj-Nf-lux"/>
                                                 <constraint firstItem="sTj-c7-Jb6" firstAttribute="leading" secondItem="7b2-mY-SnO" secondAttribute="trailing" constant="8" symbolic="YES" id="J09-RF-PlW"/>
                                                 <constraint firstItem="7b2-mY-SnO" firstAttribute="leading" secondItem="gEC-gK-olU" secondAttribute="leading" constant="79" id="Jep-ZS-re9"/>
                                                 <constraint firstItem="WHW-H9-4bA" firstAttribute="leading" secondItem="7b2-mY-SnO" secondAttribute="leading" id="K4l-lR-r93"/>
                                                 <constraint firstItem="7b2-mY-SnO" firstAttribute="top" secondItem="gEC-gK-olU" secondAttribute="top" constant="27" id="OSN-A9-LeK"/>
-                                                <constraint firstItem="7b2-mY-SnO" firstAttribute="leading" secondItem="rgS-sw-STt" secondAttribute="trailing" constant="13" id="Xaa-vI-ay1"/>
-                                                <constraint firstItem="WHW-H9-4bA" firstAttribute="top" secondItem="rgS-sw-STt" secondAttribute="top" id="c4M-Ew-Clv"/>
-                                                <constraint firstItem="rgS-sw-STt" firstAttribute="top" secondItem="gEC-gK-olU" secondAttribute="top" constant="8" id="u0M-Gg-VpN"/>
                                                 <constraint firstItem="sTj-c7-Jb6" firstAttribute="baseline" secondItem="7b2-mY-SnO" secondAttribute="baseline" id="wyg-lX-tSg"/>
-                                                <constraint firstItem="rgS-sw-STt" firstAttribute="leading" secondItem="gEC-gK-olU" secondAttribute="leading" constant="6" id="z6K-Id-Ube"/>
                                                 <constraint firstItem="sTj-c7-Jb6" firstAttribute="top" secondItem="7b2-mY-SnO" secondAttribute="top" id="zTE-Ob-A51"/>
                                             </constraints>
                                         </view>
