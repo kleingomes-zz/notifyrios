@@ -56,8 +56,7 @@
 - (IBAction)menuAction:(id)sender {
     //[self makeBlurredScreenshot];
     
-    self.slidingViewController.delegate = self.zoomController;
-
+    //self.slidingViewController.delegate = self.zoomController;
     
     if ([self.slidingViewController currentTopViewPosition] == ECSlidingViewControllerTopViewPositionAnchoredRight) {
         [self.slidingViewController resetTopViewAnimated:YES];
