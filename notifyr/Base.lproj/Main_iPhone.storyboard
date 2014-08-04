@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -511,7 +511,7 @@
                         <sections>
                             <tableViewSection id="AEi-m8-kwF">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="96" id="p0g-aC-0P9">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="96" id="p0g-aC-0P9">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p0g-aC-0P9" id="QSz-ne-3wN">
@@ -523,7 +523,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notfyrlogo3.png" translatesAutoresizingMaskIntoConstraints="NO" id="9yz-7K-gAX">
-                                                    <rect key="frame" x="68" y="32" width="184" height="48"/>
+                                                    <rect key="frame" x="31" y="32" width="184" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -675,7 +675,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.elevator.down.png" translatesAutoresizingMaskIntoConstraints="NO" id="ErF-3T-Xs0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.unlock.png" translatesAutoresizingMaskIntoConstraints="NO" id="ErF-3T-Xs0">
                                                     <rect key="frame" x="7" y="-6" width="48" height="47"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -2065,7 +2065,6 @@ This document was last updated on May 24, 2014</string>
         <image name="appbar.chevron.left.png" width="76" height="76"/>
         <image name="appbar.cog.png" width="76" height="76"/>
         <image name="appbar.connection.quality.veryhigh.png" width="76" height="76"/>
-        <image name="appbar.elevator.down.png" width="76" height="76"/>
         <image name="appbar.email.hardedge.png" width="76" height="76"/>
         <image name="appbar.hamburger.png" width="44" height="44"/>
         <image name="appbar.list 2.png" width="76" height="76"/>
@@ -2075,6 +2074,7 @@ This document was last updated on May 24, 2014</string>
         <image name="appbar.people.png" width="76" height="76"/>
         <image name="appbar.radar.png" width="76" height="76"/>
         <image name="appbar.sign.parking.png" width="76" height="76"/>
+        <image name="appbar.unlock.png" width="76" height="76"/>
         <image name="appbar.windowsphone.png" width="76" height="76"/>
         <image name="blueBackground3.jpg" width="600" height="450"/>
         <image name="button.png" width="118" height="39"/>

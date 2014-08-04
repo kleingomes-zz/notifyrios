@@ -51,6 +51,7 @@
 		AF8127D0198EED3200EE0F77 /* blueBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF8127CF198EED3200EE0F77 /* blueBackground.jpg */; };
 		AF8127D2198F05BC00EE0F77 /* blueBackground2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D1198F05BC00EE0F77 /* blueBackground2.jpg */; };
 		AF8127D4198F060E00EE0F77 /* blueBackground3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D3198F060E00EE0F77 /* blueBackground3.jpg */; };
+		AF8127D6198F108300EE0F77 /* appbar.unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D5198F108300EE0F77 /* appbar.unlock.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
@@ -147,6 +148,7 @@
 		AF8127CF198EED3200EE0F77 /* blueBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueBackground.jpg; sourceTree = "<group>"; };
 		AF8127D1198F05BC00EE0F77 /* blueBackground2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueBackground2.jpg; sourceTree = "<group>"; };
 		AF8127D3198F060E00EE0F77 /* blueBackground3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueBackground3.jpg; sourceTree = "<group>"; };
+		AF8127D5198F108300EE0F77 /* appbar.unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.unlock.png; sourceTree = "<group>"; };
 		DF6DB70069F546298F2ED858 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 		AF75F63B1930FE47005F5F6C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				AF8127D5198F108300EE0F77 /* appbar.unlock.png */,
 				E07747CA198DC05800D970F7 /* appbar.hamburger.png */,
 				E07747CB198DC05800D970F7 /* appbar.hamburger@2x.png */,
 				AF75F68B19327CAB005F5F6C /* appbar.chevron.right.png */,
@@ -540,6 +543,7 @@
 				E01A59201902F05600EB0BE4 /* Main_iPad.storyboard in Resources */,
 				AF75F67C19324F43005F5F6C /* sammy.jpeg in Resources */,
 				AF75F65D19314E0D005F5F6C /* appbar.connection.quality.veryhigh.png in Resources */,
+				AF8127D6198F108300EE0F77 /* appbar.unlock.png in Resources */,
 				AF75F65519313FCE005F5F6C /* Blur-600.jpg in Resources */,
 				AF7C0FE9192BEC19003FEF2E /* notfyrlogo3.png in Resources */,
 				AF75F669193156E1005F5F6C /* appbar.people 2.png in Resources */,
