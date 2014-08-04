@@ -155,6 +155,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles2.png"]];
+    imageView.frame = self.tableView.frame;
+    self.tableView.backgroundView = imageView;
 }
 
 
@@ -235,6 +239,18 @@
             }
         });
     }
+    
+    
+    
+    cell.contentView.backgroundColor = [UIColor clearColor];
+    UIView *whiteRoundedCornerView = [[UIView alloc] initWithFrame:CGRectMake(10,10,300,70)];
+    whiteRoundedCornerView.backgroundColor = [UIColor whiteColor];
+    whiteRoundedCornerView.layer.masksToBounds = NO;
+    whiteRoundedCornerView.layer.cornerRadius = 3.0;
+    whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(-1, 1);
+    whiteRoundedCornerView.layer.shadowOpacity = 0.5;
+    [cell.contentView addSubview:whiteRoundedCornerView];
+    [cell.contentView sendSubviewToBack:whiteRoundedCornerView];
     
     return cell;
 }
