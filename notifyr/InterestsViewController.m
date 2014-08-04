@@ -255,7 +255,7 @@
     }
     
     
-    
+    /*
     cell.contentView.backgroundColor = [UIColor clearColor];
     //UIView *whiteRoundedCornerView = [[UIView alloc] initWithFrame:CGRectMake(10,10,300,70)];
     UIView *whiteRoundedCornerView = [[UIView alloc] initWithFrame:CGRectMake(10,5,300,70)];
@@ -267,6 +267,7 @@
     whiteRoundedCornerView.alpha = 0.95;
     [cell.contentView addSubview:whiteRoundedCornerView];
     [cell.contentView sendSubviewToBack:whiteRoundedCornerView];
+     */
     
     return cell;
 }
