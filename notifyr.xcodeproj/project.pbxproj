@@ -50,6 +50,7 @@
 		AF8127CE198EE8A600EE0F77 /* n2Darey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF8127CD198EE8A600EE0F77 /* n2Darey.jpg */; };
 		AF8127D0198EED3200EE0F77 /* blueBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF8127CF198EED3200EE0F77 /* blueBackground.jpg */; };
 		AF8127D2198F05BC00EE0F77 /* blueBackground2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D1198F05BC00EE0F77 /* blueBackground2.jpg */; };
+		AF8127D4198F060E00EE0F77 /* blueBackground3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D3198F060E00EE0F77 /* blueBackground3.jpg */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
 		E01A590C1902F05600EB0BE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */; };
@@ -144,6 +145,7 @@
 		AF8127CD198EE8A600EE0F77 /* n2Darey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = n2Darey.jpg; sourceTree = "<group>"; };
 		AF8127CF198EED3200EE0F77 /* blueBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueBackground.jpg; sourceTree = "<group>"; };
 		AF8127D1198F05BC00EE0F77 /* blueBackground2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueBackground2.jpg; sourceTree = "<group>"; };
+		AF8127D3198F060E00EE0F77 /* blueBackground3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blueBackground3.jpg; sourceTree = "<group>"; };
 		DF6DB70069F546298F2ED858 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 		AF7C0FE7192BEBE3003FEF2E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF8127D3198F060E00EE0F77 /* blueBackground3.jpg */,
 				AF8127D1198F05BC00EE0F77 /* blueBackground2.jpg */,
 				AF8127CF198EED3200EE0F77 /* blueBackground.jpg */,
 				AF8127CD198EE8A600EE0F77 /* n2Darey.jpg */,
@@ -564,6 +567,7 @@
 				AF75F645193100E7005F5F6C /* appbar.cog.png in Resources */,
 				AF75F653193111B9005F5F6C /* appbar.email.hardedge.png in Resources */,
 				AF75F67819324B9A005F5F6C /* appbar.social.twitter.png in Resources */,
+				AF8127D4198F060E00EE0F77 /* blueBackground3.jpg in Resources */,
 				AF75F672193246BC005F5F6C /* Apple-Logo.jpeg in Resources */,
 				AF75F67619324955005F5F6C /* indicatorRed.png in Resources */,
 				AF75F64D19310E1B005F5F6C /* appbar.cloud.png in Resources */,
