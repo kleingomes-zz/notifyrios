@@ -233,7 +233,8 @@
         [numberFormatter setGroupingSeparator:@","];
     }
     
-    cell.stockQuote.text = [numberFormatter stringFromNumber:interest.stockQuote];
+    //cell.stockQuote.text = [NSString stringWithFormat:@"%@%@%@",@"$", [numberFormatter stringFromNumber:interest.stockQuote], @" (+2.42)"];
+    cell.stockQuote.text = [NSString stringWithFormat:@"%@",@"(+2.42)"];
     
     //Set image. Check image cache first
     Biz *biz = [Biz sharedBiz];
