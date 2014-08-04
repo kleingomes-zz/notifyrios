@@ -54,6 +54,7 @@
 		AF8127D6198F108300EE0F77 /* appbar.unlock.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D5198F108300EE0F77 /* appbar.unlock.png */; };
 		AF8127D8198F180B00EE0F77 /* appTiles.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D7198F180B00EE0F77 /* appTiles.png */; };
 		AF8127DA198F18C100EE0F77 /* appTiles2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D9198F18C100EE0F77 /* appTiles2.png */; };
+		AF8127DE198F2C7900EE0F77 /* appTiles3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127DD198F2C7900EE0F77 /* appTiles3.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
@@ -153,6 +154,7 @@
 		AF8127D5198F108300EE0F77 /* appbar.unlock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.unlock.png; sourceTree = "<group>"; };
 		AF8127D7198F180B00EE0F77 /* appTiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles.png; sourceTree = "<group>"; };
 		AF8127D9198F18C100EE0F77 /* appTiles2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles2.png; sourceTree = "<group>"; };
+		AF8127DD198F2C7900EE0F77 /* appTiles3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles3.png; sourceTree = "<group>"; };
 		DF6DB70069F546298F2ED858 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 		AF7C0FE7192BEBE3003FEF2E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF8127DD198F2C7900EE0F77 /* appTiles3.png */,
 				AF8127D9198F18C100EE0F77 /* appTiles2.png */,
 				AF8127D7198F180B00EE0F77 /* appTiles.png */,
 				AF8127D3198F060E00EE0F77 /* blueBackground3.jpg */,
@@ -591,6 +594,7 @@
 				AF75F67A19324CEA005F5F6C /* appbar.people.multiple.png in Resources */,
 				AF75F686193273B9005F5F6C /* iphone_6_fake_line_up_hero.jpg in Resources */,
 				AF8127D0198EED3200EE0F77 /* blueBackground.jpg in Resources */,
+				AF8127DE198F2C7900EE0F77 /* appTiles3.png in Resources */,
 				AF75F6631931513D005F5F6C /* appbar.elevator.down.png in Resources */,
 				AF75F66519315273005F5F6C /* appbar.people.sensor.variant.png in Resources */,
 				AF75F68019326F48005F5F6C /* iphones-on-display.jpg in Resources */,
