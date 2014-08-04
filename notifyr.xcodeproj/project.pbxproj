@@ -56,6 +56,10 @@
 		AF8127DA198F18C100EE0F77 /* appTiles2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D9198F18C100EE0F77 /* appTiles2.png */; };
 		AF8127DE198F2C7900EE0F77 /* appTiles3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127DD198F2C7900EE0F77 /* appTiles3.png */; };
 		AF8127E0198F2DC700EE0F77 /* appTiles4.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127DF198F2DC700EE0F77 /* appTiles4.png */; };
+		AF8127E8198F420D00EE0F77 /* appTiles6WhiteBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127E7198F420D00EE0F77 /* appTiles6WhiteBottom.png */; };
+		AF8127EA198F424800EE0F77 /* appTiles7.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127E9198F424800EE0F77 /* appTiles7.png */; };
+		AF8127EC198F427600EE0F77 /* appTiles8.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127EB198F427600EE0F77 /* appTiles8.png */; };
+		AF8127EE198F42B900EE0F77 /* appTiles9.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127ED198F42B900EE0F77 /* appTiles9.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3673198F32F700331E23 /* MEZoomAnimationController.m */; };
@@ -158,6 +162,10 @@
 		AF8127D9198F18C100EE0F77 /* appTiles2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles2.png; sourceTree = "<group>"; };
 		AF8127DD198F2C7900EE0F77 /* appTiles3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles3.png; sourceTree = "<group>"; };
 		AF8127DF198F2DC700EE0F77 /* appTiles4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles4.png; sourceTree = "<group>"; };
+		AF8127E7198F420D00EE0F77 /* appTiles6WhiteBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles6WhiteBottom.png; sourceTree = "<group>"; };
+		AF8127E9198F424800EE0F77 /* appTiles7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles7.png; sourceTree = "<group>"; };
+		AF8127EB198F427600EE0F77 /* appTiles8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles8.png; sourceTree = "<group>"; };
+		AF8127ED198F42B900EE0F77 /* appTiles9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles9.png; sourceTree = "<group>"; };
 		DF6DB70069F546298F2ED858 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
@@ -309,6 +317,10 @@
 		AF7C0FE7192BEBE3003FEF2E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF8127ED198F42B900EE0F77 /* appTiles9.png */,
+				AF8127EB198F427600EE0F77 /* appTiles8.png */,
+				AF8127E9198F424800EE0F77 /* appTiles7.png */,
+				AF8127E7198F420D00EE0F77 /* appTiles6WhiteBottom.png */,
 				AF8127DF198F2DC700EE0F77 /* appTiles4.png */,
 				AF8127DD198F2C7900EE0F77 /* appTiles3.png */,
 				AF8127D9198F18C100EE0F77 /* appTiles2.png */,
@@ -554,7 +566,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF8127EC198F427600EE0F77 /* appTiles8.png in Resources */,
 				AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */,
+				AF8127EA198F424800EE0F77 /* appTiles7.png in Resources */,
 				AF75F649193105E2005F5F6C /* appbar.sign.parking.png in Resources */,
 				AF75F65919314288005F5F6C /* appbar.align.justify.png in Resources */,
 				E01A59201902F05600EB0BE4 /* Main_iPad.storyboard in Resources */,
@@ -565,6 +579,7 @@
 				AF7C0FE9192BEC19003FEF2E /* notfyrlogo3.png in Resources */,
 				AF75F669193156E1005F5F6C /* appbar.people 2.png in Resources */,
 				AF75F64719310408005F5F6C /* appbar.chevron.left.png in Resources */,
+				AF8127EE198F42B900EE0F77 /* appTiles9.png in Resources */,
 				AF75F66F19324390005F5F6C /* btnAddNotification.png in Resources */,
 				AF75F65719314197005F5F6C /* appbar.connection.wifi.variant.png in Resources */,
 				AF8127D2198F05BC00EE0F77 /* blueBackground2.jpg in Resources */,
@@ -578,6 +593,7 @@
 				AF8127CE198EE8A600EE0F77 /* n2Darey.jpg in Resources */,
 				AF75F65119310FF1005F5F6C /* appbar.newspaper.png in Resources */,
 				AF75F67519324955005F5F6C /* indicatorGreen.png in Resources */,
+				AF8127E8198F420D00EE0F77 /* appTiles6WhiteBottom.png in Resources */,
 				AF8127E0198F2DC700EE0F77 /* appTiles4.png in Resources */,
 				AF75F65F19314FA2005F5F6C /* appbar.smiley.frown.png in Resources */,
 				AF75F68219326FB5005F5F6C /* macvsmac in Resources */,
