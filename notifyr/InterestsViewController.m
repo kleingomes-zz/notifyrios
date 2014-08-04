@@ -156,7 +156,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles3.png"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles4.png"]];
     imageView.frame = self.tableView.frame;
     self.tableView.backgroundView = imageView;
 }
@@ -249,8 +249,8 @@
     whiteRoundedCornerView.layer.masksToBounds = NO;
     whiteRoundedCornerView.layer.cornerRadius = 3.0;
     whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(-1, 1);
-    whiteRoundedCornerView.layer.shadowOpacity = 0.5;
-    whiteRoundedCornerView.alpha = 0.7;
+    whiteRoundedCornerView.layer.shadowOpacity = 0.2;
+    whiteRoundedCornerView.alpha = 0.95;
     [cell.contentView addSubview:whiteRoundedCornerView];
     [cell.contentView sendSubviewToBack:whiteRoundedCornerView];
     

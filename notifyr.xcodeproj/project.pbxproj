@@ -55,6 +55,7 @@
 		AF8127D8198F180B00EE0F77 /* appTiles.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D7198F180B00EE0F77 /* appTiles.png */; };
 		AF8127DA198F18C100EE0F77 /* appTiles2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D9198F18C100EE0F77 /* appTiles2.png */; };
 		AF8127DE198F2C7900EE0F77 /* appTiles3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127DD198F2C7900EE0F77 /* appTiles3.png */; };
+		AF8127E0198F2DC700EE0F77 /* appTiles4.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127DF198F2DC700EE0F77 /* appTiles4.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
@@ -155,6 +156,7 @@
 		AF8127D7198F180B00EE0F77 /* appTiles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles.png; sourceTree = "<group>"; };
 		AF8127D9198F18C100EE0F77 /* appTiles2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles2.png; sourceTree = "<group>"; };
 		AF8127DD198F2C7900EE0F77 /* appTiles3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles3.png; sourceTree = "<group>"; };
+		AF8127DF198F2DC700EE0F77 /* appTiles4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles4.png; sourceTree = "<group>"; };
 		DF6DB70069F546298F2ED858 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 		AF7C0FE7192BEBE3003FEF2E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AF8127DF198F2DC700EE0F77 /* appTiles4.png */,
 				AF8127DD198F2C7900EE0F77 /* appTiles3.png */,
 				AF8127D9198F18C100EE0F77 /* appTiles2.png */,
 				AF8127D7198F180B00EE0F77 /* appTiles.png */,
@@ -570,6 +573,7 @@
 				AF8127CE198EE8A600EE0F77 /* n2Darey.jpg in Resources */,
 				AF75F65119310FF1005F5F6C /* appbar.newspaper.png in Resources */,
 				AF75F67519324955005F5F6C /* indicatorGreen.png in Resources */,
+				AF8127E0198F2DC700EE0F77 /* appTiles4.png in Resources */,
 				AF75F65F19314FA2005F5F6C /* appbar.smiley.frown.png in Resources */,
 				AF75F68219326FB5005F5F6C /* macvsmac in Resources */,
 				AF75F684193272AC005F5F6C /* appbar.radar.png in Resources */,
