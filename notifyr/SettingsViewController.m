@@ -22,6 +22,9 @@
     if ([self.slidingViewController currentTopViewPosition] == ECSlidingViewControllerTopViewPositionAnchoredRight) {
         [self.slidingViewController resetTopViewAnimated:YES];
     }
+    self.slidingViewController.topViewController.view.layer.shadowOpacity = 0.75f;
+    self.slidingViewController.topViewController.view.layer.shadowRadius = 10.0f;
+    self.slidingViewController.topViewController.view.layer.shadowColor = [UIColor blackColor].CGColor;
 }
 
 

@@ -58,6 +58,7 @@
     
     //self.slidingViewController.delegate = self.zoomController;
     
+    
     if ([self.slidingViewController currentTopViewPosition] == ECSlidingViewControllerTopViewPositionAnchoredRight) {
         [self.slidingViewController resetTopViewAnimated:YES];
     }
@@ -65,7 +66,12 @@
     {
         [self.slidingViewController anchorTopViewToRightAnimated:YES];
         self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGesturePanning | ECSlidingViewControllerAnchoredGestureTapping;
+        
+        self.slidingViewController.topViewController.view.layer.shadowOpacity = 0.75f;
+        self.slidingViewController.topViewController.view.layer.shadowRadius = 10.0f;
+        self.slidingViewController.topViewController.view.layer.shadowColor = [UIColor blackColor].CGColor;
     }
+    
 }
 
 - (void)makeBlurredScreenshot
