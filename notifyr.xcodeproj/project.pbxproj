@@ -52,6 +52,7 @@
 		AF8127D2198F05BC00EE0F77 /* blueBackground2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D1198F05BC00EE0F77 /* blueBackground2.jpg */; };
 		AF8127D4198F060E00EE0F77 /* blueBackground3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF8127D3198F060E00EE0F77 /* blueBackground3.jpg */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
+		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
 		E01A590C1902F05600EB0BE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */; };
 		E01A590E1902F05600EB0BE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A590D1902F05600EB0BE4 /* UIKit.framework */; };
@@ -149,6 +150,8 @@
 		DF6DB70069F546298F2ED858 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
+		E00C366F198F09EB00331E23 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		E00C3670198F09EB00331E23 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		E01A59061902F05600EB0BE4 /* notifyr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notifyr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01A59091902F05600EB0BE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -354,6 +357,8 @@
 				E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */,
 				E055249C197B61EF007322AE /* NewInterestViewController.h */,
 				E055249D197B61EF007322AE /* NewInterestViewController.m */,
+				E00C366F198F09EB00331E23 /* MenuViewController.h */,
+				E00C3670198F09EB00331E23 /* MenuViewController.m */,
 				E07747D1198DC1C900D970F7 /* SettingsViewController.h */,
 				E07747D2198DC1C900D970F7 /* SettingsViewController.m */,
 				E07747D4198DC58D00D970F7 /* PrivacyPolicyViewController.h */,
@@ -645,6 +650,7 @@
 				E0D3A5AB19741CB9008C445D /* ArticlesViewController.m in Sources */,
 				E01A59161902F05600EB0BE4 /* main.m in Sources */,
 				E0D3A5A519735F8A008C445D /* EventType.m in Sources */,
+				E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */,
 				E055249E197B61EF007322AE /* NewInterestViewController.m in Sources */,
 				E0414E6C198D6F64005B5BB9 /* UIImage+ImageEffects.m in Sources */,
 				E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */,
