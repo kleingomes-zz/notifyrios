@@ -571,7 +571,6 @@
 
 - (void)notifyInterestsUpdatedWithDictionary:(NSArray *)jsonItems
 {
-    Biz *biz = [Biz sharedBiz];
 
     NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
     for (NSDictionary *dict in jsonItems)
@@ -581,13 +580,13 @@
     }
     
     //set objects
-    for (Interest *interest in items)
-    {
-        interest.title = [biz getCompanyById:interest.companyId].name;
-        interest.company = [biz getCompanyById:interest.companyId];
-        interest.eventType = [biz getEventTypeById:interest.eventTypeId];
-        interest.product = [biz getProductById:interest.productId];
-    }
+//    Biz *biz = [Biz sharedBiz];
+//    for (Interest *interest in items)
+//    {
+//        interest.title = [biz getCompanyById:interest.companyId].name;
+//        interest.company = [biz getCompanyById:interest.companyId];
+//        interest.product = [biz getProductById:interest.productId];
+//    }
     
     
     //NSArray *items = [self getFakeInterests];

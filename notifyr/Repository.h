@@ -12,6 +12,9 @@
 
 + (Repository *)sharedRepository;
 
+- (NSArray *)getInterests;
+
 - (NSArray *)getCompanies;
+
 
 @end

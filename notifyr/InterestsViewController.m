@@ -144,7 +144,11 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refreshAction) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
-
+    
+    if (!_interestObserver)
+    {
+        [self initObserver];
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -153,12 +157,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+
 - (void)viewWillAppear:(BOOL)animated
 {
-    if (!_interestObserver)
-    {
-        [self initObserver];
-    }
     //[self refreshAction];
 }
 

@@ -10,6 +10,12 @@
 
 @implementation Repository
 
+- (NSArray *)getInterests
+{
+    NSMutableArray *interests = [[NSMutableArray alloc] init];
+    return interests;
+}
+
 - (NSArray *)getCompanies
 {
     NSMutableArray *companies = [[NSMutableArray alloc] init];

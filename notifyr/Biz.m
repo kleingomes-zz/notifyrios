@@ -13,7 +13,17 @@
 
 @implementation Biz
 
+
 #pragma mark - Properties
+
+- (NSArray *)interests
+{
+    if (!_interests)
+    {
+        _interests = [[Repository sharedRepository] getInterests];
+    }
+    return _interests;
+}
 
 - (NSArray *)companies
 {
@@ -22,20 +32,6 @@
         _companies = [[Repository sharedRepository] getCompanies];
     }
     return _companies;
-}
-
-- (NSArray *)eventTypes
-{
-    if (!_eventTypes)
-    {
-        NSMutableArray *eventTypesArray = [[NSMutableArray alloc] init];
-        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@4 name:@"News"]];
-        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@1 name:@"Release Date"]];
-        //[eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@2 name:@"Quarterly Results"]];
-        [eventTypesArray addObject:[[EventType alloc] initWithEventTypeId:@3 name:@"Conference"]];
-        _eventTypes = [NSArray arrayWithArray:eventTypesArray];
-    }
-    return _eventTypes;
 }
 
 - (NSMutableDictionary *)imageCache
@@ -81,30 +77,15 @@
     return nil;
 }
 
-- (EventType *)getEventTypeById:(NSNumber *)eventTypeId
-{
-    if (eventTypeId == nil)
-    {
-        return nil;
-    }
-    for (EventType *eventType in self.eventTypes)
-    {
-        if ([eventType.eventTypeId isEqualToValue:eventTypeId])
-        {
-            return eventType;
-        }
-    }
-    return nil;
-}
-
-
-
 
 #pragma mark - Main Methods
 
 - (void)getInterests
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getInterests];
+
+    return;
     [apiClient getCompaniesWithCompletionHandler:^(NSError *error) {
         [apiClient getProductsWithCompletionHandler:^(NSError *error) {
             [apiClient getInterests];

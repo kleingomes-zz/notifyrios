@@ -14,13 +14,14 @@
 
 @interface Biz : NSObject
 
+@property (nonatomic, strong) NSArray *interests;
+
 @property (nonatomic, strong) NSArray *companies;
 
 @property (nonatomic, strong) NSArray *products;
 
-@property (nonatomic, strong) NSArray *eventTypes;
-
 @property (atomic, strong) NSMutableDictionary *imageCache;
+
 
 + (Biz *)sharedBiz;
 
@@ -39,7 +40,6 @@
 
 - (Product *)getProductById:(NSNumber *)productId;
 
-- (EventType *)getEventTypeById:(NSNumber *)eventTypeId;
 
 
 @end
