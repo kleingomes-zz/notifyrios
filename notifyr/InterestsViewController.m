@@ -14,6 +14,7 @@
 #import "Constants.h"
 #import "UIImage+ImageEffects.h"
 #import "UIViewController+ECSlidingViewController.h"
+#import "MEZoomAnimationController.h"
 
 
 @interface InterestsViewController ()
@@ -21,10 +22,21 @@
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) id interestObserver;
 
+@property (nonatomic, strong) MEZoomAnimationController *zoomController;
+
 @end
 
 
 @implementation InterestsViewController
+
+- (MEZoomAnimationController *) zoomController
+{
+    if (!_zoomController)
+    {
+        _zoomController = [[MEZoomAnimationController alloc] init];
+    }
+    return _zoomController;
+}
 
 - (NSMutableArray *)items
 {
@@ -43,6 +55,9 @@
 
 - (IBAction)menuAction:(id)sender {
     //[self makeBlurredScreenshot];
+    
+    self.slidingViewController.delegate = self.zoomController;
+
     
     if ([self.slidingViewController currentTopViewPosition] == ECSlidingViewControllerTopViewPositionAnchoredRight) {
         [self.slidingViewController resetTopViewAnimated:YES];

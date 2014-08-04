@@ -58,6 +58,7 @@
 		AF8127E0198F2DC700EE0F77 /* appTiles4.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127DF198F2DC700EE0F77 /* appTiles4.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
+		E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3673198F32F700331E23 /* MEZoomAnimationController.m */; };
 		E01A590A1902F05600EB0BE4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59091902F05600EB0BE4 /* Foundation.framework */; };
 		E01A590C1902F05600EB0BE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */; };
 		E01A590E1902F05600EB0BE4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A590D1902F05600EB0BE4 /* UIKit.framework */; };
@@ -162,6 +163,8 @@
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
 		E00C366F198F09EB00331E23 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		E00C3670198F09EB00331E23 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		E00C3672198F32F700331E23 /* MEZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEZoomAnimationController.h; sourceTree = "<group>"; };
+		E00C3673198F32F700331E23 /* MEZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEZoomAnimationController.m; sourceTree = "<group>"; };
 		E01A59061902F05600EB0BE4 /* notifyr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notifyr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01A59091902F05600EB0BE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E01A590B1902F05600EB0BE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -380,6 +383,8 @@
 				E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */,
 				E0414E6A198D6F64005B5BB9 /* UIImage+ImageEffects.h */,
 				E0414E6B198D6F64005B5BB9 /* UIImage+ImageEffects.m */,
+				E00C3672198F32F700331E23 /* MEZoomAnimationController.h */,
+				E00C3673198F32F700331E23 /* MEZoomAnimationController.m */,
 				E0931D76190ADED4001A991F /* Model */,
 				E0AF886219211E3300E27C69 /* Data */,
 				E0931D77190ADEDE001A991F /* UI */,
@@ -675,6 +680,7 @@
 				E0414E6C198D6F64005B5BB9 /* UIImage+ImageEffects.m in Sources */,
 				E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */,
 				E0414DDB1985C912005B5BB9 /* AvailableInterest.m in Sources */,
+				E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */,
 				E07747D6198DC58D00D970F7 /* PrivacyPolicyViewController.m in Sources */,
 				E0931D73190ADBF5001A991F /* Interest.m in Sources */,
 				E01ED8DE1929815700798C31 /* Constants.m in Sources */,
