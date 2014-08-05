@@ -181,7 +181,23 @@
     self.tableView.backgroundView = imageView;
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    
+    
+    UIButton *btnName = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btnName setFrame:CGRectMake(0, 0, 44, 44)];
+    [btnName setBackgroundImage:[UIImage imageNamed:@"appbar.add.new.png"] forState:UIControlStateNormal];
+    [btnName addTarget:self action:@selector(addAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *locationItem = [[UIBarButtonItem alloc] initWithCustomView:btnName];
+    self.navigationItem.rightBarButtonItem = locationItem;
 }
+
+
+- (IBAction)addAction:(id)sender {
+    [self performSegueWithIdentifier:@"AddNew" sender:self];
+}
+
 
 
 - (void)viewWillAppear:(BOOL)animated

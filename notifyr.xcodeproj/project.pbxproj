@@ -70,7 +70,7 @@
 		AF81280019906ADD00EE0F77 /* appbar.notification.star.png in Resources */ = {isa = PBXBuildFile; fileRef = AF8127FF19906ADD00EE0F77 /* appbar.notification.star.png */; };
 		AF81280219906B3B00EE0F77 /* appbar.star.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280119906B3B00EE0F77 /* appbar.star.png */; };
 		AF81280419906BED00EE0F77 /* appbar.star.yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280319906BED00EE0F77 /* appbar.star.yellow.png */; };
-		AF81280619908B3D00EE0F77 /* appbar.add.new.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280519908B3D00EE0F77 /* appbar.add.new.png */; };
+		AF81280619908B3D00EE0F77 /* appbar.add.new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3673198F32F700331E23 /* MEZoomAnimationController.m */; };
@@ -187,7 +187,7 @@
 		AF8127FF19906ADD00EE0F77 /* appbar.notification.star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.notification.star.png; sourceTree = "<group>"; };
 		AF81280119906B3B00EE0F77 /* appbar.star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.png; sourceTree = "<group>"; };
 		AF81280319906BED00EE0F77 /* appbar.star.yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.yellow.png; sourceTree = "<group>"; };
-		AF81280519908B3D00EE0F77 /* appbar.add.new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.add.new.png; sourceTree = "<group>"; };
+		AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appbar.add.new@2x.png"; sourceTree = "<group>"; };
 		DF6DB70069F546298F2ED858 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 		AF75F63B1930FE47005F5F6C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				AF81280519908B3D00EE0F77 /* appbar.add.new.png */,
+				AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */,
 				AF81280319906BED00EE0F77 /* appbar.star.yellow.png */,
 				AF81280119906B3B00EE0F77 /* appbar.star.png */,
 				AF8127FF19906ADD00EE0F77 /* appbar.notification.star.png */,
@@ -664,7 +664,7 @@
 				AF8127DE198F2C7900EE0F77 /* appTiles3.png in Resources */,
 				AF75F6631931513D005F5F6C /* appbar.elevator.down.png in Resources */,
 				AF75F66519315273005F5F6C /* appbar.people.sensor.variant.png in Resources */,
-				AF81280619908B3D00EE0F77 /* appbar.add.new.png in Resources */,
+				AF81280619908B3D00EE0F77 /* appbar.add.new@2x.png in Resources */,
 				AF81280219906B3B00EE0F77 /* appbar.star.png in Resources */,
 				AF75F68019326F48005F5F6C /* iphones-on-display.jpg in Resources */,
 				E01A59141902F05600EB0BE4 /* InfoPlist.strings in Resources */,
