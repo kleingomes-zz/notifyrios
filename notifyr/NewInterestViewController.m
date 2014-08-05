@@ -218,6 +218,7 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.inputField.delegate = self;
@@ -232,6 +233,7 @@
     self.suggestionsTableView.scrollEnabled = YES;
     self.suggestionsTableView.hidden = YES;
     [self.view addSubview:self.suggestionsTableView];
+    
 }
 
 - (void)didReceiveMemoryWarning

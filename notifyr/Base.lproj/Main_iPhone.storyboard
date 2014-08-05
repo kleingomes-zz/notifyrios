@@ -112,9 +112,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="jLX-9A-Mpq">
+                            <rect key="frame" x="0.0" y="64" width="320" height="49"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YN6-DF-CBH">
+                                    <rect key="frame" x="98" y="11" width="124" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segments>
+                                        <segment title="Popular"/>
+                                        <segment title="Newest"/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InterestCell" rowHeight="328" id="Xv2-AE-IhB" customClass="ArticleCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="328"/>
+                                <rect key="frame" x="0.0" y="135" width="320" height="328"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xv2-AE-IhB" id="QyT-fq-WXD">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="327"/>
@@ -166,6 +181,10 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.star.yellow.png" translatesAutoresizingMaskIntoConstraints="NO" id="R6g-ou-vRP">
+                                            <rect key="frame" x="270" y="112" width="50" height="70"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -2113,6 +2132,7 @@ This document was last updated on May 24, 2014</string>
         <image name="appbar.people.png" width="76" height="76"/>
         <image name="appbar.radar.png" width="76" height="76"/>
         <image name="appbar.sign.parking.png" width="76" height="76"/>
+        <image name="appbar.star.yellow.png" width="76" height="76"/>
         <image name="appbar.unlock.png" width="76" height="76"/>
         <image name="appbar.windowsphone.png" width="76" height="76"/>
         <image name="button.png" width="118" height="39"/>

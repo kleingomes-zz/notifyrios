@@ -94,6 +94,11 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     self.navigationItem.title = self.interest.productName ? self.interest.productName : self.interest.companyName;
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles9.png"]];
+    imageView.frame = self.tableView.frame;
+    self.tableView.backgroundView = imageView;
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)viewWillAppear:(BOOL)animated
