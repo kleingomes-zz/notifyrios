@@ -29,6 +29,9 @@
 
 @implementation InterestsViewController
 
+#define INTEREST_SECTION 0
+#define ADD_NEW_SECTION 1
+
 - (MEZoomAnimationController *) zoomController
 {
     if (!_zoomController)
@@ -193,12 +196,10 @@
     self.navigationItem.rightBarButtonItem = locationItem;
 }
 
-
-- (IBAction)addAction:(id)sender {
+- (IBAction)addAction:(id)sender
+{
     [self performSegueWithIdentifier:@"AddNew" sender:self];
 }
-
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -221,63 +222,82 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.items count];
+    if (section == INTEREST_SECTION)
+    {
+        return [self.items count];
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    InterestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InterestCell" forIndexPath:indexPath];
     
-    // Configure the cell...
-    Interest *interest = self.items[indexPath.row];
-    //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
-    cell.companyNameLabel.text = interest.companyName ? interest.companyName : @"[No company]";
-    cell.productNameLabel.text = interest.productName ? interest.productName : @"";
-    cell.eventTypeLabel.text = [NSString stringWithFormat:@"Type: %@", interest.eventTypeName ? interest.eventTypeName : @"[No Event Type]"];
-    
-    static NSNumberFormatter *numberFormatter = nil;
-    if (!numberFormatter)
+    if (indexPath.section == INTEREST_SECTION)
     {
-        numberFormatter = [[NSNumberFormatter alloc] init];
-        [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        [numberFormatter setGroupingSeparator:@","];
-    }
-    
-    //cell.stockQuote.text = [NSString stringWithFormat:@"%@%@%@",@"$", [numberFormatter stringFromNumber:interest.stockQuote], @" (+2.42)"];
-    cell.stockQuote.text = [NSString stringWithFormat:@"%@",@"(+2.42)"];
-    
-    //Set image. Check image cache first
-    Biz *biz = [Biz sharedBiz];
-    if (biz.imageCache[interest.logoUrl])
-    {
-        cell.logoImageView.image = biz.imageCache[interest.logoUrl];
+        InterestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InterestCell" forIndexPath:indexPath];
+        
+        // Configure the cell...
+        Interest *interest = self.items[indexPath.row];
+        //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
+        cell.companyNameLabel.text = interest.companyName ? interest.companyName : @"[No company]";
+        cell.productNameLabel.text = interest.productName ? interest.productName : @"";
+        cell.eventTypeLabel.text = [NSString stringWithFormat:@"Type: %@", interest.eventTypeName ? interest.eventTypeName : @"[No Event Type]"];
+        
+        static NSNumberFormatter *numberFormatter = nil;
+        if (!numberFormatter)
+        {
+            numberFormatter = [[NSNumberFormatter alloc] init];
+            [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+            [numberFormatter setGroupingSeparator:@","];
+        }
+        
+        //cell.stockQuote.text = [NSString stringWithFormat:@"%@%@%@",@"$", [numberFormatter stringFromNumber:interest.stockQuote], @" (+2.42)"];
+        cell.stockQuote.text = [NSString stringWithFormat:@"%@",@"(+2.42)"];
+        
+        //Set image. Check image cache first
+        Biz *biz = [Biz sharedBiz];
+        if (biz.imageCache[interest.logoUrl])
+        {
+            cell.logoImageView.image = biz.imageCache[interest.logoUrl];
+        }
+        else
+        {
+            //cell.logoImageView = nil; //todo: replace with default image
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:interest.logoUrl]];
+                if (imgData) {
+                    UIImage *image = [UIImage imageWithData:imgData];
+                    if (image) {
+                        //biz.imageCache[interest.logoUrl] = image;
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            InterestCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
+                            if (updateCell)
+                            {
+                                updateCell.logoImageView.image = image;
+                            }
+                        });
+                    }
+                }
+            });
+        }
+        
+        return cell;
     }
     else
     {
-        //cell.logoImageView = nil; //todo: replace with default image
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:interest.logoUrl]];
-            if (imgData) {
-                UIImage *image = [UIImage imageWithData:imgData];
-                if (image) {
-                    //biz.imageCache[interest.logoUrl] = image;
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        InterestCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
-                        if (updateCell)
-                        {
-                            updateCell.logoImageView.image = image;
-                        }
-                    });
-                }
-            }
-        });
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddNewCell" forIndexPath:indexPath];
+        return cell;
     }
+    
     
     
     /*
@@ -294,7 +314,10 @@
     [cell.contentView sendSubviewToBack:whiteRoundedCornerView];
      */
     
-    return cell;
+    
+//    UIView *bgColorView = [[UIView alloc] init];
+//    bgColorView.backgroundColor = [UIColor redColor];
+//    [cell setSelectedBackgroundView:bgColorView];
 }
 
 
@@ -302,7 +325,7 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return indexPath.section == INTEREST_SECTION;
 }
 
 

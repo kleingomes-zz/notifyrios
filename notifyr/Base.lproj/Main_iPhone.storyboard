@@ -81,11 +81,11 @@
                                     <segue destination="VLr-JZ-fXu" kind="push" identifier="ShowInterestArticles" id="3NJ-xn-Hkv"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddNewCell" rowHeight="78" id="htj-Tq-Ew8" customClass="InterestCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddNewCell" rowHeight="78" id="htj-Tq-Ew8" customClass="InterestCell">
                                 <rect key="frame" x="0.0" y="164" width="320" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="htj-Tq-Ew8" id="AOh-vI-r0e">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.add.new.png" highlightedImage="appbar.add.new.png" translatesAutoresizingMaskIntoConstraints="NO" id="vXj-h8-UWX">
@@ -96,6 +96,9 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="1i3-3R-ttB" kind="push" id="Fc6-Oj-4HV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -2160,4 +2163,7 @@ This document was last updated on May 24, 2014</string>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="zzG-KP-CWS"/>
+    </inferredMetricsTieBreakers>
 </document>

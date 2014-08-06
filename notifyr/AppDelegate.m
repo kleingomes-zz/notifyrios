@@ -28,7 +28,7 @@
 {
     UIRemoteNotificationType remoteNotifcationTypes = [application enabledRemoteNotificationTypes];
 
-    NSLog(@"Remote Notification Types:%u", remoteNotifcationTypes);
+    NSLog(@"Remote Notification Types:%lu", remoteNotifcationTypes);
     if (remoteNotifcationTypes == UIRemoteNotificationTypeNone)
     {
         NSLog(@"UIRemoteNotificationTypeNone");
