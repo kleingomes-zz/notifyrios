@@ -112,7 +112,7 @@
                                 <action selector="menuAction:" destination="jQE-ZB-ylz" id="MLF-Rq-pDX"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="Js7-Jj-T7p">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="Js7-Jj-T7p">
                             <connections>
                                 <segue destination="1i3-3R-ttB" kind="push" identifier="AddNew" id="zzG-KP-CWS"/>
                             </connections>

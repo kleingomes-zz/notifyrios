@@ -187,13 +187,13 @@
     
     
     
-    UIButton *btnName = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btnName setFrame:CGRectMake(0, 0, 44, 44)];
-    [btnName setBackgroundImage:[UIImage imageNamed:@"appbar.add.new.png"] forState:UIControlStateNormal];
-    [btnName addTarget:self action:@selector(addAction:) forControlEvents:UIControlEventTouchUpInside];
+   // UIButton *btnName = [UIButton buttonWithType:UIButtonTypeCustom];
+   // [btnName setFrame:CGRectMake(0, 0, 44, 44)];
+   // [btnName setBackgroundImage:[UIImage imageNamed:@"appbar.add.new.png"] forState:UIControlStateNormal];
+   // [btnName addTarget:self action:@selector(addAction:) forControlEvents:UIControlEventTouchUpInside];
     
-    UIBarButtonItem *locationItem = [[UIBarButtonItem alloc] initWithCustomView:btnName];
-    self.navigationItem.rightBarButtonItem = locationItem;
+    //UIBarButtonItem *locationItem = [[UIBarButtonItem alloc] initWithCustomView:btnName];
+    //self.navigationItem.rightBarButtonItem = locationItem;
 }
 
 - (IBAction)addAction:(id)sender
