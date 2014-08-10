@@ -39,7 +39,10 @@
     self.descriptionTextView.text = article.description;
     self.authorLabel.text = article.author ? article.author : @"[No Author]";
     [self.sourceButton setTitle:article.source ? article.source : @"[No Source]" forState:UIControlStateNormal];
+    if(article.image != NULL)
+    {
     self.mainImageView.image = article.image;
+    }
 }
 
 - (void)didReceiveMemoryWarning
