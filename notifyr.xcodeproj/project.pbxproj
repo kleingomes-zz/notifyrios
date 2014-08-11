@@ -71,6 +71,7 @@
 		AF81280219906B3B00EE0F77 /* appbar.star.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280119906B3B00EE0F77 /* appbar.star.png */; };
 		AF81280419906BED00EE0F77 /* appbar.star.yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280319906BED00EE0F77 /* appbar.star.yellow.png */; };
 		AF81280619908B3D00EE0F77 /* appbar.add.new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */; };
+		AFE79943199849140079A6E3 /* NotifyR3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE79942199849140079A6E3 /* NotifyR3.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3673198F32F700331E23 /* MEZoomAnimationController.m */; };
@@ -188,6 +189,7 @@
 		AF81280119906B3B00EE0F77 /* appbar.star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.png; sourceTree = "<group>"; };
 		AF81280319906BED00EE0F77 /* appbar.star.yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.yellow.png; sourceTree = "<group>"; };
 		AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appbar.add.new@2x.png"; sourceTree = "<group>"; };
+		AFE79942199849140079A6E3 /* NotifyR3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifyR3.png; sourceTree = "<group>"; };
 		DF6DB70069F546298F2ED858 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		AF75F63B1930FE47005F5F6C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				AFE79942199849140079A6E3 /* NotifyR3.png */,
 				AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */,
 				AF81280319906BED00EE0F77 /* appbar.star.yellow.png */,
 				AF81280119906B3B00EE0F77 /* appbar.star.png */,
@@ -602,6 +605,7 @@
 				AF8127EC198F427600EE0F77 /* appTiles8.png in Resources */,
 				AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */,
 				AF8127EA198F424800EE0F77 /* appTiles7.png in Resources */,
+				AFE79943199849140079A6E3 /* NotifyR3.png in Resources */,
 				AF75F649193105E2005F5F6C /* appbar.sign.parking.png in Resources */,
 				AF8127F81990489400EE0F77 /* menuBG.png in Resources */,
 				AF8127F21990413400EE0F77 /* appbar.draw.pencil.png in Resources */,
@@ -877,7 +881,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DF6DB70069F546298F2ED858 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -898,7 +901,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DF6DB70069F546298F2ED858 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
