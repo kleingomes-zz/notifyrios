@@ -20,7 +20,7 @@
 
 @property (nonatomic, strong) NSArray *products;
 
-@property (atomic, strong) NSMutableDictionary *imageCache;
+@property (nonatomic, strong) NSMutableDictionary *imageCache;
 
 
 + (Biz *)sharedBiz;

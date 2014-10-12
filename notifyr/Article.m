@@ -18,7 +18,7 @@
     article.articleId = [Utils getNumberFromDictionary:dictionary name:@"Id"];
     
     article.title = [Utils getStringFromDictionary:dictionary name:@"Title"];
-    article.description = [Utils getStringFromDictionary:dictionary name:@"Description"];
+    article.articleDescription = [Utils getStringFromDictionary:dictionary name:@"Description"];
     article.source = [Utils getStringFromDictionary:dictionary name:@"Source"];
     article.author = [Utils getStringFromDictionary:dictionary name:@"Author"];
     article.url = [Utils getStringFromDictionary:dictionary name:@"URL"];
