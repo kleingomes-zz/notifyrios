@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -216,9 +217,6 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.star.png" translatesAutoresizingMaskIntoConstraints="NO" id="R6g-ou-vRP">
-                                            <rect key="frame" x="282" y="2" width="33" height="23"/>
-                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -272,17 +270,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9GS-L3-t5e">
-                                <rect key="frame" x="18" y="248" width="284" height="31"/>
-                            </slider>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification News Priority" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTv-vu-5hE">
-                                <rect key="frame" x="73" y="211" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appbar.radar.png" translatesAutoresizingMaskIntoConstraints="NO" id="dwq-TK-azM">
+                                <rect key="frame" x="20" y="114" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Xna-Sg-enW"/>
+                                    <constraint firstAttribute="width" constant="40" id="mIM-S3-wmr"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peq-Py-FDg">
-                                <rect key="frame" x="137" y="476" width="46" height="30"/>
+                                <rect key="frame" x="137" y="518" width="46" height="30"/>
                                 <state key="normal" title="Create">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -291,7 +287,7 @@
                                 </connections>
                             </button>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hb5-pz-WoZ">
-                                <rect key="frame" x="115" y="416" width="91" height="63"/>
+                                <rect key="frame" x="115" y="458" width="91" height="63"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9Qr-E1-69b">
                                         <rect key="frame" x="35" y="9" width="20" height="20"/>
@@ -304,58 +300,36 @@
                                 </constraints>
                             </view>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qaz-Xf-s0n">
-                                <rect key="frame" x="124" y="427" width="73" height="18"/>
+                                <rect key="frame" x="124" y="469" width="73" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appbar.newspaper.png" translatesAutoresizingMaskIntoConstraints="NO" id="0lI-Sq-nMe">
-                                <rect key="frame" x="20" y="195" width="53" height="53"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="53" id="ZZS-dr-5v3"/>
-                                    <constraint firstAttribute="width" constant="53" id="tNK-3P-kxx"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jN-kf-tQc">
-                                <rect key="frame" x="127" y="427" width="67" height="18"/>
+                                <rect key="frame" x="137" y="469" width="47" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appbar.radar.png" translatesAutoresizingMaskIntoConstraints="NO" id="dwq-TK-azM">
-                                <rect key="frame" x="20" y="114" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Xna-Sg-enW"/>
-                                    <constraint firstAttribute="width" constant="40" id="mIM-S3-wmr"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HkF-1Q-E5p" firstAttribute="top" secondItem="dBd-hD-JNj" secondAttribute="bottom" constant="14" id="22d-LT-12g"/>
-                            <constraint firstItem="9GS-L3-t5e" firstAttribute="leading" secondItem="2gJ-2f-KRM" secondAttribute="leadingMargin" constant="4" id="8QM-HK-JOc"/>
-                            <constraint firstItem="aTv-vu-5hE" firstAttribute="leading" secondItem="0lI-Sq-nMe" secondAttribute="trailing" id="AZb-Ei-CMG"/>
-                            <constraint firstItem="9GS-L3-t5e" firstAttribute="top" secondItem="aTv-vu-5hE" secondAttribute="bottom" constant="16" id="Bah-eZ-Fk0"/>
-                            <constraint firstItem="4jN-kf-tQc" firstAttribute="leading" secondItem="9GS-L3-t5e" secondAttribute="trailing" constant="-173" id="DeT-03-ZI7"/>
+                            <constraint firstItem="peq-Py-FDg" firstAttribute="top" secondItem="Qaz-Xf-s0n" secondAttribute="bottom" constant="31" id="6WI-AG-7Py"/>
                             <constraint firstAttribute="centerX" secondItem="peq-Py-FDg" secondAttribute="centerX" id="FPw-N5-uar"/>
                             <constraint firstItem="Msh-J6-hl5" firstAttribute="leading" secondItem="dwq-TK-azM" secondAttribute="leading" id="GJ3-r5-84E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Msh-J6-hl5" secondAttribute="trailing" constant="4" id="JaM-EZ-uE1"/>
                             <constraint firstItem="3bk-r5-rXQ" firstAttribute="leading" secondItem="dwq-TK-azM" secondAttribute="trailing" constant="8" id="KXi-4t-zTI"/>
                             <constraint firstItem="dwq-TK-azM" firstAttribute="top" secondItem="dBd-hD-JNj" secondAttribute="bottom" constant="50" id="NCf-jd-7PN"/>
-                            <constraint firstItem="4jN-kf-tQc" firstAttribute="top" secondItem="9GS-L3-t5e" secondAttribute="bottom" constant="149" id="Pjy-oX-FFQ"/>
-                            <constraint firstItem="hb5-pz-WoZ" firstAttribute="top" secondItem="9GS-L3-t5e" secondAttribute="bottom" constant="138" id="Yn5-9v-MmG"/>
-                            <constraint firstAttribute="centerX" secondItem="4jN-kf-tQc" secondAttribute="centerX" constant="-0.5" id="aPk-Y9-Ihr"/>
+                            <constraint firstItem="peq-Py-FDg" firstAttribute="top" secondItem="hb5-pz-WoZ" secondAttribute="bottom" constant="-3" id="T9T-PU-HSj"/>
+                            <constraint firstAttribute="centerX" secondItem="4jN-kf-tQc" secondAttribute="centerX" id="aPk-Y9-Ihr"/>
                             <constraint firstAttribute="centerX" secondItem="hb5-pz-WoZ" secondAttribute="centerX" constant="-0.5" id="aV6-nk-BDA"/>
                             <constraint firstItem="3bk-r5-rXQ" firstAttribute="centerY" secondItem="dwq-TK-azM" secondAttribute="centerY" constant="9.5" id="dNb-CF-KcS"/>
                             <constraint firstItem="Msh-J6-hl5" firstAttribute="top" secondItem="3bk-r5-rXQ" secondAttribute="bottom" id="e1W-HZ-ai4"/>
                             <constraint firstAttribute="centerX" secondItem="HkF-1Q-E5p" secondAttribute="centerX" id="jcm-xH-5E6"/>
                             <constraint firstItem="peq-Py-FDg" firstAttribute="top" secondItem="4jN-kf-tQc" secondAttribute="bottom" constant="31" id="kW0-Cw-13y"/>
-                            <constraint firstItem="Qaz-Xf-s0n" firstAttribute="top" secondItem="dBd-hD-JNj" secondAttribute="bottom" constant="363" id="lMO-ti-uhh"/>
-                            <constraint firstItem="Msh-J6-hl5" firstAttribute="leading" secondItem="0lI-Sq-nMe" secondAttribute="leading" id="nEE-zi-6h1"/>
-                            <constraint firstItem="0lI-Sq-nMe" firstAttribute="centerY" secondItem="aTv-vu-5hE" secondAttribute="centerY" id="nke-OX-Fr7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="9GS-L3-t5e" secondAttribute="trailing" constant="4" id="nww-zq-Los"/>
+                            <constraint firstItem="7Zv-T2-YJl" firstAttribute="top" secondItem="peq-Py-FDg" secondAttribute="bottom" constant="20" id="nkW-xp-HZS"/>
                             <constraint firstItem="Msh-J6-hl5" firstAttribute="leading" secondItem="2gJ-2f-KRM" secondAttribute="leadingMargin" constant="4" id="rQD-TV-lxn"/>
                             <constraint firstAttribute="centerX" secondItem="Qaz-Xf-s0n" secondAttribute="centerX" id="sbj-Aw-GAg"/>
-                            <constraint firstItem="0lI-Sq-nMe" firstAttribute="top" secondItem="Msh-J6-hl5" secondAttribute="bottom" constant="11" id="sr6-9h-4x0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hsz-bB-sMM"/>
@@ -363,7 +337,6 @@
                         <outlet property="activityIndicatorView" destination="9Qr-E1-69b" id="Bnm-Jm-9GN"/>
                         <outlet property="inputField" destination="Msh-J6-hl5" id="msT-C2-fpf"/>
                         <outlet property="notFoundLabel" destination="Qaz-Xf-s0n" id="J9K-pn-0bX"/>
-                        <outlet property="notificationPrioritySlider" destination="9GS-L3-t5e" id="cz7-Km-mEN"/>
                         <outlet property="saveIndicatorView" destination="hb5-pz-WoZ" id="eaf-ze-9gq"/>
                     </connections>
                 </viewController>
@@ -2087,12 +2060,10 @@ This document was last updated on May 24, 2014</string>
         <image name="appbar.list 2.png" width="76" height="76"/>
         <image name="appbar.list.png" width="76" height="76"/>
         <image name="appbar.newspaper 2.png" width="76" height="76"/>
-        <image name="appbar.newspaper.png" width="76" height="76"/>
         <image name="appbar.people 2.png" width="76" height="76"/>
         <image name="appbar.people.png" width="76" height="76"/>
         <image name="appbar.radar.png" width="76" height="76"/>
         <image name="appbar.sign.parking.png" width="76" height="76"/>
-        <image name="appbar.star.png" width="76" height="76"/>
         <image name="appbar.unlock.png" width="76" height="76"/>
         <image name="button.png" width="118" height="39"/>
         <image name="notfyrlogo3.png" width="3320" height="850"/>
