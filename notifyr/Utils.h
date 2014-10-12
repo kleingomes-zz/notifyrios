@@ -14,4 +14,6 @@
 
 + (NSString *)getStringFromDictionary:(NSDictionary *)dictionary name:(NSString *)name;
 
++ (NSDate *)getDateFromDictionary:(NSDictionary *)dictionary name:(NSString *)name;
+
 @end

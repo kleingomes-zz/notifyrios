@@ -21,6 +21,7 @@
 @property (nonatomic) NSNumber *score;
 @property (nonatomic) NSString *iUrl;
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSDate *publishDate;
 
 
 + (Article *)makeArticleFromDictionary:(NSDictionary *)dictionary;

@@ -28,4 +28,12 @@
     return dictionary[name];
 }
 
++ (NSDate *)getDateFromDictionary:(NSDictionary *)dictionary name:(NSString *)name
+{
+    if (dictionary[name] == [NSNull null])
+    {
+        return nil;
+    }
+    return dictionary[name];
+}
 @end
