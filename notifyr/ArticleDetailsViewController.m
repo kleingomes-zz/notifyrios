@@ -36,7 +36,7 @@
     
     Article *article = self.article;
     self.titleLabel.text = article.title ? article.title : @"[No Title]";
-    self.descriptionTextView.text = article.description;
+    self.descriptionTextView.text = article.articleDescription;
     self.authorLabel.text = article.author ? article.author : @"[No Author]";
     [self.sourceButton setTitle:article.source ? article.source : @"[No Source]" forState:UIControlStateNormal];
     if(article.image != NULL)

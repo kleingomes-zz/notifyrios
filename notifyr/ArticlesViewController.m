@@ -136,7 +136,7 @@
     
     Article *article = self.items[indexPath.row];
     cell.titleLabel.text = article.title ? article.title : @"[No Title]";
-    cell.descriptionTextView.text = article.description;
+    cell.descriptionTextView.text = article.articleDescription;
     cell.authorLabel.text = article.author ? article.author : @"[No Author]";
     [cell.sourceButton setTitle:article.source ? article.source : @"[No Source]" forState:UIControlStateNormal];
     cell.score.text = [NSString stringWithFormat:@"%.1f", [article.score floatValue]];
