@@ -19,6 +19,7 @@
 
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) id articleObserver;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -93,7 +94,9 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    self.navigationItem.title = self.interest.productName ? self.interest.productName : self.interest.companyName;
+    NSString *title = self.interest.productName ? self.interest.productName : self.interest.companyName;
+    self.titleLabel.text = title;
+    self.navigationItem.title = title;
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles9.png"]];
     imageView.frame = self.tableView.frame;
     self.tableView.backgroundView = imageView;

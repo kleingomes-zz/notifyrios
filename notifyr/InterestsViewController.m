@@ -185,7 +185,7 @@
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
     
    // UIButton *btnName = [UIButton buttonWithType:UIButtonTypeCustom];
    // [btnName setFrame:CGRectMake(0, 0, 44, 44)];

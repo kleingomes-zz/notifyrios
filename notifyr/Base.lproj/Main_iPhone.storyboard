@@ -157,15 +157,18 @@
                             <rect key="frame" x="0.0" y="64" width="320" height="49"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YN6-DF-CBH">
-                                    <rect key="frame" x="98" y="11" width="124" height="29"/>
-                                    <segments>
-                                        <segment title="Popular"/>
-                                        <segment title="Newest"/>
-                                    </segments>
-                                </segmentedControl>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dC6-aT-5DF">
+                                    <rect key="frame" x="143" y="14" width="34" height="21"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="centerY" secondItem="dC6-aT-5DF" secondAttribute="centerY" id="Pv6-4d-dho"/>
+                                <constraint firstAttribute="centerX" secondItem="dC6-aT-5DF" secondAttribute="centerX" id="TQT-WA-pAF"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InterestCell" rowHeight="204" id="Xv2-AE-IhB" customClass="ArticleCell">
@@ -237,7 +240,18 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="a3r-Yi-2lS">
                         <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="YN6-DF-CBH">
+                            <rect key="frame" x="98" y="8" width="124" height="29"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Popular"/>
+                                <segment title="Newest"/>
+                            </segments>
+                        </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="titleLabel" destination="dC6-aT-5DF" id="u0r-UV-bFb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJ5-tf-fbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
