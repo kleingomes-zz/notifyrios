@@ -164,19 +164,6 @@
                                                 <constraint firstAttribute="width" secondItem="Ngo-Cz-zpM" secondAttribute="height" multiplier="16:9" id="WGV-tz-EXf"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="188" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-2p-nCz">
-                                            <rect key="frame" x="10" y="190" width="302" height="16"/>
-                                            <attributedString key="attributedText">
-                                                <fragment content="Title">
-                                                    <attributes>
-                                                        <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <font key="NSFont" size="13" name="HelveticaNeue-Bold"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe |" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hf5-1I-S5s">
                                             <rect key="frame" x="10" y="210" width="60" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -195,15 +182,23 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="188" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-2p-nCz">
+                                            <rect key="frame" x="10" y="138" width="302" height="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="0.0" height="1"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="hEk-2p-nCz" secondAttribute="trailing" id="8H5-1l-Ps4"/>
-                                        <constraint firstItem="hf5-1I-S5s" firstAttribute="top" secondItem="hEk-2p-nCz" secondAttribute="bottom" constant="4" id="Cff-Fk-FgF"/>
+                                        <constraint firstItem="hf5-1I-S5s" firstAttribute="top" secondItem="Ngo-Cz-zpM" secondAttribute="bottom" constant="22" id="A5Y-0O-JI5"/>
                                         <constraint firstItem="Ngo-Cz-zpM" firstAttribute="leading" secondItem="QyT-fq-WXD" secondAttribute="leading" id="FWx-D7-U2g"/>
                                         <constraint firstItem="qgd-vC-ay2" firstAttribute="centerY" secondItem="dnr-Sd-LSL" secondAttribute="centerY" id="Hyt-Qv-bYg"/>
                                         <constraint firstItem="hEk-2p-nCz" firstAttribute="leading" secondItem="QyT-fq-WXD" secondAttribute="leadingMargin" constant="2" id="QfM-sd-hUG"/>
                                         <constraint firstAttribute="trailing" secondItem="Ngo-Cz-zpM" secondAttribute="trailing" id="Qp6-XI-8DY"/>
-                                        <constraint firstItem="hEk-2p-nCz" firstAttribute="top" secondItem="Ngo-Cz-zpM" secondAttribute="bottom" constant="2" id="W7A-rs-cR1"/>
+                                        <constraint firstItem="hEk-2p-nCz" firstAttribute="top" secondItem="Ngo-Cz-zpM" secondAttribute="bottom" constant="-50" id="Svg-Vw-F05"/>
                                         <constraint firstItem="hf5-1I-S5s" firstAttribute="leading" secondItem="hEk-2p-nCz" secondAttribute="leading" id="bQs-rJ-olN"/>
                                         <constraint firstItem="Ngo-Cz-zpM" firstAttribute="top" secondItem="QyT-fq-WXD" secondAttribute="topMargin" id="bh3-dn-aEq"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="dnr-Sd-LSL" secondAttribute="bottom" constant="-2" id="doG-no-QyG"/>
@@ -218,7 +213,6 @@
                                     <outlet property="score" destination="qgd-vC-ay2" id="x64-B5-tUl"/>
                                     <outlet property="sourceButton" destination="dnr-Sd-LSL" id="ruL-eX-zxP"/>
                                     <outlet property="titleLabel" destination="hEk-2p-nCz" id="B6H-mR-Log"/>
-                                    <outlet property="titleTopConstraint" destination="W7A-rs-cR1" id="f90-1m-uZ4"/>
                                     <segue destination="Qvv-ee-S0K" kind="push" identifier="ShowArticle" id="ep1-qb-Caf"/>
                                 </connections>
                             </tableViewCell>
