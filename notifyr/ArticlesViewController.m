@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) id articleObserver;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *aspectRatoConstraint;
 
 @end
 
@@ -102,6 +103,9 @@
     self.tableView.backgroundView = imageView;
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    self.tableView.estimatedRowHeight = 350;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -139,28 +143,44 @@
     
     Article *article = self.items[indexPath.row];
     cell.titleLabel.text = article.title ? article.title : @"[No Title]";
-    cell.descriptionTextView.text = article.articleDescription;
+    cell.descriptionLabel.text = article.articleDescription;
     cell.authorLabel.text = article.author ? article.author : @"[No Author]";
     [cell.sourceButton setTitle:article.source ? article.source : @"[No Source]" forState:UIControlStateNormal];
     cell.score.text = [NSString stringWithFormat:@"%.1f", [article.score floatValue]];
     cell.mainImageView.image = nil; //todo replace with default image
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:article.iUrl]];
-        if (imgData) {
-            UIImage *image = [UIImage imageWithData:imgData];
-            if (image) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    article.image = image;
-                    cell.mainImageView.image = image;
-                });
+    if (article.iUrl && [article.iUrl length] > 0)
+    {
+        cell.titleTopConstraint.constant = 2;
+        cell.mainImageView.hidden = NO;
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:article.iUrl]];
+            if (imgData) {
+                UIImage *image = [UIImage imageWithData:imgData];
+                if (image) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        article.image = image;
+                        cell.mainImageView.image = image;
+                    });
+                }
+                else
+                {
+                    NSLog(@"Invalid Image %@", article.iUrl);
+                    cell.titleTopConstraint.constant = cell.mainImageView.frame.size.height * -1;
+                    cell.mainImageView.hidden = YES;
+                    [cell needsUpdateConstraints];
+                }
             }
-            else
-            {
-                NSLog(@"Invalid Image %@", article.iUrl);
-            }
-        }
-    });
+        });
+    }
+    else
+    {
+        cell.titleTopConstraint.constant = cell.mainImageView.frame.size.height * -1;
+        cell.mainImageView.hidden = YES;
+    }
+    
+    
     
     return cell;
 }
