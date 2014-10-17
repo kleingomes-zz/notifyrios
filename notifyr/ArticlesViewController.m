@@ -139,21 +139,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InterestCell" forIndexPath:indexPath];
-    
     Article *article = self.items[indexPath.row];
+    ArticleCell *cell;
+
+    BOOL hasImage = (article.iUrl && [article.iUrl length] > 0);
+    if (hasImage)
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
+    }
+    else
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"NoImageCell" forIndexPath:indexPath];
+    }
+    
     cell.titleLabel.text = article.title ? article.title : @"[No Title]";
     cell.descriptionLabel.text = article.articleDescription;
     cell.authorLabel.text = article.author ? article.author : @"[No Author]";
-    [cell.sourceButton setTitle:article.source ? article.source : @"[No Source]" forState:UIControlStateNormal];
+    cell.sourceLabel.text = article.source ? article.source : @"[No Source]";
     cell.score.text = [NSString stringWithFormat:@"%.1f", [article.score floatValue]];
-    cell.mainImageView.image = nil; //todo replace with default image
+    //cell.mainImageView.image = nil; //todo replace with default image
     
-    if (article.iUrl && [article.iUrl length] > 0)
+    if (hasImage)
     {
-        cell.titleTopConstraint.constant = 2;
-        cell.mainImageView.hidden = NO;
-        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:article.iUrl]];
             if (imgData) {
@@ -174,13 +181,6 @@
             }
         });
     }
-    else
-    {
-        cell.titleTopConstraint.constant = cell.mainImageView.frame.size.height * -1;
-        cell.mainImageView.hidden = YES;
-    }
-    
-    
     
     return cell;
 }
