@@ -39,7 +39,14 @@
 
 - (void)initItems
 {
-    [[Biz sharedBiz] getArticlesForInterest:self.interest];
+    if (self.interest == nil)
+    {
+        [[Biz sharedBiz] getArticlesForAllInterests];
+    }
+    else
+    {
+        [[Biz sharedBiz] getArticlesForInterest:self.interest];
+    }
 }
 
 - (void)initObserver
@@ -95,7 +102,16 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    NSString *title = self.interest.productName ? self.interest.productName : self.interest.companyName;
+    NSString *title;
+    if (self.interest != nil)
+    {
+        title = self.interest.productName ? self.interest.productName : self.interest.companyName;
+    }
+    else
+    {
+        title = @"All Interests";
+    }
+    
     self.titleLabel.text = title;
     self.navigationItem.title = title;
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles9.png"]];
