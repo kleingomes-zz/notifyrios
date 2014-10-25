@@ -232,7 +232,7 @@
                                     <segue destination="Qvv-ee-S0K" kind="push" identifier="ShowArticle" id="ep1-qb-Caf"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell alpha="0.75" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoImageCell" rowHeight="60" id="hba-Wy-F8V" customClass="ArticleCell">
+                            <tableViewCell alpha="0.75" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NoImageCell" rowHeight="60" id="hba-Wy-F8V" customClass="ArticleCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hba-Wy-F8V" id="JTO-lX-alJ">
@@ -274,6 +274,7 @@
                                     <outlet property="score" destination="a3v-Wj-9lR" id="hoX-DQ-Nl7"/>
                                     <outlet property="sourceLabel" destination="TzA-9B-dyP" id="Oc2-D8-oM1"/>
                                     <outlet property="titleLabel" destination="T6k-WW-MI3" id="Cpz-oa-uyu"/>
+                                    <segue destination="Qvv-ee-S0K" kind="push" identifier="ShowArticle" id="oB4-9a-Nrz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -336,7 +337,7 @@
                                     <constraint firstAttribute="width" constant="40" id="mIM-S3-wmr"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peq-Py-FDg">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peq-Py-FDg">
                                 <rect key="frame" x="137" y="518" width="46" height="30"/>
                                 <state key="normal" title="Create">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -345,7 +346,7 @@
                                     <action selector="createAction:" destination="1i3-3R-ttB" eventType="touchUpInside" id="xVx-z9-rwa"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hb5-pz-WoZ">
+                            <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hb5-pz-WoZ">
                                 <rect key="frame" x="115" y="458" width="91" height="63"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9Qr-E1-69b">
@@ -358,13 +359,13 @@
                                     <constraint firstAttribute="height" constant="63" id="WTN-CA-vCe"/>
                                 </constraints>
                             </view>
-                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qaz-Xf-s0n">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Not Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qaz-Xf-s0n">
                                 <rect key="frame" x="124" y="469" width="73" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jN-kf-tQc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Saving" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jN-kf-tQc">
                                 <rect key="frame" x="137" y="469" width="47" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
@@ -2152,5 +2153,6 @@ This document was last updated on May 24, 2014</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="3NJ-xn-Hkv"/>
+        <segue reference="oB4-9a-Nrz"/>
     </inferredMetricsTieBreakers>
 </document>
