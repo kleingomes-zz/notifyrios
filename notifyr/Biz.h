@@ -29,6 +29,8 @@
 
 - (void)getArticlesForInterest:(Interest *)interest;
 
+- (void)getArticlesForAllInterests;
+
 - (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 - (void)deleteInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;

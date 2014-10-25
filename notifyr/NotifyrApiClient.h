@@ -20,6 +20,8 @@
 
 - (void)getArticlesForInterest:(Interest *)interest;
 
+- (void)getArticlesForAllInterests;
+
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 - (void)getProductsWithCompletionHandler:(void (^)(NSError *error))completionHandler;

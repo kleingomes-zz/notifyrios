@@ -134,6 +134,32 @@
     }];
 }
 
+- (void)getArticlesForAllInterests
+{
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getArticlesForAllInterestsMain];
+        }];
+    }
+    else
+    {
+        [self getArticlesForAllInterestsMain];
+    }
+}
+
+- (void)getArticlesForAllInterestsMain
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetAllInterestArticles?userId=%@", self.userId]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (!error && jsonObject)
+        {
+            [self notifyArticlesUpdatedForInterest:nil jsonItems:jsonObject]; //TODO: possibly not have the nill
+        }
+    }];
+}
+
 - (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     //todo: replace this access token pattern/main method in these methods

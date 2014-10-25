@@ -99,6 +99,13 @@
     [apiClient getArticlesForInterest:interest];
 }
 
+- (void)getArticlesForAllInterests
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getArticlesForAllInterests];
+}
+
+
 - (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
