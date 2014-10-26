@@ -442,10 +442,6 @@
 				E07747D2198DC1C900D970F7 /* SettingsViewController.m */,
 				E07747D4198DC58D00D970F7 /* PrivacyPolicyViewController.h */,
 				E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */,
-				E0414E6A198D6F64005B5BB9 /* UIImage+ImageEffects.h */,
-				E0414E6B198D6F64005B5BB9 /* UIImage+ImageEffects.m */,
-				E00C3672198F32F700331E23 /* MEZoomAnimationController.h */,
-				E00C3673198F32F700331E23 /* MEZoomAnimationController.m */,
 				E0BA964219FC774E00FC81D5 /* Utils */,
 				E0931D76190ADED4001A991F /* Model */,
 				E0AF886219211E3300E27C69 /* Data */,
@@ -540,6 +536,10 @@
 			children = (
 				E0BA963F19FC774500FC81D5 /* GradientView.h */,
 				E0BA964019FC774500FC81D5 /* GradientView.m */,
+				E0414E6A198D6F64005B5BB9 /* UIImage+ImageEffects.h */,
+				E0414E6B198D6F64005B5BB9 /* UIImage+ImageEffects.m */,
+				E00C3672198F32F700331E23 /* MEZoomAnimationController.h */,
+				E00C3673198F32F700331E23 /* MEZoomAnimationController.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
