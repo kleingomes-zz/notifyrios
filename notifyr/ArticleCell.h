@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GradientView.h"
 
 @interface ArticleCell : UITableViewCell
 
@@ -18,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mainImageView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainImageViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet GradientView *textBackgroundView;
 
 
 @end

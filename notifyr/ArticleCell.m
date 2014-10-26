@@ -22,6 +22,8 @@
 - (void)awakeFromNib
 {
     // Initialization code
+    [self.titleLabel sizeToFit];
+    self.textBackgroundView.gradientColors = [NSArray arrayWithObjects:(id)[[UIColor clearColor] CGColor], (id)[[UIColor colorWithRed:0 green:0 blue:0 alpha:1.0] CGColor], nil];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
