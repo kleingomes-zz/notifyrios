@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-UIActivityIndicator-for-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2D770399020299E4F8D1F091</key>
+		<key>82FC01BE0FB16F865ED2B9CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>352A8D4947AE1C2F2CB9DB9E</key>
+		<key>8E269569800CF820ED532410</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7A817B74E949EEC10CF5B6B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E270A1290F157AC93B58659E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

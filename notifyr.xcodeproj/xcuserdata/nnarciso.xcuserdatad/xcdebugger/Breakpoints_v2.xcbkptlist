@@ -360,11 +360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "notifyr/ArticlesViewController.m"
-            timestampString = "435901157.417438"
+            timestampString = "435975568.809807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>

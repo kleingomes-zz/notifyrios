@@ -12,6 +12,7 @@
 #import "ArticleCell.h"
 #import "Article.h"
 #import "ArticleDetailsViewController.h"
+#import <UIActivityIndicator-for-SDWebImage/UIImageView+UIActivityIndicatorForSDWebImage.h>
 
 @interface ArticlesViewController ()
 
@@ -177,25 +178,12 @@
     
     if (hasImage)
     {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:article.iUrl]];
-            if (imgData) {
-                UIImage *image = [UIImage imageWithData:imgData];
-                if (image) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        article.image = image;
-                        cell.mainImageView.image = image;
-                    });
-                }
-                else
-                {
-                    NSLog(@"Invalid Image %@", article.iUrl);
-                    cell.titleTopConstraint.constant = cell.mainImageView.frame.size.height * -1;
-                    cell.mainImageView.hidden = YES;
-                    [cell needsUpdateConstraints];
-                }
+        [cell.mainImageView setImageWithURL:[NSURL URLWithString:article.iUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (error)
+            {
+                NSLog(@"Invalid Image %@: %@", article.iUrl, [error localizedDescription]);
             }
-        });
+        } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
     
     return cell;
