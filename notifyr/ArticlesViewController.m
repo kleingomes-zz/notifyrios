@@ -183,6 +183,14 @@
             {
                 NSLog(@"Invalid Image %@: %@", article.iUrl, [error localizedDescription]);
             }
+            else
+            {
+                if (image.size.width < 320)
+                {
+                    NSLog(@"Too small");
+                    cell.mainImageView.contentMode = UIViewContentModeCenter;
+                }
+            }
         } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
     
