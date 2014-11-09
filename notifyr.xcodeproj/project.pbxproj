@@ -426,22 +426,7 @@
 				E01A59191902F05600EB0BE4 /* AppDelegate.m */,
 				E01A591B1902F05600EB0BE4 /* Main_iPhone.storyboard */,
 				E01A591E1902F05600EB0BE4 /* Main_iPad.storyboard */,
-				E0931D71190ADBF5001A991F /* InterestsViewController.h */,
-				E0931D72190ADBF5001A991F /* InterestsViewController.m */,
-				E0D3A5A919741CB9008C445D /* ArticlesViewController.h */,
-				E0D3A5AA19741CB9008C445D /* ArticlesViewController.m */,
-				E0D3A5B21974511A008C445D /* ArticleDetailsViewController.h */,
-				E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */,
-				E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */,
-				E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */,
-				E055249C197B61EF007322AE /* NewInterestViewController.h */,
-				E055249D197B61EF007322AE /* NewInterestViewController.m */,
-				E00C366F198F09EB00331E23 /* MenuViewController.h */,
-				E00C3670198F09EB00331E23 /* MenuViewController.m */,
-				E07747D1198DC1C900D970F7 /* SettingsViewController.h */,
-				E07747D2198DC1C900D970F7 /* SettingsViewController.m */,
-				E07747D4198DC58D00D970F7 /* PrivacyPolicyViewController.h */,
-				E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */,
+				E0614D831A0FBC8A0015DDA2 /* ViewControllers */,
 				E0BA964219FC774E00FC81D5 /* Utils */,
 				E0931D76190ADED4001A991F /* Model */,
 				E0AF886219211E3300E27C69 /* Data */,
@@ -482,6 +467,29 @@
 				E01A59341902F05600EB0BE4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E0614D831A0FBC8A0015DDA2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E0931D71190ADBF5001A991F /* InterestsViewController.h */,
+				E0931D72190ADBF5001A991F /* InterestsViewController.m */,
+				E0D3A5A919741CB9008C445D /* ArticlesViewController.h */,
+				E0D3A5AA19741CB9008C445D /* ArticlesViewController.m */,
+				E0D3A5B21974511A008C445D /* ArticleDetailsViewController.h */,
+				E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */,
+				E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */,
+				E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */,
+				E055249C197B61EF007322AE /* NewInterestViewController.h */,
+				E055249D197B61EF007322AE /* NewInterestViewController.m */,
+				E00C366F198F09EB00331E23 /* MenuViewController.h */,
+				E00C3670198F09EB00331E23 /* MenuViewController.m */,
+				E07747D1198DC1C900D970F7 /* SettingsViewController.h */,
+				E07747D2198DC1C900D970F7 /* SettingsViewController.m */,
+				E07747D4198DC58D00D970F7 /* PrivacyPolicyViewController.h */,
+				E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		E0931D76190ADED4001A991F /* Model */ = {

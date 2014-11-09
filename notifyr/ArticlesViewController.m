@@ -121,8 +121,8 @@
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    self.tableView.estimatedRowHeight = 350;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    //self.tableView.estimatedRowHeight = 350;
+    //self.tableView.rowHeight = UITableViewAutomaticDimension;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -162,7 +162,15 @@
     BOOL hasImage = (article.iUrl && [article.iUrl length] > 0);
     if (hasImage)
     {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
+        BOOL isSmallImage = [article.iUrl containsString:@"gstatic"]; //TODO: replace this with a property in the article set by the server
+        if (isSmallImage)
+        {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"SmallImageCell" forIndexPath:indexPath];
+        }
+        else
+        {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
+        }
     }
     else
     {
@@ -182,14 +190,6 @@
             if (error)
             {
                 NSLog(@"Invalid Image %@: %@", article.iUrl, [error localizedDescription]);
-            }
-            else
-            {
-                if (image.size.width < 320)
-                {
-                    NSLog(@"Too small");
-                    cell.mainImageView.contentMode = UIViewContentModeCenter;
-                }
             }
         } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
