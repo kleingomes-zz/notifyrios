@@ -34,6 +34,13 @@
     {
         return nil;
     }
-    return dictionary[name];
+    
+    NSString *dateString = dictionary[name];
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss"];
+    NSDate *date = [dateFormat dateFromString:dateString];
+
+    return date;
 }
+
 @end

@@ -182,6 +182,7 @@
     cell.authorLabel.text = article.author ? article.author : @"[No Author]";
     cell.sourceLabel.text = article.source ? article.source : @"[No Source]";
     cell.score.text = [NSString stringWithFormat:@"%.1f", [article.score floatValue]];
+    cell.dateLabel.text = [self convertDateToString:article.publishDate];
     //cell.mainImageView.image = nil; //todo replace with default image
     
     if (hasImage)
@@ -195,6 +196,29 @@
     }
     
     return cell;
+}
+
+- (NSString *)convertDateToString:(NSDate *)date
+{
+    NSTimeInterval secondsInDay = 60 * 60 * 24;
+    NSTimeInterval secondsInHour = 60 * 60;
+    NSTimeInterval secondsInMinute = 60;
+    NSTimeInterval age = fabs(date.timeIntervalSinceNow);
+    if (age > secondsInDay)
+    {
+        return [NSString stringWithFormat:@"%.0fd", round(age / secondsInDay)];
+    }
+    else
+    {
+        if (age > secondsInHour)
+        {
+            return [NSString stringWithFormat:@"%.0fh", round(age / secondsInHour)];
+        }
+        else
+        {
+            return [NSString stringWithFormat:@"%.0fm", round(age / secondsInMinute)];
+        }
+    }
 }
 
 
