@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -182,28 +182,28 @@
                                                 <constraint firstAttribute="height" constant="180" id="fNh-oJ-gSv"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGb-1g-YME" customClass="GradientView">
-                                            <rect key="frame" x="0.0" y="128" width="320" height="52"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGb-1g-YME" customClass="GradientView">
+                                            <rect key="frame" x="0.0" y="127" width="320" height="52.5"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-9i-B9t">
-                                                    <rect key="frame" x="8" y="29" width="40" height="16"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Source" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-9i-B9t">
+                                                    <rect key="frame" x="8" y="29" width="39.5" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="shadowOffset" width="0.0" height="1"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgd-vC-ay2">
-                                                    <rect key="frame" x="280" y="29" width="33" height="16"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgd-vC-ay2">
+                                                    <rect key="frame" x="279" y="29" width="32.5" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <size key="shadowOffset" width="0.0" height="1"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="188" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-2p-nCz">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="188" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-2p-nCz">
                                                     <rect key="frame" x="8" y="8" width="304" height="17"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -213,7 +213,7 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="hEk-2p-nCz" secondAttribute="trailing" constant="8" id="6Vr-ke-TcE"/>
-                                                <constraint firstItem="hEk-2p-nCz" firstAttribute="top" secondItem="PGb-1g-YME" secondAttribute="top" constant="8" id="I5r-eE-H9S"/>
+                                                <constraint firstItem="hEk-2p-nCz" firstAttribute="top" secondItem="PGb-1g-YME" secondAttribute="top" constant="12" id="I5r-eE-H9S"/>
                                                 <constraint firstAttribute="bottom" secondItem="Nde-9i-B9t" secondAttribute="bottom" constant="8" id="JgB-Uf-x1T"/>
                                                 <constraint firstAttribute="trailing" secondItem="qgd-vC-ay2" secondAttribute="trailing" constant="8" id="LZD-b3-Y54"/>
                                                 <constraint firstItem="Nde-9i-B9t" firstAttribute="top" secondItem="hEk-2p-nCz" secondAttribute="bottom" constant="4" id="P3I-hM-ItH"/>
