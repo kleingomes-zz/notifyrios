@@ -15,7 +15,7 @@
 #import "UIImage+ImageEffects.h"
 #import "UIViewController+ECSlidingViewController.h"
 #import "MEZoomAnimationController.h"
-
+#import <UIImageView+UIActivityIndicatorForSDWebImage.h>
 
 @interface InterestsViewController ()
 
@@ -271,23 +271,12 @@
         }
         else
         {
-            //cell.logoImageView = nil; //todo: replace with default image
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:interest.logoUrl]];
-                if (imgData) {
-                    UIImage *image = [UIImage imageWithData:imgData];
-                    if (image) {
-                        //biz.imageCache[interest.logoUrl] = image;
-                        dispatch_async(dispatch_get_main_queue(), ^{
-                            InterestCell *updateCell = (id)[tableView cellForRowAtIndexPath:indexPath];
-                            if (updateCell)
-                            {
-                                updateCell.logoImageView.image = image;
-                            }
-                        });
-                    }
+            [cell.logoImageView setImageWithURL:[NSURL URLWithString:interest.logoUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                if (error)
+                {
+                    NSLog(@"Invalid Image %@: %@", interest.logoUrl, [error localizedDescription]);
                 }
-            });
+            } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
         }
         
         return cell;
@@ -297,7 +286,6 @@
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddNewCell" forIndexPath:indexPath];
         return cell;
     }
-    
     
     
     /*
