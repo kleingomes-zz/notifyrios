@@ -194,6 +194,11 @@
             }
         } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
+    // Remove the border for the first cell
+    if(indexPath.row == 0)
+    {
+        cell.borderLineView.hidden = true;
+    }
     
     return cell;
 }

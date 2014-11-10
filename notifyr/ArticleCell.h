@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainImageViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet GradientView *textBackgroundView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIView *borderLineView;
 
 
 @end
