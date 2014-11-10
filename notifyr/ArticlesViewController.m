@@ -79,7 +79,6 @@
 {
     if ([segue.identifier isEqualToString:@"ShowArticle"])
     {
-        NSLog(@"row: %li", (long)[self.tableView indexPathForSelectedRow].row);
         ArticleWebViewController *vc = (ArticleWebViewController *)segue.destinationViewController;
         Article *article = self.items[[self.tableView indexPathForSelectedRow].row];
         vc.article = article;
