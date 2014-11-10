@@ -340,13 +340,13 @@
                                     <segue destination="Qvv-ee-S0K" kind="push" identifier="ShowArticle" id="oB4-9a-Nrz"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell alpha="0.75" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoImageCell" rowHeight="100" id="rwc-71-T45" customClass="ArticleCell">
+                            <tableViewCell alpha="0.75" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NoImageCell" rowHeight="100" id="rwc-71-T45" customClass="ArticleCell">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rwc-71-T45" id="qv9-zn-1Ab">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gf8-D4-Nqg" userLabel="Border">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gf8-D4-Nqg" userLabel="Border">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
                                             <color key="backgroundColor" white="0.85664335660000002" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -399,6 +399,7 @@
                                     <outlet property="score" destination="yxK-Lx-OW7" id="ymH-DQ-i14"/>
                                     <outlet property="sourceLabel" destination="LD5-DC-RR2" id="5sa-pG-BPa"/>
                                     <outlet property="titleLabel" destination="4Im-jT-hl1" id="3RL-d5-WPL"/>
+                                    <segue destination="Qvv-ee-S0K" kind="push" identifier="ShowArticle" id="UT5-3Q-pM1"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -591,8 +592,9 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGi-KQ-IFw">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rtG-rq-qPs">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -603,12 +605,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="webView" destination="wGi-KQ-IFw" id="k83-70-CS2"/>
+                        <outlet property="webView" destination="rtG-rq-qPs" id="brL-3o-pd8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3re-xC-bHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336" y="742"/>
+            <point key="canvasLocation" x="2364" y="750"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ieG-qs-IaG">
@@ -2272,8 +2274,8 @@ This document was last updated on May 24, 2014</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="UT5-3Q-pM1"/>
         <segue reference="3NJ-xn-Hkv"/>
-        <segue reference="oB4-9a-Nrz"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
 </document>

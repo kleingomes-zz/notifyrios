@@ -11,7 +11,7 @@
 #import "Constants.h"
 #import "ArticleCell.h"
 #import "Article.h"
-#import "ArticleDetailsViewController.h"
+#import "ArticleWebViewController.h"
 #import <UIActivityIndicator-for-SDWebImage/UIImageView+UIActivityIndicatorForSDWebImage.h>
 #import "UIViewController+ECSlidingViewController.h"
 
@@ -79,7 +79,7 @@
 {
     if ([segue.identifier isEqualToString:@"ShowArticle"])
     {
-        ArticleDetailsViewController *vc = (ArticleDetailsViewController *)segue.destinationViewController;
+        ArticleWebViewController *vc = (ArticleWebViewController *)segue.destinationViewController;
         Article *article = self.items[[self.tableView indexPathForSelectedRow].row];
         vc.article = article;
     }
