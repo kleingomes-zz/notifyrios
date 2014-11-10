@@ -13,6 +13,7 @@
 #import "Article.h"
 #import "ArticleDetailsViewController.h"
 #import <UIActivityIndicator-for-SDWebImage/UIImageView+UIActivityIndicatorForSDWebImage.h>
+#import "UIViewController+ECSlidingViewController.h"
 
 @interface ArticlesViewController ()
 
@@ -227,6 +228,28 @@
             return [NSString stringWithFormat:@"%.0fm", round(age / secondsInMinute)];
         }
     }
+}
+
+
+- (IBAction)menuAction:(id)sender {
+    //[self makeBlurredScreenshot];
+    
+    //self.slidingViewController.delegate = self.zoomController;
+    
+    
+    if ([self.slidingViewController currentTopViewPosition] == ECSlidingViewControllerTopViewPositionAnchoredRight) {
+        [self.slidingViewController resetTopViewAnimated:YES];
+    }
+    else
+    {
+        [self.slidingViewController anchorTopViewToRightAnimated:YES];
+        self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGesturePanning | ECSlidingViewControllerAnchoredGestureTapping;
+        
+        self.slidingViewController.topViewController.view.layer.shadowOpacity = 0.75f;
+        self.slidingViewController.topViewController.view.layer.shadowRadius = 10.0f;
+        self.slidingViewController.topViewController.view.layer.shadowColor = [UIColor blackColor].CGColor;
+    }
+    
 }
 
 

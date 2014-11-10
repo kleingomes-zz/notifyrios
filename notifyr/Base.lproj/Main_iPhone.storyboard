@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -144,14 +144,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VX4-h3-hud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1512" y="750"/>
+            <point key="canvasLocation" x="1471" y="750"/>
         </scene>
         <!--All Interests-->
         <scene sceneID="dcs-ag-rfE">
             <objects>
                 <tableViewController id="VLr-JZ-fXu" customClass="ArticlesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Abb-0O-F0f">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.32517482517482516" alpha="1" colorSpace="calibratedWhite"/>
@@ -415,11 +415,18 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" badgeValue="3" systemItem="mostViewed" id="Ogn-AC-9Sg"/>
-                    <navigationItem key="navigationItem" title="All Interests" id="a3r-Yi-2lS"/>
+                    <navigationItem key="navigationItem" title="All Interests" id="a3r-Yi-2lS">
+                        <barButtonItem key="leftBarButtonItem" image="appbar.hamburger.png" id="1WN-GY-cNm">
+                            <color key="tintColor" white="0.98951048949999998" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="menuAction:" destination="VLr-JZ-fXu" id="HV1-gg-FcU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJ5-tf-fbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912" y="750.5"/>
+            <point key="canvasLocation" x="1907" y="750"/>
         </scene>
         <!--New Interest View Controller-->
         <scene sceneID="8Ks-jB-zij">
@@ -588,7 +595,7 @@
                         <viewControllerLayoutGuide type="bottom" id="l9d-5L-Tpa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4CY-WQ-HI2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGi-KQ-IFw">
@@ -608,7 +615,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3re-xC-bHP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2336" y="773"/>
+            <point key="canvasLocation" x="2336" y="742"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ieG-qs-IaG">
@@ -2272,7 +2279,7 @@ This document was last updated on May 24, 2014</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="M8b-2k-00h"/>
+        <segue reference="3NJ-xn-Hkv"/>
         <segue reference="oB4-9a-Nrz"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
