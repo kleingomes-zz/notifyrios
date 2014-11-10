@@ -131,9 +131,12 @@
                 <navigationController id="DGi-rp-bWL" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" badgeValue="3" selectedImage="NotifyR3.png" systemItem="mostViewed" id="Eg3-8n-Gx2"/>
                     <navigationItem key="navigationItem" id="7UQ-Yc-Erw"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6we-2s-5e3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6we-2s-5e3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.99168926479999997" blue="0.99168926479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="1" green="0.99168926479999997" blue="0.99168926479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.99168926479999997" blue="0.99168926479999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="VLr-JZ-fXu" kind="relationship" relationship="rootViewController" id="M8b-2k-00h"/>
@@ -141,24 +144,31 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VX4-h3-hud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1410" y="773"/>
+            <point key="canvasLocation" x="1512" y="750"/>
         </scene>
         <!--All Interests-->
         <scene sceneID="dcs-ag-rfE">
             <objects>
                 <tableViewController id="VLr-JZ-fXu" customClass="ArticlesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Abb-0O-F0f">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.32517482517482516" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <view key="tableHeaderView" opaque="NO" alpha="0.88" contentMode="scaleToFill" id="jLX-9A-Mpq">
-                            <rect key="frame" x="0.0" y="64" width="320" height="40"/>
+                        <view key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="jLX-9A-Mpq">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
+                                <view alpha="0.5" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RFM-xY-AYl" userLabel="Border">
+                                    <rect key="frame" x="20" y="0.0" width="280" height="1"/>
+                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="tvw-7y-hM9"/>
+                                    </constraints>
+                                </view>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YN6-DF-CBH">
-                                    <rect key="frame" x="98" y="6" width="124" height="29"/>
+                                    <rect key="frame" x="98" y="11" width="124" height="29"/>
                                     <segments>
                                         <segment title="Popular"/>
                                         <segment title="Newest"/>
@@ -167,7 +177,7 @@
                                 </segmentedControl>
                             </subviews>
                             <color key="backgroundColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="tintColor" white="0.98951048949999998" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="1" green="0.99168926477432251" blue="0.99168926477432251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" verticalCompressionResistancePriority="250" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="180" id="Xv2-AE-IhB" customClass="ArticleCell">
@@ -578,7 +588,7 @@
                         <viewControllerLayoutGuide type="bottom" id="l9d-5L-Tpa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4CY-WQ-HI2">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wGi-KQ-IFw">
@@ -2262,7 +2272,7 @@ This document was last updated on May 24, 2014</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3NJ-xn-Hkv"/>
+        <segue reference="M8b-2k-00h"/>
         <segue reference="oB4-9a-Nrz"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
