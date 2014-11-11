@@ -124,8 +124,8 @@
     self.extendedLayoutIncludesOpaqueBars = YES;
     self.tableView.estimatedRowHeight = 350;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
-    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
+ //   [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+ //   [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
     
 }
 
