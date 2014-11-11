@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90E01EDFC4744AF48F221DD9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3006AF9FF84ABD8AE12F3E /* libPods.a */; };
+		AF0FCEEC1A12A7EA00DED0DC /* NotifyR3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0FCEEB1A12A7EA00DED0DC /* NotifyR3.png */; };
 		AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F63D1930FE66005F5F6C /* appbar.cogs.png */; };
 		AF75F6431930FFED005F5F6C /* appbar.people.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F6421930FFED005F5F6C /* appbar.people.png */; };
 		AF75F645193100E7005F5F6C /* appbar.cog.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F644193100E7005F5F6C /* appbar.cog.png */; };
@@ -71,7 +72,6 @@
 		AF81280219906B3B00EE0F77 /* appbar.star.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280119906B3B00EE0F77 /* appbar.star.png */; };
 		AF81280419906BED00EE0F77 /* appbar.star.yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280319906BED00EE0F77 /* appbar.star.yellow.png */; };
 		AF81280619908B3D00EE0F77 /* appbar.add.new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */; };
-		AFE79943199849140079A6E3 /* NotifyR3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFE79942199849140079A6E3 /* NotifyR3.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3673198F32F700331E23 /* MEZoomAnimationController.m */; };
@@ -129,6 +129,7 @@
 		732DD0D5A8AF7F8543C6D604 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8C3006AF9FF84ABD8AE12F3E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D5832D5A0C7383DF82C30C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AF0FCEEB1A12A7EA00DED0DC /* NotifyR3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifyR3.png; sourceTree = "<group>"; };
 		AF75F63D1930FE66005F5F6C /* appbar.cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cogs.png; sourceTree = "<group>"; };
 		AF75F6421930FFED005F5F6C /* appbar.people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.people.png; sourceTree = "<group>"; };
 		AF75F644193100E7005F5F6C /* appbar.cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cog.png; sourceTree = "<group>"; };
@@ -192,7 +193,6 @@
 		AF81280119906B3B00EE0F77 /* appbar.star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.png; sourceTree = "<group>"; };
 		AF81280319906BED00EE0F77 /* appbar.star.yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.yellow.png; sourceTree = "<group>"; };
 		AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appbar.add.new@2x.png"; sourceTree = "<group>"; };
-		AFE79942199849140079A6E3 /* NotifyR3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifyR3.png; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
 		E00C366F198F09EB00331E23 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -302,8 +302,8 @@
 		AF75F63B1930FE47005F5F6C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				AFE79942199849140079A6E3 /* NotifyR3.png */,
 				AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */,
+				AF0FCEEB1A12A7EA00DED0DC /* NotifyR3.png */,
 				AF81280319906BED00EE0F77 /* appbar.star.yellow.png */,
 				AF81280119906B3B00EE0F77 /* appbar.star.png */,
 				AF8127FF19906ADD00EE0F77 /* appbar.notification.star.png */,
@@ -636,7 +636,7 @@
 				AF8127EC198F427600EE0F77 /* appTiles8.png in Resources */,
 				AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */,
 				AF8127EA198F424800EE0F77 /* appTiles7.png in Resources */,
-				AFE79943199849140079A6E3 /* NotifyR3.png in Resources */,
+				AF0FCEEC1A12A7EA00DED0DC /* NotifyR3.png in Resources */,
 				AF75F649193105E2005F5F6C /* appbar.sign.parking.png in Resources */,
 				AF8127F81990489400EE0F77 /* menuBG.png in Resources */,
 				AF8127F21990413400EE0F77 /* appbar.draw.pencil.png in Resources */,

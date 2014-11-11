@@ -190,7 +190,7 @@
                                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGb-1g-YME" customClass="GradientView">
                                             <rect key="frame" x="0.0" y="114" width="320" height="64.5"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Source" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-9i-B9t">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-9i-B9t">
                                                     <rect key="frame" x="8" y="44" width="39.5" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -229,7 +229,7 @@
                                                 <constraint firstItem="hEk-2p-nCz" firstAttribute="top" secondItem="PGb-1g-YME" secondAttribute="top" constant="20" id="I5r-eE-H9S"/>
                                                 <constraint firstAttribute="bottom" secondItem="Nde-9i-B9t" secondAttribute="bottom" constant="8" id="JgB-Uf-x1T"/>
                                                 <constraint firstAttribute="trailing" secondItem="qgd-vC-ay2" secondAttribute="trailing" constant="8" id="LZD-b3-Y54"/>
-                                                <constraint firstItem="Nde-9i-B9t" firstAttribute="top" secondItem="hEk-2p-nCz" secondAttribute="bottom" constant="5" id="P3I-hM-ItH"/>
+                                                <constraint firstItem="Nde-9i-B9t" firstAttribute="top" secondItem="hEk-2p-nCz" secondAttribute="bottom" constant="3" id="P3I-hM-ItH"/>
                                                 <constraint firstItem="Nde-9i-B9t" firstAttribute="leading" secondItem="PGb-1g-YME" secondAttribute="leading" constant="8" id="PiR-Lj-cCY"/>
                                                 <constraint firstItem="Nde-9i-B9t" firstAttribute="baseline" secondItem="4Nf-4M-ecR" secondAttribute="baseline" id="YDc-fc-h9X"/>
                                                 <constraint firstItem="qgd-vC-ay2" firstAttribute="top" secondItem="PGb-1g-YME" secondAttribute="top" id="hwS-aT-zjj"/>
