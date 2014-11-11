@@ -215,17 +215,43 @@
     NSTimeInterval age = fabs(date.timeIntervalSinceNow);
     if (age > secondsInDay)
     {
-        return [NSString stringWithFormat:@"%.0fd", round(age / secondsInDay)];
+        NSInteger daysAgo = round(age / secondsInDay);
+        if(daysAgo > 1)
+        {
+            return [NSString stringWithFormat:@"%.0f days ago", round(age / secondsInDay)];
+        }
+        else
+        {
+            return [NSString stringWithFormat:@"%.0f day ago", round(age / secondsInDay)];
+        }
     }
     else
     {
         if (age > secondsInHour)
         {
-            return [NSString stringWithFormat:@"%.0fh", round(age / secondsInHour)];
+            NSInteger hoursAgo = round(age / secondsInHour);
+            if(hoursAgo > 1)
+            {
+                return [NSString stringWithFormat:@"%.0f hours ago", round(age / secondsInHour)];
+            }
+            else
+            {
+                return [NSString stringWithFormat:@"%.0f hour ago", round(age / secondsInHour)];
+            }
+            
         }
         else
         {
-            return [NSString stringWithFormat:@"%.0fm", round(age / secondsInMinute)];
+            NSInteger minutesAgo = round(age / secondsInMinute);
+            if(minutesAgo > 1)
+            {
+                return [NSString stringWithFormat:@"%.0f minutes ago", round(age / secondsInMinute)];
+            }
+            else
+            {
+                return [NSString stringWithFormat:@"%.0f minute ago", round(age / secondsInMinute)];
+            }
+            
         }
     }
 }
