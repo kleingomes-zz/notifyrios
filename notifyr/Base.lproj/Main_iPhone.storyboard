@@ -2281,5 +2281,5 @@ This document was last updated on May 24, 2014</string>
         <segue reference="UT5-3Q-pM1"/>
         <segue reference="3NJ-xn-Hkv"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.039215686274509803" green="0.37647058823529411" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.11764706671237946" green="0.41568630933761597" blue="0.88235300779342651" alpha="1" colorSpace="deviceRGB"/>
 </document>

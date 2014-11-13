@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		90E01EDFC4744AF48F221DD9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3006AF9FF84ABD8AE12F3E /* libPods.a */; };
 		AF0FCEEC1A12A7EA00DED0DC /* NotifyR3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0FCEEB1A12A7EA00DED0DC /* NotifyR3.png */; };
+		AF0FCEEE1A1529C300DED0DC /* menubg1.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0FCEED1A1529C300DED0DC /* menubg1.png */; };
+		AF0FCEF01A152AF400DED0DC /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0FCEEF1A152AF400DED0DC /* menu2.png */; };
 		AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F63D1930FE66005F5F6C /* appbar.cogs.png */; };
 		AF75F6431930FFED005F5F6C /* appbar.people.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F6421930FFED005F5F6C /* appbar.people.png */; };
 		AF75F645193100E7005F5F6C /* appbar.cog.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F644193100E7005F5F6C /* appbar.cog.png */; };
@@ -130,6 +132,8 @@
 		8C3006AF9FF84ABD8AE12F3E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D5832D5A0C7383DF82C30C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AF0FCEEB1A12A7EA00DED0DC /* NotifyR3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifyR3.png; sourceTree = "<group>"; };
+		AF0FCEED1A1529C300DED0DC /* menubg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubg1.png; sourceTree = "<group>"; };
+		AF0FCEEF1A152AF400DED0DC /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2.png; sourceTree = "<group>"; };
 		AF75F63D1930FE66005F5F6C /* appbar.cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cogs.png; sourceTree = "<group>"; };
 		AF75F6421930FFED005F5F6C /* appbar.people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.people.png; sourceTree = "<group>"; };
 		AF75F644193100E7005F5F6C /* appbar.cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cog.png; sourceTree = "<group>"; };
@@ -302,6 +306,8 @@
 		AF75F63B1930FE47005F5F6C /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				AF0FCEEF1A152AF400DED0DC /* menu2.png */,
+				AF0FCEED1A1529C300DED0DC /* menubg1.png */,
 				AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */,
 				AF0FCEEB1A12A7EA00DED0DC /* NotifyR3.png */,
 				AF81280319906BED00EE0F77 /* appbar.star.yellow.png */,
@@ -660,6 +666,7 @@
 				AF75F67E19325015005F5F6C /* indicatorDisabled.png in Resources */,
 				AF75F66B19323802005F5F6C /* appbar.list 2.png in Resources */,
 				AF75F667193154EB005F5F6C /* appbar.windowsphone.png in Resources */,
+				AF0FCEF01A152AF400DED0DC /* menu2.png in Resources */,
 				E07747CD198DC05800D970F7 /* appbar.hamburger@2x.png in Resources */,
 				E07747CC198DC05800D970F7 /* appbar.hamburger.png in Resources */,
 				AF75F68A19327C6A005F5F6C /* appbar.question.png in Resources */,
@@ -675,6 +682,7 @@
 				E01A591D1902F05600EB0BE4 /* Main_iPhone.storyboard in Resources */,
 				AF75F64B193106FF005F5F6C /* appbar.list.png in Resources */,
 				AF75F66119314FD9005F5F6C /* appbar.smiley.grumpy.png in Resources */,
+				AF0FCEEE1A1529C300DED0DC /* menubg1.png in Resources */,
 				AF75F68C19327CAB005F5F6C /* appbar.chevron.right.png in Resources */,
 				AF75F64F19310EFC005F5F6C /* appbar.people.arrow.right.png in Resources */,
 				AF8127F019903F4700EE0F77 /* appbar.navigate.next.png in Resources */,
