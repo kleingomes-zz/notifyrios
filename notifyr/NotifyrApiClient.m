@@ -406,6 +406,8 @@
                completionHandler:(void (^)(NSData *data, NSURLResponse *response, NSError *error, id jsonObject))completionHandler
 {
     NSMutableURLRequest *request = [self getRequestWithUrlString:urlString method:method];
+    
+    NSLog(@"API Call: %@", [request.URL absoluteString]);
     [self makeAPICallWithRequest:request completionHandler:completionHandler];
     
 }
