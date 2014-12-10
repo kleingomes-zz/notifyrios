@@ -166,7 +166,7 @@
     BOOL hasImage = (article.iUrl && [article.iUrl length] > 0);
     if (hasImage)
     {
-        BOOL isSmallImage = [article.iUrl containsString:@"gstatic"]; //TODO: replace this with a property in the article set by the server
+        BOOL isSmallImage = NO; //[article.iUrl containsString:@"gstatic"]; //TODO: replace this with a property in the article set by the server
         if (isSmallImage)
         {
             cell = [tableView dequeueReusableCellWithIdentifier:@"SmallImageCell" forIndexPath:indexPath];
