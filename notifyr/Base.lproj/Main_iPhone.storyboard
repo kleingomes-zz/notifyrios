@@ -1991,18 +1991,59 @@ This document was last updated on May 24, 2014</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Download Images" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brb-NA-gOO">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Images" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Brb-NA-gOO">
                                                     <rect key="frame" x="61" y="11" width="234" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.radar.png" translatesAutoresizingMaskIntoConstraints="NO" id="LH0-jP-xsU">
-                                                    <rect key="frame" x="0.0" y="-5" width="53" height="53"/>
-                                                </imageView>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="prl-Eb-N65">
                                                     <rect key="frame" x="257" y="6" width="51" height="31"/>
                                                 </switch>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.camera.send.png" translatesAutoresizingMaskIntoConstraints="NO" id="LH0-jP-xsU">
+                                                    <rect key="frame" x="-5" y="-2" width="48" height="48"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2oY-jd-7Rx">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2oY-jd-7Rx" id="Q9D-Gg-iiS">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clear Cache" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqm-sk-Rhe">
+                                                    <rect key="frame" x="61" y="11" width="234" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.closedcaption.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Xr-J5-CmY">
+                                                    <rect key="frame" x="0.0" y="-2" width="48" height="48"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ynI-5T-raE">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ynI-5T-raE" id="J8N-8c-rK0">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preload Articles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WL4-6L-gPS">
+                                                    <rect key="frame" x="61" y="11" width="234" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="htK-Sz-X08">
+                                                    <rect key="frame" x="257" y="6" width="51" height="31"/>
+                                                </switch>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.debug.step.out.png" translatesAutoresizingMaskIntoConstraints="NO" id="YW9-R3-PB0">
+                                                    <rect key="frame" x="-5" y="-2" width="48" height="48"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2029,7 +2070,7 @@ This document was last updated on May 24, 2014</string>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.connection.quality.veryhigh.png" translatesAutoresizingMaskIntoConstraints="NO" id="10T-Nq-wGQ">
-                                                    <rect key="frame" x="0.0" y="-2" width="53" height="53"/>
+                                                    <rect key="frame" x="0.0" y="-2" width="48" height="48"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -2046,14 +2087,14 @@ This document was last updated on May 24, 2014</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Guest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GH-os-Bg6">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GH-os-Bg6">
                                                     <rect key="frame" x="220" y="11" width="100" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.people 2.png" translatesAutoresizingMaskIntoConstraints="NO" id="DoM-Yv-8HZ">
-                                                    <rect key="frame" x="0.0" y="-5" width="53" height="53"/>
+                                                    <rect key="frame" x="0.0" y="-5" width="48" height="48"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -2115,7 +2156,7 @@ This document was last updated on May 24, 2014</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXe-OG-41s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939" y="742"/>
+            <point key="canvasLocation" x="939" y="739.5"/>
         </scene>
         <!--Sliding View Controller-->
         <scene sceneID="rNT-d1-Lpa">
@@ -2217,9 +2258,12 @@ This document was last updated on May 24, 2014</string>
     </scenes>
     <resources>
         <image name="appTiles.png" width="640" height="1136"/>
+        <image name="appbar.camera.send.png" width="76" height="76"/>
         <image name="appbar.chevron.left.png" width="76" height="76"/>
+        <image name="appbar.closedcaption.png" width="76" height="76"/>
         <image name="appbar.cog.png" width="76" height="76"/>
         <image name="appbar.connection.quality.veryhigh.png" width="76" height="76"/>
+        <image name="appbar.debug.step.out.png" width="76" height="76"/>
         <image name="appbar.hamburger.png" width="44" height="44"/>
         <image name="appbar.list 2.png" width="76" height="76"/>
         <image name="appbar.list.png" width="76" height="76"/>
@@ -2241,5 +2285,5 @@ This document was last updated on May 24, 2014</string>
         <segue reference="3NJ-xn-Hkv"/>
         <segue reference="UT5-3Q-pM1"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.11764706671237946" green="0.41568630933761597" blue="0.88235300779342651" alpha="1" colorSpace="deviceRGB"/>
+    <color key="tintColor" red="0.20392156859999999" green="0.41568627450000001" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
 </document>

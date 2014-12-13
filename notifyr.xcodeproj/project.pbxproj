@@ -75,6 +75,9 @@
 		AF81280419906BED00EE0F77 /* appbar.star.yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280319906BED00EE0F77 /* appbar.star.yellow.png */; };
 		AF81280619908B3D00EE0F77 /* appbar.add.new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */; };
 		AFF5C6B11A3C9EF500AA5C4C /* appTiles3.fix.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */; };
+		AFF5C6B31A3CA2E400AA5C4C /* appbar.camera.send.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */; };
+		AFF5C6B51A3CA37E00AA5C4C /* appbar.closedcaption.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */; };
+		AFF5C6B71A3CA44400AA5C4C /* appbar.debug.step.out.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B61A3CA44400AA5C4C /* appbar.debug.step.out.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3673198F32F700331E23 /* MEZoomAnimationController.m */; };
@@ -199,6 +202,9 @@
 		AF81280319906BED00EE0F77 /* appbar.star.yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.yellow.png; sourceTree = "<group>"; };
 		AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appbar.add.new@2x.png"; sourceTree = "<group>"; };
 		AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles3.fix.png; sourceTree = "<group>"; };
+		AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.camera.send.png; sourceTree = "<group>"; };
+		AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.closedcaption.png; sourceTree = "<group>"; };
+		AFF5C6B61A3CA44400AA5C4C /* appbar.debug.step.out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.debug.step.out.png; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
 		E00C366F198F09EB00331E23 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -305,9 +311,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		AF75F63B1930FE47005F5F6C /* Icons */ = {
+		AF75F63B1930FE47005F5F6C /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */,
+				AFF5C6B61A3CA44400AA5C4C /* appbar.debug.step.out.png */,
+				AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */,
 				AF0FCEEF1A152AF400DED0DC /* menu2.png */,
 				AF0FCEED1A1529C300DED0DC /* menubg1.png */,
 				AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */,
@@ -353,7 +362,7 @@
 				AF75F6421930FFED005F5F6C /* appbar.people.png */,
 				AF75F63D1930FE66005F5F6C /* appbar.cogs.png */,
 			);
-			name = Icons;
+			name = icons;
 			sourceTree = "<group>";
 		};
 		AF75F670193246AC005F5F6C /* temp images */ = {
@@ -442,7 +451,7 @@
 				E0931D77190ADEDE001A991F /* UI */,
 				E01A59241902F05600EB0BE4 /* Images.xcassets */,
 				AF75F670193246AC005F5F6C /* temp images */,
-				AF75F63B1930FE47005F5F6C /* Icons */,
+				AF75F63B1930FE47005F5F6C /* icons */,
 				AF7C0FE7192BEBE3003FEF2E /* Images */,
 				E01A59101902F05600EB0BE4 /* Supporting Files */,
 			);
@@ -677,6 +686,7 @@
 				AF75F65119310FF1005F5F6C /* appbar.newspaper.png in Resources */,
 				AF75F67519324955005F5F6C /* indicatorGreen.png in Resources */,
 				AF8127E8198F420D00EE0F77 /* appTiles6WhiteBottom.png in Resources */,
+				AFF5C6B71A3CA44400AA5C4C /* appbar.debug.step.out.png in Resources */,
 				AF8127E0198F2DC700EE0F77 /* appTiles4.png in Resources */,
 				AF75F65F19314FA2005F5F6C /* appbar.smiley.frown.png in Resources */,
 				AF75F68219326FB5005F5F6C /* macvsmac in Resources */,
@@ -684,6 +694,7 @@
 				AF81280019906ADD00EE0F77 /* appbar.notification.star.png in Resources */,
 				E01A591D1902F05600EB0BE4 /* Main_iPhone.storyboard in Resources */,
 				AF75F64B193106FF005F5F6C /* appbar.list.png in Resources */,
+				AFF5C6B31A3CA2E400AA5C4C /* appbar.camera.send.png in Resources */,
 				AF75F66119314FD9005F5F6C /* appbar.smiley.grumpy.png in Resources */,
 				AF0FCEEE1A1529C300DED0DC /* menubg1.png in Resources */,
 				AF75F68C19327CAB005F5F6C /* appbar.chevron.right.png in Resources */,
@@ -704,6 +715,7 @@
 				AF75F672193246BC005F5F6C /* Apple-Logo.jpeg in Resources */,
 				AF75F67619324955005F5F6C /* indicatorRed.png in Resources */,
 				AF75F64D19310E1B005F5F6C /* appbar.cloud.png in Resources */,
+				AFF5C6B51A3CA37E00AA5C4C /* appbar.closedcaption.png in Resources */,
 				AF75F67A19324CEA005F5F6C /* appbar.people.multiple.png in Resources */,
 				AF75F686193273B9005F5F6C /* iphone_6_fake_line_up_hero.jpg in Resources */,
 				AF8127D0198EED3200EE0F77 /* blueBackground.jpg in Resources */,
