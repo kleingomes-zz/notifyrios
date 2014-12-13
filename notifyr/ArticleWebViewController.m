@@ -29,5 +29,12 @@
     [self.webView loadRequest:urlRequest];
 }
 
+- (IBAction)sharePressed:(id)sender {
+    NSArray *activityItems = @[self.article.title, self.article.url];
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    [self.navigationController presentViewController:activityViewController animated:YES completion:^{
+    }];
+}
 
 @end
