@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BnF-QO-y8U">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -17,14 +17,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InterestCell" rowHeight="78" id="dlI-7g-PKG" customClass="InterestCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InterestCell" rowHeight="78" id="dlI-7g-PKG" customClass="InterestCell">
                                 <rect key="frame" x="0.0" y="86" width="320" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dlI-7g-PKG" id="yaz-VH-AL5">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gEC-gK-olU">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEC-gK-olU">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-sw-STt">
@@ -34,52 +34,16 @@
                                                         <constraint firstAttribute="width" constant="60" id="QTd-uw-jSI"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apple" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7b2-mY-SnO">
-                                                    <rect key="frame" x="79" y="31" width="35" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(+5.52)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTj-c7-Jb6">
-                                                    <rect key="frame" x="119" y="33" width="36" height="14"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" red="0.0" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show: All" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCw-9Y-sTq">
-                                                    <rect key="frame" x="79" y="51" width="49" height="14"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appbar.chevron.right.color.png" translatesAutoresizingMaskIntoConstraints="NO" id="jWW-rV-3CK">
-                                                    <rect key="frame" x="283" y="0.0" width="37" height="78"/>
-                                                    <color key="tintColor" red="0.46670162710000002" green="0.66222535859999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="37" id="ggW-Vl-yvF"/>
-                                                        <constraint firstAttribute="height" constant="78" id="uhe-xv-ctf"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iPhone 6" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WHW-H9-4bA">
-                                                    <rect key="frame" x="79" y="10" width="204" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.14509195920000001" green="0.40299110760000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apple" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7b2-mY-SnO">
+                                                    <rect key="frame" x="93" y="28" width="114" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="rCw-9Y-sTq" firstAttribute="top" secondItem="7b2-mY-SnO" secondAttribute="bottom" constant="4" id="0YT-A5-gAA"/>
-                                                <constraint firstItem="7b2-mY-SnO" firstAttribute="baseline" secondItem="sTj-c7-Jb6" secondAttribute="baseline" id="6km-AI-bwc"/>
                                                 <constraint firstItem="rgS-sw-STt" firstAttribute="leading" secondItem="gEC-gK-olU" secondAttribute="leading" constant="9" id="CG2-dA-B4O"/>
-                                                <constraint firstItem="WHW-H9-4bA" firstAttribute="top" secondItem="gEC-gK-olU" secondAttribute="top" constant="10" id="IgS-aS-4ai"/>
-                                                <constraint firstItem="jWW-rV-3CK" firstAttribute="leading" secondItem="WHW-H9-4bA" secondAttribute="trailing" id="Jan-VN-F2E"/>
-                                                <constraint firstItem="sTj-c7-Jb6" firstAttribute="leading" secondItem="7b2-mY-SnO" secondAttribute="trailing" constant="5" id="RJa-cr-g90"/>
-                                                <constraint firstAttribute="trailing" secondItem="jWW-rV-3CK" secondAttribute="trailing" id="S7q-J6-vcH"/>
-                                                <constraint firstItem="7b2-mY-SnO" firstAttribute="leading" secondItem="rCw-9Y-sTq" secondAttribute="leading" id="WVi-4c-4Je"/>
-                                                <constraint firstItem="7b2-mY-SnO" firstAttribute="leading" secondItem="WHW-H9-4bA" secondAttribute="leading" id="ehr-VJ-2uF"/>
-                                                <constraint firstItem="7b2-mY-SnO" firstAttribute="top" secondItem="WHW-H9-4bA" secondAttribute="bottom" constant="4" id="jmy-DR-7q0"/>
-                                                <constraint firstAttribute="centerY" secondItem="jWW-rV-3CK" secondAttribute="centerY" id="maI-GQ-9iU"/>
                                                 <constraint firstItem="rgS-sw-STt" firstAttribute="top" secondItem="gEC-gK-olU" secondAttribute="top" constant="9" id="qd1-kh-RfX"/>
-                                                <constraint firstItem="WHW-H9-4bA" firstAttribute="leading" secondItem="rgS-sw-STt" secondAttribute="trailing" constant="10" id="tes-vV-9Ve"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -95,8 +59,6 @@
                                 <connections>
                                     <outlet property="companyNameLabel" destination="7b2-mY-SnO" id="NLl-y3-cCh"/>
                                     <outlet property="logoImageView" destination="rgS-sw-STt" id="RdT-Te-CN5"/>
-                                    <outlet property="productNameLabel" destination="WHW-H9-4bA" id="vZe-L8-Sml"/>
-                                    <outlet property="stockQuote" destination="sTj-c7-Jb6" id="LNZ-pH-3dP"/>
                                     <segue destination="VLr-JZ-fXu" kind="push" identifier="ShowInterestArticles" id="3NJ-xn-Hkv"/>
                                 </connections>
                             </tableViewCell>
@@ -129,7 +91,7 @@
         <scene sceneID="Ooo-dm-Qe5">
             <objects>
                 <navigationController id="DGi-rp-bWL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" badgeValue="3" selectedImage="NotifyR3.png" systemItem="mostViewed" id="Eg3-8n-Gx2"/>
+                    <tabBarItem key="tabBarItem" title="" selectedImage="appTiles.png" systemItem="mostViewed" id="Eg3-8n-Gx2"/>
                     <navigationItem key="navigationItem" id="7UQ-Yc-Erw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6we-2s-5e3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -169,7 +131,7 @@
                                     <color key="tintColor" white="0.98951048949999998" alpha="1" colorSpace="calibratedWhite"/>
                                 </segmentedControl>
                             </subviews>
-                            <color key="backgroundColor" red="0.039215686270000001" green="0.37647058820000001" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.20392156862745098" green="0.41568627450980394" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="tintColor" red="1" green="0.99168926477432251" blue="0.99168926477432251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
@@ -412,7 +374,7 @@
                             <outlet property="delegate" destination="VLr-JZ-fXu" id="ANg-LF-xxh"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" badgeValue="3" systemItem="mostViewed" id="Ogn-AC-9Sg"/>
+                    <tabBarItem key="tabBarItem" selectedImage="appbar.unlock.png" systemItem="favorites" id="Ogn-AC-9Sg"/>
                     <navigationItem key="navigationItem" title="All Interests" id="a3r-Yi-2lS">
                         <barButtonItem key="leftBarButtonItem" image="appbar.hamburger.png" id="1WN-GY-cNm">
                             <color key="tintColor" white="0.98951048949999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -639,6 +601,7 @@
         <!--View Controller-->
         <scene sceneID="aKq-wd-SU9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aD3-Gn-y9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Mc5-8f-0e3" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jBr-AQ-26a"/>
@@ -665,9 +628,8 @@
                         <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aD3-Gn-y9I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31" y="36"/>
+            <point key="canvasLocation" x="-175" y="48"/>
         </scene>
         <!--Menu View Controller-->
         <scene sceneID="VeD-HC-JZY">
@@ -2254,10 +2216,8 @@ This document was last updated on May 24, 2014</string>
         </scene>
     </scenes>
     <resources>
-        <image name="NotifyR3.png" width="120" height="120"/>
         <image name="appTiles.png" width="640" height="1136"/>
         <image name="appbar.chevron.left.png" width="76" height="76"/>
-        <image name="appbar.chevron.right.color.png" width="76" height="76"/>
         <image name="appbar.cog.png" width="76" height="76"/>
         <image name="appbar.connection.quality.veryhigh.png" width="76" height="76"/>
         <image name="appbar.hamburger.png" width="44" height="44"/>
@@ -2278,8 +2238,8 @@ This document was last updated on May 24, 2014</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="UT5-3Q-pM1"/>
         <segue reference="3NJ-xn-Hkv"/>
+        <segue reference="UT5-3Q-pM1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.11764706671237946" green="0.41568630933761597" blue="0.88235300779342651" alpha="1" colorSpace="deviceRGB"/>
 </document>

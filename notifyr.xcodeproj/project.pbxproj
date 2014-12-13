@@ -74,6 +74,7 @@
 		AF81280219906B3B00EE0F77 /* appbar.star.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280119906B3B00EE0F77 /* appbar.star.png */; };
 		AF81280419906BED00EE0F77 /* appbar.star.yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280319906BED00EE0F77 /* appbar.star.yellow.png */; };
 		AF81280619908B3D00EE0F77 /* appbar.add.new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */; };
+		AFF5C6B11A3C9EF500AA5C4C /* appTiles3.fix.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3673198F32F700331E23 /* MEZoomAnimationController.m */; };
@@ -197,6 +198,7 @@
 		AF81280119906B3B00EE0F77 /* appbar.star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.png; sourceTree = "<group>"; };
 		AF81280319906BED00EE0F77 /* appbar.star.yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.yellow.png; sourceTree = "<group>"; };
 		AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appbar.add.new@2x.png"; sourceTree = "<group>"; };
+		AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles3.fix.png; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
 		E00C366F198F09EB00331E23 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 		AF7C0FE7192BEBE3003FEF2E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */,
 				AF8127FD19904CA500EE0F77 /* appTiles2.fix.png */,
 				AF8127F919904B9000EE0F77 /* menuBG2.png */,
 				AF8127F71990489400EE0F77 /* menuBG.png */,
@@ -707,6 +710,7 @@
 				AF8127DE198F2C7900EE0F77 /* appTiles3.png in Resources */,
 				AF75F6631931513D005F5F6C /* appbar.elevator.down.png in Resources */,
 				AF75F66519315273005F5F6C /* appbar.people.sensor.variant.png in Resources */,
+				AFF5C6B11A3C9EF500AA5C4C /* appTiles3.fix.png in Resources */,
 				AF81280619908B3D00EE0F77 /* appbar.add.new@2x.png in Resources */,
 				AF81280219906B3B00EE0F77 /* appbar.star.png in Resources */,
 				AF75F68019326F48005F5F6C /* iphones-on-display.jpg in Resources */,

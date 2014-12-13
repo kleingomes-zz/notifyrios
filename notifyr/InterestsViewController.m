@@ -248,7 +248,7 @@
         // Configure the cell...
         Interest *interest = self.items[indexPath.row];
         //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
-        cell.companyNameLabel.text = interest.companyName ? interest.companyName : @"[No company]";
+        cell.companyNameLabel.text = interest.productName ? interest.productName :interest.companyName ;
         cell.productNameLabel.text = interest.productName ? interest.productName : @"";
         cell.eventTypeLabel.text = [NSString stringWithFormat:@"Type: %@", interest.eventTypeName ? interest.eventTypeName : @"[No Event Type]"];
         
@@ -261,7 +261,7 @@
         }
         
         //cell.stockQuote.text = [NSString stringWithFormat:@"%@%@%@",@"$", [numberFormatter stringFromNumber:interest.stockQuote], @" (+2.42)"];
-        cell.stockQuote.text = [NSString stringWithFormat:@"%@",@"(+2.42)"];
+       // cell.stockQuote.text = [NSString stringWithFormat:@"%@",@"(+2.42)"];
         
         //Set image. Check image cache first
         Biz *biz = [Biz sharedBiz];
