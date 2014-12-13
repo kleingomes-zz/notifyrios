@@ -571,6 +571,9 @@
                     <navigationItem key="navigationItem" id="iCj-ND-Qr2">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="7M4-yP-iZf">
                             <color key="tintColor" white="0.98951048949999998" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="sharePressed:" destination="Qvv-ee-S0K" id="jem-hN-hMK"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
