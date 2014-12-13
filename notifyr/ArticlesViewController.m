@@ -23,11 +23,15 @@
 @property (nonatomic, strong) id articleObserver;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *aspectRatoConstraint;
+@property (nonatomic, strong) NSString *sortOrder;
 
 @end
 
 
 @implementation ArticlesViewController
+
+#define SORT_SEGMENTED_CONTROL_POPULAR 0
+#define SORT_SEGMENTED_CONTROL_NEWEST 1
 
 - (NSArray *)items
 {
@@ -43,7 +47,7 @@
 {
     if (self.interest == nil)
     {
-        [[Biz sharedBiz] getArticlesForAllInterests];
+        [[Biz sharedBiz] getArticlesForAllInterestsWithSort:self.sortOrder];
     }
     else
     {
@@ -104,6 +108,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
+    self.sortOrder = kInterestsSortOrderPublishDate;
+    
     NSString *title;
     if (self.interest != nil)
     {
@@ -278,6 +284,18 @@
     
 }
 
+- (IBAction)sortChanged:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex == SORT_SEGMENTED_CONTROL_POPULAR)
+    {
+        self.sortOrder = kInterestsSortOrderScore;
+    }
+    else if (sender.selectedSegmentIndex == SORT_SEGMENTED_CONTROL_NEWEST)
+    {
+        self.sortOrder = kInterestsSortOrderPublishDate;
+    }
+    [self initItems];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -298,22 +316,6 @@
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
 }
 */
 

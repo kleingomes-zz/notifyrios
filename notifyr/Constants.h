@@ -15,5 +15,8 @@ FOUNDATION_EXPORT NSString *const CompaniesUpdateNotification;
 FOUNDATION_EXPORT NSString *const ProductsUpdateNotification;
 FOUNDATION_EXPORT NSString *const ArticlesUpdateNotification;
 
+FOUNDATION_EXPORT NSString *const kInterestsSortOrderScore;
+FOUNDATION_EXPORT NSString *const kInterestsSortOrderPublishDate;
+
 
 @end

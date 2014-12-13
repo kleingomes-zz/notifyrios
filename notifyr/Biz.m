@@ -99,10 +99,10 @@
     [apiClient getArticlesForInterest:interest];
 }
 
-- (void)getArticlesForAllInterests
+- (void)getArticlesForAllInterestsWithSort:(NSString *)sortOrder
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
-    [apiClient getArticlesForAllInterests];
+    [apiClient getArticlesForAllInterestsWithSort:sortOrder];
 }
 
 
