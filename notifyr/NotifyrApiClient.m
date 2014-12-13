@@ -134,23 +134,23 @@
     }];
 }
 
-- (void)getArticlesForAllInterests
+- (void)getArticlesForAllInterestsWithSort:(NSString *)sortOrder
 {
     if (!self.accessToken)
     {
         [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
-            [self getArticlesForAllInterestsMain];
+            [self getArticlesForAllInterestsMainWithSort:sortOrder];
         }];
     }
     else
     {
-        [self getArticlesForAllInterestsMain];
+        [self getArticlesForAllInterestsMainWithSort:sortOrder];
     }
 }
 
-- (void)getArticlesForAllInterestsMain
+- (void)getArticlesForAllInterestsMainWithSort:(NSString *)sortOrder
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetAllInterestArticles?userId=%@", self.userId]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetAllInterestArticles?userId=%@&sortBy=%@", self.userId, sortOrder]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)

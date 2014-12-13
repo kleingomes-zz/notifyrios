@@ -29,7 +29,7 @@
 
 - (void)getArticlesForInterest:(Interest *)interest;
 
-- (void)getArticlesForAllInterests;
+- (void)getArticlesForAllInterestsWithSort:(NSString *)sortOrder;
 
 - (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
 

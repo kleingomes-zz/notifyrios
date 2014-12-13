@@ -20,7 +20,7 @@
 
 - (void)getArticlesForInterest:(Interest *)interest;
 
-- (void)getArticlesForAllInterests;
+- (void)getArticlesForAllInterestsWithSort:(NSString *)sortOrder;
 
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 
