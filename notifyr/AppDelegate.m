@@ -18,7 +18,15 @@
     
     [self checkNotificationTypes:application];
     
-     [[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+     //[[UIApplication sharedApplication] registerForRemoteNotificationTypes: UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+    
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIRemoteNotificationTypeBadge
+                                                                                         |UIRemoteNotificationTypeSound
+                                                                                         |UIRemoteNotificationTypeAlert) categories:nil];
+    [application registerUserNotificationSettings:settings];
+    
     
 //    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
 //    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x0066ff)];
@@ -41,7 +49,7 @@
 {
     UIRemoteNotificationType remoteNotifcationTypes = [application enabledRemoteNotificationTypes];
 
-    NSLog(@"Remote Notification Types:%lu", remoteNotifcationTypes);
+    NSLog(@"Remote Notification Types:%u", remoteNotifcationTypes);
     if (remoteNotifcationTypes == UIRemoteNotificationTypeNone)
     {
         NSLog(@"UIRemoteNotificationTypeNone");
@@ -63,7 +71,6 @@
         NSLog(@"UIRemoteNotificationTypeNewsstandContentAvailability");
     }
 }
-
 
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken
