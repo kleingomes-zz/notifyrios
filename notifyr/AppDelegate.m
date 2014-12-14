@@ -43,6 +43,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[UITabBar appearance] setTintColor:[UIColor colorWithRed:52/255.0 green:106/255.0  blue:220/255.0  alpha:1.0]];
  //   [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:52/255.0 green:106/255.0  blue:220/255.0  alpha:1.0]];
+    
     return YES;
 }
 
