@@ -391,7 +391,7 @@
             </objects>
             <point key="canvasLocation" x="1907" y="750"/>
         </scene>
-        <!--New Interest View Controller-->
+        <!--Add Interests-->
         <scene sceneID="8Ks-jB-zij">
             <objects>
                 <viewController id="1i3-3R-ttB" customClass="NewInterestViewController" sceneMemberID="viewController">
@@ -403,28 +403,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkF-1Q-E5p">
-                                <rect key="frame" x="125" y="78" width="71" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NotifyMe About" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bk-r5-rXQ">
-                                <rect key="frame" x="68" y="133" width="120" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-J6-hl5">
-                                <rect key="frame" x="20" y="154" width="280" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appbar.radar.png" translatesAutoresizingMaskIntoConstraints="NO" id="dwq-TK-azM">
-                                <rect key="frame" x="20" y="114" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Xna-Sg-enW"/>
-                                    <constraint firstAttribute="width" constant="40" id="mIM-S3-wmr"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peq-Py-FDg">
                                 <rect key="frame" x="137" y="518" width="46" height="30"/>
                                 <state key="normal" title="Create">
@@ -458,29 +436,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Notify Me About..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-J6-hl5">
+                                <rect key="frame" x="16" y="78" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="HkF-1Q-E5p" firstAttribute="top" secondItem="dBd-hD-JNj" secondAttribute="bottom" constant="14" id="22d-LT-12g"/>
                             <constraint firstItem="peq-Py-FDg" firstAttribute="top" secondItem="Qaz-Xf-s0n" secondAttribute="bottom" constant="31" id="6WI-AG-7Py"/>
                             <constraint firstAttribute="centerX" secondItem="peq-Py-FDg" secondAttribute="centerX" id="FPw-N5-uar"/>
-                            <constraint firstItem="Msh-J6-hl5" firstAttribute="leading" secondItem="dwq-TK-azM" secondAttribute="leading" id="GJ3-r5-84E"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Msh-J6-hl5" secondAttribute="trailing" constant="4" id="JaM-EZ-uE1"/>
-                            <constraint firstItem="3bk-r5-rXQ" firstAttribute="leading" secondItem="dwq-TK-azM" secondAttribute="trailing" constant="8" id="KXi-4t-zTI"/>
-                            <constraint firstItem="dwq-TK-azM" firstAttribute="top" secondItem="dBd-hD-JNj" secondAttribute="bottom" constant="50" id="NCf-jd-7PN"/>
                             <constraint firstItem="peq-Py-FDg" firstAttribute="top" secondItem="hb5-pz-WoZ" secondAttribute="bottom" constant="-3" id="T9T-PU-HSj"/>
                             <constraint firstAttribute="centerX" secondItem="4jN-kf-tQc" secondAttribute="centerX" id="aPk-Y9-Ihr"/>
                             <constraint firstAttribute="centerX" secondItem="hb5-pz-WoZ" secondAttribute="centerX" constant="-0.5" id="aV6-nk-BDA"/>
-                            <constraint firstItem="3bk-r5-rXQ" firstAttribute="centerY" secondItem="dwq-TK-azM" secondAttribute="centerY" constant="9.5" id="dNb-CF-KcS"/>
-                            <constraint firstItem="Msh-J6-hl5" firstAttribute="top" secondItem="3bk-r5-rXQ" secondAttribute="bottom" id="e1W-HZ-ai4"/>
-                            <constraint firstAttribute="centerX" secondItem="HkF-1Q-E5p" secondAttribute="centerX" id="jcm-xH-5E6"/>
                             <constraint firstItem="peq-Py-FDg" firstAttribute="top" secondItem="4jN-kf-tQc" secondAttribute="bottom" constant="31" id="kW0-Cw-13y"/>
                             <constraint firstItem="7Zv-T2-YJl" firstAttribute="top" secondItem="peq-Py-FDg" secondAttribute="bottom" constant="20" id="nkW-xp-HZS"/>
                             <constraint firstItem="Msh-J6-hl5" firstAttribute="leading" secondItem="2gJ-2f-KRM" secondAttribute="leadingMargin" constant="4" id="rQD-TV-lxn"/>
                             <constraint firstAttribute="centerX" secondItem="Qaz-Xf-s0n" secondAttribute="centerX" id="sbj-Aw-GAg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hsz-bB-sMM"/>
+                    <navigationItem key="navigationItem" title="Add Interests" id="hsz-bB-sMM">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="BTh-bh-PoK"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicatorView" destination="9Qr-E1-69b" id="Bnm-Jm-9GN"/>
                         <outlet property="inputField" destination="Msh-J6-hl5" id="msT-C2-fpf"/>
@@ -504,9 +482,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rCP-Ie-Jgl">
-                                <rect key="frame" x="0.0" y="64" width="320" height="167"/>
-                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1S-mx-55a">
                                 <rect key="frame" x="20" y="239" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -533,6 +508,9 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rCP-Ie-Jgl">
+                                <rect key="frame" x="0.0" y="64" width="320" height="167"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -2276,7 +2254,6 @@ This document was last updated on May 24, 2014</string>
         <image name="appbar.newspaper 2.png" width="76" height="76"/>
         <image name="appbar.people 2.png" width="76" height="76"/>
         <image name="appbar.people.png" width="76" height="76"/>
-        <image name="appbar.radar.png" width="76" height="76"/>
         <image name="appbar.sign.parking.png" width="76" height="76"/>
         <image name="appbar.unlock.png" width="76" height="76"/>
         <image name="button.png" width="118" height="39"/>
@@ -2291,5 +2268,5 @@ This document was last updated on May 24, 2014</string>
         <segue reference="3NJ-xn-Hkv"/>
         <segue reference="UT5-3Q-pM1"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.20392156859999999" green="0.41568627450000001" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
 </document>

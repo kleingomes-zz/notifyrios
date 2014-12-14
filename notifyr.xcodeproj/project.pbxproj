@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		90E01EDFC4744AF48F221DD9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3006AF9FF84ABD8AE12F3E /* libPods.a */; };
-		AF0FCEEC1A12A7EA00DED0DC /* NotifyR3.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0FCEEB1A12A7EA00DED0DC /* NotifyR3.png */; };
 		AF0FCEEE1A1529C300DED0DC /* menubg1.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0FCEED1A1529C300DED0DC /* menubg1.png */; };
 		AF0FCEF01A152AF400DED0DC /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0FCEEF1A152AF400DED0DC /* menu2.png */; };
 		AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F63D1930FE66005F5F6C /* appbar.cogs.png */; };
@@ -78,6 +77,7 @@
 		AFF5C6B31A3CA2E400AA5C4C /* appbar.camera.send.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */; };
 		AFF5C6B51A3CA37E00AA5C4C /* appbar.closedcaption.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */; };
 		AFF5C6B71A3CA44400AA5C4C /* appbar.debug.step.out.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B61A3CA44400AA5C4C /* appbar.debug.step.out.png */; };
+		AFF5C6B91A3D970D00AA5C4C /* NotifyR3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B81A3D970D00AA5C4C /* NotifyR3.png */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3673198F32F700331E23 /* MEZoomAnimationController.m */; };
@@ -135,7 +135,6 @@
 		732DD0D5A8AF7F8543C6D604 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8C3006AF9FF84ABD8AE12F3E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3D5832D5A0C7383DF82C30C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		AF0FCEEB1A12A7EA00DED0DC /* NotifyR3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifyR3.png; sourceTree = "<group>"; };
 		AF0FCEED1A1529C300DED0DC /* menubg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubg1.png; sourceTree = "<group>"; };
 		AF0FCEEF1A152AF400DED0DC /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2.png; sourceTree = "<group>"; };
 		AF75F63D1930FE66005F5F6C /* appbar.cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cogs.png; sourceTree = "<group>"; };
@@ -205,6 +204,7 @@
 		AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.camera.send.png; sourceTree = "<group>"; };
 		AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.closedcaption.png; sourceTree = "<group>"; };
 		AFF5C6B61A3CA44400AA5C4C /* appbar.debug.step.out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.debug.step.out.png; sourceTree = "<group>"; };
+		AFF5C6B81A3D970D00AA5C4C /* NotifyR3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NotifyR3.png; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
 		E00C366F198F09EB00331E23 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -314,13 +314,13 @@
 		AF75F63B1930FE47005F5F6C /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				AFF5C6B81A3D970D00AA5C4C /* NotifyR3.png */,
 				AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */,
 				AFF5C6B61A3CA44400AA5C4C /* appbar.debug.step.out.png */,
 				AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */,
 				AF0FCEEF1A152AF400DED0DC /* menu2.png */,
 				AF0FCEED1A1529C300DED0DC /* menubg1.png */,
 				AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */,
-				AF0FCEEB1A12A7EA00DED0DC /* NotifyR3.png */,
 				AF81280319906BED00EE0F77 /* appbar.star.yellow.png */,
 				AF81280119906B3B00EE0F77 /* appbar.star.png */,
 				AF8127FF19906ADD00EE0F77 /* appbar.notification.star.png */,
@@ -654,7 +654,6 @@
 				AF8127EC198F427600EE0F77 /* appTiles8.png in Resources */,
 				AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */,
 				AF8127EA198F424800EE0F77 /* appTiles7.png in Resources */,
-				AF0FCEEC1A12A7EA00DED0DC /* NotifyR3.png in Resources */,
 				AF75F649193105E2005F5F6C /* appbar.sign.parking.png in Resources */,
 				AF8127F81990489400EE0F77 /* menuBG.png in Resources */,
 				AF8127F21990413400EE0F77 /* appbar.draw.pencil.png in Resources */,
@@ -693,6 +692,7 @@
 				AF75F684193272AC005F5F6C /* appbar.radar.png in Resources */,
 				AF81280019906ADD00EE0F77 /* appbar.notification.star.png in Resources */,
 				E01A591D1902F05600EB0BE4 /* Main_iPhone.storyboard in Resources */,
+				AFF5C6B91A3D970D00AA5C4C /* NotifyR3.png in Resources */,
 				AF75F64B193106FF005F5F6C /* appbar.list.png in Resources */,
 				AFF5C6B31A3CA2E400AA5C4C /* appbar.camera.send.png in Resources */,
 				AF75F66119314FD9005F5F6C /* appbar.smiley.grumpy.png in Resources */,
