@@ -117,7 +117,7 @@
     }
     else
     {
-        title = @"All Interests";
+        title = @"Interests";
     }
     
     self.titleLabel.text = title;

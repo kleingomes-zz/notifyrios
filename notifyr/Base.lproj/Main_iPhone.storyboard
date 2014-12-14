@@ -7,7 +7,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--My Interests-->
+        <!--Following-->
         <scene sceneID="jDf-ci-rUT">
             <objects>
                 <tableViewController id="jQE-ZB-ylz" customClass="InterestsViewController" sceneMemberID="viewController">
@@ -68,7 +68,7 @@
                             <outlet property="delegate" destination="jQE-ZB-ylz" id="IrT-CS-9D3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Interests" id="Yn3-en-pS9">
+                    <navigationItem key="navigationItem" title="Following" id="Yn3-en-pS9">
                         <barButtonItem key="leftBarButtonItem" image="appbar.hamburger.png" id="exD-wA-24i">
                             <color key="tintColor" white="0.98951048949999998" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -108,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="1471" y="750"/>
         </scene>
-        <!--All Interests-->
+        <!--Interests-->
         <scene sceneID="dcs-ag-rfE">
             <objects>
                 <tableViewController id="VLr-JZ-fXu" customClass="ArticlesViewController" sceneMemberID="viewController">
@@ -177,7 +177,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="shadowOffset" width="0.0" height="1"/>
+                                                    <size key="shadowOffset" width="1" height="1"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Nf-4M-ecR">
                                                     <rect key="frame" x="55" y="44" width="26" height="15.5"/>
@@ -378,7 +378,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" selectedImage="appbar.unlock.png" systemItem="favorites" id="Ogn-AC-9Sg"/>
-                    <navigationItem key="navigationItem" title="All Interests" id="a3r-Yi-2lS">
+                    <navigationItem key="navigationItem" title="Interests" id="a3r-Yi-2lS">
                         <barButtonItem key="leftBarButtonItem" image="appbar.hamburger.png" id="1WN-GY-cNm">
                             <color key="tintColor" white="0.98951048949999998" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -403,15 +403,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peq-Py-FDg">
-                                <rect key="frame" x="137" y="518" width="46" height="30"/>
-                                <state key="normal" title="Create">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="createAction:" destination="1i3-3R-ttB" eventType="touchUpInside" id="xVx-z9-rwa"/>
-                                </connections>
-                            </button>
                             <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hb5-pz-WoZ">
                                 <rect key="frame" x="115" y="458" width="91" height="63"/>
                                 <subviews>
@@ -425,24 +416,184 @@
                                     <constraint firstAttribute="height" constant="63" id="WTN-CA-vCe"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="menuBG5.png" translatesAutoresizingMaskIntoConstraints="NO" id="e0N-V6-4pl">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="peq-Py-FDg">
+                                <rect key="frame" x="137" y="518" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createAction:" destination="1i3-3R-ttB" eventType="touchUpInside" id="xVx-z9-rwa"/>
+                                </connections>
+                            </button>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Not Found" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qaz-Xf-s0n">
                                 <rect key="frame" x="124" y="469" width="73" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Saving" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jN-kf-tQc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4jN-kf-tQc">
                                 <rect key="frame" x="137" y="469" width="47" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Notify Me About..." borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Msh-J6-hl5">
-                                <rect key="frame" x="16" y="78" width="280" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="16" y="86" width="280" height="30"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.magnify.png" translatesAutoresizingMaskIntoConstraints="NO" id="0yF-oc-a4Z">
+                                <rect key="frame" x="258" y="82" width="38" height="38"/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgl-0i-oW8">
+                                <rect key="frame" x="16" y="134" width="280" height="327"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="82n-Dj-QhQ">
+                                        <rect key="frame" x="2" y="8" width="140" height="36"/>
+                                        <subviews>
+                                            <view alpha="0.10000000000000001" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5e-wP-6mz">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="38"/>
+                                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HRb-BQ-fxO">
+                                                <rect key="frame" x="0.0" y="34" width="130" height="2"/>
+                                                <color key="backgroundColor" white="0.90601503760000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apple" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Frf-6F-uGU">
+                                                <rect key="frame" x="16" y="8" width="42" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.90601503760000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.moon.new.png" translatesAutoresizingMaskIntoConstraints="NO" id="eGT-AZ-cwX">
+                                                <rect key="frame" x="100" y="3" width="25" height="25"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkZ-kV-YZz">
+                                        <rect key="frame" x="150" y="8" width="140" height="36"/>
+                                        <subviews>
+                                            <view alpha="0.10000000149011612" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M6O-JX-Djw">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="38"/>
+                                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WM1-cu-AgO">
+                                                <rect key="frame" x="0.0" y="34" width="130" height="2"/>
+                                                <color key="backgroundColor" white="0.90601503760000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Samsung" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCX-qd-hsw">
+                                                <rect key="frame" x="16" y="8" width="76" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.90601503760000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.moon.new.png" translatesAutoresizingMaskIntoConstraints="NO" id="ccO-Hs-Qab">
+                                                <rect key="frame" x="100" y="3" width="25" height="25"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwc-vZ-r6J">
+                                        <rect key="frame" x="0.0" y="57" width="140" height="36"/>
+                                        <subviews>
+                                            <view alpha="0.10000000149011612" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dws-0o-rnW">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="38"/>
+                                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Ji-Ad-FM7">
+                                                <rect key="frame" x="0.0" y="34" width="130" height="2"/>
+                                                <color key="backgroundColor" white="0.90601503760000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Android" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DvX-QR-qTZ">
+                                                <rect key="frame" x="16" y="8" width="76" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.90601503760000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.moon.new.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Z7-Lv-YoP">
+                                                <rect key="frame" x="100" y="3" width="25" height="25"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DI9-Eb-L6q">
+                                        <rect key="frame" x="0.0" y="106" width="140" height="36"/>
+                                        <subviews>
+                                            <view alpha="0.10000000149011612" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GTc-DT-1FH">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="38"/>
+                                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nR2-0r-ghs">
+                                                <rect key="frame" x="0.0" y="34" width="130" height="2"/>
+                                                <color key="backgroundColor" white="0.90601503760000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sony" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckA-f7-Alg">
+                                                <rect key="frame" x="16" y="8" width="76" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.90601503760000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.moon.new.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yvb-O3-Ye9">
+                                                <rect key="frame" x="100" y="3" width="25" height="25"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VOV-DD-dvY">
+                                        <rect key="frame" x="150" y="57" width="140" height="36"/>
+                                        <subviews>
+                                            <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WjF-mS-j81">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="38"/>
+                                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ksj-SZ-vpe">
+                                                <rect key="frame" x="0.0" y="34" width="130" height="2"/>
+                                                <color key="backgroundColor" red="0.0" green="1" blue="0.18190638700041895" alpha="1" colorSpace="calibratedRGB"/>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.green.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Fp-n8-yWP">
+                                                <rect key="frame" x="100" y="3" width="25" height="25"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iPhone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDa-nN-oQ6">
+                                                <rect key="frame" x="16" y="8" width="76" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OZS-jm-E1H">
+                                        <rect key="frame" x="150" y="106" width="140" height="36"/>
+                                        <subviews>
+                                            <view alpha="0.10000000149011612" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v2o-8H-YOQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="38"/>
+                                                <color key="backgroundColor" name="keyboardFocusIndicatorColor" catalog="System" colorSpace="catalog"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wd4-QI-NGI">
+                                                <rect key="frame" x="0.0" y="34" width="130" height="2"/>
+                                                <color key="backgroundColor" white="0.90601503760000002" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Galaxy S5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hkw-JK-BdJ">
+                                                <rect key="frame" x="16" y="8" width="76" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.90601503760000002" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.moon.new.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Ul-84-Y5j">
+                                                <rect key="frame" x="100" y="3" width="25" height="25"/>
+                                            </imageView>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWT-ic-S2x" customClass="btnNext">
+                                <rect key="frame" x="57" y="469" width="207" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="peq-Py-FDg" firstAttribute="top" secondItem="Qaz-Xf-s0n" secondAttribute="bottom" constant="31" id="6WI-AG-7Py"/>
                             <constraint firstAttribute="centerX" secondItem="peq-Py-FDg" secondAttribute="centerX" id="FPw-N5-uar"/>
@@ -451,9 +602,11 @@
                             <constraint firstAttribute="centerX" secondItem="4jN-kf-tQc" secondAttribute="centerX" id="aPk-Y9-Ihr"/>
                             <constraint firstAttribute="centerX" secondItem="hb5-pz-WoZ" secondAttribute="centerX" constant="-0.5" id="aV6-nk-BDA"/>
                             <constraint firstItem="peq-Py-FDg" firstAttribute="top" secondItem="4jN-kf-tQc" secondAttribute="bottom" constant="31" id="kW0-Cw-13y"/>
+                            <constraint firstAttribute="width" secondItem="e0N-V6-4pl" secondAttribute="width" id="m5f-Ab-dTa"/>
                             <constraint firstItem="7Zv-T2-YJl" firstAttribute="top" secondItem="peq-Py-FDg" secondAttribute="bottom" constant="20" id="nkW-xp-HZS"/>
                             <constraint firstItem="Msh-J6-hl5" firstAttribute="leading" secondItem="2gJ-2f-KRM" secondAttribute="leadingMargin" constant="4" id="rQD-TV-lxn"/>
                             <constraint firstAttribute="centerX" secondItem="Qaz-Xf-s0n" secondAttribute="centerX" id="sbj-Aw-GAg"/>
+                            <constraint firstAttribute="height" secondItem="e0N-V6-4pl" secondAttribute="height" id="wC7-5l-WN0"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Interests" id="hsz-bB-sMM">
@@ -461,6 +614,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicatorView" destination="9Qr-E1-69b" id="Bnm-Jm-9GN"/>
+                        <outlet property="btnNext" destination="aWT-ic-S2x" id="0jd-Up-9m5"/>
                         <outlet property="inputField" destination="Msh-J6-hl5" id="msT-C2-fpf"/>
                         <outlet property="notFoundLabel" destination="Qaz-Xf-s0n" id="J9K-pn-0bX"/>
                         <outlet property="saveIndicatorView" destination="hb5-pz-WoZ" id="eaf-ze-9gq"/>
@@ -665,6 +819,26 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
+                                    <tableViewCell alpha="0.0" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="F6p-Ir-ybf">
+                                        <rect key="frame" x="0.0" y="216" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F6p-Ir-ybf" id="wns-CS-Fv7">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.newspaper 2.png" translatesAutoresizingMaskIntoConstraints="NO" id="l0D-MM-Ies">
+                                                    <rect key="frame" x="6" y="-5" width="53" height="53"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Breaking News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7L-qT-DK1">
+                                                    <rect key="frame" x="68" y="9" width="116" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="zPL-ac-x59">
                                         <rect key="frame" x="0.0" y="172" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -672,7 +846,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Notifications" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGa-dL-l58">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Interests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGa-dL-l58">
                                                     <rect key="frame" x="68" y="9" width="177" height="26"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -687,26 +861,6 @@
                                         <connections>
                                             <segue destination="DBm-XG-iXu" kind="custom" customClass="ECSlidingSegue" id="pEz-P7-tOM"/>
                                         </connections>
-                                    </tableViewCell>
-                                    <tableViewCell alpha="0.0" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="F6p-Ir-ybf">
-                                        <rect key="frame" x="0.0" y="216" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F6p-Ir-ybf" id="wns-CS-Fv7">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.newspaper 2.png" translatesAutoresizingMaskIntoConstraints="NO" id="l0D-MM-Ies">
-                                                    <rect key="frame" x="6" y="-5" width="53" height="53"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7L-qT-DK1">
-                                                    <rect key="frame" x="68" y="9" width="104" height="26"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="OPZ-8X-X9F">
                                         <rect key="frame" x="0.0" y="260" width="320" height="44"/>
@@ -2248,15 +2402,19 @@ This document was last updated on May 24, 2014</string>
         <image name="appbar.cog.png" width="76" height="76"/>
         <image name="appbar.connection.quality.veryhigh.png" width="76" height="76"/>
         <image name="appbar.debug.step.out.png" width="76" height="76"/>
+        <image name="appbar.green.png" width="76" height="76"/>
         <image name="appbar.hamburger.png" width="44" height="44"/>
         <image name="appbar.list 2.png" width="76" height="76"/>
         <image name="appbar.list.png" width="76" height="76"/>
+        <image name="appbar.magnify.png" width="76" height="76"/>
+        <image name="appbar.moon.new.png" width="76" height="76"/>
         <image name="appbar.newspaper 2.png" width="76" height="76"/>
         <image name="appbar.people 2.png" width="76" height="76"/>
         <image name="appbar.people.png" width="76" height="76"/>
         <image name="appbar.sign.parking.png" width="76" height="76"/>
         <image name="appbar.unlock.png" width="76" height="76"/>
         <image name="button.png" width="118" height="39"/>
+        <image name="menuBG5.png" width="640" height="1136"/>
         <image name="notfyrlogo3.png" width="3320" height="850"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

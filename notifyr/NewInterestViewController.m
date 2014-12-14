@@ -10,7 +10,7 @@
 #import "Biz.h"
 #import "AvailableInterest.h"
 #import "Interest.h"
-
+#import <QuartzCore/QuartzCore.h>
 @interface NewInterestViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITextField *inputField;
@@ -223,6 +223,7 @@
     // Do any additional setup after loading the view.
     self.inputField.delegate = self;
     
+  //  self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"appTiles3.fix.png"]];
     //self.suggestionsTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 80, 320, 120) style:UITableViewStylePlain];
     self.suggestionsTableView = [[UITableView alloc] initWithFrame:
                                  CGRectMake(0, self.inputField.frame.origin.y + self.inputField.frame.size.height, self.view.frame.size.width, 200)
@@ -233,6 +234,9 @@
     self.suggestionsTableView.scrollEnabled = YES;
     self.suggestionsTableView.hidden = YES;
     [self.view addSubview:self.suggestionsTableView];
+    _btnNext.layer.borderWidth=1.0f;
+    _btnNext.layer.borderColor=[[UIColor whiteColor] CGColor];
+    
     
 }
 
