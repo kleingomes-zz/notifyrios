@@ -194,6 +194,8 @@
     
     //UIBarButtonItem *locationItem = [[UIBarButtonItem alloc] initWithCustomView:btnName];
     //self.navigationItem.rightBarButtonItem = locationItem;
+
+  //  self.navigationController.view.backgroundColor = [UIColor colorWithRed:52/255.0 green:106/255.0  blue:220/255.0  alpha:1.0];
 }
 
 - (IBAction)addAction:(id)sender
