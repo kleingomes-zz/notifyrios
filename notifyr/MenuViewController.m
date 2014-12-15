@@ -20,8 +20,11 @@
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
+
+
 
 - (void)viewDidLoad
 {
@@ -36,6 +39,7 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles3.fix.png"]];
     imageView.frame = self.tableView.frame;
     self.tableView.backgroundView = imageView;
+    
 
 }
 

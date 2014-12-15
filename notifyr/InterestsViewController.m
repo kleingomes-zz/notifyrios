@@ -41,6 +41,11 @@
     return _zoomController;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 70.0;
+}
+
 - (NSMutableArray *)items
 {
     if (!_items)
@@ -54,6 +59,7 @@
 - (void)initItems
 {                
     [[Biz sharedBiz] getInterests];
+    
 }
 
 - (IBAction)menuAction:(id)sender {
@@ -179,14 +185,14 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles9.png"]];
-    imageView.frame = self.tableView.frame;
-    self.tableView.backgroundView = imageView;
+   // UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles9.png"]];
+   // imageView.frame = self.tableView.frame;
+   // self.tableView.backgroundView = imageView;
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
-    
+   // self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"menuBG6.png"]];
    // UIButton *btnName = [UIButton buttonWithType:UIButtonTypeCustom];
    // [btnName setFrame:CGRectMake(0, 0, 44, 44)];
    // [btnName setBackgroundImage:[UIImage imageNamed:@"appbar.add.new.png"] forState:UIControlStateNormal];
@@ -195,6 +201,7 @@
     //UIBarButtonItem *locationItem = [[UIBarButtonItem alloc] initWithCustomView:btnName];
     //self.navigationItem.rightBarButtonItem = locationItem;
 
+    
   //  self.navigationController.view.backgroundColor = [UIColor colorWithRed:52/255.0 green:106/255.0  blue:220/255.0  alpha:1.0];
 }
 
@@ -246,7 +253,7 @@
     if (indexPath.section == INTEREST_SECTION)
     {
         InterestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InterestCell" forIndexPath:indexPath];
-        
+        cell.backgroundColor = [UIColor clearColor];
         // Configure the cell...
         Interest *interest = self.items[indexPath.row];
         //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
@@ -264,7 +271,7 @@
         
         //cell.stockQuote.text = [NSString stringWithFormat:@"%@%@%@",@"$", [numberFormatter stringFromNumber:interest.stockQuote], @" (+2.42)"];
        // cell.stockQuote.text = [NSString stringWithFormat:@"%@",@"(+2.42)"];
-        
+
         //Set image. Check image cache first
         Biz *biz = [Biz sharedBiz];
         if (biz.imageCache[interest.logoUrl])

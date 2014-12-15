@@ -236,6 +236,7 @@
     [self.view addSubview:self.suggestionsTableView];
     _btnNext.layer.borderWidth=1.0f;
     _btnNext.layer.borderColor=[[UIColor whiteColor] CGColor];
+    
     [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
                                                   forBarMetrics:UIBarMetricsDefault];
     self.navigationController.navigationBar.shadowImage = [UIImage new];

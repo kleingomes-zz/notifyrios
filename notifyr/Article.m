@@ -25,7 +25,7 @@
     article.score = [Utils getNumberFromDictionary:dictionary name:@"Score"];
     article.iUrl = [Utils getStringFromDictionary:dictionary name:@"IURL"];
     article.publishDate = [Utils getDateFromDictionary:dictionary name:@"PublishDate"];
-    
+    article.timeAgo = [Utils getStringFromDictionary:dictionary name:@"TimeAgo"];
     return article;
 }
 

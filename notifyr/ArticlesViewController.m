@@ -122,14 +122,16 @@
     
     self.titleLabel.text = title;
     self.navigationItem.title = title;
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles9.png"]];
-    imageView.frame = self.tableView.frame;
-    self.tableView.backgroundView = imageView;
+ //   UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles9.png"]];
+ //   imageView.frame = self.tableView.frame;
+//    self.tableView.backgroundView = imageView;
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.extendedLayoutIncludesOpaqueBars = YES;
     self.tableView.estimatedRowHeight = 350;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
+   // self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"menuBG5.png"]];
  //   [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
  //   [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
     

@@ -150,7 +150,7 @@
 
 - (void)getArticlesForAllInterestsMainWithSort:(NSString *)sortOrder
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetAllInterestArticles?userId=%@&sortBy=%@", self.userId, sortOrder]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetAllInterestArticles?take=20&userId=%@&sortBy=%@", self.userId, sortOrder]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)

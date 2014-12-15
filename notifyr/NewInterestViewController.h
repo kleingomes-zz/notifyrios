@@ -10,5 +10,6 @@
 
 @interface NewInterestViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *btnNext;
+@property (weak, nonatomic) IBOutlet UIView *viewPopular;
 
 @end
