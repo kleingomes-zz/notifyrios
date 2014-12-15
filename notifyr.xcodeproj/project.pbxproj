@@ -73,6 +73,7 @@
 		AF81280219906B3B00EE0F77 /* appbar.star.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280119906B3B00EE0F77 /* appbar.star.png */; };
 		AF81280419906BED00EE0F77 /* appbar.star.yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280319906BED00EE0F77 /* appbar.star.yellow.png */; };
 		AF81280619908B3D00EE0F77 /* appbar.add.new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */; };
+		AFABF0CE1A3F436C009197FB /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFABF0CD1A3F436C009197FB /* Launch Screen.xib */; };
 		AFF5C6B11A3C9EF500AA5C4C /* appTiles3.fix.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */; };
 		AFF5C6B31A3CA2E400AA5C4C /* appbar.camera.send.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */; };
 		AFF5C6B51A3CA37E00AA5C4C /* appbar.closedcaption.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */; };
@@ -208,6 +209,7 @@
 		AF81280119906B3B00EE0F77 /* appbar.star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.png; sourceTree = "<group>"; };
 		AF81280319906BED00EE0F77 /* appbar.star.yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.yellow.png; sourceTree = "<group>"; };
 		AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appbar.add.new@2x.png"; sourceTree = "<group>"; };
+		AFABF0CD1A3F436C009197FB /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles3.fix.png; sourceTree = "<group>"; };
 		AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.camera.send.png; sourceTree = "<group>"; };
 		AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.closedcaption.png; sourceTree = "<group>"; };
@@ -478,6 +480,7 @@
 				AF75F63B1930FE47005F5F6C /* icons */,
 				AF7C0FE7192BEBE3003FEF2E /* Images */,
 				E01A59101902F05600EB0BE4 /* Supporting Files */,
+				AFABF0CD1A3F436C009197FB /* Launch Screen.xib */,
 			);
 			path = notifyr;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 				AF8127FE19904CA500EE0F77 /* appTiles2.fix.png in Resources */,
 				AF75F65919314288005F5F6C /* appbar.align.justify.png in Resources */,
 				E01A59201902F05600EB0BE4 /* Main_iPad.storyboard in Resources */,
+				AFABF0CE1A3F436C009197FB /* Launch Screen.xib in Resources */,
 				AF75F67C19324F43005F5F6C /* sammy.jpeg in Resources */,
 				AF75F65D19314E0D005F5F6C /* appbar.connection.quality.veryhigh.png in Resources */,
 				AF8127D6198F108300EE0F77 /* appbar.unlock.png in Resources */,
