@@ -74,6 +74,12 @@
 		AF81280419906BED00EE0F77 /* appbar.star.yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280319906BED00EE0F77 /* appbar.star.yellow.png */; };
 		AF81280619908B3D00EE0F77 /* appbar.add.new@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */; };
 		AFABF0CE1A3F436C009197FB /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFABF0CD1A3F436C009197FB /* Launch Screen.xib */; };
+		AFABF0FF1A41B4D2009197FB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFABF0FE1A41B4D2009197FB /* NotificationCenter.framework */; };
+		AFABF1041A41B4D2009197FB /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFABF1031A41B4D2009197FB /* TodayViewController.swift */; };
+		AFABF1061A41B4D2009197FB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFABF1051A41B4D2009197FB /* MainInterface.storyboard */; };
+		AFABF1091A41B4D2009197FB /* Notifier Live.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AFABF0FD1A41B4D2009197FB /* Notifier Live.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AFABF1101A41BF32009197FB /* appbar.chevron.left.light.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF10E1A41BF32009197FB /* appbar.chevron.left.light.png */; };
+		AFABF1111A41BF32009197FB /* appbar.chevron.right.light.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF10F1A41BF32009197FB /* appbar.chevron.right.light.png */; };
 		AFF5C6B11A3C9EF500AA5C4C /* appTiles3.fix.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */; };
 		AFF5C6B31A3CA2E400AA5C4C /* appbar.camera.send.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */; };
 		AFF5C6B51A3CA37E00AA5C4C /* appbar.closedcaption.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */; };
@@ -131,6 +137,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AFABF1071A41B4D2009197FB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E01A58FE1902F05600EB0BE4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFABF0FC1A41B4D2009197FB;
+			remoteInfo = "Notifier Live";
+		};
 		E01A592F1902F05600EB0BE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E01A58FE1902F05600EB0BE4 /* Project object */;
@@ -139,6 +152,20 @@
 			remoteInfo = notifyr;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AFABF10D1A41B4D2009197FB /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AFABF1091A41B4D2009197FB /* Notifier Live.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		732DD0D5A8AF7F8543C6D604 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +237,13 @@
 		AF81280319906BED00EE0F77 /* appbar.star.yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.star.yellow.png; sourceTree = "<group>"; };
 		AF81280519908B3D00EE0F77 /* appbar.add.new@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appbar.add.new@2x.png"; sourceTree = "<group>"; };
 		AFABF0CD1A3F436C009197FB /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		AFABF0FD1A41B4D2009197FB /* Notifier Live.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Notifier Live.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFABF0FE1A41B4D2009197FB /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		AFABF1021A41B4D2009197FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFABF1031A41B4D2009197FB /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		AFABF1051A41B4D2009197FB /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		AFABF10E1A41BF32009197FB /* appbar.chevron.left.light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.chevron.left.light.png; sourceTree = "<group>"; };
+		AFABF10F1A41BF32009197FB /* appbar.chevron.right.light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.chevron.right.light.png; sourceTree = "<group>"; };
 		AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles3.fix.png; sourceTree = "<group>"; };
 		AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.camera.send.png; sourceTree = "<group>"; };
 		AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.closedcaption.png; sourceTree = "<group>"; };
@@ -295,6 +329,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AFABF0FA1A41B4D2009197FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFABF0FF1A41B4D2009197FB /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E01A59031902F05600EB0BE4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,6 +374,8 @@
 		AF75F63B1930FE47005F5F6C /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				AFABF10E1A41BF32009197FB /* appbar.chevron.left.light.png */,
+				AFABF10F1A41BF32009197FB /* appbar.chevron.right.light.png */,
 				AFF5C6C61A3ED66B00AA5C4C /* appbar.moon.full.png */,
 				AFF5C6C41A3DB85600AA5C4C /* appbar.green.png */,
 				AFF5C6C21A3DB45C00AA5C4C /* appbar.moon.new.png */,
@@ -430,11 +474,30 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		AFABF1001A41B4D2009197FB /* Notifier Live */ = {
+			isa = PBXGroup;
+			children = (
+				AFABF1031A41B4D2009197FB /* TodayViewController.swift */,
+				AFABF1051A41B4D2009197FB /* MainInterface.storyboard */,
+				AFABF1011A41B4D2009197FB /* Supporting Files */,
+			);
+			path = "Notifier Live";
+			sourceTree = "<group>";
+		};
+		AFABF1011A41B4D2009197FB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFABF1021A41B4D2009197FB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		E01A58FD1902F05600EB0BE4 = {
 			isa = PBXGroup;
 			children = (
 				E01A590F1902F05600EB0BE4 /* notifyr */,
 				E01A59311902F05600EB0BE4 /* notifyrTests */,
+				AFABF1001A41B4D2009197FB /* Notifier Live */,
 				E01A59081902F05600EB0BE4 /* Frameworks */,
 				E01A59071902F05600EB0BE4 /* Products */,
 				7AD4E309E8A19B385BFBF34F /* Pods */,
@@ -446,6 +509,7 @@
 			children = (
 				E01A59061902F05600EB0BE4 /* notifyr.app */,
 				E01A592A1902F05600EB0BE4 /* notifyrTests.xctest */,
+				AFABF0FD1A41B4D2009197FB /* Notifier Live.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -459,6 +523,7 @@
 				E01A590D1902F05600EB0BE4 /* UIKit.framework */,
 				E01A592B1902F05600EB0BE4 /* XCTest.framework */,
 				8C3006AF9FF84ABD8AE12F3E /* libPods.a */,
+				AFABF0FE1A41B4D2009197FB /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -600,6 +665,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AFABF0FC1A41B4D2009197FB /* Notifier Live */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFABF10C1A41B4D2009197FB /* Build configuration list for PBXNativeTarget "Notifier Live" */;
+			buildPhases = (
+				AFABF0F91A41B4D2009197FB /* Sources */,
+				AFABF0FA1A41B4D2009197FB /* Frameworks */,
+				AFABF0FB1A41B4D2009197FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Notifier Live";
+			productName = "Notifier Live";
+			productReference = AFABF0FD1A41B4D2009197FB /* Notifier Live.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		E01A59051902F05600EB0BE4 /* notifyr */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E01A593B1902F05600EB0BE4 /* Build configuration list for PBXNativeTarget "notifyr" */;
@@ -609,10 +691,12 @@
 				E01A59031902F05600EB0BE4 /* Frameworks */,
 				E01A59041902F05600EB0BE4 /* Resources */,
 				165215D736CB4396A1338937 /* Copy Pods Resources */,
+				AFABF10D1A41B4D2009197FB /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AFABF1081A41B4D2009197FB /* PBXTargetDependency */,
 			);
 			name = notifyr;
 			productName = notifyr;
@@ -646,6 +730,10 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Nelson Narciso";
 				TargetAttributes = {
+					AFABF0FC1A41B4D2009197FB = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = X4QH59WD29;
+					};
 					E01A59051902F05600EB0BE4 = {
 						DevelopmentTeam = X4QH59WD29;
 					};
@@ -669,11 +757,20 @@
 			targets = (
 				E01A59051902F05600EB0BE4 /* notifyr */,
 				E01A59291902F05600EB0BE4 /* notifyrTests */,
+				AFABF0FC1A41B4D2009197FB /* Notifier Live */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AFABF0FB1A41B4D2009197FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFABF1061A41B4D2009197FB /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E01A59041902F05600EB0BE4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -684,6 +781,7 @@
 				AF75F649193105E2005F5F6C /* appbar.sign.parking.png in Resources */,
 				AF8127F81990489400EE0F77 /* menuBG.png in Resources */,
 				AF8127F21990413400EE0F77 /* appbar.draw.pencil.png in Resources */,
+				AFABF1111A41BF32009197FB /* appbar.chevron.right.light.png in Resources */,
 				AF8127FE19904CA500EE0F77 /* appTiles2.fix.png in Resources */,
 				AF75F65919314288005F5F6C /* appbar.align.justify.png in Resources */,
 				E01A59201902F05600EB0BE4 /* Main_iPad.storyboard in Resources */,
@@ -718,6 +816,7 @@
 				AFF5C6B71A3CA44400AA5C4C /* appbar.debug.step.out.png in Resources */,
 				AF8127E0198F2DC700EE0F77 /* appTiles4.png in Resources */,
 				AF75F65F19314FA2005F5F6C /* appbar.smiley.frown.png in Resources */,
+				AFABF1101A41BF32009197FB /* appbar.chevron.left.light.png in Resources */,
 				AF75F68219326FB5005F5F6C /* macvsmac in Resources */,
 				AF75F684193272AC005F5F6C /* appbar.radar.png in Resources */,
 				AF81280019906ADD00EE0F77 /* appbar.notification.star.png in Resources */,
@@ -810,6 +909,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AFABF0F91A41B4D2009197FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFABF1041A41B4D2009197FB /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E01A59021902F05600EB0BE4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -854,6 +961,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AFABF1081A41B4D2009197FB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFABF0FC1A41B4D2009197FB /* Notifier Live */;
+			targetProxy = AFABF1071A41B4D2009197FB /* PBXContainerItemProxy */;
+		};
 		E01A59301902F05600EB0BE4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E01A59051902F05600EB0BE4 /* notifyr */;
@@ -897,6 +1009,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AFABF10A1A41B4D2009197FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Notifier Live/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AFABF10B1A41B4D2009197FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Notifier Live/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		E01A59391902F05600EB0BE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -976,6 +1125,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -996,6 +1146,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1052,6 +1203,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AFABF10C1A41B4D2009197FB /* Build configuration list for PBXNativeTarget "Notifier Live" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFABF10A1A41B4D2009197FB /* Debug */,
+				AFABF10B1A41B4D2009197FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		E01A59011902F05600EB0BE4 /* Build configuration list for PBXProject "notifyr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
