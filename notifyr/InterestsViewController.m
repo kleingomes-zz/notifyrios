@@ -16,6 +16,7 @@
 #import "UIViewController+ECSlidingViewController.h"
 #import "MEZoomAnimationController.h"
 #import <UIImageView+UIActivityIndicatorForSDWebImage.h>
+#import "ItemArticleFetcher.h"
 
 @interface InterestsViewController ()
 
@@ -101,12 +102,13 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
     if ([segue.identifier isEqualToString:@"ShowInterestArticles"])
     {
         ArticlesViewController *vc = (ArticlesViewController *)segue.destinationViewController;
-        Item *interest = self.items[[self.tableView indexPathForSelectedRow].row];
-        vc.interest = interest;
+        Item *item = self.items[[self.tableView indexPathForSelectedRow].row];
+        ItemArticleFetcher *itemArticleFetcher = [[ItemArticleFetcher alloc] init];
+        itemArticleFetcher.item = item;
+        vc.delegate = itemArticleFetcher;
     }
 }
 

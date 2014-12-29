@@ -105,6 +105,26 @@
     [apiClient getArticlesForAllInterestsWithSort:sortOrder];
 }
 
+- (void)getArticlesForItem:(Item *)item skip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getArticlesForItem:item skip:skip take:take sortBy:sortBy completion:completion];
+}
+
+
+- (void)getArticlesForAllItemsWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getArticlesForAllItemsWithSkip:skip take:take sortBy:sortBy completion:completion];
+}
+
+- (void)getArticlesForBreakingNewsWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getArticlesForBreakingNewsWithSkip:skip take:take sortBy:sortBy completion:completion];
+}
+
+
 
 - (void)saveInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
 {

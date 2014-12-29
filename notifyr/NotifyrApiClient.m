@@ -155,6 +155,125 @@
     }];
 }
 
+
+
+
+
+- (void)getArticlesForItem:(Item *)item skip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getArticlesForItemMain:item skip:skip take:take sortBy:sortBy completion:completion];
+        }];
+    }
+    else
+    {
+        [self getArticlesForItemMain:item skip:skip take:take sortBy:sortBy completion:completion];
+    }
+}
+
+- (void)getArticlesForItemMain:(Item *)item skip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetItemArticles?itemId=%@&take=%ld&sortBy=%@", item.itemId, (long)take, sortBy]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (error != nil)
+        {
+            completion(nil, error);
+            return;
+        }
+        
+        NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonObject count]];
+        for (NSDictionary *dict in jsonObject)
+        {
+            Article *article = [Article makeArticleFromDictionary:dict];
+            [items addObject:article];
+        }
+        
+        completion(items, nil);
+    }];
+}
+
+
+
+
+- (void)getArticlesForAllItemsWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getArticlesForAllItemsMainWithSkip:skip take:take sortBy:sortBy completion:completion];
+        }];
+    }
+    else
+    {
+        [self getArticlesForAllItemsMainWithSkip:skip take:take sortBy:sortBy completion:completion];
+    }
+}
+
+- (void)getArticlesForAllItemsMainWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetAllItemArticles?take=%ld&userId=%@&sortBy=%@", (long)take, self.userId, sortBy]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (error != nil)
+        {
+            completion(nil, error);
+            return;
+        }
+        
+        NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonObject count]];
+        for (NSDictionary *dict in jsonObject)
+        {
+            Article *article = [Article makeArticleFromDictionary:dict];
+            [items addObject:article];
+        }
+        
+        completion(items, nil);
+    }];
+}
+
+- (void)getArticlesForBreakingNewsWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getArticlesForBreakingNewsMainWithSkip:skip take:take sortBy:sortBy completion:completion];
+        }];
+    }
+    else
+    {
+        [self getArticlesForBreakingNewsMainWithSkip:skip take:take sortBy:sortBy completion:completion];
+    }
+}
+
+- (void)getArticlesForBreakingNewsMainWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"News/GetBreakingNews?take=%ld&sortBy=%@", (long)take, sortBy]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (error != nil)
+        {
+            completion(nil, error);
+            return;
+        }
+        
+        NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonObject count]];
+        for (NSDictionary *dict in jsonObject)
+        {
+            Article *article = [Article makeArticleFromDictionary:dict];
+            [items addObject:article];
+        }
+        
+        completion(items, nil);
+    }];
+}
+
+
+
+
+
 - (void)saveInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     //todo: replace this access token pattern/main method in these methods

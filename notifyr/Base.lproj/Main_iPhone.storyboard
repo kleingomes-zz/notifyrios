@@ -109,9 +109,9 @@
         <!--Interests-->
         <scene sceneID="dcs-ag-rfE">
             <objects>
-                <tableViewController id="VLr-JZ-fXu" customClass="ArticlesViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ArticlesViewController" id="VLr-JZ-fXu" customClass="ArticlesViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Abb-0O-F0f">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.32517482517482516" alpha="1" colorSpace="calibratedWhite"/>
@@ -388,6 +388,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJ5-tf-fbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1907" y="750"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UlW-pi-9wk">
+            <objects>
+                <navigationController id="3zd-SM-dzs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="o37-Lv-8MO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vpF-Am-wSc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TFa-mb-4tD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1471" y="1441"/>
         </scene>
         <!--Add Interests-->
         <scene sceneID="8Ks-jB-zij">
@@ -752,7 +766,7 @@
                         <viewControllerLayoutGuide type="bottom" id="l9d-5L-Tpa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4CY-WQ-HI2">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rtG-rq-qPs">
@@ -2438,10 +2452,10 @@ This document was last updated on May 24, 2014</string>
             </objects>
             <point key="canvasLocation" x="513" y="2148"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="boO-VN-98o">
             <objects>
-                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="DBm-XG-iXu" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="DBm-XG-iXu" customClass="MainTabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="lYb-IY-CfE">
@@ -2451,6 +2465,7 @@ This document was last updated on May 24, 2014</string>
                     <connections>
                         <segue destination="DGi-rp-bWL" kind="relationship" relationship="viewControllers" id="8Ou-6D-6Lo"/>
                         <segue destination="FMW-SP-44s" kind="relationship" relationship="viewControllers" id="utA-gC-4WW"/>
+                        <segue destination="3zd-SM-dzs" kind="relationship" relationship="viewControllers" id="izc-QD-YZd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4p-3L-TFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2487,7 +2502,7 @@ This document was last updated on May 24, 2014</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="3NJ-xn-Hkv"/>
+        <segue reference="M8b-2k-00h"/>
         <segue reference="UT5-3Q-pM1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

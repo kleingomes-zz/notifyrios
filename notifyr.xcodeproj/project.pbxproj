@@ -93,6 +93,7 @@
 		AFF5C6C51A3DB85600AA5C4C /* appbar.green.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6C41A3DB85600AA5C4C /* appbar.green.png */; };
 		AFF5C6C71A3ED66B00AA5C4C /* appbar.moon.full.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6C61A3ED66B00AA5C4C /* appbar.moon.full.png */; };
 		AFF5C6C91A3EF3AA00AA5C4C /* menuBG6.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6C81A3EF3AA00AA5C4C /* menuBG6.png */; };
+		E0064E501A50F65200C665AE /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0064E4F1A50F65200C665AE /* MainTabBarViewController.m */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
 		E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3673198F32F700331E23 /* MEZoomAnimationController.m */; };
@@ -112,6 +113,9 @@
 		E01A59381902F05600EB0BE4 /* notifyrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E01A59371902F05600EB0BE4 /* notifyrTests.m */; };
 		E01A59421902F07800EB0BE4 /* WindowsAzureMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E01A59411902F07800EB0BE4 /* WindowsAzureMessaging.framework */; };
 		E01ED8DE1929815700798C31 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = E01ED8DD1929815700798C31 /* Constants.m */; };
+		E02DE62E1A5104DD0083CC53 /* AllItemsArticleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E02DE62D1A5104DD0083CC53 /* AllItemsArticleFetcher.m */; };
+		E02DE6311A510BF70083CC53 /* BreakingNewsArticleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E02DE6301A510BF70083CC53 /* BreakingNewsArticleFetcher.m */; };
+		E02DE6341A5112B60083CC53 /* ItemArticleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E02DE6331A5112B60083CC53 /* ItemArticleFetcher.m */; };
 		E0414DDB1985C912005B5BB9 /* AvailableInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = E0414DDA1985C912005B5BB9 /* AvailableInterest.m */; };
 		E0414E6C198D6F64005B5BB9 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = E0414E6B198D6F64005B5BB9 /* UIImage+ImageEffects.m */; };
 		E0498E531916F1DD004B4CF3 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E521916F1DD004B4CF3 /* Company.m */; };
@@ -257,6 +261,8 @@
 		AFF5C6C41A3DB85600AA5C4C /* appbar.green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.green.png; sourceTree = "<group>"; };
 		AFF5C6C61A3ED66B00AA5C4C /* appbar.moon.full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.moon.full.png; sourceTree = "<group>"; };
 		AFF5C6C81A3EF3AA00AA5C4C /* menuBG6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBG6.png; sourceTree = "<group>"; };
+		E0064E4E1A50F65200C665AE /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
+		E0064E4F1A50F65200C665AE /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
 		E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleWebViewController.m; sourceTree = "<group>"; };
 		E00C366F198F09EB00331E23 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -284,6 +290,12 @@
 		E01A59411902F07800EB0BE4 /* WindowsAzureMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMessaging.framework; sourceTree = "<group>"; };
 		E01ED8DC1929815700798C31 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E01ED8DD1929815700798C31 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		E02DE62C1A5104DD0083CC53 /* AllItemsArticleFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllItemsArticleFetcher.h; sourceTree = "<group>"; };
+		E02DE62D1A5104DD0083CC53 /* AllItemsArticleFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllItemsArticleFetcher.m; sourceTree = "<group>"; };
+		E02DE62F1A510BF70083CC53 /* BreakingNewsArticleFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BreakingNewsArticleFetcher.h; sourceTree = "<group>"; };
+		E02DE6301A510BF70083CC53 /* BreakingNewsArticleFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BreakingNewsArticleFetcher.m; sourceTree = "<group>"; };
+		E02DE6321A5112B60083CC53 /* ItemArticleFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemArticleFetcher.h; sourceTree = "<group>"; };
+		E02DE6331A5112B60083CC53 /* ItemArticleFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemArticleFetcher.m; sourceTree = "<group>"; };
 		E0414DD91985C912005B5BB9 /* AvailableInterest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvailableInterest.h; sourceTree = "<group>"; };
 		E0414DDA1985C912005B5BB9 /* AvailableInterest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvailableInterest.m; sourceTree = "<group>"; };
 		E0414E6A198D6F64005B5BB9 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
@@ -598,6 +610,8 @@
 				E07747D2198DC1C900D970F7 /* SettingsViewController.m */,
 				E07747D4198DC58D00D970F7 /* PrivacyPolicyViewController.h */,
 				E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */,
+				E0064E4E1A50F65200C665AE /* MainTabBarViewController.h */,
+				E0064E4F1A50F65200C665AE /* MainTabBarViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -621,6 +635,12 @@
 				E0414DDA1985C912005B5BB9 /* AvailableInterest.m */,
 				E0D3A5AC197420B7008C445D /* Article.h */,
 				E0D3A5AD197420B7008C445D /* Article.m */,
+				E02DE62C1A5104DD0083CC53 /* AllItemsArticleFetcher.h */,
+				E02DE62D1A5104DD0083CC53 /* AllItemsArticleFetcher.m */,
+				E02DE6321A5112B60083CC53 /* ItemArticleFetcher.h */,
+				E02DE6331A5112B60083CC53 /* ItemArticleFetcher.m */,
+				E02DE62F1A510BF70083CC53 /* BreakingNewsArticleFetcher.h */,
+				E02DE6301A510BF70083CC53 /* BreakingNewsArticleFetcher.m */,
 				E0498E5419170D5B004B4CF3 /* Utils.h */,
 				E0498E5519170D5B004B4CF3 /* Utils.m */,
 				E01ED8DC1929815700798C31 /* Constants.h */,
@@ -936,13 +956,17 @@
 				E01A591A1902F05600EB0BE4 /* AppDelegate.m in Sources */,
 				E0931D7A190ADF16001A991F /* Biz.m in Sources */,
 				E0D3A5AB19741CB9008C445D /* ArticlesViewController.m in Sources */,
+				E0064E501A50F65200C665AE /* MainTabBarViewController.m in Sources */,
 				E01A59161902F05600EB0BE4 /* main.m in Sources */,
+				E02DE6311A510BF70083CC53 /* BreakingNewsArticleFetcher.m in Sources */,
 				E0D3A5A519735F8A008C445D /* EventType.m in Sources */,
 				E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */,
+				E02DE62E1A5104DD0083CC53 /* AllItemsArticleFetcher.m in Sources */,
 				E055249E197B61EF007322AE /* NewInterestViewController.m in Sources */,
 				E0414E6C198D6F64005B5BB9 /* UIImage+ImageEffects.m in Sources */,
 				E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */,
 				E0414DDB1985C912005B5BB9 /* AvailableInterest.m in Sources */,
+				E02DE6341A5112B60083CC53 /* ItemArticleFetcher.m in Sources */,
 				E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */,
 				E07747D6198DC58D00D970F7 /* PrivacyPolicyViewController.m in Sources */,
 				E0931D73190ADBF5001A991F /* Item.m in Sources */,
