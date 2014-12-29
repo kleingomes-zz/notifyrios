@@ -19,10 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *interestNameLabel;
 
-@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) id articleObserver;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *aspectRatoConstraint;
 @property (nonatomic, strong) NSString *sortOrder;
 
 @end
@@ -33,7 +31,7 @@
 #define SORT_SEGMENTED_CONTROL_POPULAR 0
 #define SORT_SEGMENTED_CONTROL_NEWEST 1
 
-- (NSArray *)items
+- (NSMutableArray *)items
 {
     if (!_items)
     {
@@ -45,18 +43,19 @@
 
 - (void)initItems
 {
-    if (self.interest == nil)
-    {
-        [[Biz sharedBiz] getArticlesForAllInterestsWithSort:self.sortOrder];
-    }
-    else
-    {
-        [[Biz sharedBiz] getArticlesForInterest:self.interest];
-    }
+    [self.delegate getArticlesWithSkip:0 take:20 sortBy:self.sortOrder completion:^(NSArray *articles, NSError *error) {
+        [self.items removeAllObjects];
+        [self.items addObjectsFromArray:articles];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadData];
+        });
+    }];
 }
 
 - (void)initObserver
 {
+    return;
+    
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     
@@ -66,7 +65,7 @@
                                                      
                                                      NSLog(@"Got %lu articles", (unsigned long)[articles count]);
                                                      
-                                                     self.items = articles;
+                                                     [self.items addObjectsFromArray: articles];
                                                      [self.refreshControl endRefreshing];
                                                      [self.tableView reloadData];
                                                  }];
@@ -75,7 +74,7 @@
 
 - (void)refreshAction
 {
-    [[Biz sharedBiz] getInterests];
+    [self initItems];
 }
 
 
@@ -89,18 +88,14 @@
     }
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if ([self.navigationController.viewControllers count] > 1)
+    {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -109,32 +104,14 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
     self.sortOrder = kInterestsSortOrderPublishDate;
-    
-    NSString *title;
-    if (self.interest != nil)
-    {
-        title = self.interest.itemName;
-    }
-    else
-    {
-        title = @"Interests";
-    }
-    
-    self.titleLabel.text = title;
-    self.navigationItem.title = title;
- //   UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles9.png"]];
- //   imageView.frame = self.tableView.frame;
-//    self.tableView.backgroundView = imageView;
+        
+    self.navigationItem.title = [self.delegate getTitle];
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.extendedLayoutIncludesOpaqueBars = YES;
     self.tableView.estimatedRowHeight = 350;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
-   // self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"menuBG5.png"]];
- //   [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
- //   [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc]init] forBarMetrics:UIBarMetricsDefault];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -146,12 +123,6 @@
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center removeObserver:self.articleObserver];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source

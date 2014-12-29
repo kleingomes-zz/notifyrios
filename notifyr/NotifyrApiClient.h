@@ -22,6 +22,13 @@
 
 - (void)getArticlesForAllInterestsWithSort:(NSString *)sortOrder;
 
+- (void)getArticlesForItem:(Item *)item skip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
+
+- (void)getArticlesForAllItemsWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
+
+- (void)getArticlesForBreakingNewsWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
+
+
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 - (void)getProductsWithCompletionHandler:(void (^)(NSError *error))completionHandler;

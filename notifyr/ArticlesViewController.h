@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Item.h"
 
+@protocol ArticlesViewControllerDelegate <NSObject>
+
+- (NSString *)getTitle;
+- (void)getArticlesWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
+
+@end
+
+
 @interface ArticlesViewController : UITableViewController
 
-@property (nonatomic, strong)Item *interest;
+@property (nonatomic, strong) id<ArticlesViewControllerDelegate> delegate;
 
 @end
