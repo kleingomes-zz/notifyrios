@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Interest.h"
+#import "Item.h"
 
 @interface Article : NSObject
 
 @property (nonatomic) NSNumber *articleId;
-@property (nonatomic) Interest *interest;
+@property (nonatomic) Item *interest;
 @property (nonatomic) NSString *title;
 @property (nonatomic) NSString *articleDescription;
 @property (nonatomic) NSString *author;

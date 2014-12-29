@@ -113,7 +113,7 @@
     NSString *title;
     if (self.interest != nil)
     {
-        title = self.interest.productName ? self.interest.productName : self.interest.companyName;
+        title = self.interest.itemName;
     }
     else
     {
