@@ -67,18 +67,7 @@
     if (foundAvailableInterest)
     {
         Interest *interest = [[Interest alloc] init];
-        interest.notificationPriority = [NSNumber numberWithFloat: self.notificationPrioritySlider.value];
-        interest.notificationFrequencyHours = @0; //todo: don't hard code this
-        interest.isActive = [NSNumber numberWithBool:YES];
         
-        if ([foundAvailableInterest.type isEqualToString:@"Company"])
-        {
-            interest.companyId = foundAvailableInterest.availableInterestId;
-        }
-        else
-        {
-            interest.productId = foundAvailableInterest.availableInterestId;
-        }
         return interest;
     }
     

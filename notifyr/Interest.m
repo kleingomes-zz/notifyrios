@@ -11,34 +11,12 @@
 
 @implementation Interest
 
-
-- (id)initWithTitle:(NSString *)title
-{
-    //todo: remove this
-    self = [super init];
-    if (self) {
-        self.title = title;
-    }
-    return self;
-}
-
 + (Interest *)makeInterestFromDictionary:(NSDictionary *)dictionary
 {
     Interest *interest = [[Interest alloc] init];
-    interest.interestId = [Utils getNumberFromDictionary:dictionary name:@"Id"];
-    interest.companyId = [Utils getNumberFromDictionary:dictionary name:@"CompanyId"];
-    interest.productId = [Utils getNumberFromDictionary:dictionary name:@"ProductId"];
-    interest.eventTypeId = [Utils getNumberFromDictionary:dictionary name:@"EventTypeId"];
-
-    interest.companyName = [Utils getStringFromDictionary:dictionary name:@"CompanyName"];
-    interest.productName = [Utils getStringFromDictionary:dictionary name:@"ProductName"];
-    interest.isProduct = [Utils getNumberFromDictionary:dictionary name:@"IsProduct"];
-    interest.eventTypeName = [Utils getStringFromDictionary:dictionary name:@"EventTypeName"];
-    interest.stockQuote = [Utils getNumberFromDictionary:dictionary name:@"StockQuote"];
+    interest.itemId = [Utils getNumberFromDictionary:dictionary name:@"ItemId"];
     interest.logoUrl = [Utils getStringFromDictionary:dictionary name:@"LogoUrl"];
-    interest.hasBeenViewed = [Utils getNumberFromDictionary:dictionary name:@"HasBeenViewed"];
-    interest.notificationPriority = [Utils getNumberFromDictionary:dictionary name:@"notificationPriority"];
-
+    interest.itemName = [Utils getStringFromDictionary:dictionary name:@"ItemName"];
     
     return interest;
 }

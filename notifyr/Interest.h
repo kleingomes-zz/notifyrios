@@ -13,28 +13,9 @@
 
 @interface Interest : NSObject
 
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic) NSNumber *interestId;
-@property (nonatomic) NSNumber *companyId;
-@property (nonatomic) NSNumber *productId;
-@property (nonatomic) NSNumber *eventTypeId;
-
-@property (nonatomic, weak) Company *company;
-@property (nonatomic, weak) Product *product;
-@property (nonatomic, weak) EventType *eventType;
-
-@property (nonatomic, strong) NSString *companyName;
-@property (nonatomic, strong) NSString *productName;
-@property (nonatomic) NSNumber *isProduct;
-@property (nonatomic) NSString *eventTypeName;
-@property (nonatomic) NSNumber *stockQuote;
+@property (nonatomic) NSNumber *itemId;
+@property (nonatomic, strong) NSString *itemName;
 @property (nonatomic) NSString *logoUrl;
-@property (nonatomic) NSNumber *hasBeenViewed;
-@property (nonatomic) NSNumber *notificationPriority;
-@property (nonatomic) NSNumber *notificationFrequencyHours;
-@property (nonatomic) NSNumber *isActive;
-
-
 
 + (Interest *)makeInterestFromDictionary:(NSDictionary *)dictionary;
 

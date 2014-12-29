@@ -81,12 +81,7 @@
 
 -(void)getInterestsMain
 {
-    //NSString *urlString = @"http://www.notifyr.ca/service/api/Notification/GetNotifications?userId=19a65135-4dff-4ac1-b7c0-877c640581ac";
-    //NSString *urlString = @"http://frogs.primeprojection.com/api/playsessionapi";
-    //NSString *urlString = @"http://192.168.1.103/Notifyr.WebAPI/api/Notification/GetNotifications?userId=19a65135-4dff-4ac1-b7c0-877c640581ac";
-
-    //NSString *urlString = [self getUrl:@"Interest/GetInterests?userId=19a65135-4dff-4ac1-b7c0-877c640581ac"];
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetInterests?userId=%@", self.userId]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetUserItems?userId=%@", self.userId]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
@@ -124,7 +119,7 @@
 
 - (void)getArticlesMainForInterest:(Interest *)interest
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetInterestArticles?interestId=%@", interest.interestId]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetItemArticles?itemId=%@", interest.itemId]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
@@ -150,7 +145,7 @@
 
 - (void)getArticlesForAllInterestsMainWithSort:(NSString *)sortOrder
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetAllInterestArticles?take=20&userId=%@&sortBy=%@", self.userId, sortOrder]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetAllItemArticles?take=20&userId=%@&sortBy=%@", self.userId, sortOrder]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
@@ -177,18 +172,14 @@
 
 - (void)saveInterestMain:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
-    NSString *urlString = [self getUrl:@"Interest/SaveInterests"];
+    NSString *urlString = [self getUrl:@"Item/SaveUserItem"];
     
     NSMutableURLRequest *request = [self getRequestWithUrlString:urlString method:@"POST"];
     //[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     dict[@"UserId"] = self.userId;
-    dict[@"ProductId"] = interest.productId ? interest.productId : [NSNull null];
-    dict[@"CompanyId"] = interest.companyId ? interest.companyId : [NSNull null];
-    dict[@"NotificationFrequencyHours"] = interest.notificationFrequencyHours;
-    dict[@"NotificationPriority"] = interest.notificationPriority;
-    dict[@"IsActive"] = interest.isActive;
+    dict[@"ItemId"] = interest.itemId;
     
     NSArray *interestsArray = @[dict];
     
@@ -219,7 +210,7 @@
 
 - (void)deleteInterestMain:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/DeleteInterest?interestId=%@", interest.interestId]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/DeleteUserItem?UserItemId=%@", interest.itemId]];
     
     [self makeAPICallWithUrlString:urlString method:@"POST" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         completionHandler(error);
@@ -245,7 +236,7 @@
 
 - (void)getAvailableInterestsMain:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Interest/GetAvailableInterests?query=%@", query]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetAvailableItems?query=%@", query]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
@@ -452,148 +443,6 @@
 }
 
 
-/*
- - (void)getCompaniesFromApi
- {
- NSString *urlString = @"http://www.notifyr.ca/service/api/Company/GetAllCompanies";
- NSMutableURLRequest *request = [self getRequestWithUrlString:urlString];
- 
- NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
- NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
- 
- NSURLSessionDataTask *task = [session dataTaskWithRequest:request
- completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
- NSInteger statusCode = ((NSHTTPURLResponse *) response).statusCode;
- NSLog(@"API response status code:%ld", (long)statusCode);
- //NSString *result = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
- 
- if (error)
- {
- NSLog(@"Error attempting to %@: %@", urlString, error.description);
- }
- else
- {
- NSError *error = nil;
- NSArray *items = [NSJSONSerialization JSONObjectWithData:data
- options:0
- error:&error];
- if (error)
- {
- NSLog(@"Serialization error: %@", error.description);
- }
- else
- {
- NSLog(@"Response: %@", items);
- [self notifyNewCompaniesWithDictionary:items];
- 
- 
- [self getReceivedNotifications];
- }
- }
- }];
- [task resume];
- }
- */
-
-/*
- - (void)getReceivedNotificationsFromApi
- {
- NSString *urlString = @"http://frogs.primeprojection.com//api/playsessionapi";
- NSString *method = @"GET";
- NSURL *url = [NSURL URLWithString:urlString];
- 
- NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
- NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
- NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
- cachePolicy:NSURLRequestUseProtocolCachePolicy
- timeoutInterval:60.0];
- 
- [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
- 
- [request setHTTPMethod:method];
- 
- NSURLSessionDataTask *task = [session dataTaskWithRequest:request
- completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
- NSInteger statusCode = ((NSHTTPURLResponse *) response).statusCode;
- NSLog(@"API response status code:%ld", (long)statusCode);
- //NSString *result = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
- 
- 
- if (error)
- {
- NSLog(@"Error attempting to %@: %@", urlString, error.description);
- }
- else
- {
- NSError *error = nil;
- NSArray *items = [NSJSONSerialization JSONObjectWithData:data
- options:0
- error:&error];
- if (error)
- {
- NSLog(@"Serialization error: %@", error.description);
- }
- else
- {
- NSLog(@"Response: %@", items);
- [self notifyNewReceivedNotificationsWithDictionary:items];
- }
- }
- }];
- 
- [task resume];
- }
-
-- (void)getReceivedNotifications
-{
-    NSString *urlString = @"http://www.notifyr.ca/service/api/Notification/GetNotifications?userId=19a65135-4dff-4ac1-b7c0-877c640581ac";
-    NSString *method = @"GET";
-    NSURL *url = [NSURL URLWithString:urlString];
-    
-    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
-                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
-                                                       timeoutInterval:60.0];
-    
-    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    [request setHTTPMethod:method];
-    
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request
-                                            completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                                                NSInteger statusCode = ((NSHTTPURLResponse *) response).statusCode;
-                                                NSLog(@"API response status code:%ld", (long)statusCode);
-                                                //NSString *result = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-                                                
-                                                
-                                                if (error)
-                                                {
-                                                    NSLog(@"Error attempting to %@: %@", urlString, error.description);
-                                                }
-                                                else
-                                                {
-                                                    NSError *error = nil;
-                                                    NSArray *items = [NSJSONSerialization JSONObjectWithData:data
-                                                                                                     options:0
-                                                                                                       error:&error];
-                                                    if (error)
-                                                    {
-                                                        NSLog(@"Serialization error: %@", error.description);
-                                                    }
-                                                    else
-                                                    {
-                                                        NSLog(@"Response: %@", items);
-                                                        [self notifyNewReceivedNotificationsWithDictionary:items];
-                                                    }
-                                                }
-                                            }];
-    
-    [task resume];
-}
- 
- */
-
 #pragma mark - Create objects and notify observers
 
 
@@ -606,16 +455,6 @@
         Interest *interest = [Interest makeInterestFromDictionary:dict];
         [items addObject:interest];
     }
-    
-    //set objects
-//    Biz *biz = [Biz sharedBiz];
-//    for (Interest *interest in items)
-//    {
-//        interest.title = [biz getCompanyById:interest.companyId].name;
-//        interest.company = [biz getCompanyById:interest.companyId];
-//        interest.product = [biz getProductById:interest.productId];
-//    }
-    
     
     //NSArray *items = [self getFakeInterests];
 
