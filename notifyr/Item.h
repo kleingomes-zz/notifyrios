@@ -11,12 +11,12 @@
 #import "Product.h"
 #import "EventType.h"
 
-@interface Interest : NSObject
+@interface Item : NSObject
 
 @property (nonatomic) NSNumber *itemId;
 @property (nonatomic, strong) NSString *itemName;
 @property (nonatomic) NSString *logoUrl;
 
-+ (Interest *)makeInterestFromDictionary:(NSDictionary *)dictionary;
++ (Item *)makeInterestFromDictionary:(NSDictionary *)dictionary;
 
 @end

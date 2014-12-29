@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Interest.h"
+#import "Item.h"
 
 @interface ArticlesViewController : UITableViewController
 
-@property (nonatomic, strong)Interest *interest;
+@property (nonatomic, strong)Item *interest;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "NotifyrApiClient.h"
-#import "Interest.h"
+#import "Item.h"
 #import "Company.h"
 #import "Product.h"
 #import "Article.h"
@@ -103,7 +103,7 @@
     }];
 }
 
-- (void)getArticlesForInterest:(Interest *)interest
+- (void)getArticlesForInterest:(Item *)interest
 {
     if (!self.accessToken)
     {
@@ -117,7 +117,7 @@
     }
 }
 
-- (void)getArticlesMainForInterest:(Interest *)interest
+- (void)getArticlesMainForInterest:(Item *)interest
 {
     NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetItemArticles?itemId=%@", interest.itemId]];
     
@@ -155,7 +155,7 @@
     }];
 }
 
-- (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
+- (void)saveInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     //todo: replace this access token pattern/main method in these methods
     if (!self.accessToken)
@@ -170,7 +170,7 @@
     }
 }
 
-- (void)saveInterestMain:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
+- (void)saveInterestMain:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     NSString *urlString = [self getUrl:@"Item/SaveUserItem"];
     
@@ -193,7 +193,7 @@
     }];
 }
 
-- (void)deleteInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
+- (void)deleteInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     //todo: replace this access token pattern/main method in these methods
     if (!self.accessToken)
@@ -208,7 +208,7 @@
     }
 }
 
-- (void)deleteInterestMain:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
+- (void)deleteInterestMain:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/DeleteUserItem?UserItemId=%@", interest.itemId]];
     
@@ -452,7 +452,7 @@
     NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
     for (NSDictionary *dict in jsonItems)
     {
-        Interest *interest = [Interest makeInterestFromDictionary:dict];
+        Item *interest = [Item makeInterestFromDictionary:dict];
         [items addObject:interest];
     }
     
@@ -484,7 +484,7 @@
     NSMutableArray *items = [[NSMutableArray alloc] init];
     for (NSDictionary *dict in dictionaries)
     {
-        [items addObject:[Interest makeInterestFromDictionary:dict]];
+        [items addObject:[Item makeInterestFromDictionary:dict]];
     }
     
     return items;
@@ -523,7 +523,7 @@
     [center postNotificationName:ProductsUpdateNotification object:nil userInfo:userInfo];
 }
 
-- (void)notifyArticlesUpdatedForInterest:(Interest *)interest jsonItems:(NSArray *)jsonItems
+- (void)notifyArticlesUpdatedForInterest:(Item *)interest jsonItems:(NSArray *)jsonItems
 {
     NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
     for (NSDictionary *dict in jsonItems)

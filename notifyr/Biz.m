@@ -93,7 +93,7 @@
     }];
 }
 
-- (void)getArticlesForInterest:(Interest *)interest
+- (void)getArticlesForInterest:(Item *)interest
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
     [apiClient getArticlesForInterest:interest];
@@ -106,13 +106,13 @@
 }
 
 
-- (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
+- (void)saveInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
     [apiClient saveInterest:interest withCompletionHandler:completionHandler];
 }
 
-- (void)deleteInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
+- (void)deleteInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
     [apiClient deleteInterest:interest withCompletionHandler:completionHandler];

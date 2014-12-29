@@ -7,7 +7,7 @@
 //
 
 #import "InterestsViewController.h"
-#import "Interest.h"
+#import "Item.h"
 #import "InterestCell.h"
 #import "Biz.h"
 #import "ArticlesViewController.h"
@@ -105,7 +105,7 @@
     if ([segue.identifier isEqualToString:@"ShowInterestArticles"])
     {
         ArticlesViewController *vc = (ArticlesViewController *)segue.destinationViewController;
-        Interest *interest = self.items[[self.tableView indexPathForSelectedRow].row];
+        Item *interest = self.items[[self.tableView indexPathForSelectedRow].row];
         vc.interest = interest;
     }
 }
@@ -130,10 +130,10 @@
 
 - (void)updateInterests:(NSArray *)updatedInterests
 {
-    for (Interest *updatedInterest in updatedInterests)
+    for (Item *updatedInterest in updatedInterests)
     {
-        Interest *foundInterest = nil;
-        for (Interest *interest in self.items)
+        Item *foundInterest = nil;
+        for (Item *interest in self.items)
         {
             if ([updatedInterest.itemId isEqualToNumber:interest.itemId])
             {
@@ -255,7 +255,7 @@
         InterestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InterestCell" forIndexPath:indexPath];
         cell.backgroundColor = [UIColor clearColor];
         // Configure the cell...
-        Interest *interest = self.items[indexPath.row];
+        Item *interest = self.items[indexPath.row];
         //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
         cell.companyNameLabel.text = interest.itemName;
         
@@ -330,7 +330,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         // Delete the row from the data source
-        Interest *interest = self.items[indexPath.row];
+        Item *interest = self.items[indexPath.row];
         [[Biz sharedBiz] deleteInterest:interest withCompletionHandler:^(NSError *error) {
             NSLog(@"deleted");
         }];

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Interest.h"
+#import "Item.h"
 
 @interface NotifyrApiClient : NSObject
 
@@ -18,7 +18,7 @@
 
 - (void)getInterests;
 
-- (void)getArticlesForInterest:(Interest *)interest;
+- (void)getArticlesForInterest:(Item *)interest;
 
 - (void)getArticlesForAllInterestsWithSort:(NSString *)sortOrder;
 
@@ -26,9 +26,9 @@
 
 - (void)getProductsWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 
-- (void)saveInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
+- (void)saveInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
 
-- (void)deleteInterest:(Interest *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
+- (void)deleteInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 

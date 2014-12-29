@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Nelson Narciso. All rights reserved.
 //
 
-#import "Interest.h"
+#import "Item.h"
 #import "Utils.h"
 
-@implementation Interest
+@implementation Item
 
-+ (Interest *)makeInterestFromDictionary:(NSDictionary *)dictionary
++ (Item *)makeInterestFromDictionary:(NSDictionary *)dictionary
 {
-    Interest *interest = [[Interest alloc] init];
+    Item *interest = [[Item alloc] init];
     interest.itemId = [Utils getNumberFromDictionary:dictionary name:@"ItemId"];
     interest.logoUrl = [Utils getStringFromDictionary:dictionary name:@"LogoUrl"];
     interest.itemName = [Utils getStringFromDictionary:dictionary name:@"ItemName"];

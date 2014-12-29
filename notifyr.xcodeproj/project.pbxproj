@@ -121,7 +121,7 @@
 		E07747CD198DC05800D970F7 /* appbar.hamburger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E07747CB198DC05800D970F7 /* appbar.hamburger@2x.png */; };
 		E07747D3198DC1C900D970F7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07747D2198DC1C900D970F7 /* SettingsViewController.m */; };
 		E07747D6198DC58D00D970F7 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */; };
-		E0931D73190ADBF5001A991F /* Interest.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D6E190ADBF5001A991F /* Interest.m */; };
+		E0931D73190ADBF5001A991F /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D6E190ADBF5001A991F /* Item.m */; };
 		E0931D74190ADBF5001A991F /* InterestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D70190ADBF5001A991F /* InterestCell.m */; };
 		E0931D75190ADBF5001A991F /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D72190ADBF5001A991F /* InterestsViewController.m */; };
 		E0931D7A190ADF16001A991F /* Biz.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D79190ADF16001A991F /* Biz.m */; };
@@ -300,8 +300,8 @@
 		E07747D2198DC1C900D970F7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		E07747D4198DC58D00D970F7 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
 		E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
-		E0931D6D190ADBF5001A991F /* Interest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interest.h; sourceTree = "<group>"; };
-		E0931D6E190ADBF5001A991F /* Interest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interest.m; sourceTree = "<group>"; };
+		E0931D6D190ADBF5001A991F /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		E0931D6E190ADBF5001A991F /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		E0931D6F190ADBF5001A991F /* InterestCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestCell.h; sourceTree = "<group>"; };
 		E0931D70190ADBF5001A991F /* InterestCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestCell.m; sourceTree = "<group>"; };
 		E0931D71190ADBF5001A991F /* InterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsViewController.h; sourceTree = "<group>"; };
@@ -615,8 +615,8 @@
 				E0D3A5A71973904F008C445D /* Product.m */,
 				E0D3A5A319735F8A008C445D /* EventType.h */,
 				E0D3A5A419735F8A008C445D /* EventType.m */,
-				E0931D6D190ADBF5001A991F /* Interest.h */,
-				E0931D6E190ADBF5001A991F /* Interest.m */,
+				E0931D6D190ADBF5001A991F /* Item.h */,
+				E0931D6E190ADBF5001A991F /* Item.m */,
 				E0414DD91985C912005B5BB9 /* AvailableInterest.h */,
 				E0414DDA1985C912005B5BB9 /* AvailableInterest.m */,
 				E0D3A5AC197420B7008C445D /* Article.h */,
@@ -945,7 +945,7 @@
 				E0414DDB1985C912005B5BB9 /* AvailableInterest.m in Sources */,
 				E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */,
 				E07747D6198DC58D00D970F7 /* PrivacyPolicyViewController.m in Sources */,
-				E0931D73190ADBF5001A991F /* Interest.m in Sources */,
+				E0931D73190ADBF5001A991F /* Item.m in Sources */,
 				E01ED8DE1929815700798C31 /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1210,6 +1210,7 @@
 				AFABF10B1A41B4D2009197FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E01A59011902F05600EB0BE4 /* Build configuration list for PBXProject "notifyr" */ = {
 			isa = XCConfigurationList;

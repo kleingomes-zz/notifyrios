@@ -9,7 +9,7 @@
 #import "NewInterestViewController.h"
 #import "Biz.h"
 #import "AvailableInterest.h"
-#import "Interest.h"
+#import "Item.h"
 #import <QuartzCore/QuartzCore.h>
 @interface NewInterestViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -40,7 +40,7 @@
 
 - (IBAction)createAction:(id)sender
 {
-    Interest *interest = [self getInterestFromUI];
+    Item *interest = [self getInterestFromUI];
     if (interest)
     {
         [self saveInterest:[self getInterestFromUI]];
@@ -51,7 +51,7 @@
     }
 }
 
-- (Interest *)getInterestFromUI
+- (Item *)getInterestFromUI
 {
     NSString *text = [self.inputField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     AvailableInterest *foundAvailableInterest = nil;
@@ -66,7 +66,7 @@
  
     if (foundAvailableInterest)
     {
-        Interest *interest = [[Interest alloc] init];
+        Item *interest = [[Item alloc] init];
         
         return interest;
     }
@@ -74,7 +74,7 @@
     return nil;
 }
 
-- (void)saveInterest:(Interest *)interest
+- (void)saveInterest:(Item *)interest
 {
     self.saveIndicatorView.hidden = NO;
     [self.activityIndicatorView startAnimating];
