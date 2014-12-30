@@ -12,7 +12,7 @@
             <objects>
                 <tableViewController id="jQE-ZB-ylz" customClass="InterestsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" id="tbu-dE-U2V">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -35,7 +35,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Apple" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7b2-mY-SnO">
-                                                    <rect key="frame" x="79" y="23" width="114" height="21"/>
+                                                    <rect key="frame" x="79" y="23" width="208" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -85,12 +85,13 @@
             </objects>
             <point key="canvasLocation" x="1471" y="36"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My News-->
         <scene sceneID="Ooo-dm-Qe5">
             <objects>
                 <navigationController id="DGi-rp-bWL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" selectedImage="appTiles.png" systemItem="mostViewed" id="Eg3-8n-Gx2"/>
+                    <tabBarItem key="tabBarItem" title="My News" image="newspaper.png" selectedImage="appTiles.png" id="Eg3-8n-Gx2"/>
                     <navigationItem key="navigationItem" id="7UQ-Yc-Erw"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6we-2s-5e3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -375,7 +376,7 @@
                             <outlet property="delegate" destination="VLr-JZ-fXu" id="ANg-LF-xxh"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" selectedImage="appbar.unlock.png" systemItem="favorites" id="Ogn-AC-9Sg"/>
+                    <tabBarItem key="tabBarItem" title="My News" image="newspaper.png" selectedImage="appbar.unlock.png" id="Ogn-AC-9Sg"/>
                     <navigationItem key="navigationItem" title="Interests" id="a3r-Yi-2lS">
                         <barButtonItem key="leftBarButtonItem" image="appbar.hamburger.png" id="1WN-GY-cNm">
                             <color key="tintColor" white="0.98951048949999998" alpha="1" colorSpace="calibratedWhite"/>
@@ -389,12 +390,13 @@
             </objects>
             <point key="canvasLocation" x="1907" y="750"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Viral News-->
         <scene sceneID="UlW-pi-9wk">
             <objects>
                 <navigationController id="3zd-SM-dzs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="o37-Lv-8MO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vpF-Am-wSc">
+                    <tabBarItem key="tabBarItem" title="Viral News" image="chart_up.png" id="o37-Lv-8MO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="vpF-Am-wSc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -412,7 +414,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7Zv-T2-YJl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2gJ-2f-KRM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hb5-pz-WoZ">
@@ -792,14 +794,60 @@
             </objects>
             <point key="canvasLocation" x="2364" y="750"/>
         </scene>
+        <!--Favorites-->
+        <scene sceneID="KbW-T8-7Yq">
+            <objects>
+                <tableViewController id="p8x-sh-dQv" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qU9-th-Xkh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hBU-bB-OaK">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hBU-bB-OaK" id="nC2-62-5ba">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="p8x-sh-dQv" id="0Ci-jA-FR0"/>
+                            <outlet property="delegate" destination="p8x-sh-dQv" id="GF1-Je-Kw9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Favorites" id="He1-Zm-8mL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zod-ZW-zKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="-743"/>
+        </scene>
         <!--Navigation Controller-->
+        <scene sceneID="bmH-Es-MIe">
+            <objects>
+                <navigationController id="XRp-77-G1C" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="1UJ-lW-vno"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="R6h-fZ-dcr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="p8x-sh-dQv" kind="relationship" relationship="rootViewController" id="0sg-dc-xlS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfF-Ty-igM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="-743"/>
+        </scene>
+        <!--My Interests-->
         <scene sceneID="ieG-qs-IaG">
             <objects>
                 <navigationController storyboardIdentifier="InterestsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="FMW-SP-44s" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="V0n-zm-VDg"/>
+                    <tabBarItem key="tabBarItem" title="My Interests" image="top_charts.png" id="V0n-zm-VDg"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="L7d-OB-RBh"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="oM7-nL-CCq">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="oM7-nL-CCq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2466,6 +2514,7 @@ This document was last updated on May 24, 2014</string>
                         <segue destination="DGi-rp-bWL" kind="relationship" relationship="viewControllers" id="8Ou-6D-6Lo"/>
                         <segue destination="FMW-SP-44s" kind="relationship" relationship="viewControllers" id="utA-gC-4WW"/>
                         <segue destination="3zd-SM-dzs" kind="relationship" relationship="viewControllers" id="izc-QD-YZd"/>
+                        <segue destination="XRp-77-G1C" kind="relationship" relationship="viewControllers" id="3KW-7b-thK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D4p-3L-TFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2493,8 +2542,11 @@ This document was last updated on May 24, 2014</string>
         <image name="appbar.sign.parking.png" width="76" height="76"/>
         <image name="appbar.unlock.png" width="76" height="76"/>
         <image name="button.png" width="118" height="39"/>
+        <image name="chart_up.png" width="32" height="32"/>
         <image name="menuBG5.png" width="640" height="1136"/>
+        <image name="newspaper.png" width="32" height="32"/>
         <image name="notfyrlogo3.png" width="3320" height="850"/>
+        <image name="top_charts.png" width="22" height="22"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

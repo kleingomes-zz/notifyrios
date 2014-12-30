@@ -94,7 +94,7 @@
     
     if ([self.navigationController.viewControllers count] > 1)
     {
-        self.navigationItem.leftBarButtonItem = nil;
+       self.navigationItem.leftBarButtonItem = nil;
     }
     
     // Uncomment the following line to preserve selection between presentations.
@@ -112,6 +112,7 @@
     self.tableView.estimatedRowHeight = 350;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated

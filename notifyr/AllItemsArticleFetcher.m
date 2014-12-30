@@ -13,7 +13,7 @@
 
 - (NSString *)getTitle
 {
-    return @"All Items";
+    return @"My News";
 }
 
 - (void)getArticlesWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion

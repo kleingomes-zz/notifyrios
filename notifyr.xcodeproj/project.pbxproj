@@ -80,6 +80,15 @@
 		AFABF1091A41B4D2009197FB /* Notifier Live.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AFABF0FD1A41B4D2009197FB /* Notifier Live.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AFABF1101A41BF32009197FB /* appbar.chevron.left.light.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF10E1A41BF32009197FB /* appbar.chevron.left.light.png */; };
 		AFABF1111A41BF32009197FB /* appbar.chevron.right.light.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF10F1A41BF32009197FB /* appbar.chevron.right.light.png */; };
+		AFABF1151A527C23009197FB /* top_charts.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF1141A527C23009197FB /* top_charts.png */; };
+		AFABF1171A527C63009197FB /* top_charts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF1161A527C63009197FB /* top_charts@2x.png */; };
+		AFABF1191A527C8B009197FB /* top_charts@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF1181A527C8B009197FB /* top_charts@3x.png */; };
+		AFABF1211A527E8D009197FB /* newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF1201A527E8D009197FB /* newspaper.png */; };
+		AFABF1231A527E94009197FB /* newspaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF1221A527E94009197FB /* newspaper@2x.png */; };
+		AFABF1251A527E9A009197FB /* newspaper@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF1241A527E99009197FB /* newspaper@3x.png */; };
+		AFABF1271A527F1E009197FB /* chart_up.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF1261A527F1E009197FB /* chart_up.png */; };
+		AFABF1291A527F3A009197FB /* chart_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF1281A527F3A009197FB /* chart_up@2x.png */; };
+		AFABF12B1A527F40009197FB /* chart_up@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AFABF12A1A527F40009197FB /* chart_up@3x.png */; };
 		AFF5C6B11A3C9EF500AA5C4C /* appTiles3.fix.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */; };
 		AFF5C6B31A3CA2E400AA5C4C /* appbar.camera.send.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */; };
 		AFF5C6B51A3CA37E00AA5C4C /* appbar.closedcaption.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */; };
@@ -248,6 +257,15 @@
 		AFABF1051A41B4D2009197FB /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		AFABF10E1A41BF32009197FB /* appbar.chevron.left.light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.chevron.left.light.png; sourceTree = "<group>"; };
 		AFABF10F1A41BF32009197FB /* appbar.chevron.right.light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.chevron.right.light.png; sourceTree = "<group>"; };
+		AFABF1141A527C23009197FB /* top_charts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top_charts.png; sourceTree = "<group>"; };
+		AFABF1161A527C63009197FB /* top_charts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_charts@2x.png"; sourceTree = "<group>"; };
+		AFABF1181A527C8B009197FB /* top_charts@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top_charts@3x.png"; sourceTree = "<group>"; };
+		AFABF1201A527E8D009197FB /* newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newspaper.png; sourceTree = "<group>"; };
+		AFABF1221A527E94009197FB /* newspaper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newspaper@2x.png"; sourceTree = "<group>"; };
+		AFABF1241A527E99009197FB /* newspaper@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "newspaper@3x.png"; sourceTree = "<group>"; };
+		AFABF1261A527F1E009197FB /* chart_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart_up.png; sourceTree = "<group>"; };
+		AFABF1281A527F3A009197FB /* chart_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chart_up@2x.png"; sourceTree = "<group>"; };
+		AFABF12A1A527F40009197FB /* chart_up@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chart_up@3x.png"; sourceTree = "<group>"; };
 		AFF5C6B01A3C9EF500AA5C4C /* appTiles3.fix.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appTiles3.fix.png; sourceTree = "<group>"; };
 		AFF5C6B21A3CA2E400AA5C4C /* appbar.camera.send.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.camera.send.png; sourceTree = "<group>"; };
 		AFF5C6B41A3CA37E00AA5C4C /* appbar.closedcaption.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.closedcaption.png; sourceTree = "<group>"; };
@@ -386,6 +404,15 @@
 		AF75F63B1930FE47005F5F6C /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				AFABF12A1A527F40009197FB /* chart_up@3x.png */,
+				AFABF1281A527F3A009197FB /* chart_up@2x.png */,
+				AFABF1261A527F1E009197FB /* chart_up.png */,
+				AFABF1241A527E99009197FB /* newspaper@3x.png */,
+				AFABF1221A527E94009197FB /* newspaper@2x.png */,
+				AFABF1201A527E8D009197FB /* newspaper.png */,
+				AFABF1181A527C8B009197FB /* top_charts@3x.png */,
+				AFABF1161A527C63009197FB /* top_charts@2x.png */,
+				AFABF1141A527C23009197FB /* top_charts.png */,
 				AFABF10E1A41BF32009197FB /* appbar.chevron.left.light.png */,
 				AFABF10F1A41BF32009197FB /* appbar.chevron.right.light.png */,
 				AFF5C6C61A3ED66B00AA5C4C /* appbar.moon.full.png */,
@@ -800,26 +827,31 @@
 				AF8127EA198F424800EE0F77 /* appTiles7.png in Resources */,
 				AF75F649193105E2005F5F6C /* appbar.sign.parking.png in Resources */,
 				AF8127F81990489400EE0F77 /* menuBG.png in Resources */,
+				AFABF1251A527E9A009197FB /* newspaper@3x.png in Resources */,
 				AF8127F21990413400EE0F77 /* appbar.draw.pencil.png in Resources */,
 				AFABF1111A41BF32009197FB /* appbar.chevron.right.light.png in Resources */,
 				AF8127FE19904CA500EE0F77 /* appTiles2.fix.png in Resources */,
 				AF75F65919314288005F5F6C /* appbar.align.justify.png in Resources */,
 				E01A59201902F05600EB0BE4 /* Main_iPad.storyboard in Resources */,
+				AFABF1271A527F1E009197FB /* chart_up.png in Resources */,
 				AFABF0CE1A3F436C009197FB /* Launch Screen.xib in Resources */,
 				AF75F67C19324F43005F5F6C /* sammy.jpeg in Resources */,
 				AF75F65D19314E0D005F5F6C /* appbar.connection.quality.veryhigh.png in Resources */,
 				AF8127D6198F108300EE0F77 /* appbar.unlock.png in Resources */,
 				AF75F65519313FCE005F5F6C /* Blur-600.jpg in Resources */,
 				AF7C0FE9192BEC19003FEF2E /* notfyrlogo3.png in Resources */,
+				AFABF1151A527C23009197FB /* top_charts.png in Resources */,
 				AF75F669193156E1005F5F6C /* appbar.people 2.png in Resources */,
 				AF8127F61990448400EE0F77 /* appbar.chevron.right.color.png in Resources */,
 				AF75F64719310408005F5F6C /* appbar.chevron.left.png in Resources */,
 				AF81280419906BED00EE0F77 /* appbar.star.yellow.png in Resources */,
+				AFABF1291A527F3A009197FB /* chart_up@2x.png in Resources */,
 				AF8127EE198F42B900EE0F77 /* appTiles9.png in Resources */,
 				AF75F66F19324390005F5F6C /* btnAddNotification.png in Resources */,
 				AF75F65719314197005F5F6C /* appbar.connection.wifi.variant.png in Resources */,
 				AF8127D2198F05BC00EE0F77 /* blueBackground2.jpg in Resources */,
 				E01A59251902F05600EB0BE4 /* Images.xcassets in Resources */,
+				AFABF1171A527C63009197FB /* top_charts@2x.png in Resources */,
 				AF75F67E19325015005F5F6C /* indicatorDisabled.png in Resources */,
 				AF75F66B19323802005F5F6C /* appbar.list 2.png in Resources */,
 				AFF5C6BB1A3D9A9700AA5C4C /* appbar.magnify.png in Resources */,
@@ -851,16 +883,19 @@
 				AF75F64F19310EFC005F5F6C /* appbar.people.arrow.right.png in Resources */,
 				AF8127F019903F4700EE0F77 /* appbar.navigate.next.png in Resources */,
 				AF75F6431930FFED005F5F6C /* appbar.people.png in Resources */,
+				AFABF1211A527E8D009197FB /* newspaper.png in Resources */,
 				AFF5C6BD1A3D9D7200AA5C4C /* appTilesAddInterest.png in Resources */,
 				AF75F68819327848005F5F6C /* btnCreate.png in Resources */,
 				AF75F65C19314E0D005F5F6C /* appbar.connection.quality.extremelylow.png in Resources */,
 				AF75F66D1932398A005F5F6C /* button.png in Resources */,
 				AFF5C6C31A3DB45C00AA5C4C /* appbar.moon.new.png in Resources */,
+				AFABF12B1A527F40009197FB /* chart_up@3x.png in Resources */,
 				AFF5C6C91A3EF3AA00AA5C4C /* menuBG6.png in Resources */,
 				AFF5C6C71A3ED66B00AA5C4C /* appbar.moon.full.png in Resources */,
 				AF75F645193100E7005F5F6C /* appbar.cog.png in Resources */,
 				AF8127FA19904B9000EE0F77 /* menuBG2.png in Resources */,
 				AF75F653193111B9005F5F6C /* appbar.email.hardedge.png in Resources */,
+				AFABF1191A527C8B009197FB /* top_charts@3x.png in Resources */,
 				AF8127D8198F180B00EE0F77 /* appTiles.png in Resources */,
 				AF75F67819324B9A005F5F6C /* appbar.social.twitter.png in Resources */,
 				AF8127DA198F18C100EE0F77 /* appTiles2.png in Resources */,
@@ -869,6 +904,7 @@
 				AF75F672193246BC005F5F6C /* Apple-Logo.jpeg in Resources */,
 				AF75F67619324955005F5F6C /* indicatorRed.png in Resources */,
 				AF75F64D19310E1B005F5F6C /* appbar.cloud.png in Resources */,
+				AFABF1231A527E94009197FB /* newspaper@2x.png in Resources */,
 				AFF5C6B51A3CA37E00AA5C4C /* appbar.closedcaption.png in Resources */,
 				AF75F67A19324CEA005F5F6C /* appbar.people.multiple.png in Resources */,
 				AF75F686193273B9005F5F6C /* iphone_6_fake_line_up_hero.jpg in Resources */,
