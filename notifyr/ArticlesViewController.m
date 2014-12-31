@@ -17,11 +17,13 @@
 
 @interface ArticlesViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *interestNameLabel;
-
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) id articleObserver;
 @property (nonatomic, strong) NSString *sortOrder;
+@property (nonatomic) NSInteger pageNumber;
+@property (nonatomic) NSInteger pageSize;
+@property (nonatomic) BOOL loading;
+@property (nonatomic) BOOL loadedAllPages;
 
 @end
 
@@ -43,13 +45,38 @@
 
 - (void)initItems
 {
-    [self.delegate getArticlesWithSkip:0 take:20 sortBy:self.sortOrder completion:^(NSArray *articles, NSError *error) {
-        [self.items removeAllObjects];
+    self.pageNumber = 0;
+    [self loadArticles];
+}
+
+- (void)loadArticles
+{
+    [self startLoading];
+    [self.delegate getArticlesWithSkip:self.pageNumber * self.pageSize take:self.pageSize sortBy:self.sortOrder completion:^(NSArray *articles, NSError *error) {
+        if (self.pageNumber == 0)
+        {
+            [self.items removeAllObjects];
+        }
         [self.items addObjectsFromArray:articles];
         dispatch_async(dispatch_get_main_queue(), ^{
+            [self endLoading];
             [self.tableView reloadData];
         });
     }];
+}
+
+- (void)startLoading {
+    UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    activityIndicatorView.frame  = CGRectInset(activityIndicatorView.frame, 0.0f, -20.0f);
+    self.tableView.tableFooterView = activityIndicatorView;
+    [activityIndicatorView startAnimating];
+    self.loading = YES;
+}
+
+- (void)endLoading {
+    self.loading = NO;
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.pageNumber++;
 }
 
 - (void)initObserver
@@ -92,6 +119,8 @@
 {
     [super viewDidLoad];
     
+    self.pageSize = 20;
+    
     if ([self.navigationController.viewControllers count] > 1)
     {
        self.navigationItem.leftBarButtonItem = nil;
@@ -112,7 +141,6 @@
     self.tableView.estimatedRowHeight = 350;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
-
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -306,6 +334,20 @@
     action2.backgroundColor = [UIColor blueColor];
     
     return @[action1, action2];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)sender {
+    CGPoint offset = sender.contentOffset;
+    CGRect bounds = sender.bounds;
+    CGSize size = sender.contentSize;
+    UIEdgeInsets inset = sender.contentInset;
+    float y = offset.y + bounds.size.height - inset.bottom;
+    float h = size.height;
+    float reloadDistance = 10.0f;
+    if (y > h + reloadDistance && !self.loading && !self.loadedAllPages)
+    {
+        [self loadArticles];
+    }
 }
 
 
