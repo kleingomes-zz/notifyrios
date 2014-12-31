@@ -270,17 +270,13 @@
     [self initItems];
 }
 
-
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -291,8 +287,26 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Action 1" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        
+        NSLog(@"action 1 pressed");
+        [tableView setEditing:NO animated:YES];
+        
+    }];
+    
+    UITableViewRowAction *action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Action 2" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        
+        NSLog(@"action 2 pressed");
+        [tableView setEditing:NO animated:YES];
+        
+    }];
+    action2.backgroundColor = [UIColor blueColor];
+    
+    return @[action1, action2];
+}
 
 
 @end
