@@ -89,7 +89,7 @@
         <scene sceneID="Ooo-dm-Qe5">
             <objects>
                 <navigationController id="DGi-rp-bWL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My News" image="newspaper.png" selectedImage="appTiles.png" id="Eg3-8n-Gx2"/>
+                    <tabBarItem key="tabBarItem" title="My News" image="newspaper.png" id="Eg3-8n-Gx2"/>
                     <navigationItem key="navigationItem" id="7UQ-Yc-Erw"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="6we-2s-5e3">
