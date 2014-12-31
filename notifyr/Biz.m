@@ -99,12 +99,6 @@
     [apiClient getArticlesForInterest:interest];
 }
 
-- (void)getArticlesForAllInterestsWithSort:(NSString *)sortOrder
-{
-    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
-    [apiClient getArticlesForAllInterestsWithSort:sortOrder];
-}
-
 - (void)getArticlesForItem:(Item *)item skip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];

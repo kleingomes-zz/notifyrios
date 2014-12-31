@@ -129,34 +129,6 @@
     }];
 }
 
-- (void)getArticlesForAllInterestsWithSort:(NSString *)sortOrder
-{
-    if (!self.accessToken)
-    {
-        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
-            [self getArticlesForAllInterestsMainWithSort:sortOrder];
-        }];
-    }
-    else
-    {
-        [self getArticlesForAllInterestsMainWithSort:sortOrder];
-    }
-}
-
-- (void)getArticlesForAllInterestsMainWithSort:(NSString *)sortOrder
-{
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetAllItemArticles?take=20&userId=%@&sortBy=%@", self.userId, sortOrder]];
-    
-    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
-        if (!error && jsonObject)
-        {
-            [self notifyArticlesUpdatedForInterest:nil jsonItems:jsonObject]; //TODO: possibly not have the nill
-        }
-    }];
-}
-
-
-
 
 
 - (void)getArticlesForItem:(Item *)item skip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
@@ -175,7 +147,7 @@
 
 - (void)getArticlesForItemMain:(Item *)item skip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetItemArticles?itemId=%@&take=%ld&sortBy=%@", item.itemId, (long)take, sortBy]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetItemArticles?itemId=%@&skip=%ld&take=%ld&sortBy=%@", item.itemId, (long)skip, (long)take, sortBy]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (error != nil)
@@ -214,7 +186,7 @@
 
 - (void)getArticlesForAllItemsMainWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetAllItemArticles?take=%ld&userId=%@&sortBy=%@", (long)take, self.userId, sortBy]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetAllItemArticles?skip=%ld&take=%ld&userId=%@&sortBy=%@", (long)skip, (long)take, self.userId, sortBy]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (error != nil)
@@ -250,7 +222,7 @@
 
 - (void)getArticlesForBreakingNewsMainWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"News/GetBreakingNews?take=%ld&sortBy=%@", (long)take, sortBy]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"News/GetBreakingNews?skip=%ld&take=%ld&sortBy=%@", (long)skip, (long)take, sortBy]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (error != nil)

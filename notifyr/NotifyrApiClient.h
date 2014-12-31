@@ -20,8 +20,6 @@
 
 - (void)getArticlesForInterest:(Item *)interest;
 
-- (void)getArticlesForAllInterestsWithSort:(NSString *)sortOrder;
-
 - (void)getArticlesForItem:(Item *)item skip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
 
 - (void)getArticlesForAllItemsWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
