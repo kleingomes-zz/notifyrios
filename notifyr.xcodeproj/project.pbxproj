@@ -146,7 +146,6 @@
 		E0D3A5AB19741CB9008C445D /* ArticlesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5AA19741CB9008C445D /* ArticlesViewController.m */; };
 		E0D3A5AE197420B7008C445D /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5AD197420B7008C445D /* Article.m */; };
 		E0D3A5B119742725008C445D /* ArticleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5B019742725008C445D /* ArticleCell.m */; };
-		E0D3A5B41974511A008C445D /* ArticleDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,8 +353,6 @@
 		E0D3A5AD197420B7008C445D /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		E0D3A5AF19742725008C445D /* ArticleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleCell.h; sourceTree = "<group>"; };
 		E0D3A5B019742725008C445D /* ArticleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleCell.m; sourceTree = "<group>"; };
-		E0D3A5B21974511A008C445D /* ArticleDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleDetailsViewController.h; sourceTree = "<group>"; };
-		E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -625,8 +622,6 @@
 				E0931D72190ADBF5001A991F /* InterestsViewController.m */,
 				E0D3A5A919741CB9008C445D /* ArticlesViewController.h */,
 				E0D3A5AA19741CB9008C445D /* ArticlesViewController.m */,
-				E0D3A5B21974511A008C445D /* ArticleDetailsViewController.h */,
-				E0D3A5B31974511A008C445D /* ArticleDetailsViewController.m */,
 				E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */,
 				E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */,
 				E055249C197B61EF007322AE /* NewInterestViewController.h */,
@@ -977,7 +972,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0D3A5B41974511A008C445D /* ArticleDetailsViewController.m in Sources */,
 				E0498E5619170D5B004B4CF3 /* Utils.m in Sources */,
 				E0BA964119FC774500FC81D5 /* GradientView.m in Sources */,
 				E0AF885B19211BC700E27C69 /* NotifyrApiClient.m in Sources */,
