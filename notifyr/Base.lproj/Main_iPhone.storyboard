@@ -2427,8 +2427,8 @@ This document was last updated on May 24, 2014</string>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="DGi-rp-bWL" kind="relationship" relationship="viewControllers" id="8Ou-6D-6Lo"/>
                         <segue destination="FMW-SP-44s" kind="relationship" relationship="viewControllers" id="utA-gC-4WW"/>
+                        <segue destination="DGi-rp-bWL" kind="relationship" relationship="viewControllers" id="8Ou-6D-6Lo"/>
                         <segue destination="3zd-SM-dzs" kind="relationship" relationship="viewControllers" id="izc-QD-YZd"/>
                         <segue destination="XRp-77-G1C" kind="relationship" relationship="viewControllers" id="3KW-7b-thK"/>
                     </connections>

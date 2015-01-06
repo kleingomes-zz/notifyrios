@@ -259,7 +259,7 @@
 
 - (void)getArticlesForFavouritesMainWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Article/GetBreakingNews?skip=%ld&take=%ld&sortBy=%@", (long)skip, (long)take, sortBy]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Article/GetUserFavouriteArticles?userId=%@&skip=%ld&take=%ld&sortBy=%@", self.userId, (long)skip, (long)take, sortBy]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (error != nil)
