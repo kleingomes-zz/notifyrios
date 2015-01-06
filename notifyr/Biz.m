@@ -118,6 +118,11 @@
     [apiClient getArticlesForBreakingNewsWithSkip:skip take:take sortBy:sortBy completion:completion];
 }
 
+- (void)getArticlesForFavouritesWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getArticlesForFavouritesWithSkip:skip take:take sortBy:sortBy completion:completion];
+}
 
 
 - (void)saveInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;

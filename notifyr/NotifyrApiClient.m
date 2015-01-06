@@ -222,7 +222,7 @@
 
 - (void)getArticlesForBreakingNewsMainWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"News/GetBreakingNews?skip=%ld&take=%ld&sortBy=%@", (long)skip, (long)take, sortBy]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Article/GetBreakingNews?skip=%ld&take=%ld&sortBy=%@", (long)skip, (long)take, sortBy]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (error != nil)
@@ -242,6 +242,42 @@
     }];
 }
 
+///
+- (void)getArticlesForFavouritesWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getArticlesForFavouritesMainWithSkip:skip take:take sortBy:sortBy completion:completion];
+        }];
+    }
+    else
+    {
+        [self getArticlesForFavouritesMainWithSkip:skip take:take sortBy:sortBy completion:completion];
+    }
+}
+
+- (void)getArticlesForFavouritesMainWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Article/GetBreakingNews?skip=%ld&take=%ld&sortBy=%@", (long)skip, (long)take, sortBy]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (error != nil)
+        {
+            completion(nil, error);
+            return;
+        }
+        
+        NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonObject count]];
+        for (NSDictionary *dict in jsonObject)
+        {
+            Article *article = [Article makeArticleFromDictionary:dict];
+            [items addObject:article];
+        }
+        
+        completion(items, nil);
+    }];
+}
 
 
 

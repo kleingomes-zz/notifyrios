@@ -19,6 +19,7 @@
 
 #define ALL_ITEMS_INDEX 0
 #define BREAKING_NEWS_INDEX 2
+#define FAVOURITES_INDEX 3
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -39,6 +40,15 @@
         
         UINavigationController *navigationController = (UINavigationController *) self.viewControllers[BREAKING_NEWS_INDEX];
         navigationController.viewControllers = @[breakingNewsViewController];
+    }
+    
+    if ([self.viewControllers[FAVOURITES_INDEX] isKindOfClass:[UINavigationController class]])
+    {
+        ArticlesViewController *favouritesViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticlesViewController"];
+        favouritesViewController.delegate = [[BreakingNewsArticleFetcher alloc] init];
+        
+        UINavigationController *navigationController = (UINavigationController *) self.viewControllers[FAVOURITES_INDEX];
+        navigationController.viewControllers = @[favouritesViewController];
     }
     
 }

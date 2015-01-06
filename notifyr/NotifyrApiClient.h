@@ -26,6 +26,7 @@
 
 - (void)getArticlesForBreakingNewsWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
 
+- (void)getArticlesForFavouritesWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
 
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 
