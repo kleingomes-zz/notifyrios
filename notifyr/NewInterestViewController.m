@@ -22,6 +22,12 @@
 @property (strong, nonatomic) UITableView *suggestionsTableView;
 @property (strong, nonatomic) NSArray *allSuggestedInterests;
 @property (strong, nonatomic) NSMutableArray *suggestedInterests;
+@property (weak, nonatomic) IBOutlet UIView *sampleView;
+
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *sampleViews;
+@property (weak, nonatomic) IBOutlet UITextField *addInterestTxtField;
+@property (weak, nonatomic) IBOutlet UITextField *addInterestsTxtField;
+@property (weak, nonatomic) IBOutlet UITextField *addItemTxtField;
 
 
 @end
@@ -226,11 +232,23 @@
     _btnNext.layer.borderWidth=1.0f;
     _btnNext.layer.borderColor=[[UIColor whiteColor] CGColor];
     
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
+   // [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+   //                                               forBarMetrics:UIBarMetricsDefault];
+   // self.navigationController.navigationBar.shadowImage = [UIImage new];
+   // self.navigationController.navigationBar.translucent = YES;
+   // self.navigationController.view.backgroundColor = [UIColor clearColor];
+    //Adds a shadow to sampleView
+    
+    // Add a drop shadow to the views
+    for (UIView *aLabel in self.sampleViews) {
+         CALayer *layer = aLabel.layer;
+         layer.shadowOffset = CGSizeMake(1, 1);
+         layer.shadowColor = [[UIColor blackColor] CGColor];
+         layer.shadowRadius = 1.50f;
+         layer.shadowOpacity = 0.30f;
+         layer.shadowPath = [[UIBezierPath bezierPathWithRect:layer.bounds] CGPath];
+    }
+
     
 }
 
