@@ -31,7 +31,9 @@
 
 - (NSString *)userName
 {
-    return @"1470ce68-be22-485d-9ae6-453544326331@notifyr.ca";
+    return [NSString stringWithFormat:@"%@@notifyr.ca", self.userId]; //TODO: make this use the saved user name
+    
+    //return @"1470ce68-be22-485d-9ae6-453544326331@notifyr.ca";
 }
 
 - (NSString *)password
