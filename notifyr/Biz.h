@@ -44,6 +44,8 @@
 
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 
+- (void)getPopularItemsWithCompletionHandler:(void (^)(NSArray *items, NSError *error))completionHandler;
+
 
 - (Company *)getCompanyById:(NSNumber *)companyId;
 

@@ -144,6 +144,13 @@
     [apiClient getAvailableInterests:query withCompletionHandler:completionHandler];
 }
 
+- (void)getPopularItemsWithCompletionHandler:(void (^)(NSArray *items, NSError *error))completionHandler
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getPopularItemsWithCompletionHandler:completionHandler];
+}
+
+
 - (void)initObserver
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];

@@ -383,6 +383,42 @@
 }
 
 
+
+- (void)getPopularItemsWithCompletionHandler:(void (^)(NSArray *items, NSError *error))completionHandler
+{
+    //todo: replace this access token pattern/main method in these methods
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getPopularItemsMainWithCompletionHandler:completionHandler];
+        }];
+    }
+    else
+    {
+        [self getPopularItemsMainWithCompletionHandler:completionHandler];
+    }
+}
+
+- (void)getPopularItemsMainWithCompletionHandler:(void (^)(NSArray *items, NSError *error))completionHandler
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetPopularItems"]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (!error && jsonObject)
+        {
+            NSArray *jsonItems = (NSArray *)jsonObject;
+            NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
+            for (NSDictionary *dict in jsonItems)
+            {
+                Item *item = [Item makeInterestFromDictionary:dict];
+                [items addObject:item];
+            }
+            completionHandler(items, error);
+        }
+    }];
+}
+
+
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     if (!self.accessToken)
