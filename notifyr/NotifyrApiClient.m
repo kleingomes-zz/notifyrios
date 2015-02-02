@@ -377,6 +377,14 @@
     NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/DeleteUserItem?ItemId=%@", interest.itemId]];
     
     [self makeAPICallWithUrlString:urlString method:@"POST" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        
+        //TODO: move the notification code elsewhere
+        NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+        userInfo[@"interests"] = @[interest];
+        
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center postNotificationName:DeleteInterestNotification object:nil userInfo:userInfo];
+
         completionHandler(error);
     }];
 }
