@@ -15,7 +15,7 @@
 {
     Item *interest = [[Item alloc] init];
     interest.itemId = [Utils getNumberFromDictionary:dictionary name:@"Id"];
-    interest.logoUrl = [Utils getStringFromDictionary:dictionary name:@"IURL"];
+    interest.logoUrl = [Utils getStringFromDictionary:dictionary name:@"IUrl"];
     interest.itemName = [Utils getStringFromDictionary:dictionary name:@"Name"];
     
     return interest;
