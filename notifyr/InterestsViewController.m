@@ -119,15 +119,24 @@
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     
     self.interestObserver = [center addObserverForName:InterestsUpdateNotification object:nil
-                                                     queue:mainQueue usingBlock:^(NSNotification *notification) {
-                                                         NSArray *interests = notification.userInfo[@"interests"];
-                                                         
-                                                         NSLog(@"Got %lu interests", (unsigned long)[interests count]);
-                                                         
-                                                         [self updateInterests:interests];
-                                                         [self.refreshControl endRefreshing];
-                                                         [self.tableView reloadData];
-                                                     }];
+                                                 queue:mainQueue usingBlock:^(NSNotification *notification) {
+                                                     NSArray *interests = notification.userInfo[@"interests"];
+                                                     
+                                                     NSLog(@"Got %lu interests", (unsigned long)[interests count]);
+                                                     
+                                                     [self updateInterests:interests];
+                                                     [self.refreshControl endRefreshing];
+                                                     [self.tableView reloadData];
+                                                 }];
+    
+    self.interestObserver = [center addObserverForName:DeleteInterestNotification object:nil
+                                                 queue:mainQueue usingBlock:^(NSNotification *notification) {
+                                                     NSArray *interests = notification.userInfo[@"interests"];
+                                                     
+                                                     [self deleteItems:interests];
+                                                     [self.refreshControl endRefreshing];
+                                                     [self.tableView reloadData];
+                                                 }];
 }
 
 - (void)updateInterests:(NSArray *)updatedInterests
@@ -153,6 +162,40 @@
         }
     }
 }
+
+- (void)deleteItems:(NSArray *)deletedItems
+{
+    for (Item *deletedItem in deletedItems)
+    {
+        NSInteger i = 0;
+        while (i < [self.items count])
+        {
+            Item *item = self.items[i];
+            if ([item.itemId isEqualToNumber:deletedItem.itemId])
+            {
+                [self.items removeObjectAtIndex:i];
+            }
+            else
+            {
+                i++;
+            }
+        }
+    }
+}
+
+- (Item *)getItemMatchingItem:(Item *)itemToFind
+{
+    for (Item *item in self.items)
+    {
+        if ([item.itemId isEqualToNumber:itemToFind.itemId])
+        {
+            return item;
+        }
+    }
+    return nil;
+}
+
+
 
 - (void)refreshAction
 {
