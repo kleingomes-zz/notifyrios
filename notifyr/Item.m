@@ -14,9 +14,9 @@
 + (Item *)makeInterestFromDictionary:(NSDictionary *)dictionary
 {
     Item *interest = [[Item alloc] init];
-    interest.itemId = [Utils getNumberFromDictionary:dictionary name:@"ItemId"];
-    interest.logoUrl = [Utils getStringFromDictionary:dictionary name:@"LogoUrl"];
-    interest.itemName = [Utils getStringFromDictionary:dictionary name:@"ItemName"];
+    interest.itemId = [Utils getNumberFromDictionary:dictionary name:@"Id"];
+    interest.logoUrl = [Utils getStringFromDictionary:dictionary name:@"IURL"];
+    interest.itemName = [Utils getStringFromDictionary:dictionary name:@"Name"];
     
     return interest;
 }

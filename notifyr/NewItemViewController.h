@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddInterestViewController : UITableViewController
+@interface NewItemViewController : UITableViewController
 
 @end

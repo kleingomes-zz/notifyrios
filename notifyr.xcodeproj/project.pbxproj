@@ -130,12 +130,11 @@
 		E0414E6C198D6F64005B5BB9 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = E0414E6B198D6F64005B5BB9 /* UIImage+ImageEffects.m */; };
 		E0498E531916F1DD004B4CF3 /* Company.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E521916F1DD004B4CF3 /* Company.m */; };
 		E0498E5619170D5B004B4CF3 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E0498E5519170D5B004B4CF3 /* Utils.m */; };
-		E055249E197B61EF007322AE /* NewInterestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E055249D197B61EF007322AE /* NewInterestViewController.m */; };
 		E07747CC198DC05800D970F7 /* appbar.hamburger.png in Resources */ = {isa = PBXBuildFile; fileRef = E07747CA198DC05800D970F7 /* appbar.hamburger.png */; };
 		E07747CD198DC05800D970F7 /* appbar.hamburger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E07747CB198DC05800D970F7 /* appbar.hamburger@2x.png */; };
 		E07747D3198DC1C900D970F7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07747D2198DC1C900D970F7 /* SettingsViewController.m */; };
 		E07747D6198DC58D00D970F7 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */; };
-		E07F1F4C1A7DA12B00C724BA /* AddInterestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07F1F4B1A7DA12B00C724BA /* AddInterestViewController.m */; };
+		E07F1F4C1A7DA12B00C724BA /* NewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07F1F4B1A7DA12B00C724BA /* NewItemViewController.m */; };
 		E07F1F4F1A7DB43800C724BA /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E07F1F4E1A7DB43800C724BA /* ItemCell.m */; };
 		E0931D73190ADBF5001A991F /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D6E190ADBF5001A991F /* Item.m */; };
 		E0931D74190ADBF5001A991F /* InterestCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D70190ADBF5001A991F /* InterestCell.m */; };
@@ -326,16 +325,14 @@
 		E0498E521916F1DD004B4CF3 /* Company.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Company.m; sourceTree = "<group>"; };
 		E0498E5419170D5B004B4CF3 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		E0498E5519170D5B004B4CF3 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
-		E055249C197B61EF007322AE /* NewInterestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewInterestViewController.h; sourceTree = "<group>"; };
-		E055249D197B61EF007322AE /* NewInterestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewInterestViewController.m; sourceTree = "<group>"; };
 		E07747CA198DC05800D970F7 /* appbar.hamburger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.hamburger.png; sourceTree = "<group>"; };
 		E07747CB198DC05800D970F7 /* appbar.hamburger@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "appbar.hamburger@2x.png"; sourceTree = "<group>"; };
 		E07747D1198DC1C900D970F7 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		E07747D2198DC1C900D970F7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		E07747D4198DC58D00D970F7 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
 		E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
-		E07F1F4A1A7DA12B00C724BA /* AddInterestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddInterestViewController.h; sourceTree = "<group>"; };
-		E07F1F4B1A7DA12B00C724BA /* AddInterestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddInterestViewController.m; sourceTree = "<group>"; };
+		E07F1F4A1A7DA12B00C724BA /* NewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewItemViewController.h; sourceTree = "<group>"; };
+		E07F1F4B1A7DA12B00C724BA /* NewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewItemViewController.m; sourceTree = "<group>"; };
 		E07F1F4D1A7DB43800C724BA /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
 		E07F1F4E1A7DB43800C724BA /* ItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCell.m; sourceTree = "<group>"; };
 		E0931D6D190ADBF5001A991F /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
@@ -633,10 +630,8 @@
 				E0D3A5AA19741CB9008C445D /* ArticlesViewController.m */,
 				E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */,
 				E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */,
-				E055249C197B61EF007322AE /* NewInterestViewController.h */,
-				E055249D197B61EF007322AE /* NewInterestViewController.m */,
-				E07F1F4A1A7DA12B00C724BA /* AddInterestViewController.h */,
-				E07F1F4B1A7DA12B00C724BA /* AddInterestViewController.m */,
+				E07F1F4A1A7DA12B00C724BA /* NewItemViewController.h */,
+				E07F1F4B1A7DA12B00C724BA /* NewItemViewController.m */,
 				E00C366F198F09EB00331E23 /* MenuViewController.h */,
 				E00C3670198F09EB00331E23 /* MenuViewController.m */,
 				E07747D1198DC1C900D970F7 /* SettingsViewController.h */,
@@ -1009,13 +1004,12 @@
 				E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */,
 				E07F1F4F1A7DB43800C724BA /* ItemCell.m in Sources */,
 				E02DE62E1A5104DD0083CC53 /* AllItemsArticleFetcher.m in Sources */,
-				E055249E197B61EF007322AE /* NewInterestViewController.m in Sources */,
 				E0414E6C198D6F64005B5BB9 /* UIImage+ImageEffects.m in Sources */,
 				E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */,
 				E0414DDB1985C912005B5BB9 /* AvailableInterest.m in Sources */,
 				E02DE6341A5112B60083CC53 /* ItemArticleFetcher.m in Sources */,
 				E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */,
-				E07F1F4C1A7DA12B00C724BA /* AddInterestViewController.m in Sources */,
+				E07F1F4C1A7DA12B00C724BA /* NewItemViewController.m in Sources */,
 				E07747D6198DC58D00D970F7 /* PrivacyPolicyViewController.m in Sources */,
 				E0931D73190ADBF5001A991F /* Item.m in Sources */,
 				E01ED8DE1929815700798C31 /* Constants.m in Sources */,

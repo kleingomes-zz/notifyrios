@@ -88,11 +88,6 @@
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
         {
-            
-            //[self notifyInterestsUpdatedWithDictionary:jsonObject];
-            //return;
-
-            
             NSInteger statusCode = ((NSHTTPURLResponse *) response).statusCode;
             if (statusCode != 200)
             {
@@ -282,6 +277,38 @@
 }
 
 
+- (void)getUserItemsWithWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *items, NSError *error)) completion
+{
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self getUserItemsMainWithWithSkip:skip take:take sortBy:sortBy completion:completion];
+        }];
+    }
+    else
+    {
+        [self getUserItemsMainWithWithSkip:skip take:take sortBy:sortBy completion:completion];
+    }
+}
+
+- (void)getUserItemsMainWithWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *items, NSError *error))completion
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetUserItems?userId=%@", self.userId]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        if (!error && jsonObject)
+        {
+            NSArray *jsonItems = (NSArray *)jsonObject;
+            NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
+            for (NSDictionary *dict in jsonItems)
+            {
+                Item *item = [Item makeInterestFromDictionary:dict];
+                [items addObject:item];
+            }
+            completion(items, error);
+        }
+    }];
+}
 
 
 - (void)saveInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
@@ -301,7 +328,7 @@
 
 - (void)saveInterestMain:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
-    NSString *urlString = [self getUrl:@"Item/SaveUserItem"];
+    NSString *urlString = [self getUrl:@"Item/SaveUserItems"];
     
     NSMutableURLRequest *request = [self getRequestWithUrlString:urlString method:@"POST"];
     //[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
@@ -317,6 +344,14 @@
     [request setHTTPBody:postData];
     
     [self makeAPICallWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        
+        NSInteger statusCode = ((NSHTTPURLResponse *) response).statusCode;
+        if (statusCode != 200)
+        {
+            NSLog(@"Got bad response code trying to save interest: %ld", (long)statusCode);
+            return;
+        }
+        
         [self notifyInterestsUpdatedWithDictionary:jsonObject];
         completionHandler(error);
     }];
@@ -339,13 +374,12 @@
 
 - (void)deleteInterestMain:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/DeleteUserItem?UserItemId=%@", interest.itemId]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/DeleteUserItem?ItemId=%@", interest.itemId]];
     
     [self makeAPICallWithUrlString:urlString method:@"POST" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         completionHandler(error);
     }];
 }
-
 
 
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
@@ -365,7 +399,8 @@
 
 - (void)getAvailableInterestsMain:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 {
-    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetAvailableItems?query=%@", query]];
+    NSString *encodedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Item/GetItems?query=%@", encodedQuery]];
     
     [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
         if (!error && jsonObject)
@@ -374,8 +409,8 @@
             NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
             for (NSDictionary *dict in jsonItems)
             {
-                AvailableInterest *availableInterest = [AvailableInterest makeAvailableInterestFromDictionary:dict];
-                [items addObject:availableInterest];
+                Item *item = [Item makeInterestFromDictionary:dict];
+                [items addObject:item];
             }
             completionHandler(items, error);
         }
@@ -613,7 +648,6 @@
 
 - (void)notifyInterestsUpdatedWithDictionary:(NSArray *)jsonItems
 {
-
     NSMutableArray *items = [[NSMutableArray alloc] initWithCapacity:[jsonItems count]];
     for (NSDictionary *dict in jsonItems)
     {

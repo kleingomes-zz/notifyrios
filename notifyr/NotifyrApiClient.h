@@ -18,6 +18,9 @@
 
 - (void)getInterests;
 
+
+//Articles
+
 - (void)getArticlesForInterest:(Item *)interest;
 
 - (void)getArticlesForItem:(Item *)item skip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
@@ -27,6 +30,15 @@
 - (void)getArticlesForBreakingNewsWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
 
 - (void)getArticlesForFavouritesWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
+
+
+//Items
+
+- (void)getUserItemsWithWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *items, NSError *error)) completion;
+
+- (void)getPopularItemsWithCompletionHandler:(void (^)(NSArray *items, NSError *error))completionHandler;
+
+
 
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler;
 
@@ -38,7 +50,6 @@
 
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 
-- (void)getPopularItemsWithCompletionHandler:(void (^)(NSArray *items, NSError *error))completionHandler;
 
 
 @end

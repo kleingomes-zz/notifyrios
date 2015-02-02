@@ -14,7 +14,7 @@
 
 @interface Biz : NSObject
 
-@property (nonatomic, strong) NSArray *interests;
+@property (nonatomic, strong) NSArray *userItems;
 
 @property (nonatomic, strong) NSArray *companies;
 
@@ -44,7 +44,11 @@
 
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 
+
+
 - (void)getPopularItemsWithCompletionHandler:(void (^)(NSArray *items, NSError *error))completionHandler;
+
+- (void)getUserItemsWithCompletion:(void(^)(NSArray *items, NSError *error)) completion;
 
 
 - (Company *)getCompanyById:(NSNumber *)companyId;

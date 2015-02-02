@@ -16,13 +16,13 @@
 
 #pragma mark - Properties
 
-- (NSArray *)interests
+- (NSArray *)userItems
 {
-    if (!_interests)
+    if (!_userItems)
     {
-        _interests = [[Repository sharedRepository] getInterests];
+        _userItems = [[NSMutableArray alloc] init];
     }
-    return _interests;
+    return _userItems;
 }
 
 - (NSArray *)companies
@@ -84,13 +84,6 @@
 {
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
     [apiClient getInterests];
-
-    return;
-    [apiClient getCompaniesWithCompletionHandler:^(NSError *error) {
-        [apiClient getProductsWithCompletionHandler:^(NSError *error) {
-            [apiClient getInterests];
-        }];
-    }];
 }
 
 - (void)getArticlesForInterest:(Item *)interest
@@ -149,6 +142,19 @@
     NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
     [apiClient getPopularItemsWithCompletionHandler:completionHandler];
 }
+
+- (void)getUserItemsWithCompletion:(void(^)(NSArray *items, NSError *error)) completion
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient getUserItemsWithWithSkip:0 take:100 sortBy:nil completion:^(NSArray *items, NSError *error) {
+        if (error != nil)
+        {
+            self.userItems = items;
+        }
+        completion(items, error);
+    }];
+}
+
 
 
 - (void)initObserver
