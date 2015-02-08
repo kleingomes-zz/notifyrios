@@ -163,7 +163,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(self.items.count == 0)
+  /*  if(self.items.count == 0)
     {
         UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
         
@@ -176,7 +176,7 @@
         
         self.tableView.backgroundView = messageLabel;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    }
+    }*/
     return [self.items count];
 }
 
@@ -234,7 +234,8 @@
     NSTimeInterval secondsInDay = 60 * 60 * 24;
     NSTimeInterval secondsInHour = 60 * 60;
     NSTimeInterval secondsInMinute = 60;
-    NSTimeInterval age = fabs(date.timeIntervalSinceNow);
+    double gmtOffset = 18000;
+    NSTimeInterval age = fabs(date.timeIntervalSinceNow-gmtOffset);
     if (age > secondsInDay)
     {
         NSInteger daysAgo = round(age / secondsInDay);
