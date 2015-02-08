@@ -36,7 +36,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles3.fix.png"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"menuTemp3.png"]];
+//        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles3.fix.png"]];
     imageView.frame = self.tableView.frame;
     self.tableView.backgroundView = imageView;
     

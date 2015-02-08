@@ -103,6 +103,9 @@
 		AFF5C6C51A3DB85600AA5C4C /* appbar.green.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6C41A3DB85600AA5C4C /* appbar.green.png */; };
 		AFF5C6C71A3ED66B00AA5C4C /* appbar.moon.full.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6C61A3ED66B00AA5C4C /* appbar.moon.full.png */; };
 		AFF5C6C91A3EF3AA00AA5C4C /* menuBG6.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF5C6C81A3EF3AA00AA5C4C /* menuBG6.png */; };
+		AFFE85371A874FB500003745 /* menuTemp.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFE85361A874FB500003745 /* menuTemp.png */; };
+		AFFE85391A87503C00003745 /* menuTemp2.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFE85381A87503C00003745 /* menuTemp2.png */; };
+		AFFE853B1A87509300003745 /* menuTemp3.png in Resources */ = {isa = PBXBuildFile; fileRef = AFFE853A1A87509300003745 /* menuTemp3.png */; };
 		E0064E501A50F65200C665AE /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0064E4F1A50F65200C665AE /* MainTabBarViewController.m */; };
 		E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C366B198DE3BE00331E23 /* ArticleWebViewController.m */; };
 		E00C3671198F09EB00331E23 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C3670198F09EB00331E23 /* MenuViewController.m */; };
@@ -282,6 +285,9 @@
 		AFF5C6C41A3DB85600AA5C4C /* appbar.green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.green.png; sourceTree = "<group>"; };
 		AFF5C6C61A3ED66B00AA5C4C /* appbar.moon.full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.moon.full.png; sourceTree = "<group>"; };
 		AFF5C6C81A3EF3AA00AA5C4C /* menuBG6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuBG6.png; sourceTree = "<group>"; };
+		AFFE85361A874FB500003745 /* menuTemp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuTemp.png; sourceTree = "<group>"; };
+		AFFE85381A87503C00003745 /* menuTemp2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuTemp2.png; sourceTree = "<group>"; };
+		AFFE853A1A87509300003745 /* menuTemp3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuTemp3.png; sourceTree = "<group>"; };
 		E0064E4E1A50F65200C665AE /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
 		E0064E4F1A50F65200C665AE /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
 		E00C366A198DE3BE00331E23 /* ArticleWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleWebViewController.h; sourceTree = "<group>"; };
@@ -479,6 +485,9 @@
 		AF75F670193246AC005F5F6C /* temp images */ = {
 			isa = PBXGroup;
 			children = (
+				AFFE853A1A87509300003745 /* menuTemp3.png */,
+				AFFE85361A874FB500003745 /* menuTemp.png */,
+				AFFE85381A87503C00003745 /* menuTemp2.png */,
 				AF75F685193273B9005F5F6C /* iphone_6_fake_line_up_hero.jpg */,
 				AF75F68119326FB5005F5F6C /* macvsmac */,
 				AF75F67F19326F48005F5F6C /* iphones-on-display.jpg */,
@@ -869,8 +878,11 @@
 				AF8127CE198EE8A600EE0F77 /* n2Darey.jpg in Resources */,
 				AF75F65119310FF1005F5F6C /* appbar.newspaper.png in Resources */,
 				AF75F67519324955005F5F6C /* indicatorGreen.png in Resources */,
+				AFFE85371A874FB500003745 /* menuTemp.png in Resources */,
 				AF8127E8198F420D00EE0F77 /* appTiles6WhiteBottom.png in Resources */,
+				AFFE853B1A87509300003745 /* menuTemp3.png in Resources */,
 				AFF5C6B71A3CA44400AA5C4C /* appbar.debug.step.out.png in Resources */,
+				AFFE85391A87503C00003745 /* menuTemp2.png in Resources */,
 				AF8127E0198F2DC700EE0F77 /* appTiles4.png in Resources */,
 				AF75F65F19314FA2005F5F6C /* appbar.smiley.frown.png in Resources */,
 				AFABF1101A41BF32009197FB /* appbar.chevron.left.light.png in Resources */,

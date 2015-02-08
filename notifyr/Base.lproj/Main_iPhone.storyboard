@@ -21,10 +21,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.cog.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iaq-NM-dP1">
-                                    <rect key="frame" x="245" y="5" width="30" height="30"/>
+                                    <rect key="frame" x="243" y="5" width="30" height="30"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dE9-m7-d3V">
-                                    <rect key="frame" x="245" y="26" width="42" height="21"/>
+                                    <rect key="frame" x="243" y="26" width="42" height="21"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Settings">
                                             <attributes>
