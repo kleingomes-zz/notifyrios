@@ -24,6 +24,7 @@
 @property (nonatomic) NSInteger pageSize;
 @property (nonatomic) BOOL loading;
 @property (nonatomic) BOOL loadedAllPages;
+@property (weak, nonatomic) IBOutlet UIView *nothingFoundView;
 
 @end
 
@@ -163,20 +164,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  /*  if(self.items.count == 0)
+    if(self.items.count == 0)
     {
-        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+
         
-        messageLabel.text = @"Nothing here.";
-        messageLabel.textColor = [UIColor darkGrayColor];
-        messageLabel.numberOfLines = 0;
-        messageLabel.textAlignment = NSTextAlignmentCenter;
-        messageLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:20];
-        [messageLabel sizeToFit];
-        
-        self.tableView.backgroundView = messageLabel;
+        self.tableView.backgroundView = _nothingFoundView;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    }*/
+    }
+    
     return [self.items count];
 }
 
