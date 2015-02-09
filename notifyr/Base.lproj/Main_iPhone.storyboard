@@ -63,7 +63,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Apple" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7b2-mY-SnO">
-                                                    <rect key="frame" x="79" y="23" width="208" height="21"/>
+                                                    <rect key="frame" x="80" y="23" width="208" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.10338682258871926" blue="0.23015873015873012" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2757,11 +2757,21 @@ This document was last updated on May 24, 2014</string>
                     </tableView>
                     <navigationItem key="navigationItem" id="6xI-iA-bVO">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Notify me about..." minimumFontSize="16" id="CEr-JP-7Ue">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="16" id="CEr-JP-7Ue">
                             <rect key="frame" x="12" y="7" width="296" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <attributedString key="attributedText"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <color key="backgroundColor" red="0.19215686274509805" green="0.33333333333333331" blue="0.65490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <attributedString key="attributedText">
+                                <fragment content="Notify me about..">
+                                    <attributes>
+                                        <color key="NSColor" red="1" green="1" blue="1" alpha="0.91000000000000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <font key="NSFont" size="12" name="Helvetica"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                            <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                         </textField>
                     </navigationItem>
                     <connections>
@@ -2802,7 +2812,7 @@ This document was last updated on May 24, 2014</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="D01-Xk-RAA"/>
+        <segue reference="3NJ-xn-Hkv"/>
         <segue reference="ep1-qb-Caf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

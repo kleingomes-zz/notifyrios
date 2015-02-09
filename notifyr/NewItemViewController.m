@@ -52,6 +52,30 @@
     }];
 }
 
+
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    
+    header.textLabel.textColor = [UIColor blackColor];
+    header.textLabel.font = [UIFont boldSystemFontOfSize:15];
+    CGRect headerFrame = header.frame;
+    header.textLabel.frame = headerFrame;
+    header.textLabel.textAlignment = NSTextAlignmentCenter;
+    // Background color
+    view.tintColor = [UIColor colorWithRed:52/255.0 green:106/255.0  blue:220/255.0  alpha:1.0];
+    
+    // Text Color
+
+    [header.textLabel setTextColor:[UIColor whiteColor]];
+    
+    // Another way to set the background color
+    // Note: does not preserve gradient effect of original header
+    // header.contentView.backgroundColor = [UIColor blackColor];
+}
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 35;
+}
 - (NSMutableArray *)userItems
 {
     if (_userItems == nil)
