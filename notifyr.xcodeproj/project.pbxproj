@@ -1292,8 +1292,8 @@
 			baseConfigurationReference = 732DD0D5A8AF7F8543C6D604 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1303,7 +1303,7 @@
 				GCC_PREFIX_HEADER = "notifyr/notifyr-Prefix.pch";
 				INFOPLIST_FILE = "notifyr/notifyr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0c70bb6b-306d-45a2-ac5b-57eecfe38848";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1313,8 +1313,8 @@
 			baseConfigurationReference = A3D5832D5A0C7383DF82C30C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1324,7 +1324,7 @@
 				GCC_PREFIX_HEADER = "notifyr/notifyr-Prefix.pch";
 				INFOPLIST_FILE = "notifyr/notifyr-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0c70bb6b-306d-45a2-ac5b-57eecfe38848";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
