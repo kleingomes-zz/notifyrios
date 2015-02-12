@@ -24,6 +24,7 @@
 @property (nonatomic, strong) id interestObserver;
 
 @property (nonatomic, strong) MEZoomAnimationController *zoomController;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
 
@@ -214,7 +215,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
+
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refreshAction) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;

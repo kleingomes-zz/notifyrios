@@ -43,7 +43,12 @@
     
 
 }
-
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+        return CGFLOAT_MIN;
+    return 35;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
