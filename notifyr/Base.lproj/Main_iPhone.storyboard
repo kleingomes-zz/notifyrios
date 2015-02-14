@@ -167,7 +167,7 @@
                                     </connections>
                                 </segmentedControl>
                             </subviews>
-                            <color key="backgroundColor" red="0.31764705882352939" green="0.59215686274509804" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.31764705879999999" green="0.59215686270000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" red="1" green="0.99168926477432251" blue="0.99168926477432251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="mNm-wJ-pBr">
@@ -175,12 +175,12 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id5-ly-65R">
-                                    <rect key="frame" x="105" y="240" width="150" height="25"/>
+                                    <rect key="frame" x="100" y="240" width="150" height="25"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Nothing Here.">
                                             <attributes>
-                                                <color key="NSColor" red="0.11764706671237946" green="0.41568630933761597" blue="0.88235300779342651" alpha="1" colorSpace="deviceRGB"/>
-                                                <font key="NSFont" size="20" name="HelveticaNeue"/>
+                                                <color key="NSColor" red="0.49803921568627452" green="0.5490196078431373" blue="0.55294117647058827" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="20" name="HelveticaNeue-Bold"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -188,12 +188,12 @@
                                     <color key="highlightedColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uip-04-8Au">
-                                    <rect key="frame" x="58" y="254" width="205" height="67"/>
+                                    <rect key="frame" x="60" y="240" width="205" height="100"/>
                                     <attributedString key="attributedText">
-                                        <fragment content="Click the button below to add new interests.">
+                                        <fragment content="You can add favourites by swiping left on an article that you like.">
                                             <attributes>
-                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                                <color key="NSColor" red="0.51372549019607838" green="0.58039215686274515" blue="0.58431372549019611" alpha="1" colorSpace="calibratedRGB"/>
+                                                <font key="NSFont" size="13" name="HelveticaNeue"/>
                                                 <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                             </attributes>
                                         </fragment>
@@ -201,7 +201,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" verticalCompressionResistancePriority="250" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="180" id="Xv2-AE-IhB" customClass="ArticleCell">
@@ -219,10 +219,10 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGb-1g-YME" customClass="GradientView">
-                                            <rect key="frame" x="0.0" y="113" width="320" height="70"/>
+                                            <rect key="frame" x="0.0" y="113" width="320" height="69.5"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Source" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-9i-B9t">
-                                                    <rect key="frame" x="8" y="44" width="40" height="16"/>
+                                                    <rect key="frame" x="8" y="44" width="39.5" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -461,11 +461,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nothingFoundView" destination="mNm-wJ-pBr" id="TtQ-Wr-ZqZ"/>
+                        <outlet property="popularNewestView" destination="jLX-9A-Mpq" id="35s-Wq-qer"/>
+                        <outlet property="topNavigationBar" destination="a3r-Yi-2lS" id="AId-Rf-78G"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJ5-tf-fbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1907" y="750"/>
+            <point key="canvasLocation" x="1907" y="760"/>
         </scene>
         <!--Breaking News-->
         <scene sceneID="UlW-pi-9wk">

@@ -25,6 +25,8 @@
 @property (nonatomic) BOOL loading;
 @property (nonatomic) BOOL loadedAllPages;
 @property (weak, nonatomic) IBOutlet UIView *nothingFoundView;
+@property (weak, nonatomic) IBOutlet UIView *popularNewestView;
+@property (weak, nonatomic) IBOutlet UINavigationItem *topNavigationBar;
 
 @end
 
@@ -33,6 +35,7 @@
 
 #define SORT_SEGMENTED_CONTROL_POPULAR 0
 #define SORT_SEGMENTED_CONTROL_NEWEST 1
+
 
 - (NSMutableArray *)items
 {
@@ -115,12 +118,48 @@
         vc.article = article;
     }
 }
+- (UIColor *)getUIColorObjectFromHexString:(NSString *)hexStr alpha:(CGFloat)alpha
+{
+    // Convert hex string to an integer
+    unsigned int hexint = [self intFromHexString:hexStr];
+    
+    // Create color object, specifying alpha as well
+    UIColor *color =
+    [UIColor colorWithRed:((CGFloat) ((hexint & 0xFF0000) >> 16))/255
+                    green:((CGFloat) ((hexint & 0xFF00) >> 8))/255
+                     blue:((CGFloat) (hexint & 0xFF))/255
+                    alpha:alpha];
+    
+    return color;
+}
+- (unsigned int)intFromHexString:(NSString *)hexStr
+{
+    unsigned int hexInt = 0;
+    
+    // Create scanner
+    NSScanner *scanner = [NSScanner scannerWithString:hexStr];
+    
+    // Tell scanner to skip the # character
+    [scanner setCharactersToBeSkipped:[NSCharacterSet characterSetWithCharactersInString:@"#"]];
+    
+    // Scan hex value
+    [scanner scanHexInt:&hexInt];
+    
+    return hexInt;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    
+
+    
+
+    
     self.pageSize = 20;
+    
+
     
     if ([self.navigationController.viewControllers count] > 1)
     {
@@ -146,11 +185,69 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    //// TODO: get this from database
+    UIColor *darkColour;
+    UIColor *lightColoir;
+    if([[self.delegate getTitle] isEqualToString:@"nVidia"]){
+        lightColoir = [self getUIColorObjectFromHexString:@"66B003" alpha:1];
+        darkColour = [self getUIColorObjectFromHexString:@"66A003" alpha:1];
+        self.navigationController.navigationBar.barTintColor = lightColoir;
+        //   self.navigationController.navigationBar.tintColor = darkColour;
+        self.navigationController.navigationBar.translucent = NO;
+        _popularNewestView.backgroundColor = darkColour;
+    }
+    if([[self.delegate getTitle] isEqualToString:@"Xiaomi"]){
+        lightColoir = [self getUIColorObjectFromHexString:@"f1641a" alpha:1];
+        darkColour = [self getUIColorObjectFromHexString:@"cc4e0c" alpha:1];
+        self.navigationController.navigationBar.barTintColor = lightColoir;
+        //   self.navigationController.navigationBar.tintColor = darkColour;
+        self.navigationController.navigationBar.translucent = NO;
+        _popularNewestView.backgroundColor = darkColour;
+    }
+    if([[self.delegate getTitle] isEqualToString:@"Nintendo"]){
+        lightColoir = [self getUIColorObjectFromHexString:@"ff0000" alpha:1];
+        darkColour = [self getUIColorObjectFromHexString:@"cc0000" alpha:1];
+        self.navigationController.navigationBar.barTintColor = lightColoir;
+        //   self.navigationController.navigationBar.tintColor = darkColour;
+        self.navigationController.navigationBar.translucent = NO;
+        _popularNewestView.backgroundColor = darkColour;
+    }
+    if([[self.delegate getTitle] isEqualToString:@"Baidu"]){
+        lightColoir = [self getUIColorObjectFromHexString:@"5555ff" alpha:1];
+        darkColour = [self getUIColorObjectFromHexString:@"ff0000" alpha:1];
+        self.navigationController.navigationBar.barTintColor = lightColoir;
+        //   self.navigationController.navigationBar.tintColor = darkColour;
+        self.navigationController.navigationBar.translucent = NO;
+        _popularNewestView.backgroundColor = darkColour;
+    }
+    if([[self.delegate getTitle] isEqualToString:@"Alibaba"]){
+        lightColoir = [self getUIColorObjectFromHexString:@"E37F2B" alpha:1];
+        darkColour = [self getUIColorObjectFromHexString:@"D2691E" alpha:1];
+        self.navigationController.navigationBar.barTintColor = lightColoir;
+        //   self.navigationController.navigationBar.tintColor = darkColour;
+        self.navigationController.navigationBar.translucent = NO;
+        _popularNewestView.backgroundColor = darkColour;
+    }
+    if([[self.delegate getTitle] isEqualToString:@"Apple"]){
+        lightColoir = [self getUIColorObjectFromHexString:@"cccccc" alpha:1];
+        darkColour = [self getUIColorObjectFromHexString:@"666666" alpha:1];
+        self.navigationController.navigationBar.barTintColor = lightColoir;
+        //   self.navigationController.navigationBar.tintColor = darkColour;
+        self.navigationController.navigationBar.translucent = NO;
+        _popularNewestView.backgroundColor = darkColour;
+    }
+    
     [self initObserver];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+   UIColor *lightColour = [self getUIColorObjectFromHexString:@"346ADC" alpha:1];
+   UIColor *darkColour = [self getUIColorObjectFromHexString:@"5197E9" alpha:1];
+    self.navigationController.navigationBar.barTintColor = lightColour;
+    //   self.navigationController.navigationBar.tintColor = darkColour;
+    self.navigationController.navigationBar.translucent = NO;
+    _popularNewestView.backgroundColor = darkColour;
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center removeObserver:self.articleObserver];
 }

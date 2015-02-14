@@ -20,8 +20,11 @@
 
 - (void)viewDidLoad
 {
+    
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+
     
     //NSURL *websiteUrl = [NSURL URLWithString:@"http://www.google.com"];
     NSURL *websiteUrl = [NSURL URLWithString:self.article.url];
@@ -30,7 +33,11 @@
 }
 
 - (IBAction)sharePressed:(id)sender {
-    NSArray *activityItems = @[self.article.title, self.article.url];
+    NSString *notifyrString = @"Sent From NotifyR";
+    
+    NSString *shareString = [NSString stringWithFormat:@"%@\n\n%@\n\n%@",self.article.title,self.article.url,notifyrString];
+    
+    NSArray *activityItems = @[shareString];
     
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     [self.navigationController presentViewController:activityViewController animated:YES completion:^{
