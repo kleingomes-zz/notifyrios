@@ -16,6 +16,10 @@
 @property (nonatomic) NSNumber *itemId;
 @property (nonatomic, strong) NSString *itemName;
 @property (nonatomic) NSString *logoUrl;
+@property (nonatomic) NSString *primaryForegroundColour;
+@property (nonatomic) NSString *primaryForegroundColourAlt;
+@property (nonatomic) NSString *primaryBackgroundColour;
+@property (nonatomic) NSString *primaryBackgroundColourAlt;
 
 + (Item *)makeInterestFromDictionary:(NSDictionary *)dictionary;
 
