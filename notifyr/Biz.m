@@ -130,6 +130,17 @@
     [apiClient deleteInterest:interest withCompletionHandler:completionHandler];
 }
 
+- (void)addFavourite:(Article *)article withCompletionHandler:(void (^)(NSError *error))completionHandler;
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient addFavourite:article withCompletionHandler:completionHandler];
+}
+- (void)deleteFavourite:(Article *)article withCompletionHandler:(void (^)(NSError *error))completionHandler;
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient deleteFavourite:article withCompletionHandler:completionHandler];
+}
+
 
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 {

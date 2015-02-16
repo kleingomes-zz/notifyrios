@@ -357,6 +357,69 @@
     }];
 }
 
+- (void)addFavourite:(Article *)article withCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    //todo: replace this access token pattern/main method in these methods
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self addFavouriteMain:article withCompletionHandler:completionHandler];
+        }];
+    }
+    else
+    {
+        [self addFavouriteMain:article withCompletionHandler:completionHandler];
+    }
+}
+- (void)addFavouriteMain:(Article *)article withCompletionHandler:(void (^)(NSError *))completionHandler
+{
+    
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"User/AddArticleToUserFavourites?articleId=%@", article.articleId]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"POST" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        
+        //TODO: move the notification code elsewhere
+        NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+        userInfo[@"article"] = @[article];
+        
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center postNotificationName:DeleteInterestNotification object:nil userInfo:userInfo];
+        
+        completionHandler(error);
+    }];
+}
+- (void)deleteFavourite:(Article *)article withCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    //todo: replace this access token pattern/main method in these methods
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self deleteFavouriteMain:article withCompletionHandler:completionHandler];
+        }];
+    }
+    else
+    {
+        [self deleteFavouriteMain:article withCompletionHandler:completionHandler];
+    }
+}
+
+- (void)deleteFavouriteMain:(Article *)article withCompletionHandler:(void (^)(NSError *))completionHandler
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"User/RemoveArticleFromUserFavourites?articleId=%@", article.articleId]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"POST" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        
+        //TODO: move the notification code elsewhere
+        NSMutableDictionary *userInfo = [[NSMutableDictionary alloc] init];
+        userInfo[@"article"] = @[article];
+        
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center postNotificationName:DeleteInterestNotification object:nil userInfo:userInfo];
+        
+        completionHandler(error);
+    }];
+}
+
 - (void)deleteInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     //todo: replace this access token pattern/main method in these methods
@@ -596,6 +659,7 @@
     self.userName = [defaults stringForKey:@"userName"];
     self.password = [defaults stringForKey:@"password"];
 }
+
 
 
 #pragma mark - API Helper Methods

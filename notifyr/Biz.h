@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Item.h"
+#import "Article.h"
 #import "Company.h"
 #import "Product.h"
 #import "EventType.h"
@@ -41,6 +42,10 @@
 - (void)saveInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 - (void)deleteInterest:(Item *)interest withCompletionHandler:(void (^)(NSError *error))completionHandler;
+
+- (void)addFavourite:(Article *)article withCompletionHandler:(void (^)(NSError *error))completionHandler;
+
+- (void)deleteFavourite:(Article *)article withCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 

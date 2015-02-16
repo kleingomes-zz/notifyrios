@@ -51,10 +51,12 @@
 {
     self.pageNumber = 0;
     [self loadArticles];
+    
 }
 
 - (void)loadArticles
 {
+    
     [self startLoading];
     [self.delegate getArticlesWithSkip:self.pageNumber * self.pageSize take:self.pageSize sortBy:self.sortOrder completion:^(NSArray *articles, NSError *error) {
         if (self.pageNumber == 0)
@@ -111,6 +113,7 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
     if ([segue.identifier isEqualToString:@"ShowArticle"])
     {
         ArticleWebViewController *vc = (ArticleWebViewController *)segue.destinationViewController;
@@ -213,7 +216,7 @@
         _popularNewestView.backgroundColor = darkColour;
     }
     if([[self.delegate getTitle] isEqualToString:@"Baidu"]){
-        lightColoir = [self getUIColorObjectFromHexString:@"5555ff" alpha:1];
+        lightColoir = [self getUIColorObjectFromHexString:@"3333ff" alpha:1];
         darkColour = [self getUIColorObjectFromHexString:@"ff0000" alpha:1];
         self.navigationController.navigationBar.barTintColor = lightColoir;
         //   self.navigationController.navigationBar.tintColor = darkColour;
@@ -236,7 +239,14 @@
         self.navigationController.navigationBar.translucent = NO;
         _popularNewestView.backgroundColor = darkColour;
     }
-    
+    if([[self.delegate getTitle] isEqualToString:@"AMD"]){
+        lightColoir = [self getUIColorObjectFromHexString:@"338533" alpha:1];
+        darkColour = [self getUIColorObjectFromHexString:@"292c29" alpha:1];
+        self.navigationController.navigationBar.barTintColor = lightColoir;
+        //   self.navigationController.navigationBar.tintColor = darkColour;
+        self.navigationController.navigationBar.translucent = NO;
+        _popularNewestView.backgroundColor = darkColour;
+    }
     [self initObserver];
 }
 
@@ -425,15 +435,22 @@
 
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Action 1" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        
+    
+    UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Add Favourite" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        Article *article = self.items[indexPath.row];
+        [[Biz sharedBiz] addFavourite:article withCompletionHandler:^(NSError *error) {
+            NSLog(@"added");
+        }];
         NSLog(@"action 1 pressed");
         [tableView setEditing:NO animated:YES];
         
     }];
     
-    UITableViewRowAction *action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Action 2" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        
+    UITableViewRowAction *action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Remove Favourite" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        Article *article = self.items[indexPath.row];
+        [[Biz sharedBiz] deleteFavourite:article withCompletionHandler:^(NSError *error) {
+            NSLog(@"added");
+        }];
         NSLog(@"action 2 pressed");
         [tableView setEditing:NO animated:YES];
         

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Item.h"
-
+#import "Article.h"
 @interface NotifyrApiClient : NSObject
 
 @property (nonatomic, strong) NSString *userName;
@@ -31,6 +31,9 @@
 
 - (void)getArticlesForFavouritesWithSkip:(NSInteger)skip take:(NSInteger)take sortBy:(NSString *)sortBy completion:(void(^)(NSArray *articles, NSError *error))completion;
 
+- (void)addFavourite:(Article *)article withCompletionHandler:(void (^)(NSError *error))completionHandler;
+
+- (void)deleteFavourite:(Article *)article withCompletionHandler:(void (^)(NSError *error))completionHandler;
 
 //Items
 
