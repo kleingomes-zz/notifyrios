@@ -289,14 +289,23 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     //[self refreshAction];
+//    UIColor *lightColour = [self getUIColorObjectFromHexString:@"346ADC" alpha:1];
+//    UIColor *darkColour = [self getUIColorObjectFromHexString:@"5197E9" alpha:1];
+//    self.navigationController.navigationBar.barTintColor = lightColour;
+//    //   self.navigationController.navigationBar.tintColor = darkColour;
+//    self.navigationController.navigationBar.translucent = NO;
+
 }
 
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//    //NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+//    //[center removeObserver:self.interestObserver];
+//}
 - (void)viewWillDisappear:(BOOL)animated
 {
-    //NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    //[center removeObserver:self.interestObserver];
-}
 
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

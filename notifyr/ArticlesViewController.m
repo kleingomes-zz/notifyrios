@@ -27,6 +27,8 @@
 @property (weak, nonatomic) IBOutlet UIView *nothingFoundView;
 @property (weak, nonatomic) IBOutlet UIView *popularNewestView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *topNavigationBar;
+@property (weak, nonatomic) IBOutlet UILabel *nothingHereBottomText;
+@property (weak, nonatomic) IBOutlet UILabel *nothingHereTopText;
 
 @end
 
@@ -62,13 +64,30 @@
         if (self.pageNumber == 0)
         {
             [self.items removeAllObjects];
+
         }
+        
         [self.items addObjectsFromArray:articles];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self endLoading];
             [self.tableView reloadData];
+            if(self.items.count == 0)
+            {
+                _nothingHereTopText.text = favouritesNotFoundTopText;
+                _nothingHereBottomText.text = favouritesNotFoundBottomText;
+            }
+            else{
+                _nothingHereBottomText.text = @"";
+                _nothingHereTopText.text = @"";
+            }
         });
     }];
+
+        _nothingHereBottomText.text = @"";
+        _nothingHereTopText.text = @"";
+        self.tableView.backgroundView = _nothingFoundView;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
 }
 
 - (void)startLoading {
@@ -83,6 +102,7 @@
     self.loading = NO;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.pageNumber++;
+
 }
 
 - (void)initObserver
@@ -154,12 +174,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-
-    
-
-    
     self.pageSize = 20;
     
 
@@ -203,66 +217,9 @@
         }
        
     }
-    //// TODO: get this from database
-//    UIColor *darkColour;
-//    UIColor *lightColoir;
-//    if([[self.delegate getTitle] isEqualToString:@"nVidia"]){
-//        lightColoir = [self getUIColorObjectFromHexString:@"66B003" alpha:1];
-//        darkColour = [self getUIColorObjectFromHexString:@"66A003" alpha:1];
-//        self.navigationController.navigationBar.barTintColor = lightColoir;
-//        //   self.navigationController.navigationBar.tintColor = darkColour;
-//        self.navigationController.navigationBar.translucent = NO;
-//        _popularNewestView.backgroundColor = darkColour;
-//    }
-//    if([[self.delegate getTitle] isEqualToString:@"Xiaomi"]){
-//        lightColoir = [self getUIColorObjectFromHexString:@"f1641a" alpha:1];
-//        darkColour = [self getUIColorObjectFromHexString:@"cc4e0c" alpha:1];
-//        self.navigationController.navigationBar.barTintColor = lightColoir;
-//        //   self.navigationController.navigationBar.tintColor = darkColour;
-//        self.navigationController.navigationBar.translucent = NO;
-//        _popularNewestView.backgroundColor = darkColour;
-//    }
-//    if([[self.delegate getTitle] isEqualToString:@"Nintendo"]){
-//        lightColoir = [self getUIColorObjectFromHexString:@"ff0000" alpha:1];
-//        darkColour = [self getUIColorObjectFromHexString:@"cc0000" alpha:1];
-//        self.navigationController.navigationBar.barTintColor = lightColoir;
-//        //   self.navigationController.navigationBar.tintColor = darkColour;
-//        self.navigationController.navigationBar.translucent = NO;
-//        _popularNewestView.backgroundColor = darkColour;
-//    }
-//    if([[self.delegate getTitle] isEqualToString:@"Baidu"]){
-//        lightColoir = [self getUIColorObjectFromHexString:@"3333ff" alpha:1];
-//        darkColour = [self getUIColorObjectFromHexString:@"ff0000" alpha:1];
-//        self.navigationController.navigationBar.barTintColor = lightColoir;
-//        //   self.navigationController.navigationBar.tintColor = darkColour;
-//        self.navigationController.navigationBar.translucent = NO;
-//        _popularNewestView.backgroundColor = darkColour;
-//    }
-//    if([[self.delegate getTitle] isEqualToString:@"Alibaba"]){
-//        lightColoir = [self getUIColorObjectFromHexString:@"E37F2B" alpha:1];
-//        darkColour = [self getUIColorObjectFromHexString:@"D2691E" alpha:1];
-//        self.navigationController.navigationBar.barTintColor = lightColoir;
-//        //   self.navigationController.navigationBar.tintColor = darkColour;
-//        self.navigationController.navigationBar.translucent = NO;
-//        _popularNewestView.backgroundColor = darkColour;
-//    }
-//    if([[self.delegate getTitle] isEqualToString:@"Apple"]){
-//        lightColoir = [self getUIColorObjectFromHexString:@"cccccc" alpha:1];
-//        darkColour = [self getUIColorObjectFromHexString:@"666666" alpha:1];
-//        self.navigationController.navigationBar.barTintColor = lightColoir;
-//        //   self.navigationController.navigationBar.tintColor = darkColour;
-//        self.navigationController.navigationBar.translucent = NO;
-//        _popularNewestView.backgroundColor = darkColour;
-//    }
-//    if([[self.delegate getTitle] isEqualToString:@"AMD"]){
-//        lightColoir = [self getUIColorObjectFromHexString:@"338533" alpha:1];
-//        darkColour = [self getUIColorObjectFromHexString:@"292c29" alpha:1];
-//        self.navigationController.navigationBar.barTintColor = lightColoir;
-//        //   self.navigationController.navigationBar.tintColor = darkColour;
-//        self.navigationController.navigationBar.translucent = NO;
-//        _popularNewestView.backgroundColor = darkColour;
-//    }
+
     [self initObserver];
+    [self initItems];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -286,13 +243,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(self.items.count == 0)
-    {
 
-        
-        self.tableView.backgroundView = _nothingFoundView;
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    }
     
     return [self.items count];
 }
@@ -351,7 +302,7 @@
     NSTimeInterval secondsInDay = 60 * 60 * 24;
     NSTimeInterval secondsInHour = 60 * 60;
     NSTimeInterval secondsInMinute = 60;
-    double gmtOffset = 18000;
+    double gmtOffset = 25200;
     NSTimeInterval age = fabs(date.timeIntervalSinceNow-gmtOffset);
     if (age > secondsInDay)
     {
@@ -419,6 +370,9 @@
 }
 
 - (IBAction)sortChanged:(UISegmentedControl *)sender {
+    [self.items removeAllObjects];
+    [self.tableView reloadData];
+    _nothingHereTopText.text = @"Loading";
     if (sender.selectedSegmentIndex == SORT_SEGMENTED_CONTROL_POPULAR)
     {
         self.sortOrder = kInterestsSortOrderScore;
@@ -455,16 +409,18 @@
         Article *article = self.items[indexPath.row];
         [[Biz sharedBiz] addFavourite:article withCompletionHandler:^(NSError *error) {
             NSLog(@"added");
+            [self initItems];
+
         }];
         NSLog(@"action 1 pressed");
         [tableView setEditing:NO animated:YES];
-        
-    }];
+             }];
     
     UITableViewRowAction *action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Remove Favourite" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         Article *article = self.items[indexPath.row];
         [[Biz sharedBiz] deleteFavourite:article withCompletionHandler:^(NSError *error) {
-            NSLog(@"added");
+            NSLog(@"removed");
+            [self initItems];
         }];
         NSLog(@"action 2 pressed");
         [tableView setEditing:NO animated:YES];

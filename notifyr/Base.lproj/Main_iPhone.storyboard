@@ -461,6 +461,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="nothingFoundView" destination="mNm-wJ-pBr" id="TtQ-Wr-ZqZ"/>
+                        <outlet property="nothingHereBottomText" destination="Uip-04-8Au" id="WO3-R5-iUW"/>
+                        <outlet property="nothingHereTopText" destination="Id5-ly-65R" id="UJC-G6-WC9"/>
                         <outlet property="popularNewestView" destination="jLX-9A-Mpq" id="35s-Wq-qer"/>
                         <outlet property="topNavigationBar" destination="a3r-Yi-2lS" id="AId-Rf-78G"/>
                     </connections>
@@ -2753,7 +2755,7 @@ This document was last updated on May 24, 2014</string>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="M8b-2k-00h"/>
+        <segue reference="3NJ-xn-Hkv"/>
         <segue reference="ep1-qb-Caf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

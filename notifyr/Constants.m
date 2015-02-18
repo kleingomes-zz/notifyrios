@@ -20,5 +20,6 @@ NSString *const ArticlesUpdateNotification = @"ArticlesUpdateNotification";
 NSString *const kInterestsSortOrderScore = @"Score";
 NSString *const kInterestsSortOrderPublishDate = @"PublishDate";
 
-
+NSString *const favouritesNotFoundTopText = @"Nothing Here.";
+NSString *const favouritesNotFoundBottomText = @"You can add favourites by swiping left on an article that you like.";
 @end

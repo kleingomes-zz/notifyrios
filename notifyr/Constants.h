@@ -20,5 +20,6 @@ FOUNDATION_EXPORT NSString *const ArticlesUpdateNotification;
 FOUNDATION_EXPORT NSString *const kInterestsSortOrderScore;
 FOUNDATION_EXPORT NSString *const kInterestsSortOrderPublishDate;
 
-
+FOUNDATION_EXPORT NSString *const favouritesNotFoundTopText;
+FOUNDATION_EXPORT NSString *const favouritesNotFoundBottomText;
 @end
