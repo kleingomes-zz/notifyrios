@@ -9,6 +9,8 @@
 #import "MenuViewController.h"
 
 @interface MenuViewController ()
+@property (strong, nonatomic) IBOutlet UITableView *menuTableView;
+@property (weak, nonatomic) IBOutlet UITableViewCell *settingsTableCell;
 
 @end
 
@@ -30,6 +32,17 @@
 {
     [super viewDidLoad];
     
+    // Set row highlight colour for the menu
+    UIView *highlightColour = [[UIView alloc] init];
+    highlightColour.backgroundColor = [UIColor colorWithRed:81.0f/255.0f green:151.0f/255.0f blue:233.0f/255.0f alpha:1];
+
+    for (int section = 0; section < [_menuTableView numberOfSections]; section++) {
+        for (int row = 0; row < [_menuTableView numberOfRowsInSection:section]; row++) {
+            NSIndexPath* cellPath = [NSIndexPath indexPathForRow:row inSection:section];
+            UITableViewCell* cell = [_menuTableView cellForRowAtIndexPath:cellPath];
+            [cell setSelectedBackgroundView:highlightColour];
+        }
+    }
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -43,6 +56,9 @@
     
 
 }
+
+
+
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if (section == 0)

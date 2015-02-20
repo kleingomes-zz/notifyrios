@@ -20,7 +20,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" searchBarStyle="minimal" placeholder=" Filter                                  " translatesAutoresizingMaskIntoConstraints="NO" id="3td-4h-T0q">
+                                <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" searchBarStyle="minimal" placeholder=" Filter                                                   " translatesAutoresizingMaskIntoConstraints="NO" id="3td-4h-T0q">
                                     <rect key="frame" x="0.0" y="4" width="312" height="44"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
@@ -1057,7 +1057,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Main Menu" id="hfC-Y2-7Rm">
                                 <cells>
-                                    <tableViewCell alpha="0.0" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="54" id="tGm-Lp-cem">
+                                    <tableViewCell alpha="0.0" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="54" id="tGm-Lp-cem">
                                         <rect key="frame" x="0.0" y="118" width="320" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tGm-Lp-cem" id="2hl-og-to3">
@@ -1077,7 +1077,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nPG-FH-epD">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nPG-FH-epD">
                                         <rect key="frame" x="0.0" y="304" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPG-FH-epD" id="wGc-O7-ykq">
@@ -1221,6 +1221,12 @@
                             <outlet property="delegate" destination="01X-Ik-k1m" id="FmL-bm-vD4"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="_menuTableView" destination="Xfb-rW-q7K" id="5qw-lX-LT8"/>
+                        <outlet property="_settingsTableCell" destination="OPZ-8X-X9F" id="RFt-Uh-Fus"/>
+                        <outlet property="menuTableView" destination="Xfb-rW-q7K" id="Wcw-cP-7uE"/>
+                        <outlet property="settingsTableCell" destination="OPZ-8X-X9F" id="lMj-b5-3gJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EeY-7Q-6Mf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

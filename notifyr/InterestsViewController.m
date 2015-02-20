@@ -245,7 +245,6 @@
     [super viewDidLoad];
     
 
-    
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refreshAction) forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refreshControl;
@@ -288,6 +287,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    // deselect the table cell
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:false];
+    
     //[self refreshAction];
 //    UIColor *lightColour = [self getUIColorObjectFromHexString:@"346ADC" alpha:1];
 //    UIColor *darkColour = [self getUIColorObjectFromHexString:@"5197E9" alpha:1];
@@ -334,11 +337,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     
     if (indexPath.section == INTEREST_SECTION)
     {
         InterestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InterestCell" forIndexPath:indexPath];
         cell.backgroundColor = [UIColor clearColor];
+        // Set row highlight colour
+        UIView *highlightColour = [[UIView alloc] init];
+        highlightColour.backgroundColor = [UIColor colorWithRed:236.0f/255.0f green:240.0f/255.0f blue:241.0f/255.0f alpha:1];
+        [cell setSelectedBackgroundView:highlightColour];
+        
         // Configure the cell...
         Item *interest = self.items[indexPath.row];
         //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
