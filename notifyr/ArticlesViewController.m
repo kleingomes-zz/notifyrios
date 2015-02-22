@@ -264,29 +264,14 @@
    
     
     BOOL hasImage = (article.iUrl && [article.iUrl length] > 0);
-    if (hasImage)
-    {
-        BOOL isSmallImage = NO; //[article.iUrl containsString:@"gstatic"]; //TODO: replace this with a property in the article set by the server
-        if (isSmallImage)
-        {
-            cell = [tableView dequeueReusableCellWithIdentifier:@"SmallImageCell" forIndexPath:indexPath];
-        }
-        else
-        {
-            cell = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
-        }
-    }
-    else
-    {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"NoImageCell" forIndexPath:indexPath];
-    }
+
     
     cell.titleLabel.text = article.title ? article.title : @"[No Title]";
     cell.descriptionLabel.text = article.articleDescription;
     cell.authorLabel.text = article.author ? article.author : @"[No Author]";
     cell.sourceLabel.text = article.source ? article.source : @"[No Source]";
     cell.score.text = [NSString stringWithFormat:@"%.1f", [article.score floatValue]];
-    cell.dateLabel.text = [self convertDateToString:article.publishDate];
+    cell.dateLabel.text = article.timeAgo;//[self convertDateToString:article.publishDate];
     //cell.mainImageView.image = nil; //todo replace with default image
     
     if (hasImage)
@@ -346,7 +331,12 @@
     NSTimeInterval secondsInHour = 60 * 60;
     NSTimeInterval secondsInMinute = 60;
     double gmtOffset = 25200;
-    NSTimeInterval age = fabs(date.timeIntervalSinceNow-gmtOffset);
+    NSDate *referenceDate = date;/* Your reference date */
+    NSDate *utcDate = [[NSDate alloc] init];;/* Your date */
+    NSTimeInterval age = [utcDate timeIntervalSinceDate:referenceDate];
+    
+    
+  //  NSTimeInterval age = fabs(date.timeIntervalSinceReferenceDate-gmtOffset);
     if (age > secondsInDay)
     {
         NSInteger daysAgo = round(age / secondsInDay);
@@ -488,12 +478,7 @@
             break;
         case 1:
         {
-            // Delete button was pressed
-            NSIndexPath *cellIndexPath = [self.tableView indexPathForCell:cell];
-            
-            [self.items removeObjectAtIndex:cellIndexPath.row];
-            [self.tableView deleteRowsAtIndexPaths:@[cellIndexPath]
-                                  withRowAnimation:UITableViewRowAnimationAutomatic];
+            NSLog(@"Delete button was pressed");
             break;
         }
         default:
