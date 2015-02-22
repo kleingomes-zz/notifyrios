@@ -405,7 +405,7 @@
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Add Favourite" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+    UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Add" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         Article *article = self.items[indexPath.row];
         [[Biz sharedBiz] addFavourite:article withCompletionHandler:^(NSError *error) {
             NSLog(@"added");
@@ -416,7 +416,27 @@
         [tableView setEditing:NO animated:YES];
              }];
     
-    UITableViewRowAction *action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Remove Favourite" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+    UITableViewRowAction *action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Remove" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        Article *article = self.items[indexPath.row];
+        [[Biz sharedBiz] deleteFavourite:article withCompletionHandler:^(NSError *error) {
+            NSLog(@"removed");
+            [self initItems];
+        }];
+        NSLog(@"action 2 pressed");
+        [tableView setEditing:NO animated:YES];
+        
+    }];
+    UITableViewRowAction *action3 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Flag" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        Article *article = self.items[indexPath.row];
+        [[Biz sharedBiz] deleteFavourite:article withCompletionHandler:^(NSError *error) {
+            NSLog(@"removed");
+            [self initItems];
+        }];
+        NSLog(@"action 2 pressed");
+        [tableView setEditing:NO animated:YES];
+        
+    }];
+    UITableViewRowAction *action4 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Share" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         Article *article = self.items[indexPath.row];
         [[Biz sharedBiz] deleteFavourite:article withCompletionHandler:^(NSError *error) {
             NSLog(@"removed");
@@ -428,7 +448,7 @@
     }];
     action2.backgroundColor = [UIColor blueColor];
     
-    return @[action1, action2];
+    return @[action1, action2,action3,action4];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
