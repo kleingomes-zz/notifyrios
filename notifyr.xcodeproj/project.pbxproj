@@ -167,6 +167,7 @@
 		E07747CD198DC05800D970F7 /* appbar.hamburger@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E07747CB198DC05800D970F7 /* appbar.hamburger@2x.png */; };
 		E07747D3198DC1C900D970F7 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07747D2198DC1C900D970F7 /* SettingsViewController.m */; };
 		E07747D6198DC58D00D970F7 /* PrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */; };
+		E07D31051A9964E2008AF356 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E07D31041A9964E2008AF356 /* AppSettings.m */; };
 		E07F1F4C1A7DA12B00C724BA /* NewItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07F1F4B1A7DA12B00C724BA /* NewItemViewController.m */; };
 		E07F1F4F1A7DB43800C724BA /* ItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E07F1F4E1A7DB43800C724BA /* ItemCell.m */; };
 		E0931D73190ADBF5001A991F /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = E0931D6E190ADBF5001A991F /* Item.m */; };
@@ -377,6 +378,8 @@
 		E07747D2198DC1C900D970F7 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		E07747D4198DC58D00D970F7 /* PrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivacyPolicyViewController.h; sourceTree = "<group>"; };
 		E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivacyPolicyViewController.m; sourceTree = "<group>"; };
+		E07D31031A9964E2008AF356 /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
+		E07D31041A9964E2008AF356 /* AppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettings.m; sourceTree = "<group>"; };
 		E07F1F4A1A7DA12B00C724BA /* NewItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewItemViewController.h; sourceTree = "<group>"; };
 		E07F1F4B1A7DA12B00C724BA /* NewItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewItemViewController.m; sourceTree = "<group>"; };
 		E07F1F4D1A7DB43800C724BA /* ItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCell.h; sourceTree = "<group>"; };
@@ -643,6 +646,8 @@
 			children = (
 				E01A59181902F05600EB0BE4 /* AppDelegate.h */,
 				E01A59191902F05600EB0BE4 /* AppDelegate.m */,
+				E07D31031A9964E2008AF356 /* AppSettings.h */,
+				E07D31041A9964E2008AF356 /* AppSettings.m */,
 				E01A591B1902F05600EB0BE4 /* Main_iPhone.storyboard */,
 				E01A591E1902F05600EB0BE4 /* Main_iPad.storyboard */,
 				E0614D831A0FBC8A0015DDA2 /* ViewControllers */,
@@ -1109,6 +1114,7 @@
 				E00C366C198DE3BE00331E23 /* ArticleWebViewController.m in Sources */,
 				E0414DDB1985C912005B5BB9 /* AvailableInterest.m in Sources */,
 				E02DE6341A5112B60083CC53 /* ItemArticleFetcher.m in Sources */,
+				E07D31051A9964E2008AF356 /* AppSettings.m in Sources */,
 				E00C3674198F32F700331E23 /* MEZoomAnimationController.m in Sources */,
 				E07F1F4C1A7DA12B00C724BA /* NewItemViewController.m in Sources */,
 				E07747D6198DC58D00D970F7 /* PrivacyPolicyViewController.m in Sources */,

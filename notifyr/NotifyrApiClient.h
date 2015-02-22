@@ -54,5 +54,7 @@
 - (void)getAvailableInterests:(NSString *)query withCompletionHandler:(void (^)(NSArray *availableInterests, NSError *error))completionHandler;
 
 
+- (void)registerDevice:(NSString *)deviceToken withCompletionHandler:(void (^)(NSError *error))completionHandler;
+
 
 @end

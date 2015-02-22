@@ -166,6 +166,12 @@
     }];
 }
 
+- (void)registerDevice:(NSString *)deviceToken withCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    NotifyrApiClient *apiClient = [[NotifyrApiClient alloc] init];
+    [apiClient registerDevice:deviceToken withCompletionHandler:completionHandler];
+}
+
 
 
 - (void)initObserver

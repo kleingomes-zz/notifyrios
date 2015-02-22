@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import <WindowsAzureMessaging/WindowsAzureMessaging.h>
+#import "AppSettings.h"
+#import "Biz.h"
 
 @implementation AppDelegate
 
@@ -77,21 +79,40 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *) deviceToken
 {
-    
     const unsigned *tokenBytes = [deviceToken bytes];
     NSString *hexToken = [NSString stringWithFormat:@"%08x%08x%08x%08x%08x%08x%08x%08x",
                           ntohl(tokenBytes[0]), ntohl(tokenBytes[1]), ntohl(tokenBytes[2]),
                           ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
                           ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
-    NSLog(@"%@", hexToken);
+    NSLog(@"Device Token: %@", hexToken);
     
+    if (![AppSettings sharedSettings].sentDeviceTokenToApi || ![hexToken isEqualToString:[AppSettings sharedSettings].deviceToken])
+    {
+        [AppSettings sharedSettings].deviceToken = hexToken;
+        [AppSettings sharedSettings].sentDeviceTokenToApi = NO;
+        [self registerDeviceWithApi:hexToken];
+    }
     
-    SBNotificationHub* hub = [[SBNotificationHub alloc] initWithConnectionString:
-                              @"Endpoint=sb://notifyrtoronto.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=YbApWjxkhzS9/ppSUOEqisY28oUH2cge+hXAIV3HRDU=" notificationHubPath:@"notifyrhub"];
-    
-    [hub registerNativeWithDeviceToken:deviceToken tags:nil completion:^(NSError* error) {
-        if (error != nil) {
-            NSLog(@"Error registering for notifications: %@", error);
+//    SBNotificationHub* hub = [[SBNotificationHub alloc] initWithConnectionString:
+//                              @"Endpoint=sb://notifyrtoronto.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=YbApWjxkhzS9/ppSUOEqisY28oUH2cge+hXAIV3HRDU=" notificationHubPath:@"notifyrhub"];
+//    
+//    [hub registerNativeWithDeviceToken:deviceToken tags:nil completion:^(NSError* error) {
+//        if (error != nil) {
+//            NSLog(@"Error registering for notifications: %@", error);
+//        }
+//    }];
+}
+
+- (void)registerDeviceWithApi:(NSString *)deviceToken
+{
+    [[Biz sharedBiz] registerDevice:deviceToken withCompletionHandler:^(NSError *error) {
+        if (error != nil)
+        {
+            NSLog(@"Error while registering device with server: %@", [error localizedDescription]);
+        }
+        else
+        {
+            [AppSettings sharedSettings].sentDeviceTokenToApi = YES;
         }
     }];
 }
