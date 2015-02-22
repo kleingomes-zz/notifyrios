@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -11,32 +11,31 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Creating Guest Account..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBe-Mr-YrJ">
-                    <rect key="frame" x="135" y="322" width="225" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notfyrlogo3.png" translatesAutoresizingMaskIntoConstraints="NO" id="xLO-XI-eQq">
-                    <rect key="frame" x="120" y="123" width="240" height="128"/>
+                    <rect key="frame" x="128" y="150" width="240" height="128"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="240" id="5op-ke-KoU"/>
                         <constraint firstAttribute="height" constant="128" id="Jfa-ya-x1K"/>
                     </constraints>
                 </imageView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wnz-Ds-pVS">
-                    <rect key="frame" x="211" y="430" width="37" height="37"/>
-                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="0.31764706970000001" green="0.59215688710000003" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="QBe-Mr-YrJ" secondAttribute="centerX" constant="-7.5" id="Uz5-xy-jmw"/>
-                <constraint firstAttribute="centerX" secondItem="wnz-Ds-pVS" secondAttribute="centerX" constant="7.5" id="Zyh-2G-co2"/>
-                <constraint firstAttribute="centerY" secondItem="xLO-XI-eQq" secondAttribute="centerY" constant="53" id="e7j-kU-i9G"/>
+                <constraint firstAttribute="centerX" secondItem="xLO-XI-eQq" secondAttribute="centerX" constant="-8" id="03n-Bd-Qj9"/>
+                <constraint firstAttribute="centerY" secondItem="xLO-XI-eQq" secondAttribute="centerY" constant="26" id="Mkf-cy-GT5"/>
+                <constraint firstAttribute="centerY" secondItem="xLO-XI-eQq" secondAttribute="centerY" id="e7j-kU-i9G"/>
                 <constraint firstAttribute="centerX" secondItem="xLO-XI-eQq" secondAttribute="centerX" id="iCF-Lp-ZRQ"/>
+                <constraint firstItem="xLO-XI-eQq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="120" id="nvu-Ie-i0f"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="e7j-kU-i9G"/>
+                    <exclude reference="iCF-Lp-ZRQ"/>
+                    <exclude reference="nvu-Ie-i0f"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="404" y="445"/>
         </view>
     </objects>

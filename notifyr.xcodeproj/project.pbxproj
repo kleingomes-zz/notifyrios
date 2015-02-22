@@ -10,6 +10,8 @@
 		90E01EDFC4744AF48F221DD9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C3006AF9FF84ABD8AE12F3E /* libPods.a */; };
 		AF0FCEEE1A1529C300DED0DC /* menubg1.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0FCEED1A1529C300DED0DC /* menubg1.png */; };
 		AF0FCEF01A152AF400DED0DC /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0FCEEF1A152AF400DED0DC /* menu2.png */; };
+		AF4A68B31A9996FD002A8B50 /* AppStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4A68B21A9996FD002A8B50 /* AppStartViewController.swift */; };
+		AF4A68B71A999ADA002A8B50 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4A68B61A999ADA002A8B50 /* AppSettings.swift */; };
 		AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F63D1930FE66005F5F6C /* appbar.cogs.png */; };
 		AF75F6431930FFED005F5F6C /* appbar.people.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F6421930FFED005F5F6C /* appbar.people.png */; };
 		AF75F645193100E7005F5F6C /* appbar.cog.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F644193100E7005F5F6C /* appbar.cog.png */; };
@@ -221,6 +223,9 @@
 		A3D5832D5A0C7383DF82C30C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		AF0FCEED1A1529C300DED0DC /* menubg1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubg1.png; sourceTree = "<group>"; };
 		AF0FCEEF1A152AF400DED0DC /* menu2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu2.png; sourceTree = "<group>"; };
+		AF4A68AD1A999459002A8B50 /* notifyr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notifyr-Bridging-Header.h"; sourceTree = "<group>"; };
+		AF4A68B21A9996FD002A8B50 /* AppStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStartViewController.swift; sourceTree = "<group>"; };
+		AF4A68B61A999ADA002A8B50 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		AF75F63D1930FE66005F5F6C /* appbar.cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cogs.png; sourceTree = "<group>"; };
 		AF75F6421930FFED005F5F6C /* appbar.people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.people.png; sourceTree = "<group>"; };
 		AF75F644193100E7005F5F6C /* appbar.cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cog.png; sourceTree = "<group>"; };
@@ -644,6 +649,7 @@
 		E01A590F1902F05600EB0BE4 /* notifyr */ = {
 			isa = PBXGroup;
 			children = (
+				AF4A68B61A999ADA002A8B50 /* AppSettings.swift */,
 				E01A59181902F05600EB0BE4 /* AppDelegate.h */,
 				E01A59191902F05600EB0BE4 /* AppDelegate.m */,
 				E07D31031A9964E2008AF356 /* AppSettings.h */,
@@ -713,6 +719,8 @@
 				E07747D5198DC58D00D970F7 /* PrivacyPolicyViewController.m */,
 				E0064E4E1A50F65200C665AE /* MainTabBarViewController.h */,
 				E0064E4F1A50F65200C665AE /* MainTabBarViewController.m */,
+				AF4A68AD1A999459002A8B50 /* notifyr-Bridging-Header.h */,
+				AF4A68B21A9996FD002A8B50 /* AppStartViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -1101,8 +1109,10 @@
 				E0D3A5AE197420B7008C445D /* Article.m in Sources */,
 				E01A591A1902F05600EB0BE4 /* AppDelegate.m in Sources */,
 				E0931D7A190ADF16001A991F /* Biz.m in Sources */,
+				AF4A68B31A9996FD002A8B50 /* AppStartViewController.swift in Sources */,
 				E0D3A5AB19741CB9008C445D /* ArticlesViewController.m in Sources */,
 				E0064E501A50F65200C665AE /* MainTabBarViewController.m in Sources */,
+				AF4A68B71A999ADA002A8B50 /* AppSettings.swift in Sources */,
 				E01A59161902F05600EB0BE4 /* main.m in Sources */,
 				AFABF12E1A5B9BC4009197FB /* FavouriteArticleFetcher.m in Sources */,
 				E02DE6311A510BF70083CC53 /* BreakingNewsArticleFetcher.m in Sources */,
@@ -1298,6 +1308,7 @@
 			baseConfigurationReference = 732DD0D5A8AF7F8543C6D604 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -1308,8 +1319,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "notifyr/notifyr-Prefix.pch";
 				INFOPLIST_FILE = "notifyr/notifyr-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0c70bb6b-306d-45a2-ac5b-57eecfe38848";
+				SWIFT_OBJC_BRIDGING_HEADER = "notifyr/notifyr-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1319,6 +1333,7 @@
 			baseConfigurationReference = A3D5832D5A0C7383DF82C30C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -1329,8 +1344,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "notifyr/notifyr-Prefix.pch";
 				INFOPLIST_FILE = "notifyr/notifyr-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0c70bb6b-306d-45a2-ac5b-57eecfe38848";
+				SWIFT_OBJC_BRIDGING_HEADER = "notifyr/notifyr-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
