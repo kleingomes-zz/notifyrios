@@ -56,6 +56,9 @@
 - (void)getUserItemsWithCompletion:(void(^)(NSArray *items, NSError *error)) completion;
 
 
+- (void)registerDevice:(NSString *)deviceToken withCompletionHandler:(void (^)(NSError *error))completionHandler;
+
+
 - (Company *)getCompanyById:(NSNumber *)companyId;
 
 - (Product *)getProductById:(NSNumber *)productId;

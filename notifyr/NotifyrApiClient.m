@@ -525,6 +525,33 @@
 }
 
 
+
+- (void)registerDevice:(NSString *)deviceToken withCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    //todo: replace this access token pattern/main method in these methods
+    if (!self.accessToken)
+    {
+        [self getNewAccessTokenWithCompletionHandler:^(NSError *error) {
+            [self registerDeviceMain:deviceToken withCompletionHandler:completionHandler];
+        }];
+    }
+    else
+    {
+        [self registerDeviceMain:deviceToken withCompletionHandler:completionHandler];
+    }
+
+}
+
+- (void)registerDeviceMain:(NSString *)deviceToken withCompletionHandler:(void (^)(NSError *error))completionHandler
+{
+    NSString *urlString = [self getUrl:[NSString stringWithFormat:@"Account/RegisterDevice?deviceToken=%@&deviceOperatingSystem=apns", deviceToken]];
+    
+    [self makeAPICallWithUrlString:urlString method:@"GET" completionHandler:^(NSData *data, NSURLResponse *response, NSError *error, id jsonObject) {
+        completionHandler(error);
+    }];
+}
+
+
 - (void)getCompaniesWithCompletionHandler:(void (^)(NSError *error))completionHandler
 {
     if (!self.accessToken)
