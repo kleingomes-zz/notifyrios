@@ -291,16 +291,21 @@
     
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.row == 0) {
+//        SWTableViewCell *cell = (SWTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+//        [cell showUtilityButtonsAnimated:YES];
+//    }
+}
 - (NSArray *)rightButtons
 {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
     [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
-                                                title:@"More"];
+     [UIColor colorWithRed:239.0f/255.0f green:244.0f/255.0f blue:255.0f/255.0f alpha:1.0]
+                                                 icon:[UIImage imageNamed:@"appbar.flag.png"]];
     [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f]
-                                                title:@"Delete"];
+     [UIColor colorWithRed:239.0f/255.0f green:244.0f/255.0f blue:255.0f/255.0f alpha:1.0]
+                                                 icon:[UIImage imageNamed:@"appbar.star.png"]];
     
     return rightUtilityButtons;
 }
@@ -310,17 +315,8 @@
     NSMutableArray *leftUtilityButtons = [NSMutableArray new];
     
     [leftUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:0.07 green:0.75f blue:0.16f alpha:1.0]
-                                                icon:[UIImage imageNamed:@"check.png"]];
-    [leftUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:1.0f green:1.0f blue:0.35f alpha:1.0]
-                                                icon:[UIImage imageNamed:@"clock.png"]];
-    [leftUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:1.0f green:0.231f blue:0.188f alpha:1.0]
-                                                icon:[UIImage imageNamed:@"cross.png"]];
-    [leftUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:0.55f green:0.27f blue:0.07f alpha:1.0]
-                                                icon:[UIImage imageNamed:@"list.png"]];
+     [UIColor colorWithRed:1.0f green:1.0f blue:1.0f alpha:1.0]
+                                                icon:[UIImage imageNamed:@"Apple-Logo.jpeg"]];
     
     return leftUtilityButtons;
 }
@@ -417,23 +413,23 @@
     [self initItems];
 }
 
-// Override to support conditional editing of the table view.
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // Return NO if you do not want the specified item to be editable.
-//    return YES;
-//}
+ //Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
 
 // Override to support editing the table view.
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        // Delete the row from the data source
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//    }   
-//}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
 
 
 
@@ -471,68 +467,38 @@
     }
 }
 
-- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+- (void)swipeableTableViewCell:(ArticleCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSInteger articleId = indexPath.row;
     switch (index) {
         case 0:
-            NSLog(@"More button was pressed");
+        {
+            Article *article = self.items[articleId];
+            [[Biz sharedBiz] deleteFavourite:article withCompletionHandler:^(NSError *error) {
+
+                [self initItems];
+            }];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Saved!" message:@"Removed from Favourites!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alertView show];
             break;
+        }
         case 1:
         {
-            NSLog(@"Delete button was pressed");
+            
+            Article *article = self.items[articleId];
+            [[Biz sharedBiz] addFavourite:article withCompletionHandler:^(NSError *error) {
+
+                [self initItems];
+            }];
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Saved" message:@"Added to Favourites!" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [alertView show];
             break;
         }
         default:
             break;
     }
 }
-//- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//    UITableViewRowAction *action1 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Add" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-//        Article *article = self.items[indexPath.row];
-//        [[Biz sharedBiz] addFavourite:article withCompletionHandler:^(NSError *error) {
-//            NSLog(@"added");
-//            [self initItems];
-//
-//        }];
-//        NSLog(@"action 1 pressed");
-//        [tableView setEditing:NO animated:YES];
-//             }];
-//    
-//    UITableViewRowAction *action2 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Remove" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-//        Article *article = self.items[indexPath.row];
-//        [[Biz sharedBiz] deleteFavourite:article withCompletionHandler:^(NSError *error) {
-//            NSLog(@"removed");
-//            [self initItems];
-//        }];
-//        NSLog(@"action 2 pressed");
-//        [tableView setEditing:NO animated:YES];
-//        
-//    }];
-//    UITableViewRowAction *action3 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Flag" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-//        Article *article = self.items[indexPath.row];
-//        [[Biz sharedBiz] deleteFavourite:article withCompletionHandler:^(NSError *error) {
-//            NSLog(@"removed");
-//            [self initItems];
-//        }];
-//        NSLog(@"action 2 pressed");
-//        [tableView setEditing:NO animated:YES];
-//        
-//    }];
-//    UITableViewRowAction *action4 = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Share" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-//        Article *article = self.items[indexPath.row];
-//        [[Biz sharedBiz] deleteFavourite:article withCompletionHandler:^(NSError *error) {
-//            NSLog(@"removed");
-//            [self initItems];
-//        }];
-//        NSLog(@"action 2 pressed");
-//        [tableView setEditing:NO animated:YES];
-//        
-//    }];
-//    action2.backgroundColor = [UIColor blueColor];
-//    
-//    return @[action1, action2,action3,action4];
-//}
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
     CGPoint offset = sender.contentOffset;

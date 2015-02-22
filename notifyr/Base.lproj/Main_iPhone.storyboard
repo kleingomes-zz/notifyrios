@@ -219,10 +219,10 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGb-1g-YME" customClass="GradientView">
-                                            <rect key="frame" x="0.0" y="113" width="320" height="70"/>
+                                            <rect key="frame" x="0.0" y="113" width="320" height="69.5"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Source" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nde-9i-B9t">
-                                                    <rect key="frame" x="8" y="44" width="40" height="16"/>
+                                                    <rect key="frame" x="8" y="44" width="39.5" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>

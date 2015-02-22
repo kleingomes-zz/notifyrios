@@ -12,6 +12,8 @@
 		AF0FCEF01A152AF400DED0DC /* menu2.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0FCEEF1A152AF400DED0DC /* menu2.png */; };
 		AF4A68B31A9996FD002A8B50 /* AppStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4A68B21A9996FD002A8B50 /* AppStartViewController.swift */; };
 		AF4A68B71A999ADA002A8B50 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4A68B61A999ADA002A8B50 /* AppSettings.swift */; };
+		AF4A68B91A99DFC2002A8B50 /* flags@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = AF4A68B81A99DFC2002A8B50 /* flags@3x.png */; };
+		AF4A68BB1A99E2CE002A8B50 /* appbar.flag.png in Resources */ = {isa = PBXBuildFile; fileRef = AF4A68BA1A99E2CE002A8B50 /* appbar.flag.png */; };
 		AF75F63F1930FE66005F5F6C /* appbar.cogs.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F63D1930FE66005F5F6C /* appbar.cogs.png */; };
 		AF75F6431930FFED005F5F6C /* appbar.people.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F6421930FFED005F5F6C /* appbar.people.png */; };
 		AF75F645193100E7005F5F6C /* appbar.cog.png in Resources */ = {isa = PBXBuildFile; fileRef = AF75F644193100E7005F5F6C /* appbar.cog.png */; };
@@ -225,6 +227,8 @@
 		AF4A68AD1A999459002A8B50 /* notifyr-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "notifyr-Bridging-Header.h"; sourceTree = "<group>"; };
 		AF4A68B21A9996FD002A8B50 /* AppStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStartViewController.swift; sourceTree = "<group>"; };
 		AF4A68B61A999ADA002A8B50 /* AppSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		AF4A68B81A99DFC2002A8B50 /* flags@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flags@3x.png"; sourceTree = "<group>"; };
+		AF4A68BA1A99E2CE002A8B50 /* appbar.flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.flag.png; sourceTree = "<group>"; };
 		AF75F63D1930FE66005F5F6C /* appbar.cogs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cogs.png; sourceTree = "<group>"; };
 		AF75F6421930FFED005F5F6C /* appbar.people.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.people.png; sourceTree = "<group>"; };
 		AF75F644193100E7005F5F6C /* appbar.cog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appbar.cog.png; sourceTree = "<group>"; };
@@ -494,6 +498,7 @@
 				E07747CA198DC05800D970F7 /* appbar.hamburger.png */,
 				E07747CB198DC05800D970F7 /* appbar.hamburger@2x.png */,
 				AF75F68B19327CAB005F5F6C /* appbar.chevron.right.png */,
+				AF4A68BA1A99E2CE002A8B50 /* appbar.flag.png */,
 				AF75F68919327C6A005F5F6C /* appbar.question.png */,
 				AF75F68719327848005F5F6C /* btnCreate.png */,
 				AF75F683193272AC005F5F6C /* appbar.radar.png */,
@@ -530,6 +535,7 @@
 		AF75F670193246AC005F5F6C /* temp images */ = {
 			isa = PBXGroup;
 			children = (
+				AF4A68B81A99DFC2002A8B50 /* flags@3x.png */,
 				AFFE853A1A87509300003745 /* menuTemp3.png */,
 				AFFE85361A874FB500003745 /* menuTemp.png */,
 				AFFE85381A87503C00003745 /* menuTemp2.png */,
@@ -984,6 +990,7 @@
 				AF8127F019903F4700EE0F77 /* appbar.navigate.next.png in Resources */,
 				AF75F6431930FFED005F5F6C /* appbar.people.png in Resources */,
 				AFABF1211A527E8D009197FB /* newspaper.png in Resources */,
+				AF4A68B91A99DFC2002A8B50 /* flags@3x.png in Resources */,
 				AFF5C6BD1A3D9D7200AA5C4C /* appTilesAddInterest.png in Resources */,
 				AF75F68819327848005F5F6C /* btnCreate.png in Resources */,
 				AF75F65C19314E0D005F5F6C /* appbar.connection.quality.extremelylow.png in Resources */,
@@ -1012,6 +1019,7 @@
 				AFFE85561A89B84E00003745 /* OpenSans-Light.ttf in Resources */,
 				AF75F686193273B9005F5F6C /* iphone_6_fake_line_up_hero.jpg in Resources */,
 				AF8127D0198EED3200EE0F77 /* blueBackground.jpg in Resources */,
+				AF4A68BB1A99E2CE002A8B50 /* appbar.flag.png in Resources */,
 				AF8127DE198F2C7900EE0F77 /* appTiles3.png in Resources */,
 				AFF5C6C51A3DB85600AA5C4C /* appbar.green.png in Resources */,
 				AF75F6631931513D005F5F6C /* appbar.elevator.down.png in Resources */,
