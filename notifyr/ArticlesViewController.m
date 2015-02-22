@@ -53,6 +53,10 @@
 {
     self.pageNumber = 0;
     [self loadArticles];
+    _nothingHereBottomText.text = @"";
+    _nothingHereTopText.text = @"";
+    self.tableView.backgroundView = _nothingFoundView;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
 }
 
@@ -82,12 +86,7 @@
             }
         });
     }];
-
-        _nothingHereBottomText.text = @"";
-        _nothingHereTopText.text = @"";
-        self.tableView.backgroundView = _nothingFoundView;
-        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
+   
 }
 
 - (void)startLoading {
@@ -175,9 +174,7 @@
 {
     [super viewDidLoad];
     self.pageSize = 20;
-    
 
-    
     if ([self.navigationController.viewControllers count] > 1)
     {
        self.navigationItem.leftBarButtonItem = nil;
@@ -199,7 +196,11 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
 }
-
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 180;
+}
 - (void)viewWillAppear:(BOOL)animated
 {
     if([self.delegate isKindOfClass:[ItemArticleFetcher class]])
@@ -279,6 +280,7 @@
         [cell.mainImageView setImageWithURL:[NSURL URLWithString:article.iUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
             if (error)
             {
+                [cell.mainImageView setImage:[UIImage imageNamed:@"appbar.flag.png"]];
                 NSLog(@"Invalid Image %@: %@", article.iUrl, [error localizedDescription]);
             }
         } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
@@ -501,10 +503,12 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)sender {
+    
     CGPoint offset = sender.contentOffset;
     CGRect bounds = sender.bounds;
     CGSize size = sender.contentSize;
     UIEdgeInsets inset = sender.contentInset;
+
     float y = offset.y + bounds.size.height - inset.bottom;
     float h = size.height;
     float reloadDistance = 10.0f;
@@ -512,6 +516,7 @@
     {
         [self loadArticles];
     }
+
 }
 
 
