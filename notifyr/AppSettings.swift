@@ -9,31 +9,72 @@
 import UIKit
 
 class AppSettings: NSObject {
-  
     
-    let kUserDefaultsKeyDeviceToken = "deviceToken";
-    let kUserDefaultsKeySentDeviceTokenToApi = "sentDeviceTokenToApi"
+    private let kUserDefaultsKeyDeviceToken = "deviceToken";
+    private let kUserDefaultsKeySentDeviceTokenToApi = "sentDeviceTokenToApi"
     
-    //MARK: deviceToken
-    func deviceToken(deviceToken: String) -> String{
+    private var _deviceToken: String?
+    
+    var deviceToken: String {
         
-        return "";
+        get {
+            if (_deviceToken == nil)
+            {
+                _deviceToken = NSUserDefaults.standardUserDefaults().stringForKey(kUserDefaultsKeyDeviceToken)
+            }
+            
+            return _deviceToken!;
+        }
+        
+        set {
+            if (_deviceToken == newValue) {
+                return;
+            }
+            _deviceToken = newValue
+            var userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults .setObject(_deviceToken, forKey: kUserDefaultsKeySentDeviceTokenToApi)
+            userDefaults.synchronize()
+        }
+        
     }
     
-    func setDeviceToken(deviceToken: String) {
+    
+    private var _sentDeviceTokenToApi: Bool?
+    
+    var sentDeviceTokenToApi: Bool {
         
+        get {
+            if (_sentDeviceTokenToApi == nil)
+            {
+                _sentDeviceTokenToApi = NSUserDefaults.standardUserDefaults().boolForKey(kUserDefaultsKeySentDeviceTokenToApi)
+            }
+            
+            return _sentDeviceTokenToApi!;
+        }
+        
+        set {
+            if (_sentDeviceTokenToApi == newValue) {
+                return;
+            }
+            _sentDeviceTokenToApi = newValue
+            var userDefaults = NSUserDefaults.standardUserDefaults()
+            userDefaults .setObject(_sentDeviceTokenToApi, forKey: kUserDefaultsKeySentDeviceTokenToApi)
+            userDefaults.synchronize()
+        }
         
     }
     
-    //MARK: sentDeviceTokenToApi
-    func sentDeviceTokenToApi()->Bool{
-        
-        return true;
+    
+    class var sharedSettings : AppSettings {
+        struct Static {
+            static var onceToken : dispatch_once_t = 0
+            static var instance : AppSettings? = nil
+        }
+        dispatch_once(&Static.onceToken) {
+            Static.instance = AppSettings()
+        }
+        return Static.instance!
     }
     
-    func setSentDeviceTokenToApi(sentDeviceToken: Bool)
-    {
-        
-    }
-    
+
 }

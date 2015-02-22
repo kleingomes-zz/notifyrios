@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <WindowsAzureMessaging/WindowsAzureMessaging.h>
-#import "AppSettings.h"
+#import "notifyr-Swift.h"
 #import "Biz.h"
 
 @implementation AppDelegate
@@ -85,7 +85,7 @@
                           ntohl(tokenBytes[3]), ntohl(tokenBytes[4]), ntohl(tokenBytes[5]),
                           ntohl(tokenBytes[6]), ntohl(tokenBytes[7])];
     NSLog(@"Device Token: %@", hexToken);
-    
+        
     if (![AppSettings sharedSettings].sentDeviceTokenToApi || ![hexToken isEqualToString:[AppSettings sharedSettings].deviceToken])
     {
         [AppSettings sharedSettings].deviceToken = hexToken;
