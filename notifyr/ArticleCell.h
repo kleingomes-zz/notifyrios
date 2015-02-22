@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "GradientView.h"
-
-@interface ArticleCell : UITableViewCell
+#import <SWTableViewCell.h>
+@interface ArticleCell : SWTableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
