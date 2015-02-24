@@ -24,10 +24,9 @@ class AppStartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(animated: Bool) {
-            
-            var vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabBarController") as UIViewController
-            presentViewController(vc, animated: false, completion: nil)
+    override func viewDidAppear(animated: Bool) {            
+        var vc = self.storyboard?.instantiateViewControllerWithIdentifier("ECSlidingViewController") as UIViewController
+        presentViewController(vc, animated: false, completion: nil)
     }
 
     /*
