@@ -123,23 +123,11 @@
                                                  }];
 }
 
-
 - (void)refreshAction
 {
     [self initItems];
 }
 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    if ([segue.identifier isEqualToString:@"ShowArticle"])
-    {
-        ArticleWebViewController *vc = (ArticleWebViewController *)segue.destinationViewController;
-        Article *article = self.items[[self.tableView indexPathForSelectedRow].row];
-        vc.article = article;
-    }
-}
 - (UIColor *)getUIColorObjectFromHexString:(NSString *)hexStr alpha:(CGFloat)alpha
 {
     // Convert hex string to an integer
@@ -154,6 +142,7 @@
     
     return color;
 }
+
 - (unsigned int)intFromHexString:(NSString *)hexStr
 {
     unsigned int hexInt = 0;
@@ -208,7 +197,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
         ItemArticleFetcher *itemArticleFetcher  = (ItemArticleFetcher *) self.delegate;
         if(itemArticleFetcher.item.primaryBackgroundColour != nil && itemArticleFetcher.item.primaryBackgroundColourAlt != nil)
         {
-            NSLog(itemArticleFetcher.item.primaryBackgroundColour);
+            //NSLog(itemArticleFetcher.item.primaryBackgroundColour);
             UIColor *lightColoir = [self getUIColorObjectFromHexString:itemArticleFetcher.item.primaryBackgroundColour alpha:1];
             UIColor *darkColour = [self getUIColorObjectFromHexString:itemArticleFetcher.item.primaryBackgroundColourAlt alpha:1];
             self.navigationController.navigationBar.barTintColor = lightColoir;
@@ -293,12 +282,15 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.row == 0) {
-//        SWTableViewCell *cell = (SWTableViewCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-//        [cell showUtilityButtonsAnimated:YES];
-//    }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ArticleWebViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticleWebViewController"];
+    Article *article = self.items[indexPath.row];
+    vc.article = article;
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
 - (NSArray *)rightButtons
 {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
