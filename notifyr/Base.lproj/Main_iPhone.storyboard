@@ -2410,7 +2410,7 @@ This document was last updated on May 24, 2014</string>
         <!--Sliding View Controller-->
         <scene sceneID="rNT-d1-Lpa">
             <objects>
-                <viewController id="BnF-QO-y8U" customClass="ECSlidingViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ECSlidingViewController" id="BnF-QO-y8U" customClass="ECSlidingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f1I-kk-6lH"/>
                         <viewControllerLayoutGuide type="bottom" id="Q7e-pq-Tba"/>
