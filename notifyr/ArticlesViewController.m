@@ -57,7 +57,6 @@
     _nothingHereTopText.text = @"";
     self.tableView.backgroundView = _nothingFoundView;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
 }
 
 - (void)loadArticles
@@ -84,6 +83,7 @@
                 _nothingHereBottomText.text = @"";
                 _nothingHereTopText.text = @"";
             }
+            
         });
     }];
    
@@ -101,7 +101,7 @@
     self.loading = NO;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.pageNumber++;
-
+    [self.refreshControl endRefreshing];
 }
 
 - (void)initObserver
@@ -159,9 +159,17 @@
     return hexInt;
 }
 
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshAction) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    self.refreshControl.layer.zPosition = self.tableView.backgroundView.layer.zPosition + 1;
     self.pageSize = 20;
 
     if ([self.navigationController.viewControllers count] > 1)
