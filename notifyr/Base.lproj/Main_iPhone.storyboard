@@ -19,13 +19,16 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <searchBar contentMode="redraw" fixedFrame="YES" barStyle="black" searchBarStyle="minimal" placeholder=" Filter                                                   " translatesAutoresizingMaskIntoConstraints="NO" id="3td-4h-T0q">
+                                <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" barStyle="black" searchBarStyle="minimal" placeholder=" Filter                                                   " translatesAutoresizingMaskIntoConstraints="NO" id="3td-4h-T0q">
                                     <rect key="frame" x="0.0" y="4" width="312" height="44"/>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
                                 </searchBar>
                             </subviews>
                             <color key="backgroundColor" red="0.31764705882352939" green="0.59215686274509804" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="centerX" secondItem="3td-4h-T0q" secondAttribute="centerX" constant="4" id="JL4-to-hMv"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InterestCell" rowHeight="60" id="dlI-7g-PKG" customClass="InterestCell">
@@ -154,7 +157,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="YN6-DF-CBH">
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="YN6-DF-CBH">
                                     <rect key="frame" x="98" y="11" width="124" height="29"/>
                                     <segments>
                                         <segment title="Popular"/>
@@ -168,12 +171,16 @@
                             </subviews>
                             <color key="backgroundColor" red="0.31764705879999999" green="0.59215686270000001" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="tintColor" red="1" green="0.99168926477432251" blue="0.99168926477432251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="centerX" secondItem="YN6-DF-CBH" secondAttribute="centerX" id="8B3-Ai-6MT"/>
+                                <constraint firstAttribute="centerY" secondItem="YN6-DF-CBH" secondAttribute="centerY" id="CXe-34-4AH"/>
+                            </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="mNm-wJ-pBr">
                             <rect key="frame" x="0.0" y="492" width="320" height="250"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id5-ly-65R">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id5-ly-65R">
                                     <rect key="frame" x="100" y="240" width="150" height="25"/>
                                     <attributedString key="attributedText">
                                         <fragment content="Nothing Here.">
@@ -186,8 +193,11 @@
                                     </attributedString>
                                     <color key="highlightedColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uip-04-8Au">
-                                    <rect key="frame" x="60" y="240" width="205" height="100"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uip-04-8Au">
+                                    <rect key="frame" x="60" y="240" width="400" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="250" id="zO0-UI-hpU"/>
+                                    </constraints>
                                     <attributedString key="attributedText">
                                         <fragment content="You can add favourites by swiping left on an article that you like.">
                                             <attributes>
@@ -201,9 +211,13 @@
                                 </label>
                             </subviews>
                             <color key="backgroundColor" red="0.92549019607843142" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="Uip-04-8Au" firstAttribute="top" secondItem="Id5-ly-65R" secondAttribute="bottom" constant="-25" id="BRI-qZ-05u"/>
+                                <constraint firstAttribute="centerX" secondItem="Id5-ly-65R" secondAttribute="centerX" constant="-15" id="buV-JL-FeA"/>
+                            </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" verticalCompressionResistancePriority="250" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="180" id="Xv2-AE-IhB" customClass="ArticleCell">
+                            <tableViewCell contentMode="scaleToFill" verticalCompressionResistancePriority="250" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="180" id="Xv2-AE-IhB" customClass="ArticleCell">
                                 <rect key="frame" x="0.0" y="135" width="320" height="204"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xv2-AE-IhB" id="QyT-fq-WXD">
@@ -866,13 +880,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Creating Guest Account..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNd-Yu-XLz">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Creating Guest Account..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNd-Yu-XLz">
                                 <rect key="frame" x="63" y="387" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LQS-Cg-JGO">
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="LQS-Cg-JGO">
                                 <rect key="frame" x="150" y="447" width="37" height="37"/>
                             </activityIndicatorView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notfyrlogo3.png" translatesAutoresizingMaskIntoConstraints="NO" id="50B-3B-kzv">
@@ -886,6 +900,8 @@
                         <color key="backgroundColor" red="0.31764706970000001" green="0.59215688710000003" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="50B-3B-kzv" secondAttribute="centerY" constant="26" id="CD7-aO-BYW"/>
+                            <constraint firstAttribute="centerX" secondItem="jNd-Yu-XLz" secondAttribute="centerX" constant="-15.5" id="c65-A7-Xu0"/>
+                            <constraint firstAttribute="centerX" secondItem="LQS-Cg-JGO" secondAttribute="centerX" constant="-8.5" id="sSV-Nu-nYH"/>
                             <constraint firstAttribute="centerX" secondItem="50B-3B-kzv" secondAttribute="centerX" constant="-8" id="ukE-Dq-nxb"/>
                         </constraints>
                     </view>
