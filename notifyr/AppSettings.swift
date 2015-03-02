@@ -15,7 +15,7 @@ class AppSettings: NSObject {
     
     private var _deviceToken: String?
     
-    var deviceToken: String {
+    var deviceToken: String? {
         
         get {
             if (_deviceToken == nil)
@@ -23,7 +23,7 @@ class AppSettings: NSObject {
                 _deviceToken = NSUserDefaults.standardUserDefaults().stringForKey(kUserDefaultsKeyDeviceToken)
             }
             
-            return _deviceToken!;
+            return _deviceToken;
         }
         
         set {
