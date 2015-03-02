@@ -181,15 +181,16 @@
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.extendedLayoutIncludesOpaqueBars = YES;
-    self.tableView.estimatedRowHeight = 350;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = 350;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
 }
-- (CGFloat)tableView:(UITableView *)tableView
-heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return 180;
-}
+
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    return 180;
+//}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     if([self.delegate isKindOfClass:[ItemArticleFetcher class]])
@@ -209,7 +210,7 @@ heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     }
 
     [self initObserver];
-    [self initItems];
+    //[self initItems];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
