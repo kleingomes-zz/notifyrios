@@ -28,6 +28,16 @@
     return dictionary[name];
 }
 
++ (BOOL *)getBoolFromDictionary:(NSDictionary *)dictionary name:(NSString *)name
+{
+    if (dictionary[name] == [NSNull null])
+    {
+        return nil;
+    }
+    return [dictionary[name] boolValue];
+}
+
+
 + (NSDate *)getDateFromDictionary:(NSDictionary *)dictionary name:(NSString *)name
 {
     if (dictionary[name] == [NSNull null])
