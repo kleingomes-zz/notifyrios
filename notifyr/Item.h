@@ -16,6 +16,7 @@
 @property (nonatomic) NSNumber *itemId;
 @property (nonatomic, strong) NSString *itemName;
 @property (nonatomic) NSString *logoUrl;
+@property (nonatomic) NSNumber *itemTypeId;
 @property (nonatomic) NSString *primaryForegroundColour;
 @property (nonatomic) NSString *primaryForegroundColourAlt;
 @property (nonatomic) NSString *primaryBackgroundColour;
