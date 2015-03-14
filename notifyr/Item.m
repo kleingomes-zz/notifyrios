@@ -16,6 +16,7 @@
     Item *interest = [[Item alloc] init];
     interest.itemId = [Utils getNumberFromDictionary:dictionary name:@"Id"];
     interest.itemTypeId = [Utils getNumberFromDictionary:dictionary name:@"ItemTypeId"];
+        interest.itemTypeName = [Utils getStringFromDictionary:dictionary name:@"ItemTypeName"];
     interest.logoUrl = [Utils getStringFromDictionary:dictionary name:@"IUrl"];
     interest.itemName = [Utils getStringFromDictionary:dictionary name:@"Name"];
     interest.primaryBackgroundColour = [Utils getStringFromDictionary:dictionary name:@"PrimaryBackgroundColour"];
