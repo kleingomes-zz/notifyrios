@@ -26,13 +26,12 @@
 @property (nonatomic, strong) MEZoomAnimationController *zoomController;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
+@property (nonatomic, strong) NSMutableDictionary *sectionCounts;
+
 @end
 
 
 @implementation InterestsViewController
-
-#define INTEREST_SECTION 0
-#define ADD_NEW_SECTION 1
 
 - (MEZoomAnimationController *) zoomController
 {
@@ -48,12 +47,20 @@
     return 60.0;
 }
 
+- (NSMutableDictionary *)sectionCounts
+{
+    if (_sectionCounts == nil)
+    {
+        _sectionCounts = [[NSMutableDictionary alloc] init];
+    }
+    return _sectionCounts;
+}
+
 - (NSMutableArray *)items
 {
     if (!_items)
     {
         _items = [[NSMutableArray alloc] init];
-        [self initItems];
     }
     return _items;
 }
@@ -61,7 +68,6 @@
 - (void)initItems
 {                
     [[Biz sharedBiz] getInterests];
-    
 }
 
 - (IBAction)menuAction:(id)sender {
@@ -106,7 +112,7 @@
     if ([segue.identifier isEqualToString:@"ShowInterestArticles"])
     {
         ArticlesViewController *vc = (ArticlesViewController *)segue.destinationViewController;
-        Item *item = self.items[[self.tableView indexPathForSelectedRow].row];
+        Item *item = [self getItemAtIndexPath:[self.tableView indexPathForSelectedRow]];
         ItemArticleFetcher *itemArticleFetcher = [[ItemArticleFetcher alloc] init];
         itemArticleFetcher.item = item;
         vc.delegate = itemArticleFetcher;
@@ -162,6 +168,25 @@
             [self.items addObject:updatedInterest];
         }
     }
+    
+    [self updateSectionCounts];
+}
+
+- (void)updateSectionCounts
+{
+    [self.sectionCounts removeAllObjects];
+    for (Item *item in self.items)
+    {
+        if (self.sectionCounts[item.itemTypeName] == nil)
+        {
+            self.sectionCounts[item.itemTypeName] = @1;
+        }
+        else
+        {
+            NSInteger sectionCount = ((NSNumber *)self.sectionCounts[item.itemTypeName]).integerValue + 1;
+            self.sectionCounts[item.itemTypeName] = @(sectionCount);
+        }
+    }
 }
 
 - (void)deleteItems:(NSArray *)deletedItems
@@ -182,6 +207,7 @@
             }
         }
     }
+    [self updateSectionCounts];
 }
 
 - (Item *)getItemMatchingItem:(Item *)itemToFind
@@ -254,6 +280,8 @@
         [self initObserver];
     }
     
+    [self initItems];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -319,74 +347,87 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return [self.sectionCounts.allKeys count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == INTEREST_SECTION)
-    {
-        return [self.items count];
-    }
-    else
-    {
-        return 1;
-    }
+    NSString *sectionName = self.sectionCounts.allKeys[section];
+
+    return ((NSNumber *)self.sectionCounts[sectionName]).integerValue;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *sectionName = self.sectionCounts.allKeys[section];
+
+    return [NSString stringWithFormat:@" %@", sectionName];
 }
 
 
+- (Item *)getItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    //TODO: optimize this
+    NSInteger sectionCount = 0;
+    NSString *sectionName = self.sectionCounts.allKeys[indexPath.section];
+    
+    for (Item *item in self.items)
+    {
+        if ([item.itemTypeName isEqualToString:sectionName])
+        {
+            if (sectionCount == indexPath.row)
+            {
+                return item;
+            }
+            sectionCount++;
+        }
+    }
+    return nil;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    InterestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InterestCell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor clearColor];
+    // Set row highlight colour
+    UIView *highlightColour = [[UIView alloc] init];
+    highlightColour.backgroundColor = [UIColor colorWithRed:236.0f/255.0f green:240.0f/255.0f blue:241.0f/255.0f alpha:1];
+    [cell setSelectedBackgroundView:highlightColour];
     
-    if (indexPath.section == INTEREST_SECTION)
+    // Configure the cell...
+    Item *interest = [self getItemAtIndexPath:indexPath];
+    
+    //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
+    cell.companyNameLabel.text = interest.itemName;
+    
+    static NSNumberFormatter *numberFormatter = nil;
+    if (!numberFormatter)
     {
-        InterestCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InterestCell" forIndexPath:indexPath];
-        cell.backgroundColor = [UIColor clearColor];
-        // Set row highlight colour
-        UIView *highlightColour = [[UIView alloc] init];
-        highlightColour.backgroundColor = [UIColor colorWithRed:236.0f/255.0f green:240.0f/255.0f blue:241.0f/255.0f alpha:1];
-        [cell setSelectedBackgroundView:highlightColour];
-        
-        // Configure the cell...
-        Item *interest = self.items[indexPath.row];
-        //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
-        cell.companyNameLabel.text = interest.itemName;
-        
-        static NSNumberFormatter *numberFormatter = nil;
-        if (!numberFormatter)
-        {
-            numberFormatter = [[NSNumberFormatter alloc] init];
-            [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-            [numberFormatter setGroupingSeparator:@","];
-        }
-        
-        //cell.stockQuote.text = [NSString stringWithFormat:@"%@%@%@",@"$", [numberFormatter stringFromNumber:interest.stockQuote], @" (+2.42)"];
-       // cell.stockQuote.text = [NSString stringWithFormat:@"%@",@"(+2.42)"];
+        numberFormatter = [[NSNumberFormatter alloc] init];
+        [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
+        [numberFormatter setGroupingSeparator:@","];
+    }
+    
+    //cell.stockQuote.text = [NSString stringWithFormat:@"%@%@%@",@"$", [numberFormatter stringFromNumber:interest.stockQuote], @" (+2.42)"];
+   // cell.stockQuote.text = [NSString stringWithFormat:@"%@",@"(+2.42)"];
 
-        //Set image. Check image cache first
-        Biz *biz = [Biz sharedBiz];
-        if (biz.imageCache[interest.logoUrl])
-        {
-            cell.logoImageView.image = biz.imageCache[interest.logoUrl];
-        }
-        else
-        {
-            [cell.logoImageView setImageWithURL:[NSURL URLWithString:interest.logoUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                if (error)
-                {
-                    NSLog(@"Invalid Image %@: %@", interest.logoUrl, [error localizedDescription]);
-                }
-            } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-        }
-        
-        return cell;
+    //Set image. Check image cache first
+    Biz *biz = [Biz sharedBiz];
+    if (biz.imageCache[interest.logoUrl])
+    {
+        cell.logoImageView.image = biz.imageCache[interest.logoUrl];
     }
     else
     {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddNewCell" forIndexPath:indexPath];
-        return cell;
+        [cell.logoImageView setImageWithURL:[NSURL URLWithString:interest.logoUrl] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            if (error)
+            {
+                NSLog(@"Invalid Image %@: %@", interest.logoUrl, [error localizedDescription]);
+            }
+        } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
+    
+    return cell;
     
     
     /*
@@ -414,7 +455,7 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return indexPath.section == INTEREST_SECTION;
+    return YES;
 }
 
 
@@ -424,18 +465,21 @@
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
         // Delete the row from the data source
-        Item *interest = self.items[indexPath.row];
+        Item *interest = [self getItemAtIndexPath:indexPath];
         [[Biz sharedBiz] deleteInterest:interest withCompletionHandler:^(NSError *error) {
             NSLog(@"deleted");
         }];
         
-        [self.items removeObjectAtIndex:indexPath.row];
+        //[self.items removeObjectAtIndex:indexPath.row];
+        [self.items removeObject:[self getItemAtIndexPath:indexPath]];
+        [self updateSectionCounts];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert)
     {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
+    [self updateSectionCounts];
 }
 
 
