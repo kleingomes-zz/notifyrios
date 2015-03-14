@@ -469,17 +469,25 @@
         [[Biz sharedBiz] deleteInterest:interest withCompletionHandler:^(NSError *error) {
             NSLog(@"deleted");
         }];
-        
-        //[self.items removeObjectAtIndex:indexPath.row];
+                
+        NSInteger sectionCount = [self tableView:tableView numberOfRowsInSection:indexPath.section];
         [self.items removeObject:[self getItemAtIndexPath:indexPath]];
         [self updateSectionCounts];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        //if only 1 item in section then delete the whole section
+        if (sectionCount == 1)
+        {
+            [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+        }
+        else
+        {
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert)
     {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
-    [self updateSectionCounts];
 }
 
 
