@@ -20,16 +20,15 @@
 
 - (void)viewDidLoad
 {
-    
-    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 
-    
-    //NSURL *websiteUrl = [NSURL URLWithString:@"http://www.google.com"];
     NSURL *websiteUrl = [NSURL URLWithString:self.article.url];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
     [self.webView loadRequest:urlRequest];
+    
+    //the below is needed to remove black bar at the bottom
+    self.webView.opaque = NO;
+    self.webView.backgroundColor = [UIColor clearColor];
 }
 
 - (IBAction)sharePressed:(id)sender {
