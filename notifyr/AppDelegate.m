@@ -10,6 +10,8 @@
 #import <WindowsAzureMessaging/WindowsAzureMessaging.h>
 #import "notifyr-Swift.h"
 #import "Biz.h"
+#import "ECSlidingViewController.h"
+#import "MainTabBarViewController.h"
 
 @implementation AppDelegate
 
@@ -53,7 +55,7 @@
 {
     UIRemoteNotificationType remoteNotifcationTypes = [application enabledRemoteNotificationTypes];
 
-    NSLog(@"Remote Notification Types:%lu", remoteNotifcationTypes);
+    NSLog(@"Remote Notification Types:%lu", (long)remoteNotifcationTypes);
     if (remoteNotifcationTypes == UIRemoteNotificationTypeNone)
     {
         NSLog(@"UIRemoteNotificationTypeNone");
@@ -122,31 +124,65 @@
     NSLog(@"Failed to register for remote notifications: %@", [error description]);
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification: (NSDictionary *)userInfo {
-    NSLog(@"%@", userInfo);
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     
-    NSDictionary *aps1 = userInfo[@"aps"];
+    if (application.applicationState == UIApplicationStateActive)
+    {
+        [self showNotificationWhileActive:userInfo];
+    }
+    else
+    {
+        [self showArticleFromNotification:userInfo];
+    }
     
-    //NSDictionary *aps2 = aps1[@"aps"];
-    //NSString *msg = aps2[@"alert"];
-    
-    NSString *msg = aps1[@"alert"];
+    completionHandler(UIBackgroundFetchResultNewData);
+}
+
+- (void)showNotificationWhileActive:(NSDictionary *)userInfo
+{
+    NSDictionary *aps = userInfo[@"aps"];
+    NSString *msg = aps[@"alert"];
     
     NSLog(@"msg: %@", msg);
-
-
-    
-    //UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:
-    //                      [[userInfo objectForKey:@"aps"] valueForKey:@"alert"] delegate:nil cancelButtonTitle:
-    //                      @"OK" otherButtonTitles:nil, nil];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:msg delegate:nil cancelButtonTitle:
                           @"OK" otherButtonTitles:nil, nil];
-
-    
     [alert show];
 }
 
+- (void)showArticleFromNotification:(NSDictionary *)userInfo
+{
+    NSDictionary *notificationBody = (NSDictionary *)userInfo[@"d"];
+    NSNumber *articleId = notificationBody[@"articleId"];
+    NSString *url = notificationBody[@"articleUrl"];
+
+    if (articleId == nil || url == nil)
+    {
+        NSLog(@"Missing article info in notification");
+        return;
+    }
+    
+    Article *article = [[Article alloc] init];
+    article.articleId = articleId;
+    article.url = url;
+    self.startingArticle = article;
+    
+    [self showStartingArticle];
+}
+
+- (void)showStartingArticle
+{
+    if ([self.window.rootViewController isKindOfClass:[ECSlidingViewController class]])
+    {
+        ECSlidingViewController *rootViewController = (ECSlidingViewController *)self.window.rootViewController;
+        if ([rootViewController.topViewController isKindOfClass:[MainTabBarViewController class]])
+        {
+            MainTabBarViewController *mainTabBarViewController = (MainTabBarViewController *)rootViewController.topViewController;
+            [mainTabBarViewController showArticle:self.startingArticle];
+            self.startingArticle = nil;
+        }
+    }
+}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

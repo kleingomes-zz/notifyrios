@@ -11,6 +11,9 @@
 #import "AllItemsArticleFetcher.h"
 #import "BreakingNewsArticleFetcher.h"
 #import "FavouriteArticleFetcher.h"
+#import "AppDelegate.h"
+#import "ArticleWebViewController.h"
+
 @interface MainTabBarViewController ()
 
 @end
@@ -51,6 +54,30 @@
         navigationController.viewControllers = @[favouritesViewController];
     }
     
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    if (appDelegate.startingArticle != nil)
+    {
+        [self showArticle:appDelegate.startingArticle];
+        appDelegate.startingArticle = nil;
+    }
+}
+
+- (void)showArticle:(Article *)article
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setSelectedIndex:ALL_ITEMS_INDEX];
+        
+        ArticleWebViewController *articleWebViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticleWebViewController"];
+        articleWebViewController.article = article;
+        
+        UINavigationController *allItemsNavigationController = self.viewControllers[ALL_ITEMS_INDEX];
+        [allItemsNavigationController pushViewController:articleWebViewController animated:YES];
+    });
 }
 
 @end

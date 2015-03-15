@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Article.h"
 
 @interface MainTabBarViewController : UITabBarController
+
+- (void)showArticle:(Article *)article;
 
 @end

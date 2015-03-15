@@ -12,9 +12,6 @@ class AppStartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //
-
 
         // Do any additional setup after loading the view.
     }
@@ -26,17 +23,10 @@ class AppStartViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {            
         var vc = self.storyboard?.instantiateViewControllerWithIdentifier("ECSlidingViewController") as UIViewController
-        presentViewController(vc, animated: false, completion: nil)
+        //presentViewController(vc, animated: false, completion: nil)
+        
+        var appDelegate = UIApplication.sharedApplication().delegate!
+        appDelegate.window!!.rootViewController = vc;
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

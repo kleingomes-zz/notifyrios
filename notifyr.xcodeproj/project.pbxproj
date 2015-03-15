@@ -704,6 +704,7 @@
 		E0614D831A0FBC8A0015DDA2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF4A68B21A9996FD002A8B50 /* AppStartViewController.swift */,
 				E0931D71190ADBF5001A991F /* InterestsViewController.h */,
 				E0931D72190ADBF5001A991F /* InterestsViewController.m */,
 				E0D3A5A919741CB9008C445D /* ArticlesViewController.h */,
@@ -721,7 +722,6 @@
 				E0064E4E1A50F65200C665AE /* MainTabBarViewController.h */,
 				E0064E4F1A50F65200C665AE /* MainTabBarViewController.m */,
 				AF4A68AD1A999459002A8B50 /* notifyr-Bridging-Header.h */,
-				AF4A68B21A9996FD002A8B50 /* AppStartViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
