@@ -11,6 +11,6 @@
 
 @interface ArticleWebViewController : UIViewController
 
-@property (nonatomic, weak) Article *article;
+@property (nonatomic, strong) Article *article;
 
 @end
