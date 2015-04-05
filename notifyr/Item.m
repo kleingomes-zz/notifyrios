@@ -19,6 +19,7 @@
         interest.itemTypeName = [Utils getStringFromDictionary:dictionary name:@"ItemTypeName"];
     interest.logoUrl = [Utils getStringFromDictionary:dictionary name:@"IUrl"];
     interest.itemName = [Utils getStringFromDictionary:dictionary name:@"Name"];
+    interest.priority = [Utils getNumberFromDictionary:dictionary name:@"Priority"];
     interest.primaryBackgroundColour = [Utils getStringFromDictionary:dictionary name:@"PrimaryBackgroundColour"];
     interest.primaryBackgroundColourAlt = [Utils getStringFromDictionary:dictionary name:@"PrimaryBackgroundColourAlt"];
     interest.primaryForegroundColour = [Utils getStringFromDictionary:dictionary name:@"PrimaryForegroundColour"];
