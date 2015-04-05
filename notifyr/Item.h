@@ -11,6 +11,12 @@
 #import "Product.h"
 #import "EventType.h"
 
+typedef NS_ENUM(NSUInteger, ItemPriority) {
+    ItemPriorityHigh = 3,
+    ItemPriorityMedium = 2,
+    ItemPriorityLow = 1
+};
+
 @interface Item : NSObject
 
 @property (nonatomic) NSNumber *itemId;
@@ -18,6 +24,7 @@
 @property (nonatomic, strong) NSString *itemTypeName;
 @property (nonatomic) NSString *logoUrl;
 @property (nonatomic) NSNumber *itemTypeId;
+@property (nonatomic) NSNumber *priority;
 @property (nonatomic) NSString *primaryForegroundColour;
 @property (nonatomic) NSString *primaryForegroundColourAlt;
 @property (nonatomic) NSString *primaryBackgroundColour;

@@ -427,27 +427,27 @@
         } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     }
     
+    NSString *priorityString;
+    if (interest.priority.integerValue == ItemPriorityHigh)
+    {
+        priorityString = @"High";
+    }
+    else if (interest.priority.integerValue == ItemPriorityMedium)
+    {
+        priorityString = @"Medium";
+    }
+    else if (interest.priority.integerValue == ItemPriorityLow)
+    {
+        priorityString = @"Low";
+    }
+    else
+    {
+        priorityString = @"Unknown";
+    }
+
+    cell.priorityLabel.text = [NSString stringWithFormat:@"Priority: %@", priorityString];
+    
     return cell;
-    
-    
-    /*
-    cell.contentView.backgroundColor = [UIColor clearColor];
-    //UIView *whiteRoundedCornerView = [[UIView alloc] initWithFrame:CGRectMake(10,10,300,70)];
-    UIView *whiteRoundedCornerView = [[UIView alloc] initWithFrame:CGRectMake(10,5,300,70)];
-    whiteRoundedCornerView.backgroundColor = [UIColor whiteColor];
-    whiteRoundedCornerView.layer.masksToBounds = NO;
-    whiteRoundedCornerView.layer.cornerRadius = 3.0;
-    whiteRoundedCornerView.layer.shadowOffset = CGSizeMake(-1, 1);
-    whiteRoundedCornerView.layer.shadowOpacity = 0.2;
-    whiteRoundedCornerView.alpha = 0.95;
-    [cell.contentView addSubview:whiteRoundedCornerView];
-    [cell.contentView sendSubviewToBack:whiteRoundedCornerView];
-     */
-    
-    
-//    UIView *bgColorView = [[UIView alloc] init];
-//    bgColorView.backgroundColor = [UIColor redColor];
-//    [cell setSelectedBackgroundView:bgColorView];
 }
 
 
@@ -464,25 +464,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        // Delete the row from the data source
-        Item *interest = [self getItemAtIndexPath:indexPath];
-        [[Biz sharedBiz] deleteInterest:interest withCompletionHandler:^(NSError *error) {
-            NSLog(@"deleted");
-        }];
-                
-        NSInteger sectionCount = [self tableView:tableView numberOfRowsInSection:indexPath.section];
-        [self.items removeObject:[self getItemAtIndexPath:indexPath]];
-        [self updateSectionCounts];
-        
-        //if only 1 item in section then delete the whole section
-        if (sectionCount == 1)
-        {
-            [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-        }
-        else
-        {
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        }
+        [self deleteItemAtIndexPath:indexPath];
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert)
     {
@@ -490,6 +472,81 @@
     }
 }
 
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        [self deleteItemAtIndexPath:indexPath];
+    }];
+    
+    UITableViewRowAction *moreAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Set Priority" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        [self getPriorityForItemAtIndexPath:indexPath];
+    }];
+    moreAction.backgroundColor = [UIColor blueColor];
+    
+    return @[deleteAction, moreAction];
+}
+
+- (void)deleteItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Delete the row from the data source
+    Item *interest = [self getItemAtIndexPath:indexPath];
+    [[Biz sharedBiz] deleteInterest:interest withCompletionHandler:^(NSError *error) {
+        NSLog(@"deleted");
+    }];
+    
+    NSInteger sectionCount = [self tableView:self.tableView numberOfRowsInSection:indexPath.section];
+    [self.items removeObject:[self getItemAtIndexPath:indexPath]];
+    [self updateSectionCounts];
+    
+    //if only 1 item in section then delete the whole section
+    if (sectionCount == 1)
+    {
+        [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
+    }
+    else
+    {
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+- (void)getPriorityForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    Item *item = [self getItemAtIndexPath:indexPath];
+    
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Priority" message:@"Set Priority" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"High" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        item.priority = @(ItemPriorityHigh);
+        [self saveItem:item];
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Medium" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        item.priority = @(ItemPriorityMedium);
+        [self saveItem:item];
+    }]];
+    
+    [alertController addAction:[UIAlertAction actionWithTitle:@"Low" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        item.priority = @(ItemPriorityLow);
+        [self saveItem:item];
+    }]];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)saveItem:(Item *)item
+{
+    NSInteger row = [self.items indexOfObject:item];
+    if (row != NSNotFound)
+    {
+        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+    [[Biz sharedBiz] saveInterest:item withCompletionHandler:^(NSError *error) {
+        
+    }];
+}
 
 /*
 // Override to support rearranging the table view.

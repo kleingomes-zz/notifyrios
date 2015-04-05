@@ -336,6 +336,7 @@
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     dict[@"UserId"] = self.userId;
     dict[@"ItemId"] = interest.itemId;
+    dict[@"Priority"] = interest.priority;
     
     NSArray *interestsArray = @[dict];
     
@@ -707,6 +708,8 @@
 {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
+    
+    NSLog(@"API call: %@", request.URL.absoluteString);
     
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request
                                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

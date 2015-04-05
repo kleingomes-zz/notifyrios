@@ -28,7 +28,7 @@
     return dictionary[name];
 }
 
-+ (BOOL *)getBoolFromDictionary:(NSDictionary *)dictionary name:(NSString *)name
++ (BOOL)getBoolFromDictionary:(NSDictionary *)dictionary name:(NSString *)name
 {
     if (dictionary[name] == [NSNull null])
     {
