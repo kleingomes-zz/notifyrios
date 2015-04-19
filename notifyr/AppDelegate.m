@@ -12,6 +12,7 @@
 #import "Biz.h"
 #import "ECSlidingViewController.h"
 #import "MainTabBarViewController.h"
+#import "ArticleWebViewController.h"
 
 @implementation AppDelegate
 
@@ -210,5 +211,27 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    if ([self.window.rootViewController isKindOfClass:[ECSlidingViewController class]])
+    {
+        ECSlidingViewController *slidingViewController = (ECSlidingViewController *) self.window.rootViewController;
+        if ([slidingViewController.topViewController isKindOfClass:[UITabBarController class]])
+        {
+            UITabBarController *tabBarController = (UITabBarController *)slidingViewController.topViewController;
+            if ([tabBarController.selectedViewController isKindOfClass:[UINavigationController class]])
+            {
+                UINavigationController *navigationController = ((UINavigationController *) tabBarController.selectedViewController);
+                if ([navigationController.topViewController isKindOfClass:[ArticleWebViewController class]])
+                {
+                    return UIInterfaceOrientationMaskAll;
+                }
+            }
+        }
+    }
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 
 @end

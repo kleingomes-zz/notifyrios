@@ -8,7 +8,7 @@
 
 #import "ArticleWebViewController.h"
 
-@interface ArticleWebViewController ()
+@interface ArticleWebViewController () <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
@@ -25,10 +25,14 @@
     NSURL *websiteUrl = [NSURL URLWithString:self.article.url];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:websiteUrl];
     [self.webView loadRequest:urlRequest];
+    self.webView.delegate = self;
+    //self.navigationController.hidesBarsOnSwipe = YES;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     //the below is needed to remove black bar at the bottom
-    self.webView.opaque = NO;
-    self.webView.backgroundColor = [UIColor clearColor];
+//    self.webView.opaque = NO;
+//    self.webView.backgroundColor = [UIColor clearColor];
+    
 }
 
 - (IBAction)sharePressed:(id)sender {
@@ -41,6 +45,11 @@
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     [self.navigationController presentViewController:activityViewController animated:YES completion:^{
     }];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    self.title = theTitle;
 }
 
 @end
