@@ -22,7 +22,7 @@ class AppStartViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {            
-        var vc = self.storyboard?.instantiateViewControllerWithIdentifier("ECSlidingViewController") as UIViewController
+        var vc = self.storyboard?.instantiateViewControllerWithIdentifier("ECSlidingViewController") as! UIViewController
         //presentViewController(vc, animated: false, completion: nil)
         
         var appDelegate = UIApplication.sharedApplication().delegate!
