@@ -201,21 +201,21 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    if([self.delegate isKindOfClass:[ItemArticleFetcher class]])
-    {
-        ItemArticleFetcher *itemArticleFetcher  = (ItemArticleFetcher *) self.delegate;
-        if(itemArticleFetcher.item.primaryBackgroundColour != nil && itemArticleFetcher.item.primaryBackgroundColourAlt != nil)
-        {
-            //NSLog(itemArticleFetcher.item.primaryBackgroundColour);
-            UIColor *lightColoir = [self getUIColorObjectFromHexString:itemArticleFetcher.item.primaryBackgroundColour alpha:1];
-            UIColor *darkColour = [self getUIColorObjectFromHexString:itemArticleFetcher.item.primaryBackgroundColourAlt alpha:1];
-            self.navigationController.navigationBar.barTintColor = lightColoir;
-            //   self.navigationController.navigationBar.tintColor = darkColour;
-            self.navigationController.navigationBar.translucent = NO;
-            _popularNewestView.backgroundColor = darkColour;
-        }
-       
-    }
+//    if([self.delegate isKindOfClass:[ItemArticleFetcher class]])
+//    {
+//        ItemArticleFetcher *itemArticleFetcher  = (ItemArticleFetcher *) self.delegate;
+//        if(itemArticleFetcher.item.primaryBackgroundColour != nil && itemArticleFetcher.item.primaryBackgroundColourAlt != nil)
+//        {
+//            //NSLog(itemArticleFetcher.item.primaryBackgroundColour);
+//            UIColor *lightColoir = [self getUIColorObjectFromHexString:itemArticleFetcher.item.primaryBackgroundColour alpha:1];
+//            UIColor *darkColour = [self getUIColorObjectFromHexString:itemArticleFetcher.item.primaryBackgroundColourAlt alpha:1];
+//            self.navigationController.navigationBar.barTintColor = lightColoir;
+//            //   self.navigationController.navigationBar.tintColor = darkColour;
+//            self.navigationController.navigationBar.translucent = NO;
+//            _popularNewestView.backgroundColor = darkColour;
+//        }
+//       
+//    }
 
     [self initObserver];
     //[self initItems];
@@ -223,12 +223,12 @@
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-   UIColor *lightColour = [self getUIColorObjectFromHexString:@"346ADC" alpha:1];
-   UIColor *darkColour = [self getUIColorObjectFromHexString:@"5197E9" alpha:1];
-    self.navigationController.navigationBar.barTintColor = lightColour;
-    //   self.navigationController.navigationBar.tintColor = darkColour;
-    self.navigationController.navigationBar.translucent = NO;
-    _popularNewestView.backgroundColor = darkColour;
+//   UIColor *lightColour = [self getUIColorObjectFromHexString:@"346ADC" alpha:1];
+//   UIColor *darkColour = [self getUIColorObjectFromHexString:@"5197E9" alpha:1];
+//    self.navigationController.navigationBar.barTintColor = lightColour;
+//    //   self.navigationController.navigationBar.tintColor = darkColour;
+//    self.navigationController.navigationBar.translucent = NO;
+//    _popularNewestView.backgroundColor = darkColour;
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center removeObserver:self.articleObserver];
 }
