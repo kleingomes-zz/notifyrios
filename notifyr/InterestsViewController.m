@@ -547,7 +547,28 @@
         
     }];
 }
-
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 30;
+}
+- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+    
+    header.textLabel.textColor = [UIColor blackColor];
+    header.textLabel.font = [UIFont boldSystemFontOfSize:15];
+    CGRect headerFrame = header.frame;
+    header.textLabel.frame = headerFrame;
+    header.textLabel.textAlignment = NSTextAlignmentLeft;
+    // Background color
+    view.tintColor = [UIColor colorWithRed:240/255.0 green:240/255.0  blue:240/255.0  alpha:1.0];
+    
+    // Text Color
+    [header.textLabel setTextColor:[UIColor darkGrayColor]];
+    
+    // Another way to set the background color
+    // Note: does not preserve gradient effect of original header
+    // header.contentView.backgroundColor = [UIColor blackColor];
+}
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath

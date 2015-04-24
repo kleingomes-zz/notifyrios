@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mc5-8f-0e3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mc5-8f-0e3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -15,8 +15,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="Sey-AU-hIQ">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
+                        <view key="tableHeaderView" hidden="YES" contentMode="scaleToFill" id="Sey-AU-hIQ">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" barStyle="black" searchBarStyle="minimal" placeholder=" Filter                                                   " translatesAutoresizingMaskIntoConstraints="NO" id="3td-4h-T0q">
@@ -290,13 +290,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="4Nf-4M-ecR" secondAttribute="trailing" constant="10" id="w0F-ps-gf3"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="COb-tJ-2Rr" userLabel="Border">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
-                                            <color key="backgroundColor" white="0.85664335660000002" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="ms6-xS-T2S"/>
-                                            </constraints>
-                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="Ngo-Cz-zpM" secondAttribute="bottom" id="4sT-EW-Hmb"/>
@@ -309,7 +302,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="borderLineView" destination="COb-tJ-2Rr" id="t8J-8C-bdM"/>
                                     <outlet property="dateLabel" destination="4Nf-4M-ecR" id="g0N-nq-eor"/>
                                     <outlet property="mainImageView" destination="Ngo-Cz-zpM" id="FFR-ft-vAv"/>
                                     <outlet property="score" destination="qgd-vC-ay2" id="x64-B5-tUl"/>
@@ -887,7 +879,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Creating Guest Account..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNd-Yu-XLz">
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Creating Guest Account..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNd-Yu-XLz">
                                 <rect key="frame" x="63" y="387" width="225" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -948,6 +940,29 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Main Menu" id="hfC-Y2-7Rm">
                                 <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="zPL-ac-x59">
+                                        <rect key="frame" x="0.0" y="172" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zPL-ac-x59" id="223-ZW-xcd">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.newspaper 2.png" translatesAutoresizingMaskIntoConstraints="NO" id="YSm-qA-t2R">
+                                                    <rect key="frame" x="7" y="0.0" width="53" height="53"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Interests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfG-h6-uUP">
+                                                    <rect key="frame" x="68" y="15" width="181" height="26"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="DBm-XG-iXu" kind="custom" customClass="ECSlidingSegue" id="pEz-P7-tOM"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell hidden="YES" alpha="0.0" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="54" id="tGm-Lp-cem">
                                         <rect key="frame" x="0.0" y="118" width="320" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -967,29 +982,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="zPL-ac-x59">
-                                        <rect key="frame" x="0.0" y="172" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zPL-ac-x59" id="223-ZW-xcd">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appbar.newspaper 2.png" translatesAutoresizingMaskIntoConstraints="NO" id="YSm-qA-t2R">
-                                                    <rect key="frame" x="7" y="-5" width="53" height="53"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Interests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfG-h6-uUP">
-                                                    <rect key="frame" x="68" y="9" width="181" height="26"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="DBm-XG-iXu" kind="custom" customClass="ECSlidingSegue" id="pEz-P7-tOM"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell hidden="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nPG-FH-epD">
                                         <rect key="frame" x="0.0" y="304" width="320" height="44"/>
@@ -2532,7 +2524,6 @@ This document was last updated on May 24, 2014</string>
                     <connections>
                         <segue destination="FMW-SP-44s" kind="relationship" relationship="viewControllers" id="utA-gC-4WW"/>
                         <segue destination="DGi-rp-bWL" kind="relationship" relationship="viewControllers" id="8Ou-6D-6Lo"/>
-                        <segue destination="3zd-SM-dzs" kind="relationship" relationship="viewControllers" id="izc-QD-YZd"/>
                         <segue destination="XRp-77-G1C" kind="relationship" relationship="viewControllers" id="3KW-7b-thK"/>
                     </connections>
                 </tabBarController>

@@ -21,8 +21,8 @@
 @implementation MainTabBarViewController
 
 #define ALL_ITEMS_INDEX 1
-#define BREAKING_NEWS_INDEX 2
-#define FAVOURITES_INDEX 3
+//#define BREAKING_NEWS_INDEX 2
+#define FAVOURITES_INDEX 2
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,15 +35,15 @@
         UINavigationController *navigationController = (UINavigationController *) self.viewControllers[ALL_ITEMS_INDEX];
         navigationController.viewControllers = @[allItemsViewController];
     }
-    
-    if ([self.viewControllers[BREAKING_NEWS_INDEX] isKindOfClass:[UINavigationController class]])
-    {
-        ArticlesViewController *breakingNewsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticlesViewController"];
-        breakingNewsViewController.delegate = [[BreakingNewsArticleFetcher alloc] init];
-        
-        UINavigationController *navigationController = (UINavigationController *) self.viewControllers[BREAKING_NEWS_INDEX];
-        navigationController.viewControllers = @[breakingNewsViewController];
-    }
+//    
+//    if ([self.viewControllers[BREAKING_NEWS_INDEX] isKindOfClass:[UINavigationController class]])
+//    {
+//        ArticlesViewController *breakingNewsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"ArticlesViewController"];
+//        breakingNewsViewController.delegate = [[BreakingNewsArticleFetcher alloc] init];
+//        
+//        UINavigationController *navigationController = (UINavigationController *) self.viewControllers[BREAKING_NEWS_INDEX];
+//        navigationController.viewControllers = @[breakingNewsViewController];
+//    }
     
     if ([self.viewControllers[FAVOURITES_INDEX] isKindOfClass:[UINavigationController class]])
     {

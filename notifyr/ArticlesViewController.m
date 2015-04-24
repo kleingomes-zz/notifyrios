@@ -257,7 +257,7 @@
     ArticleCell *cell = (ArticleCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier
                                                                                            forIndexPath:indexPath];
     
-    cell.leftUtilityButtons = [self leftButtons];
+    //cell.leftUtilityButtons = [self leftButtons];
     cell.rightUtilityButtons = [self rightButtons];
     cell.delegate = self;
    
@@ -304,10 +304,10 @@
 {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
     [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:239.0f/255.0f green:244.0f/255.0f blue:255.0f/255.0f alpha:1.0]
+     [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]
                                                  icon:[UIImage imageNamed:@"appbar.flag.png"]];
     [rightUtilityButtons sw_addUtilityButtonWithColor:
-     [UIColor colorWithRed:239.0f/255.0f green:244.0f/255.0f blue:255.0f/255.0f alpha:1.0]
+     [UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0]
                                                  icon:[UIImage imageNamed:@"appbar.star.png"]];
     
     return rightUtilityButtons;
