@@ -519,7 +519,7 @@
     }]];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"1 - 3" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        item.priority = @(ItemPriorityHigh);
+        item.priority = @(ItemPriorityLow);
         [self saveItem:item];
     }]];
     
@@ -529,7 +529,7 @@
     }]];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"7+" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        item.priority = @(ItemPriorityLow);
+        item.priority = @(ItemPriorityHigh);
         [self saveItem:item];
     }]];
     
