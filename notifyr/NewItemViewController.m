@@ -203,6 +203,7 @@
     }
     else
     {
+        item.priority = @(ItemPriorityMedium);
         [self.userItems addObject:item];
         [[Biz sharedBiz] saveInterest:item withCompletionHandler:^(NSError *error) {
             if (error != nil)

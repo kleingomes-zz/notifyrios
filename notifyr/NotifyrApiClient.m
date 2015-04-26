@@ -334,7 +334,6 @@
     //[request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-    dict[@"UserId"] = self.userId;
     dict[@"ItemId"] = interest.itemId;
     dict[@"Priority"] = interest.priority;
     
