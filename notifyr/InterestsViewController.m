@@ -533,16 +533,18 @@
         [self saveItem:item];
     }]];
     
+    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
 - (void)saveItem:(Item *)item
 {
-    NSInteger row = [self.items indexOfObject:item];
-    if (row != NSNotFound)
-    {
-        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-    }
+//    NSInteger row = [self.items indexOfObject:item];
+//    if (row != NSNotFound)
+//    {
+//        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
+//    }
     [[Biz sharedBiz] saveInterest:item withCompletionHandler:^(NSError *error) {
         
     }];
