@@ -445,7 +445,7 @@
         priorityString = @"Unknown";
     }
 
-    cell.priorityLabel.text = [NSString stringWithFormat:@"Priority: %@", priorityString];
+    cell.priorityLabel.text = [NSString stringWithFormat:@"Frequency: %@", priorityString];
     
     return cell;
 }
@@ -478,7 +478,7 @@
         [self deleteItemAtIndexPath:indexPath];
     }];
     
-    UITableViewRowAction *moreAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Set Priority" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+    UITableViewRowAction *moreAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"Frequency" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         [self getPriorityForItemAtIndexPath:indexPath];
     }];
     moreAction.backgroundColor = [UIColor blueColor];
@@ -513,22 +513,22 @@
 {
     Item *item = [self getItemAtIndexPath:indexPath];
     
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Priority" message:@"Set Priority" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Frequency" message:@"How many notifications would you like to receive per week?" preferredStyle:UIAlertControllerStyleActionSheet];
     
     [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
     }]];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"High" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [alertController addAction:[UIAlertAction actionWithTitle:@"1 - 3" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         item.priority = @(ItemPriorityHigh);
         [self saveItem:item];
     }]];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Medium" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [alertController addAction:[UIAlertAction actionWithTitle:@"3 - 6" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         item.priority = @(ItemPriorityMedium);
         [self saveItem:item];
     }]];
     
-    [alertController addAction:[UIAlertAction actionWithTitle:@"Low" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+    [alertController addAction:[UIAlertAction actionWithTitle:@"7+" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         item.priority = @(ItemPriorityLow);
         [self saveItem:item];
     }]];
