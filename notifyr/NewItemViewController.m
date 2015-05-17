@@ -261,6 +261,16 @@
 }
 
 
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    if ([self.inputTextField isFirstResponder])
+    {
+        [self.inputTextField resignFirstResponder];
+    }
+}
+
 #pragma mark - Convience Methods
 
 - (BOOL)userHasItem:(Item *)item
