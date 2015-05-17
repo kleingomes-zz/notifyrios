@@ -282,6 +282,8 @@
                 NSLog(@"Invalid Image %@: %@", article.iUrl, [error localizedDescription]);
             }
         } usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    } else {
+        [cell.mainImageView setImage:nil]; //setImage:[UIImage imageNamed:@"appbar.flag.png"]];
     }
     // Remove the border for the first cell
     if(indexPath.row == 0)
