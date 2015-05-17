@@ -47,7 +47,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
@@ -269,8 +269,6 @@
     highlightColour.backgroundColor = [UIColor colorWithRed:236.0f/255.0f green:240.0f/255.0f blue:241.0f/255.0f alpha:1];
     [cell setSelectedBackgroundView:highlightColour];
     
-    NSLog(@"indexPath section:%lu row:%lu", indexPath.section, indexPath.row);
-    
     // Configure the cell...
     Item *interest = [self getItemAtIndexPath:indexPath];
     
@@ -364,7 +362,6 @@
 {
     NSString *sectionName = [self getSectionName:indexPath.section];
     NSArray *sectionArray = self.sections[sectionName];
-    NSLog(@"row: %ld", (long)indexPath.row);
     return [sectionArray objectAtIndex:indexPath.row];
 }
 
