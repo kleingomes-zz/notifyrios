@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Nelson Narciso. All rights reserved.
 //
 
-#import "InterestsViewController.h"
+#import "ItemsViewController.h"
 #import "Item.h"
 #import "InterestCell.h"
 #import "Biz.h"
@@ -18,7 +18,7 @@
 #import <UIImageView+UIActivityIndicatorForSDWebImage.h>
 #import "ItemArticleFetcher.h"
 
-@interface InterestsViewController ()
+@interface ItemsViewController ()
 
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) NSDictionary *sections;
@@ -28,7 +28,7 @@
 @end
 
 
-@implementation InterestsViewController
+@implementation ItemsViewController
 
 - (void)viewDidLoad
 {

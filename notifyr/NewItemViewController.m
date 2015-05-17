@@ -18,7 +18,6 @@
 @property (strong, nonatomic) NSArray *popularItems;
 @property (strong, nonatomic) NSArray *suggestedItems;
 @property (strong, nonatomic) NSMutableArray *userItems;
-@property (strong, nonatomic) NSArray *originalUserItems;
 @property (nonatomic) BOOL loading;
 @property (nonatomic) BOOL isShowingPopular;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
@@ -45,13 +44,11 @@
 {
     [[Biz sharedBiz] getUserItemsWithCompletion:^(NSArray *items, NSError *error) {
         self.userItems = [[NSMutableArray alloc] initWithArray:items];
-        self.originalUserItems = items;
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
     }];
 }
-
 
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
@@ -259,8 +256,6 @@
     
     return YES;
 }
-
-
 
 - (void)viewWillDisappear:(BOOL)animated
 {
