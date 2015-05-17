@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Nelson Narciso. All rights reserved.
 //
 
-#import "InterestsViewController.h"
+#import "ItemsViewController.h"
 #import "Item.h"
 #import "InterestCell.h"
 #import "Biz.h"
@@ -18,28 +18,46 @@
 #import <UIImageView+UIActivityIndicatorForSDWebImage.h>
 #import "ItemArticleFetcher.h"
 
-@interface InterestsViewController ()
+@interface ItemsViewController ()
 
 @property (nonatomic, strong) NSMutableArray *items;
-@property (nonatomic, strong) id interestObserver;
-
-@property (nonatomic, strong) MEZoomAnimationController *zoomController;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-
-@property (nonatomic, strong) NSMutableDictionary *sectionCounts;
+@property (nonatomic, strong) NSDictionary *sections;
+@property (nonatomic, strong) id interestUpdateObserver;
+@property (nonatomic, strong) id interestDeleteObserver;
 
 @end
 
 
-@implementation InterestsViewController
+@implementation ItemsViewController
 
-- (MEZoomAnimationController *) zoomController
+- (void)viewDidLoad
 {
-    if (!_zoomController)
-    {
-        _zoomController = [[MEZoomAnimationController alloc] init];
-    }
-    return _zoomController;
+    [super viewDidLoad];
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refreshAction) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    
+    [self initObservers];
+    
+    [self initItems];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    // deselect the table cell
+    //[self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:false];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -47,18 +65,9 @@
     return 60.0;
 }
 
-- (NSMutableDictionary *)sectionCounts
-{
-    if (_sectionCounts == nil)
-    {
-        _sectionCounts = [[NSMutableDictionary alloc] init];
-    }
-    return _sectionCounts;
-}
-
 - (NSMutableArray *)items
 {
-    if (!_items)
+    if (_items == nil)
     {
         _items = [[NSMutableArray alloc] init];
     }
@@ -71,11 +80,6 @@
 }
 
 - (IBAction)menuAction:(id)sender {
-    //[self makeBlurredScreenshot];
-    
-    //self.slidingViewController.delegate = self.zoomController;
-    
-    
     if ([self.slidingViewController currentTopViewPosition] == ECSlidingViewControllerTopViewPositionAnchoredRight) {
         [self.slidingViewController resetTopViewAnimated:YES];
     }
@@ -88,23 +92,6 @@
         self.slidingViewController.topViewController.view.layer.shadowRadius = 10.0f;
         self.slidingViewController.topViewController.view.layer.shadowColor = [UIColor blackColor].CGColor;
     }
-    
-}
-
-- (void)makeBlurredScreenshot
-{
-    //UIGraphicsBeginImageContext(self.view.window.bounds.size);
-    //[self.view.window.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
-    UIGraphicsBeginImageContext(self.view.bounds.size);
-    [self.view drawViewHierarchyInRect:self.view.bounds afterScreenUpdates:YES];
-    
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    UIImage *lightImage = [newImage applyLightEffect];
-
-    [self.view addSubview:[[UIImageView alloc] initWithImage:lightImage]];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -120,73 +107,99 @@
 }
 
 
-- (void)initObserver
+#pragma mark - Observer Item Changes
+
+- (void)initObservers
 {
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
     
-    self.interestObserver = [center addObserverForName:InterestsUpdateNotification object:nil
+    
+    self.interestUpdateObserver = [center addObserverForName:InterestsUpdateNotification object:nil
                                                  queue:mainQueue usingBlock:^(NSNotification *notification) {
                                                      NSArray *interests = notification.userInfo[@"interests"];
                                                      
                                                      NSLog(@"Got %lu interests", (unsigned long)[interests count]);
                                                      
                                                      [self updateInterests:interests];
-                                                     [self.refreshControl endRefreshing];
-                                                     [self.tableView reloadData];
                                                  }];
     
-    self.interestObserver = [center addObserverForName:DeleteInterestNotification object:nil
+    self.interestDeleteObserver = [center addObserverForName:DeleteInterestNotification object:nil
                                                  queue:mainQueue usingBlock:^(NSNotification *notification) {
                                                      NSArray *interests = notification.userInfo[@"interests"];
                                                      
                                                      [self deleteItems:interests];
-                                                     [self.refreshControl endRefreshing];
-                                                     [self.tableView reloadData];
+                                                     //[self.refreshControl endRefreshing];
                                                  }];
+}
+
+- (void)removeObservers
+{
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center removeObserver:self.interestUpdateObserver];
+    [center removeObserver:self.interestDeleteObserver];
 }
 
 - (void)updateInterests:(NSArray *)updatedInterests
 {
-    for (Item *updatedInterest in updatedInterests)
-    {
-        Item *foundInterest = nil;
-        for (Item *interest in self.items)
-        {
-            if ([updatedInterest.itemId isEqualToNumber:interest.itemId])
-            {
-                foundInterest = interest;
-                break;
-            }
-        }
-        if (foundInterest)
-        {
-            //todo: update interest
-        }
-        else
-        {
-            [self.items addObject:updatedInterest];
-        }
-    }
+    [self.items removeAllObjects];
+    [self.items addObjectsFromArray:updatedInterests];
     
-    [self updateSectionCounts];
+//    for (Item *updatedInterest in updatedInterests)
+//    {
+//        Item *foundInterest = nil;
+//        for (Item *interest in self.items)
+//        {
+//            if ([updatedInterest.itemId isEqualToNumber:interest.itemId])
+//            {
+//                foundInterest = interest;
+//                break;
+//            }
+//        }
+//        if (foundInterest)
+//        {
+//            //todo: update interest
+//        }
+//        else
+//        {
+//            [self.items addObject:updatedInterest];
+//        }
+//    }
+    
+    [self.items sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        Item *item1 = (Item *)obj1;
+        Item *item2 = (Item *)obj2;
+        NSComparisonResult result = [item1.itemTypeName compare:item2.itemTypeName options:NSCaseInsensitiveSearch];
+        if (result == NSOrderedSame)
+        {
+            result = [item1.itemName compare:item2.itemName options:NSCaseInsensitiveSearch];
+        }
+        return result;
+    }];
+    [self updateSections];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    });
 }
 
-- (void)updateSectionCounts
+- (void)updateSections
 {
-    [self.sectionCounts removeAllObjects];
+    NSMutableDictionary *sections = [[NSMutableDictionary alloc] init];
+    NSString *sectionName = @"";
+    NSMutableArray *sectionItems;
     for (Item *item in self.items)
     {
-        if (self.sectionCounts[item.itemTypeName] == nil)
+        if (![item.itemTypeName isEqualToString:sectionName])
         {
-            self.sectionCounts[item.itemTypeName] = @1;
+            sectionName = item.itemTypeName;
+            sectionItems = [[NSMutableArray alloc] init];
+            sections[sectionName] = sectionItems;
         }
-        else
-        {
-            NSInteger sectionCount = ((NSNumber *)self.sectionCounts[item.itemTypeName]).integerValue + 1;
-            self.sectionCounts[item.itemTypeName] = @(sectionCount);
-        }
+        [sectionItems addObject:item];
     }
+    self.sections = sections;
 }
 
 - (void)deleteItems:(NSArray *)deletedItems
@@ -207,182 +220,44 @@
             }
         }
     }
-    [self updateSectionCounts];
+    [self updateSections];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
 }
-
-- (Item *)getItemMatchingItem:(Item *)itemToFind
-{
-    for (Item *item in self.items)
-    {
-        if ([item.itemId isEqualToNumber:itemToFind.itemId])
-        {
-            return item;
-        }
-    }
-    return nil;
-}
-
-
 
 - (void)refreshAction
 {
     [[Biz sharedBiz] getInterests];
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (NSString *)getSectionName:(NSInteger)section
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-- (UIColor *)getUIColorObjectFromHexString:(NSString *)hexStr alpha:(CGFloat)alpha
-{
-    // Convert hex string to an integer
-    unsigned int hexint = [self intFromHexString:hexStr];
-    
-    // Create color object, specifying alpha as well
-    UIColor *color =
-    [UIColor colorWithRed:((CGFloat) ((hexint & 0xFF0000) >> 16))/255
-                    green:((CGFloat) ((hexint & 0xFF00) >> 8))/255
-                     blue:((CGFloat) (hexint & 0xFF))/255
-                    alpha:alpha];
-    
-    return color;
-}
-- (unsigned int)intFromHexString:(NSString *)hexStr
-{
-    unsigned int hexInt = 0;
-    
-    // Create scanner
-    NSScanner *scanner = [NSScanner scannerWithString:hexStr];
-    
-    // Tell scanner to skip the # character
-    [scanner setCharactersToBeSkipped:[NSCharacterSet characterSetWithCharactersInString:@"#"]];
-    
-    // Scan hex value
-    [scanner scanHexInt:&hexInt];
-    
-    return hexInt;
-}
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-    [refreshControl addTarget:self action:@selector(refreshAction) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refreshControl;
-    
-    if (!_interestObserver)
+    if (self.sections == nil || [self.sections count] == 0)
     {
-        [self initObserver];
+        return nil;
     }
-    
-    [self initItems];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-   // UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"appTiles9.png"]];
-   // imageView.frame = self.tableView.frame;
-   // self.tableView.backgroundView = imageView;
-    
-    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"  " style:UIBarButtonItemStylePlain target:nil action:nil];
-   // self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"menuBG6.png"]];
-   // UIButton *btnName = [UIButton buttonWithType:UIButtonTypeCustom];
-   // [btnName setFrame:CGRectMake(0, 0, 44, 44)];
-   // [btnName setBackgroundImage:[UIImage imageNamed:@"appbar.add.new.png"] forState:UIControlStateNormal];
-   // [btnName addTarget:self action:@selector(addAction:) forControlEvents:UIControlEventTouchUpInside];
-    
-    //UIBarButtonItem *locationItem = [[UIBarButtonItem alloc] initWithCustomView:btnName];
-    //self.navigationItem.rightBarButtonItem = locationItem;
-
-    
-  //  self.navigationController.view.backgroundColor = [UIColor colorWithRed:52/255.0 green:106/255.0  blue:220/255.0  alpha:1.0];
+    return [[self.sections.allKeys sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)] objectAtIndex:section];
 }
 
-- (IBAction)addAction:(id)sender
-{
-    [self performSegueWithIdentifier:@"AddNew" sender:self];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    
-    // deselect the table cell
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:false];
-    
-    //[self refreshAction];
-//    UIColor *lightColour = [self getUIColorObjectFromHexString:@"346ADC" alpha:1];
-//    UIColor *darkColour = [self getUIColorObjectFromHexString:@"5197E9" alpha:1];
-//    self.navigationController.navigationBar.barTintColor = lightColour;
-//    //   self.navigationController.navigationBar.tintColor = darkColour;
-//    self.navigationController.navigationBar.translucent = NO;
-
-}
-
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    //NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-//    //[center removeObserver:self.interestObserver];
-//}
-- (void)viewWillDisappear:(BOOL)animated
-{
-
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.sectionCounts.allKeys count];
+    return [self.sections.allKeys count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSString *sectionName = self.sectionCounts.allKeys[section];
-
-    return ((NSNumber *)self.sectionCounts[sectionName]).integerValue;
+    NSString *sectionName = [self getSectionName:section];
+    NSArray *sectionArray = self.sections[sectionName];
+    return [sectionArray count];
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSString *sectionName = self.sectionCounts.allKeys[section];
-
-    return [NSString stringWithFormat:@" %@", sectionName];
-}
-
-
-- (Item *)getItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    //TODO: optimize this
-    NSInteger sectionCount = 0;
-    NSString *sectionName = self.sectionCounts.allKeys[indexPath.section];
-    
-    for (Item *item in self.items)
-    {
-        if ([item.itemTypeName isEqualToString:sectionName])
-        {
-            if (sectionCount == indexPath.row)
-            {
-                return item;
-            }
-            sectionCount++;
-        }
-    }
-    return nil;
+    return [NSString stringWithFormat:@" %@", [self getSectionName:section]];;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -394,11 +269,13 @@
     highlightColour.backgroundColor = [UIColor colorWithRed:236.0f/255.0f green:240.0f/255.0f blue:241.0f/255.0f alpha:1];
     [cell setSelectedBackgroundView:highlightColour];
     
+    NSLog(@"indexPath section:%lu row:%lu", indexPath.section, indexPath.row);
+    
     // Configure the cell...
     Item *interest = [self getItemAtIndexPath:indexPath];
     
-    //cell.titleLabel.text = interest.title ? interest.title : @"[No company]";
     cell.companyNameLabel.text = interest.itemName;
+    
     
     static NSNumberFormatter *numberFormatter = nil;
     if (!numberFormatter)
@@ -408,9 +285,6 @@
         [numberFormatter setGroupingSeparator:@","];
     }
     
-    //cell.stockQuote.text = [NSString stringWithFormat:@"%@%@%@",@"$", [numberFormatter stringFromNumber:interest.stockQuote], @" (+2.42)"];
-   // cell.stockQuote.text = [NSString stringWithFormat:@"%@",@"(+2.42)"];
-
     //Set image. Check image cache first
     Biz *biz = [Biz sharedBiz];
     if (biz.imageCache[interest.logoUrl])
@@ -486,21 +360,29 @@
     return @[deleteAction, moreAction];
 }
 
+- (Item *)getItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *sectionName = [self getSectionName:indexPath.section];
+    NSArray *sectionArray = self.sections[sectionName];
+    NSLog(@"row: %ld", (long)indexPath.row);
+    return [sectionArray objectAtIndex:indexPath.row];
+}
+
 - (void)deleteItemAtIndexPath:(NSIndexPath *)indexPath
 {
     // Delete the row from the data source
-    Item *interest = [self getItemAtIndexPath:indexPath];
-    [[Biz sharedBiz] deleteInterest:interest withCompletionHandler:^(NSError *error) {
+    Item *item = [self getItemAtIndexPath:indexPath];
+    [[Biz sharedBiz] deleteInterest:item withCompletionHandler:^(NSError *error) {
         NSLog(@"deleted");
     }];
-    
+
     NSInteger sectionCount = [self tableView:self.tableView numberOfRowsInSection:indexPath.section];
-    [self.items removeObject:[self getItemAtIndexPath:indexPath]];
-    [self updateSectionCounts];
+    [self deleteItems:@[item]];
     
     //if only 1 item in section then delete the whole section
     if (sectionCount == 1)
     {
+        NSLog(@"section: %ld", (long)indexPath.section);
         [self.tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
     }
     else
@@ -540,11 +422,6 @@
 
 - (void)saveItem:(Item *)item
 {
-//    NSInteger row = [self.items indexOfObject:item];
-//    if (row != NSNotFound)
-//    {
-//        [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationAutomatic];
-//    }
     [[Biz sharedBiz] saveInterest:item withCompletionHandler:^(NSError *error) {
         
     }];
@@ -554,6 +431,8 @@
     return 30;
 }
 - (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section {
+    return;
+    
     UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
     
     header.textLabel.textColor = [UIColor blackColor];
@@ -586,5 +465,40 @@
     return YES;
 }
 */
+
+
+#pragma mark - Helper methods
+
+- (UIColor *)getUIColorObjectFromHexString:(NSString *)hexStr alpha:(CGFloat)alpha
+{
+    // Convert hex string to an integer
+    unsigned int hexint = [self intFromHexString:hexStr];
+    
+    // Create color object, specifying alpha as well
+    UIColor *color =
+    [UIColor colorWithRed:((CGFloat) ((hexint & 0xFF0000) >> 16))/255
+                    green:((CGFloat) ((hexint & 0xFF00) >> 8))/255
+                     blue:((CGFloat) (hexint & 0xFF))/255
+                    alpha:alpha];
+    
+    return color;
+}
+
+- (unsigned int)intFromHexString:(NSString *)hexStr
+{
+    unsigned int hexInt = 0;
+    
+    // Create scanner
+    NSScanner *scanner = [NSScanner scannerWithString:hexStr];
+    
+    // Tell scanner to skip the # character
+    [scanner setCharactersToBeSkipped:[NSCharacterSet characterSetWithCharactersInString:@"#"]];
+    
+    // Scan hex value
+    [scanner scanHexInt:&hexInt];
+    
+    return hexInt;
+}
+
 
 @end
