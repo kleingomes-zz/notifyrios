@@ -1,4 +1,6 @@
 # Notifyr iOS Application
+<img width="100" src="https://user-images.githubusercontent.com/8077220/57964880-300b2900-78f1-11e9-94bb-b7e997d7a5ed.png">
+
 Screenshots
 
 <img width="400" src="https://user-images.githubusercontent.com/8077220/57964760-8a0aef00-78ef-11e9-9b98-51da6d5f0886.jpg">
