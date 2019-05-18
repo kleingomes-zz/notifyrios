@@ -1,5 +1,5 @@
-# notifyrios
-Notifyr iOS Screenshots
+# Notifyr iOS Application
+Screenshots
 
 <img width="400" src="https://user-images.githubusercontent.com/8077220/57964760-8a0aef00-78ef-11e9-9b98-51da6d5f0886.jpg">
 <img width="400" src="https://user-images.githubusercontent.com/8077220/57964761-8a0aef00-78ef-11e9-8697-3e660cbbe1a9.jpg">
